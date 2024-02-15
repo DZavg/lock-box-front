@@ -8,11 +8,11 @@
 		"build": "run-p type-check \"build-only {@}\" --",
 		"preview": "vite preview",
 		"build-only": "vite build",
-		"type-check": "vue-tsc --build --force",
+		"type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
 		"lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
 		"format": "prettier --write src/",
 		"lintfix": "npm run format && npm run lint --fix",
-		"pre-commit": "lint-staged"
+		"pre-commit": "lint-staged && npm run type-check"
 	},
 	"lint-staged": {
 		"*.{js,ts,vue}": [
