@@ -24,5 +24,13 @@ export default defineConfig(({ mode }) => {
 		build: {
 			target: 'es2022',
 		},
+		css: {
+			preprocessorOptions: {
+				scss: {
+					additionalData: `@import '@/app/styles/variables.scss';
+                         		@import '@/app/styles/mixins.scss';`,
+				},
+			},
+		},
 	}
 })

@@ -1,0 +1,10 @@
+.container {
+	max-width: 1400px;
+	width: 100%;
+	padding: 0 $indent-s;
+	margin: 0 auto;
+
+	@media screen and (max-width: 991px) {
+		padding: 0 $indent-s;
+	}
+}

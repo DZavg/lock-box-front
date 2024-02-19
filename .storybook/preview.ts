@@ -2,7 +2,9 @@ import { type Preview, setup } from '@storybook/vue3'
 import { type App } from 'vue'
 import { createPinia } from 'pinia'
 
-import '@/app/styles/null.scss'
+import '@/app/styles/variables.scss'
+import '@/app/styles/mixins.scss'
+import '@/app/styles/main.scss'
 
 const pinia = createPinia()
 

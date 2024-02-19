@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'Example';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 400;
+	src:
+		local('Example Example'),
+		local('Example-Example'),
+		url('@/app/fonts/Example.woff2') format('woff2'),
+		url('@/app/fonts/Example.woff') format('woff');
+}
