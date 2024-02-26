@@ -6,7 +6,7 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import { type TabsData } from '@/shared/types/TabsData'
+import { type TabsData } from '@/shared/types/Tabs/TabsData'
 
 interface Props {
 	index: number

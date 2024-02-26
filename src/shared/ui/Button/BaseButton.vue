@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type HtmlButtonType } from '@/shared/types/HtmlButtonType'
+import { type HtmlButtonType } from '@/shared/types/Button/HtmlButtonType'
 
 interface Props {
 	disabled?: boolean
