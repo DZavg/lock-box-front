@@ -1,11 +1,23 @@
 @font-face {
-	font-family: 'Example';
+	font-family: 'Geologica';
 	font-display: swap;
 	font-style: normal;
 	font-weight: 400;
 	src:
-		local('Example Example'),
-		local('Example-Example'),
-		url('@/app/fonts/Example.woff2') format('woff2'),
-		url('@/app/fonts/Example.woff') format('woff');
+		local('Geologica Regular'),
+		local('Geologica-Regular'),
+		url('@/app/fonts/Geologica-Regular.woff2') format('woff2'),
+		url('@/app/fonts/Geologica-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Geologica';
+	font-display: swap;
+	font-style: normal;
+	font-weight: 500;
+	src:
+		local('Geologica Medium'),
+		local('Geologica-Medium'),
+		url('@/app/fonts/Geologica-Medium.woff2') format('woff2'),
+		url('@/app/fonts/Geologica-Medium.woff') format('woff');
 }
