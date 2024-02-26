@@ -12,6 +12,15 @@ setup((app: App) => {
 
 const preview: Preview = {
 	parameters: {
+		backgrounds: {
+			default: 'dark',
+			values: [
+				{
+					name: 'dark',
+					value: '#1E1E2A',
+				},
+			],
+		},
 		actions: { argTypesRegex: '^on[A-Z].*' },
 		controls: {
 			matchers: {
