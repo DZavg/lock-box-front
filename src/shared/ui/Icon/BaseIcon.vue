@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 interface Props {
 	icon: string
-	size?: number
+	size?: string | number
 }
 
 withDefaults(defineProps<Props>(), {

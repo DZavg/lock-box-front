@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import iconClose from '@/shared/images/svg/icon-close.svg'
-import BaseIcon from '@/shared/types/Icon/BaseIcon.vue'
+import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 
 const meta: Meta<typeof BaseIcon> = {
 	component: BaseIcon,

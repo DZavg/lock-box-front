@@ -10,12 +10,12 @@
 </template>
 
 <script lang="ts" setup>
-import BaseIcon from '@/shared/types/Icon/BaseIcon.vue'
+import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 
 interface Props {
 	disabled?: boolean
 	icon: string
-	size?: number
+	size?: string | number
 }
 
 withDefaults(defineProps<Props>(), {
@@ -29,6 +29,8 @@ defineEmits<{ (e: 'onClick'): void }>()
 
 <style lang="scss" scoped>
 .button-icon {
+	line-height: 0;
+
 	svg {
 		transition: opacity 0.15s ease-in;
 	}
