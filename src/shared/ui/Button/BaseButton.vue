@@ -4,12 +4,10 @@
 		:disabled="disabled"
 		class="button button_p"
 		:class="{ ['button_background_' + background]: background, ['button--loading']: loading }"
-		@click="!disabled && $emit('onClick')"
+		@click="!loading && !disabled && $emit('onClick')"
 	>
 		<span v-show="loading" class="button__loader">
-			<svg class="icon-16">
-				<use :href="iconLoading + '#icon'" />
-			</svg>
+			<BaseIcon :icon="iconLoading" size="16" />
 			<span>Загрузка...</span>
 		</span>
 		<span class="button__text"><slot></slot></span>
@@ -20,6 +18,7 @@
 import { type HtmlButtonType } from '@/shared/types/Button/HtmlButtonType'
 import { ButtonBackground } from '@/shared/types/Button/ButtonBackground'
 import iconLoading from '@/shared/images/svg/icon-loading.svg'
+import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 
 interface Props {
 	disabled?: boolean
@@ -90,6 +89,8 @@ defineEmits<{ (e: 'onClick'): void }>()
 	}
 
 	&--loading {
+		pointer-events: none;
+
 		.button__text {
 			display: block;
 			visibility: hidden;
