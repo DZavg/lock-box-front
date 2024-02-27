@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import CloseButton from '@/shared/ui/Button/CloseButton.vue'
+import CloseButtonIcon from '@/shared/ui/Button/CloseButtonIcon.vue'
 
-const meta: Meta<typeof CloseButton> = {
-	component: CloseButton,
+const meta: Meta<typeof CloseButtonIcon> = {
+	component: CloseButtonIcon,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof CloseButton> = {
 }
 
 export default meta
-type Story = StoryObj<typeof CloseButton>
+type Story = StoryObj<typeof CloseButtonIcon>
 
 export const Default: Story = {}
