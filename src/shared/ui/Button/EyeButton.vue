@@ -15,8 +15,6 @@ interface Props {
 withDefaults(defineProps<Props>(), {
 	show: false,
 })
-
-defineEmits<{ (e: 'onClick', open: boolean): void }>()
 </script>
 
 <style lang="scss" scoped></style>
