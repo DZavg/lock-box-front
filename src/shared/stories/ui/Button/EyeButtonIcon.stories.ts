@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import EyeButton from '@/shared/ui/Button/EyeButton.vue'
+import EyeButtonIcon from '@/shared/ui/Button/EyeButtonIcon.vue'
 
-const meta: Meta<typeof EyeButton> = {
-	component: EyeButton,
+const meta: Meta<typeof EyeButtonIcon> = {
+	component: EyeButtonIcon,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof EyeButton> = {
 }
 
 export default meta
-type Story = StoryObj<typeof EyeButton>
+type Story = StoryObj<typeof EyeButtonIcon>
 
 export const Default: Story = {}
