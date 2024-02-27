@@ -3,27 +3,36 @@
 		:type="type"
 		:disabled="disabled"
 		class="button button_p"
-		:class="{ ['button_background_' + background]: background }"
+		:class="{ ['button_background_' + background]: background, ['button--loading']: loading }"
 		@click="!disabled && $emit('onClick')"
 	>
-		<slot></slot>
+		<span v-show="loading" class="button__loader">
+			<svg class="icon-16">
+				<use :href="iconLoading + '#icon'" />
+			</svg>
+			<span>Загрузка...</span>
+		</span>
+		<span class="button__text"><slot></slot></span>
 	</button>
 </template>
 
 <script lang="ts" setup>
 import { type HtmlButtonType } from '@/shared/types/Button/HtmlButtonType'
 import { ButtonBackground } from '@/shared/types/Button/ButtonBackground'
+import iconLoading from '@/shared/images/svg/icon-loading.svg'
 
 interface Props {
 	disabled?: boolean
 	type?: HtmlButtonType
 	background?: ButtonBackground
+	loading?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
 	disabled: false,
 	type: 'button',
 	background: ButtonBackground.Fill,
+	loading: false,
 })
 
 defineEmits<{ (e: 'onClick'): void }>()
@@ -78,6 +87,27 @@ defineEmits<{ (e: 'onClick'): void }>()
 
 	&:disabled {
 		cursor: default;
+	}
+
+	&--loading {
+		.button__text {
+			display: block;
+			visibility: hidden;
+			height: 0;
+		}
+	}
+
+	&__loader {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: $indent-xs;
+		pointer-events: none;
+
+		svg {
+			animation: rotate 4s linear infinite;
+			fill: $color-white;
+		}
 	}
 }
 </style>
