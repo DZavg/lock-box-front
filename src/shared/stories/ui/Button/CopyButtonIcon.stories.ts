@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import CopyButton from '@/shared/ui/Button/CopyButton.vue'
+import CopyButtonIcon from '@/shared/ui/Button/CopyButtonIcon.vue'
 
-const meta: Meta<typeof CopyButton> = {
-	component: CopyButton,
+const meta: Meta<typeof CopyButtonIcon> = {
+	component: CopyButtonIcon,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof CopyButton> = {
 }
 
 export default meta
-type Story = StoryObj<typeof CopyButton>
+type Story = StoryObj<typeof CopyButtonIcon>
 
 export const Default: Story = {}
