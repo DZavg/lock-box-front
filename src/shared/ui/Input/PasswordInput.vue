@@ -20,10 +20,10 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	name: '',
+	name: 'password',
 	modelValue: '',
-	label: '',
-	placeholder: '',
+	label: 'Пароль',
+	placeholder: '******',
 	error: '',
 	disabled: false,
 	autocomplete: 'off',

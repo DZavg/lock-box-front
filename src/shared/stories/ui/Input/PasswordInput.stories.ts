@@ -17,8 +17,6 @@ type Story = StoryObj<typeof PasswordInput>
 
 export const Default: Story = {
 	args: {
-		label: 'Поле ввода',
-		placeholder: 'Поле ввода',
 		name: 'password',
 	},
 }
