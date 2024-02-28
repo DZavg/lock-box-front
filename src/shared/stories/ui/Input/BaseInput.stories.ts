@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
-import { ref } from 'vue'
 
 const meta: Meta<typeof BaseInput> = {
 	component: BaseInput,
