@@ -1,5 +1,5 @@
 <template>
-	<BaseButtonIcon v-if="show" :icon="iconEyeOpen" size="16" />
+	<BaseButtonIcon v-if="active" :icon="iconEyeOpen" size="16" />
 	<BaseButtonIcon v-else :icon="iconEyeClose" size="16" />
 </template>
 
@@ -9,11 +9,11 @@ import iconEyeOpen from '@/shared/images/svg/icon-eye-open.svg'
 import BaseButtonIcon from '@/shared/ui/Button/BaseButtonIcon.vue'
 
 interface Props {
-	show?: boolean
+	active: boolean
 }
 
 withDefaults(defineProps<Props>(), {
-	show: false,
+	active: false,
 })
 </script>
 
