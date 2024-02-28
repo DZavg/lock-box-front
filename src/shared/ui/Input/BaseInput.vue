@@ -1,19 +1,21 @@
 <template>
 	<div class="input">
-		<label class="input__wrapper">
-			<span class="input__label caption_p">{{ label }}</span>
-			<input
-				:class="{ ['input__element--error']: error }"
-				class="input__element body_p"
-				v-model="inputValue"
-				:name="name"
-				:placeholder="placeholder"
-				:disabled="disabled"
-				:type="type"
-				:autocomplete="autocomplete"
-			/>
-		</label>
-		<slot></slot>
+		<span class="input__label caption_p">{{ label }}</span>
+		<div class="input__wrapper">
+			<label>
+				<input
+					:class="{ ['input__element--error']: error }"
+					class="input__element body_p"
+					v-model="inputValue"
+					:name="name"
+					:placeholder="placeholder"
+					:disabled="disabled"
+					:type="type"
+					:autocomplete="autocomplete"
+				/>
+			</label>
+			<slot></slot>
+		</div>
 		<BaseError :text="error" />
 	</div>
 </template>
@@ -53,12 +55,9 @@ const inputValue = defineModel('modelValue', { default: '' })
 
 <style lang="scss" scoped>
 .input {
-	&,
-	&__wrapper {
-		display: inline-flex;
-		flex-direction: column;
-		gap: $indent-2xs;
-	}
+	display: inline-flex;
+	flex-direction: column;
+	gap: $indent-2xs;
 
 	&__label {
 		color: $color-gray-secondary;
