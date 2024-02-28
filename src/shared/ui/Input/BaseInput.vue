@@ -27,8 +27,8 @@ import BaseError from '@/shared/ui/Error/BaseError.vue'
 interface Props {
 	name: string
 	modelValue?: string
-	label: string
-	placeholder: string
+	label?: string
+	placeholder?: string
 	error?: string
 	type?: InputTypeHTMLAttribute
 	disabled?: boolean
