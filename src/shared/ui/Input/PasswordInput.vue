@@ -10,10 +10,10 @@ import EyeButtonIcon from '@/shared/ui/Button/EyeButtonIcon.vue'
 import { computed, ref, type Ref } from 'vue'
 
 interface Props {
-	name: string
+	name?: string
 	modelValue?: string
-	label: string
-	placeholder: string
+	label?: string
+	placeholder?: string
 	error?: string
 	disabled?: boolean
 	autocomplete?: string
