@@ -1,6 +1,6 @@
 <template>
 	<div class="input">
-		<span class="input__label caption_p">{{ label }}</span>
+		<span v-if="label" class="input__label caption_p">{{ label }}</span>
 		<div class="input__wrapper">
 			<label>
 				<input
@@ -16,7 +16,7 @@
 			</label>
 			<slot></slot>
 		</div>
-		<BaseError :text="error" />
+		<BaseError v-if="error" :text="error" />
 	</div>
 </template>
 
