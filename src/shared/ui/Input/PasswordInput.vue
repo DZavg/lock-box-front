@@ -1,6 +1,11 @@
 <template>
 	<BaseInput class="password-input" v-bind="props" :type="type">
-		<EyeButtonIcon class="password-input__button" @click="switchType" :active="active" />
+		<EyeButtonIcon
+			class="password-input__button"
+			@click="switchType"
+			:active="active"
+			:icon-color="iconColor"
+		/>
 	</BaseInput>
 </template>
 
@@ -8,6 +13,7 @@
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
 import EyeButtonIcon from '@/shared/ui/Button/EyeButtonIcon.vue'
 import { computed, ref, type Ref } from 'vue'
+import { IconColor } from '@/shared/types/Icon/IconColor'
 
 interface Props {
 	name?: string
@@ -32,6 +38,7 @@ const props = withDefaults(defineProps<Props>(), {
 const active: Ref<boolean> = ref(false)
 
 const type = computed(() => (active.value ? 'text' : 'password'))
+const iconColor = computed(() => (props.disabled ? IconColor.GrayThird : IconColor.White))
 
 const switchType = () => {
 	active.value = !active.value
