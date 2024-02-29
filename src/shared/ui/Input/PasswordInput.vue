@@ -1,16 +1,11 @@
 <template>
-	<BaseInput class="password-input" v-bind="props" :type="type">
-		<EyeButtonIcon
-			class="password-input__button"
-			@click="switchType"
-			:active="active"
-			:icon-color="iconColor"
-		/>
-	</BaseInput>
+	<InputWithIcon v-bind="props" :type="type">
+		<EyeButtonIcon @click="switchType" :active="active" :icon-color="iconColor" />
+	</InputWithIcon>
 </template>
 
 <script lang="ts" setup>
-import BaseInput from '@/shared/ui/Input/BaseInput.vue'
+import InputWithIcon from '@/shared/ui/Input/InputWithIcon.vue'
 import EyeButtonIcon from '@/shared/ui/Button/EyeButtonIcon.vue'
 import { computed, ref, type Ref } from 'vue'
 import { IconColor } from '@/shared/types/Icon/IconColor'
@@ -45,21 +40,4 @@ const switchType = () => {
 }
 </script>
 
-<style lang="scss" scoped>
-.password-input {
-	&:deep(.input__wrapper) {
-		position: relative;
-
-		input {
-			padding-right: 44px;
-		}
-	}
-
-	&__button {
-		position: absolute;
-		right: $indent-s;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-}
-</style>
+<style lang="scss" scoped></style>

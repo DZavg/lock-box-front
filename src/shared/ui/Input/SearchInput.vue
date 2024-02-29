@@ -1,11 +1,11 @@
 <template>
-	<BaseInput class="search-input" v-bind="props">
-		<BaseIcon class="search-input__icon" :icon="iconSearch" :color="iconColor" :size="16" />
-	</BaseInput>
+	<InputWithIcon v-bind="props">
+		<BaseIcon :icon="iconSearch" :color="iconColor" :size="16" />
+	</InputWithIcon>
 </template>
 
 <script lang="ts" setup>
-import BaseInput from '@/shared/ui/Input/BaseInput.vue'
+import InputWithIcon from '@/shared/ui/Input/InputWithIcon.vue'
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import iconSearch from '@/shared/images/svg/icon-search.svg'
 import { computed } from 'vue'
@@ -30,21 +30,4 @@ const props = withDefaults(defineProps<Props>(), {
 const iconColor = computed(() => (props.disabled ? IconColor.GrayThird : IconColor.White))
 </script>
 
-<style lang="scss" scoped>
-.search-input {
-	&:deep(.input__wrapper) {
-		position: relative;
-
-		input {
-			padding-right: 44px;
-		}
-	}
-
-	&__icon {
-		position: absolute;
-		right: $indent-s;
-		top: 50%;
-		transform: translateY(-50%);
-	}
-}
-</style>
+<style lang="scss" scoped></style>
