@@ -44,4 +44,21 @@ const tabsData: TabsData = {
 provide('tabsData', tabsData)
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.base-tabs {
+	display: flex;
+	flex-direction: column;
+	gap: $indent-m;
+
+	@media screen and (max-width: 768px) {
+		gap: $indent-s;
+	}
+
+	&__head {
+		@include scrollbar(true);
+		display: flex;
+		gap: $indent-s;
+		overflow: auto hidden;
+	}
+}
+</style>
