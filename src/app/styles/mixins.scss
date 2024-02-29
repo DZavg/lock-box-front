@@ -33,3 +33,22 @@
 	line-height: 20px;
 	font-weight: 400;
 }
+
+@mixin scrollbar($isHorizontal: false) {
+	scrollbar-width: thin;
+
+	@media only screen and (hover: hover) {
+		&::-webkit-scrollbar {
+			@if ($isHorizontal) {
+				height: 4px;
+			} @else {
+				width: 4px;
+			}
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $color-gray-third;
+			border-radius: $border-radius-xs;
+		}
+	}
+}
