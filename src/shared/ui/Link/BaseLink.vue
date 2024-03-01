@@ -30,11 +30,11 @@ withDefaults(defineProps<Props>(), {
 .link {
 	cursor: pointer;
 	user-select: none;
+	transition: color 0.15s ease-in;
 
 	&_color {
 		&_blue-primary {
 			color: $color-blue-primary;
-			transition: color 0.15s ease-in;
 
 			&:hover,
 			&:active {
@@ -44,11 +44,10 @@ withDefaults(defineProps<Props>(), {
 
 		&_white {
 			color: $color-white;
-			transition: opacity 0.15s ease-in;
 
 			&:hover,
 			&:active {
-				opacity: 0.8;
+				color: rgba($color-white, 0.8);
 			}
 		}
 	}
