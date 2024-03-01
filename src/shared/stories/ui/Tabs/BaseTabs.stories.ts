@@ -9,7 +9,7 @@ const meta: Meta<typeof BaseTabs> = {
 	parameters: {
 		design: {
 			type: 'figma',
-			url: 'https://www.figma.com/file/LKQ4FJ4bTnCSjedbRpk931/Sample-File',
+			url: 'https://www.figma.com/file/JrFyfzV8shSxNFSTQdqb4J/password-storage?type=design&node-id=1-2&mode=design&t=bLsFZyxvDIeXQk3J-0',
 		},
 	},
 }
