@@ -50,6 +50,10 @@ withDefaults(defineProps<Props>(), {
 				color: rgba($color-white, 0.8);
 			}
 		}
+
+		&_gray-third {
+			color: $color-gray-third;
+		}
 	}
 }
 </style>
