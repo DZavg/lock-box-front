@@ -30,6 +30,10 @@ withDefaults(defineProps<Props>(), {
 		&_gray-third {
 			fill: $color-gray-third;
 		}
+
+		&_blue-primary {
+			fill: $color-blue-primary;
+		}
 	}
 }
 </style>
