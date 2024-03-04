@@ -1,6 +1,6 @@
 <template>
 	<div class="input">
-		<span v-if="label" class="input__label caption_p">{{ label }}</span>
+		<BaseLabel :label="label" />
 		<div class="input__wrapper">
 			<label>
 				<input
@@ -23,6 +23,7 @@
 <script lang="ts" setup>
 import { type InputTypeHTMLAttribute } from 'vue'
 import BaseError from '@/shared/ui/Error/BaseError.vue'
+import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 
 interface Props {
 	name: string
@@ -58,11 +59,6 @@ const inputValue = defineModel('modelValue', { default: '' })
 	display: inline-flex;
 	flex-direction: column;
 	gap: $indent-2xs;
-
-	&__label {
-		color: $color-gray-secondary;
-		user-select: none;
-	}
 
 	&__element {
 		padding: 12px $indent-s;
