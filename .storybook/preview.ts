@@ -2,12 +2,15 @@ import { type Preview, setup } from '@storybook/vue3'
 import { type App } from 'vue'
 import { createPinia } from 'pinia'
 
+import '@/app/styles/null.scss'
 import '@/app/styles/main.scss'
+import { clickOutside } from '@/app/plugins/clickOutside'
 
 const pinia = createPinia()
 
 setup((app: App) => {
 	app.use(pinia)
+	app.directive('clickOutside', clickOutside)
 })
 
 const preview: Preview = {
