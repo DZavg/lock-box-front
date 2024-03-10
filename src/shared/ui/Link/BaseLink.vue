@@ -53,6 +53,14 @@ withDefaults(defineProps<Props>(), {
 
 		&_gray-third {
 			color: $color-gray-third;
+
+			&:hover {
+				color: $color-blue-primary;
+			}
+
+			&:active {
+				color: $color-blue-third;
+			}
 		}
 	}
 }
