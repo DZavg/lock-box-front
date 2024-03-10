@@ -32,8 +32,8 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
 	name: '',
-	value: '',
 	modelValue: '',
+	value: '',
 	disabled: false,
 })
 
