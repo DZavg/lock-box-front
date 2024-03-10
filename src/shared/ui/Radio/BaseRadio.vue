@@ -53,6 +53,18 @@ const inputValue = defineModel('modelValue', { default: '' })
 	cursor: pointer;
 	color: $color-white;
 
+	&:hover {
+		.radio__circle {
+			border-color: $color-blue-secondary;
+		}
+	}
+
+	&:active {
+		.radio__circle {
+			border-color: $color-blue-third;
+		}
+	}
+
 	input:checked + .radio__circle {
 		border-color: $color-blue-primary;
 
@@ -64,6 +76,10 @@ const inputValue = defineModel('modelValue', { default: '' })
 	&--disabled {
 		cursor: default;
 		pointer-events: none;
+
+		.radio__circle {
+			border-color: $color-gray-four;
+		}
 	}
 
 	&__circle {
