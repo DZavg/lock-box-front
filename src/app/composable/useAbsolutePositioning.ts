@@ -14,7 +14,7 @@ export default function (
 		bottom: 0,
 		left: 0,
 	}
-	const side = ref('')
+	const position = ref('')
 
 	const checkPosition = () => {
 		const elementDOMRect = parentElement.value?.getBoundingClientRect() || defaultDOMRect
@@ -33,20 +33,20 @@ export default function (
 		}
 
 		if (elementRect.bottom > 0 && positions.includes(Position.Bottom)) {
-			side.value = Position.Bottom
+			position.value = Position.Bottom
 			return
 		} else if (elementRect.top > 0 && positions.includes(Position.Top)) {
-			side.value = Position.Top
+			position.value = Position.Top
 			return
 		} else if (elementRect.right > 0 && positions.includes(Position.Right)) {
-			side.value = Position.Right
+			position.value = Position.Right
 			return
 		} else if (elementRect.left > 0 && positions.includes(Position.Left)) {
-			side.value = Position.Left
+			position.value = Position.Left
 			return
 		}
 
-		side.value = defaultPosition
+		position.value = defaultPosition
 	}
 
 	const checkPositionWithThrottle = throttle(checkPosition)
@@ -63,6 +63,6 @@ export default function (
 	})
 
 	return {
-		side,
+		position,
 	}
 }
