@@ -1,7 +1,7 @@
 <template>
 	<Teleport to="body">
 		<div class="modal" @keydown.esc="$emit('onClose')" @mousedown.self="$emit('onClose')">
-			<div class="modal__content">
+			<div class="modal__content" v-bind="$attrs">
 				<CloseButtonIcon class="modal__close-button" @click="$emit('onClose')" />
 				<slot></slot>
 			</div>
@@ -58,6 +58,7 @@ defineEmits<{
 		@media screen and (max-width: 768px) {
 			max-width: none;
 			min-height: 100vh;
+			border-radius: 0;
 		}
 	}
 }
