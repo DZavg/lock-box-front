@@ -49,7 +49,6 @@ defineEmits<{
 	}
 
 	&__text {
-		margin-bottom: $indent-l;
 		word-break: break-word;
 	}
 
@@ -57,6 +56,7 @@ defineEmits<{
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: $indent-m;
+		margin-top: $indent-l;
 	}
 }
 </style>
