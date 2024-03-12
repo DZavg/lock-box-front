@@ -17,6 +17,8 @@ const currentYear = new Date().getFullYear()
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	gap: $indent-2xs $indent-s;
+	flex-wrap: wrap;
 	padding: $indent-s $indent-m;
 	color: $color-white;
 	background-color: $color-dark-secondary;
