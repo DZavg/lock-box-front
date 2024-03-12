@@ -61,6 +61,7 @@ const inputValue = defineModel('modelValue', { default: '' })
 	gap: $indent-2xs;
 
 	&__element {
+		width: 100%;
 		padding: 12px $indent-s;
 		border: 1px solid transparent;
 		background-color: $color-dark-third;
