@@ -48,14 +48,14 @@ defineEmits<{
 
 	&__content {
 		position: relative;
-		max-width: 430px;
+		max-width: 400px;
 		width: 100%;
 		padding: $indent-xl;
 		background-color: $color-dark-primary;
 		color: $color-white;
 		border-radius: $border-radius-m;
 
-		@media screen and (max-width: 768px) {
+		@media screen and (max-width: 475px) {
 			max-width: none;
 			min-height: 100vh;
 			border-radius: 0;
