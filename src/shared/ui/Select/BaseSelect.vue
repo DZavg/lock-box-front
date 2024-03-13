@@ -125,8 +125,6 @@ onMounted(() => {
 	display: inline-flex;
 	flex-direction: column;
 	gap: $indent-2xs;
-	max-width: 288px;
-	width: 100%;
 
 	&--active {
 		.select__field {
