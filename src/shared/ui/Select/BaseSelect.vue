@@ -12,7 +12,11 @@
 			<BaseLabel :label="label" />
 			<div class="select__field" @click="toggleDropdown(!isActive)">
 				<span>{{ getOptionById(inputValue)?.title }}</span>
-				<DropdownButtonIcon class="select__dropdown-button" :icon-color="iconColor" />
+				<DropdownButtonIcon
+					class="select__dropdown-button"
+					:is-active="isActive"
+					:icon-color="iconColor"
+				/>
 				<BaseOptionList
 					tabindex="1"
 					ref="selectOptions"
@@ -130,11 +134,6 @@ onMounted(() => {
 		.select__field {
 			border-color: $color-blue-primary;
 		}
-		.select__dropdown-button {
-			&:deep(svg) {
-				rotate: -90deg;
-			}
-		}
 
 		.select__options {
 			visibility: visible;
@@ -163,9 +162,6 @@ onMounted(() => {
 		right: $indent-s;
 		top: 50%;
 		transform: translateY(-50%);
-		&:deep(svg) {
-			transition: rotate 0.1s ease-in;
-		}
 	}
 
 	&__options {

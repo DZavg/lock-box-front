@@ -1,6 +1,7 @@
 <template>
 	<BaseButtonIcon
 		class="dropdown-button-icon"
+		:class="{ ['dropdown-button-icon--active']: isActive }"
 		:icon="iconArrowSmall"
 		size="16"
 		:icon-color="iconColor"
@@ -14,10 +15,12 @@ import { IconColor } from '@/shared/types/Icon/IconColor'
 
 interface Props {
 	iconColor?: IconColor
+	isActive?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
 	iconColor: IconColor.White,
+	isActive: false,
 })
 </script>
 
@@ -25,6 +28,13 @@ withDefaults(defineProps<Props>(), {
 .dropdown-button-icon {
 	&:deep(svg) {
 		rotate: 90deg;
+		transition: rotate 0.1s ease-in;
+	}
+
+	&--active {
+		&:deep(svg) {
+			rotate: -90deg;
+		}
 	}
 }
 </style>
