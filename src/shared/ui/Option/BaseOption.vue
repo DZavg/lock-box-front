@@ -19,6 +19,7 @@ withDefaults(defineProps<Props>(), {
 	padding: 12px $indent-s;
 	border-radius: $border-radius-xs;
 	transition: background-color 0.1s ease-in;
+	cursor: pointer;
 
 	&--active,
 	&:hover,
