@@ -13,27 +13,24 @@
 			<div class="select__field" @click="toggleDropdown(!isActive)">
 				<span>{{ getOptionById(inputValue)?.title }}</span>
 				<DropdownButtonIcon class="select__dropdown-button" :icon-color="iconColor" />
-				<div
+				<BaseOptionList
+					tabindex="1"
 					ref="selectOptions"
 					class="select__options"
 					:class="{
 						['select__options_position_' + position]: !!position,
 					}"
 				>
-					<div class="select__list" tabindex="1">
-						<BaseRadio
-							v-for="option in options"
-							:key="option.id"
-							class="select__item"
-							:class="{ ['select__item--active']: optionIsActive(option.id) }"
-							v-model="inputValue"
-							:value="option.id"
-							:name="name"
-						>
+					<BaseOption
+						v-for="option in options"
+						:key="option.id"
+						:is-active="optionIsActive(option.id)"
+					>
+						<BaseRadio v-model="inputValue" :value="option.id" :name="name">
 							{{ option.title }}
 						</BaseRadio>
-					</div>
-				</div>
+					</BaseOption>
+				</BaseOptionList>
 			</div>
 		</div>
 		<BaseError :text="error" />
@@ -50,6 +47,8 @@ import BaseError from '@/shared/ui/Error/BaseError.vue'
 import { IconColor } from '@/shared/types/Icon/IconColor'
 import { Position } from '@/app/types/AbsolutePositioning/Position'
 import useAbsolutePositioning from '@/app/composable/useAbsolutePositioning'
+import BaseOption from '@/shared/ui/Option/BaseOption.vue'
+import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
 
 interface Props {
 	name?: string
@@ -122,6 +121,7 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .select {
+	width: 100%;
 	display: inline-flex;
 	flex-direction: column;
 	gap: $indent-2xs;
@@ -171,12 +171,8 @@ onMounted(() => {
 	}
 
 	&__options {
-		width: 100%;
 		position: absolute;
 		left: 0;
-		border-radius: $border-radius-s;
-		background-color: $color-dark-third;
-		padding: $indent-2xs;
 		visibility: hidden;
 
 		&_position {
@@ -187,29 +183,6 @@ onMounted(() => {
 			&_bottom {
 				top: calc(100% + 8px);
 			}
-		}
-	}
-
-	&__list {
-		@include scrollbar();
-		overscroll-behavior: contain;
-		overflow: hidden auto;
-		display: flex;
-		flex-direction: column;
-		gap: $indent-2xs;
-		max-height: 196px;
-		padding-right: $indent-2xs;
-	}
-
-	&__item {
-		padding: 12px $indent-s;
-		border-radius: $border-radius-xs;
-		transition: background-color 0.1s ease-in;
-
-		&--active,
-		&:hover,
-		&:focus {
-			background-color: $color-dark-secondary;
 		}
 	}
 }
