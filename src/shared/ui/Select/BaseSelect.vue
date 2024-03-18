@@ -163,8 +163,6 @@ onMounted(() => {
 		right: $indent-s;
 		top: 50%;
 		transform: translateY(-50%);
-		font-size: 0;
-		line-height: 0;
 		&:deep(svg) {
 			transition: rotate 0.1s ease-in;
 		}

@@ -32,6 +32,7 @@ defineEmits<{ (e: 'onClick'): void }>()
 
 <style lang="scss" scoped>
 .button-icon {
+	font-size: 0;
 	line-height: 0;
 
 	svg {
