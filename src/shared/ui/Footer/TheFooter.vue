@@ -1,5 +1,5 @@
 <template>
-	<footer class="footer container">
+	<footer class="footer container-m">
 		<p class="footer__copyright caption_p">© {{ currentYear }} Techouse</p>
 		<BaseLink class="caption_p" :color="LinkColor.White">Политика конфиденциальности</BaseLink>
 	</footer>
