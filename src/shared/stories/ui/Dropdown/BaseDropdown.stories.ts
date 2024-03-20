@@ -30,7 +30,7 @@ export const Default: Story = {
 		},
 		template: `
 			<BaseDropdown v-bind="args">
-			<template #title>Иванов Иван</template>
+			<template #title><p>Иванов Иван</p></template>
 			<template #button>
 				<BaseButton @onClick="toggleDropdown">Открыть/закрыть</BaseButton>
 			</template>

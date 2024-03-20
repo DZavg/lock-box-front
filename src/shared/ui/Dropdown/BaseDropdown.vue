@@ -1,7 +1,7 @@
 <template>
 	<div class="dropdown">
 		<div class="dropdown__head">
-			<p><slot name="title"></slot></p>
+			<slot name="title"></slot>
 			<slot name="button" :click="$emit('onClick')"></slot>
 		</div>
 		<div v-if="isActive" class="dropdown__body">
