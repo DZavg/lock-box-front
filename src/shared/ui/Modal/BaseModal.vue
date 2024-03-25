@@ -1,10 +1,10 @@
 <template>
 	<Teleport to="body">
 		<div class="modal" @keydown.esc="$emit('onClose')" @mousedown.self="$emit('onClose')">
-			<div class="modal__content" v-bind="$attrs">
+			<BaseCard class="modal__content" v-bind="$attrs">
 				<CloseButtonIcon class="modal__close-button" @click="$emit('onClose')" />
 				<slot></slot>
-			</div>
+			</BaseCard>
 		</div>
 	</Teleport>
 </template>
@@ -12,6 +12,7 @@
 <script lang="ts" setup>
 import CloseButtonIcon from '@/shared/ui/Button/CloseButtonIcon.vue'
 import useLockScroll from '@/app/composable/useLockScroll'
+import BaseCard from '@/shared/ui/Card/BaseCard.vue'
 
 useLockScroll()
 
@@ -50,10 +51,7 @@ defineEmits<{
 		position: relative;
 		max-width: 400px;
 		width: 100%;
-		padding: $indent-xl;
-		background-color: $color-dark-primary;
 		color: $color-white;
-		border-radius: $border-radius-m;
 
 		@media screen and (max-width: 475px) {
 			max-width: none;
