@@ -20,6 +20,7 @@ withDefaults(defineProps<Props>(), {
 	border-radius: $border-radius-xs;
 	transition: background-color 0.1s ease-in;
 	cursor: pointer;
+	word-break: break-word;
 
 	&--active,
 	&:hover,
