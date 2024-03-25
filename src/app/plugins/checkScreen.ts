@@ -16,6 +16,7 @@ const checkScreen = {
 		const checkScreenWithThrottle = throttle(checkScreen)
 
 		window.addEventListener('resize', checkScreenWithThrottle)
+		checkScreen()
 	},
 }
 export default checkScreen
