@@ -9,6 +9,7 @@ body {
 	font-family: 'Geologica', sans-serif;
 	@include body_p;
 	color: $color-white;
+	background-color: $color-dark-primary;
 }
 
 .lock-scroll {
