@@ -17,6 +17,11 @@ body {
 	touch-action: none;
 }
 
-.modal-h1-title {
+.modal-h1-title,
+.h1-title {
 	margin-bottom: $indent-m;
+
+	@media screen and (max-width: 475px) {
+		margin-bottom: $indent-xs;
+	}
 }
