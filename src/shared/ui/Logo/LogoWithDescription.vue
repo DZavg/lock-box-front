@@ -1,8 +1,10 @@
 <template>
 	<div class="logo-with-desc">
-		<svg class="logo-with-desc__icon">
-			<use :href="iconLogo + '#icon'" />
-		</svg>
+		<RouterLink :to="{ name: 'Auth' }">
+			<svg class="logo-with-desc__icon">
+				<use :href="iconLogo + '#icon'" />
+			</svg>
+		</RouterLink>
 		<p>Ваш надежный хранитель паролей</p>
 	</div>
 </template>
