@@ -1,5 +1,5 @@
 <template>
-	<BaseCard class="container-s">
+	<BaseCard>
 		<h1 class="h1-title">{{ title }}</h1>
 		<slot></slot>
 	</BaseCard>
