@@ -1,7 +1,7 @@
 <template>
 	<div class="auth-page">
 		<LogoWithDescription />
-		<AuthTabs />
+		<AuthTabs class="container-s" />
 	</div>
 </template>
 
