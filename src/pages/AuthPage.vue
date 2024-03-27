@@ -1,7 +1,7 @@
 <template>
-	<div class="auth-page">
+	<div class="auth-page container-s">
 		<LogoWithDescription />
-		<AuthTabs class="container-s" />
+		<AuthTabs />
 	</div>
 </template>
 
@@ -12,6 +12,7 @@ import AuthTabs from '@/widgets/ui/Auth/AuthTabs.vue'
 
 <style lang="scss" scoped>
 .auth-page {
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
