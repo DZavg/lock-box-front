@@ -40,6 +40,8 @@ const updateActiveTab = (name: string) => {
 
 <style lang="scss" scoped>
 .auth-tabs {
+	width: 100%;
+
 	&__wrapper {
 		&:deep(.base-tabs__head) {
 			justify-content: space-between;
