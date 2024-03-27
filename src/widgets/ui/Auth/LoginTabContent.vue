@@ -4,7 +4,7 @@
 			<EmailInput />
 			<PasswordInput />
 		</InputList>
-		<BaseLink :link="{ name: 'RecoveryPassword' }" class="login-tab-content__link">
+		<BaseLink :link="{ name: RouteName.RecoveryPassword }" class="login-tab-content__link">
 			Восстановить пароль
 		</BaseLink>
 		<BaseButton>Войти</BaseButton>
@@ -18,6 +18,7 @@ import BaseButton from '@/shared/ui/Button/BaseButton.vue'
 import PasswordInput from '@/shared/ui/Input/PasswordInput.vue'
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
 import InputList from '@/shared/ui/Input/InputList.vue'
+import { RouteName } from '@/app/router/RouteName'
 </script>
 
 <style lang="scss" scoped>

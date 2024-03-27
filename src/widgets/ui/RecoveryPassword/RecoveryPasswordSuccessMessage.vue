@@ -14,9 +14,7 @@
 			Сообщение было отправлено на ваш адрес {{ email }}. Следуйте инструкциям в сообщении, чтобы
 			сбросить пароль
 		</p>
-		<BaseLinkButton :link="{ name: 'Auth' }" class="recovery-password-success-msg__button"
-			>Готово</BaseLinkButton
-		>
+		<BaseLinkButton class="recovery-password-success-msg__button" link="/">Готово </BaseLinkButton>
 	</div>
 </template>
 

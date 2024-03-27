@@ -1,6 +1,6 @@
 <template>
 	<div class="logo-with-desc">
-		<RouterLink :to="{ name: 'Auth' }">
+		<RouterLink to="/">
 			<svg class="logo-with-desc__icon">
 				<use :href="iconLogo + '#icon'" />
 			</svg>
