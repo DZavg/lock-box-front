@@ -1,6 +1,6 @@
 <template>
 	<AuthCard class="auth-tabs" title="Добро пожаловать">
-		<BaseTabs :active-tab-name="activeTabName">
+		<BaseTabs :active-tab-name="activeTabName" class="auth-tabs__wrapper">
 			<template #head>
 				<BaseTabButton
 					v-for="tab in AuthTabsData"
@@ -38,4 +38,12 @@ const updateActiveTab = (name: string) => {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.auth-tabs {
+	&__wrapper {
+		&:deep(.base-tabs__head) {
+			justify-content: space-between;
+		}
+	}
+}
+</style>
