@@ -1,7 +1,7 @@
 <template>
 	<div class="password-recovery-page container-s">
 		<LogoWithDescription />
-		<RecoveryPasswordForm />
+		<RecoveryPasswordForm class="container-s" />
 	</div>
 </template>
 
