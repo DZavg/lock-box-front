@@ -1,9 +1,7 @@
 <template>
 	<div class="layout">
 		<div class="inner container-m">
-			<div class="content">
-				<RouterView />
-			</div>
+			<RouterView />
 		</div>
 		<TheFooter />
 	</div>
@@ -22,14 +20,16 @@ import TheFooter from '@/shared/ui/Footer/TheFooter.vue'
 }
 
 .inner {
+	width: 100%;
+	display: flex;
+	justify-content: center;
 	flex: 1 0 auto;
-}
-
-.content {
-	padding: 184px 0;
+	padding-top: 184px;
+	padding-bottom: 184px;
 
 	@media screen and (max-width: 475px) {
-		padding: $indent-xl 0 $indent-m 0;
+		padding-top: $indent-xl;
+		padding-bottom: $indent-m;
 	}
 }
 </style>
