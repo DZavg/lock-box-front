@@ -14,31 +14,31 @@ import { provide, type Ref, ref, watch } from 'vue'
 import { type TabsData } from '@/shared/types/Tabs/TabsData'
 
 interface Props {
-	activeIndex?: number
+	activeTabName?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	activeIndex: 0,
+	activeTabName: '',
 })
 
-const activeTabIndex: Ref<number> = ref(props.activeIndex)
+const activeTabName: Ref<string> = ref(props.activeTabName)
 
-function updateActiveTabIndex(index: number) {
-	if (activeTabIndex.value !== index) {
-		activeTabIndex.value = index
+function updateActiveTabName(name: string) {
+	if (activeTabName.value !== name) {
+		activeTabName.value = name
 	}
 }
 
 watch(
-	() => props.activeIndex,
+	() => props.activeTabName,
 	(val) => {
-		activeTabIndex.value = val
+		activeTabName.value = val
 	},
 )
 
 const tabsData: TabsData = {
-	activeTabIndex,
-	updateActiveTabIndex,
+	activeTabName,
+	updateActiveTabName,
 }
 
 provide('tabsData', tabsData)

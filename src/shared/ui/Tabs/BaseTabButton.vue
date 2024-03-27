@@ -1,8 +1,8 @@
 <template>
 	<button
-		class="tab-button body_p_second"
 		:class="{ ['tab-button--active']: isActive }"
-		@click="updateIndexActiveTab"
+		class="tab-button body_p_second"
+		@click="updateNameActiveTab"
 	>
 		<slot></slot>
 	</button>
@@ -13,18 +13,23 @@ import { computed, inject } from 'vue'
 import { type TabsData } from '@/shared/types/Tabs/TabsData'
 
 interface Props {
-	index: number
+	name: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	index: 0,
+	name: '',
 })
 
 const tabsData = inject('tabsData') as TabsData
-const isActive = computed(() => tabsData.activeTabIndex.value === props.index)
+const isActive = computed(() => tabsData.activeTabName.value === props.name)
 
-const updateIndexActiveTab = () => {
-	tabsData.updateActiveTabIndex && tabsData.updateActiveTabIndex(props.index)
+const emits = defineEmits<{
+	(e: 'updateActiveTab', value: string): void
+}>()
+
+const updateNameActiveTab = () => {
+	tabsData.updateActiveTabName && tabsData.updateActiveTabName(props.name)
+	emits('updateActiveTab', props.name)
 }
 </script>
 

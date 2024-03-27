@@ -9,17 +9,17 @@ import { computed, inject } from 'vue'
 import { type TabsData } from '@/shared/types/Tabs/TabsData'
 
 interface Props {
-	index: number
+	name: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	index: 0,
+	name: '',
 })
 
 const tabsData = inject('tabsData') as TabsData
 
 const isActive = computed(() => {
-	return tabsData.activeTabIndex.value === props.index
+	return tabsData.activeTabName.value === props.name
 })
 </script>
 

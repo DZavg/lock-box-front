@@ -25,18 +25,19 @@ export const Default: Story = {
 		},
 		template: `
 			<BaseTabs v-bind="args">
-				<template #head>
-					<BaseTabButton v-for="(_, index) in 5" :key="index" :index="index">Button {{index}}</BaseTabButton>
-				</template>
-				<template #body>
-					<BaseTabContent v-for="(_, index) in 5" :key="index" :index="index">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam aspernatur distinctio {{index}}</p>
-					</BaseTabContent>
-				</template>
+			<template #head>
+				<BaseTabButton v-for="(_, index) in 5" :key="index" :name="String(index)">Button {{ index }}</BaseTabButton>
+			</template>
+			<template #body>
+				<BaseTabContent v-for="(_, index) in 5" :key="index" :name="String(index)">
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aperiam aspernatur distinctio
+						{{ index }}</p>
+				</BaseTabContent>
+			</template>
 			</BaseTabs>
 		`,
 	}),
 	args: {
-		activeIndex: 2,
+		activeTabName: '0',
 	},
 }
