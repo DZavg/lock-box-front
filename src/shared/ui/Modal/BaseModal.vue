@@ -25,7 +25,7 @@ defineEmits<{
 .modal {
 	width: 100%;
 	height: 100%;
-	display: flex;
+	display: grid;
 	align-items: center;
 	justify-content: center;
 	position: fixed;
@@ -38,7 +38,7 @@ defineEmits<{
 	background: $color-modal-bg;
 
 	@media screen and (max-width: 768px) {
-		padding: 0;
+		padding: $indent-xl $indent-s;
 	}
 
 	&__close-button {
@@ -52,12 +52,6 @@ defineEmits<{
 		max-width: 400px;
 		width: 100%;
 		color: $color-white;
-
-		@media screen and (max-width: 768px) {
-			max-width: none;
-			min-height: 100vh;
-			border-radius: 0;
-		}
 	}
 }
 </style>
