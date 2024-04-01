@@ -36,7 +36,7 @@ const resetPassword = () => {
 		flex-direction: column;
 		gap: $indent-xl;
 
-		@media screen and (max-width: 475px) {
+		@media screen and (max-width: 768px) {
 			gap: $indent-m;
 		}
 	}

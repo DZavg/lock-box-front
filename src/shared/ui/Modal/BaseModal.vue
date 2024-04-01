@@ -53,7 +53,7 @@ defineEmits<{
 		width: 100%;
 		color: $color-white;
 
-		@media screen and (max-width: 475px) {
+		@media screen and (max-width: 768px) {
 			max-width: none;
 			min-height: 100vh;
 			border-radius: 0;

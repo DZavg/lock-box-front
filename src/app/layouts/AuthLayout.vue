@@ -27,7 +27,7 @@ import TheFooter from '@/shared/ui/Footer/TheFooter.vue'
 	padding-top: 184px;
 	padding-bottom: 184px;
 
-	@media screen and (max-width: 475px) {
+	@media screen and (max-width: 768px) {
 		padding-top: $indent-xl;
 		padding-bottom: $indent-m;
 	}

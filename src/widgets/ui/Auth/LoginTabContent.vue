@@ -29,7 +29,7 @@ import { RouteName } from '@/app/router/RouteName'
 	&__inputs {
 		margin-bottom: $indent-m;
 
-		@media screen and (max-width: 475px) {
+		@media screen and (max-width: 768px) {
 			margin-bottom: $indent-s;
 		}
 	}
@@ -38,7 +38,7 @@ import { RouteName } from '@/app/router/RouteName'
 		align-self: flex-end;
 		margin-bottom: $indent-l;
 
-		@media screen and (max-width: 475px) {
+		@media screen and (max-width: 768px) {
 			align-self: center;
 			margin-bottom: $indent-m;
 		}

@@ -20,7 +20,7 @@ import iconLogo from '@/shared/images/svg/icon-logo.svg'
 	align-items: center;
 	gap: $indent-s;
 
-	@media screen and (max-width: 475px) {
+	@media screen and (max-width: 768px) {
 		gap: $indent-xs;
 	}
 
@@ -29,7 +29,7 @@ import iconLogo from '@/shared/images/svg/icon-logo.svg'
 		height: 32px;
 		fill: $color-white;
 
-		@media screen and (max-width: 475px) {
+		@media screen and (max-width: 768px) {
 			width: 148px;
 			height: 24px;
 		}
