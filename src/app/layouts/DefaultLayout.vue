@@ -1,6 +1,6 @@
 <template>
 	<div class="layout">
-		<div class="inner">
+		<div class="inner container-m">
 			<RouterView />
 		</div>
 		<TheFooter />
