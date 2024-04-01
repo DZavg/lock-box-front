@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import AuthTabs from '@/widgets/ui/Auth/AuthTabs.vue'
+import LoginTabContent from '@/widgets/Auth/ui/LoginTabContent.vue'
 
-const meta: Meta<typeof AuthTabs> = {
-	component: AuthTabs,
+const meta: Meta<typeof LoginTabContent> = {
+	component: LoginTabContent,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof AuthTabs> = {
 }
 
 export default meta
-type Story = StoryObj<typeof AuthTabs>
+type Story = StoryObj<typeof LoginTabContent>
 
 export const Default: Story = {}

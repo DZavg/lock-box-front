@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import EditProjectModal from '@/features/ui/Project/EditProjectModal.vue'
+import EditProjectModal from '@/features/Project/ui/EditProjectModal.vue'
 
 const meta: Meta<typeof EditProjectModal> = {
 	component: EditProjectModal,

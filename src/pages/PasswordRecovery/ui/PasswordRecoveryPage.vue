@@ -7,9 +7,9 @@
 </template>
 
 <script lang="ts" setup>
-import RecoveryPasswordForm from '@/widgets/ui/RecoveryPassword/RecoveryPasswordForm.vue'
+import RecoveryPasswordForm from '@/widgets/RecoveryPassword/ui/RecoveryPasswordForm.vue'
 import LogoWithDescription from '@/shared/ui/Logo/LogoWithDescription.vue'
-import RecoveryPasswordSuccessMessage from '@/widgets/ui/RecoveryPassword/RecoveryPasswordSuccessMessage.vue'
+import RecoveryPasswordSuccessMessage from '@/widgets/RecoveryPassword/ui/RecoveryPasswordSuccessMessage.vue'
 import { ref, type Ref } from 'vue'
 
 const email: Ref<string> = ref('')

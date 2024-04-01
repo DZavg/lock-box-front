@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import RecoveryPasswordForm from '@/widgets/ui/RecoveryPassword/RecoveryPasswordForm.vue'
+import RecoveryPasswordForm from '@/widgets/RecoveryPassword/ui/RecoveryPasswordForm.vue'
 
 const meta: Meta<typeof RecoveryPasswordForm> = {
 	component: RecoveryPasswordForm,

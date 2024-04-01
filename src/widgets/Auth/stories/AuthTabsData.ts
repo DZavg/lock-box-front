@@ -1,7 +1,7 @@
 import { type TabData } from '@/shared/types/Tabs/TabsData'
-import LoginTabContent from '@/widgets/ui/Auth/LoginTabContent.vue'
-import RegistrationTabContent from '@/widgets/ui/Auth/RegistrationTabContent.vue'
-import { AuthTabsNames } from '@/widgets/types/Auth/AuthTabsNames'
+import LoginTabContent from '@/widgets/Auth/ui/LoginTabContent.vue'
+import RegistrationTabContent from '@/widgets/Auth/ui/RegistrationTabContent.vue'
+import { AuthTabsNames } from '@/widgets/Auth/types/AuthTabsNames'
 
 export const AuthTabsData: TabData[] = [
 	{

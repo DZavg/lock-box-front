@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import RegistrationTabContent from '@/widgets/ui/Auth/RegistrationTabContent.vue'
+import RegistrationTabContent from '@/widgets/Auth/ui/RegistrationTabContent.vue'
 
 const meta: Meta<typeof RegistrationTabContent> = {
 	component: RegistrationTabContent,

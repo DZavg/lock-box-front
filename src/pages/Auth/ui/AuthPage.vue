@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 import LogoWithDescription from '@/shared/ui/Logo/LogoWithDescription.vue'
-import AuthTabs from '@/widgets/ui/Auth/AuthTabs.vue'
+import AuthTabs from '@/widgets/Auth/ui/AuthTabs.vue'
 </script>
 
 <style lang="scss" scoped>
