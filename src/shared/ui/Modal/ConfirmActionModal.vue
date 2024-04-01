@@ -1,6 +1,6 @@
 <template>
 	<BaseModal class="confirm-action-modal">
-		<p class="h2 modal-h1-title confirm-action-modal__title">{{ title }}</p>
+		<p class="h2 h1-title confirm-action-modal__title">{{ title }}</p>
 		<p v-if="text" class="confirm-action-modal__text">{{ text }}</p>
 		<div class="confirm-action-modal__button-list">
 			<BaseButton @click="$emit('onClose')" :background="ButtonBackground.Border"

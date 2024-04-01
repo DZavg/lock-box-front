@@ -17,14 +17,6 @@ body {
 	touch-action: none;
 }
 
-.modal-h1-title {
-	margin-bottom: $indent-m;
-
-	@media screen and (max-width: 768px) {
-		margin-bottom: $indent-xs;
-	}
-}
-
 .h1-title {
 	margin-bottom: $indent-m;
 

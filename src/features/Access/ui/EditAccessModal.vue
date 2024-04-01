@@ -1,6 +1,6 @@
 <template>
 	<BaseModal class="edit-access-modal">
-		<p class="h2 modal-h1-title">Редактировать доступ</p>
+		<p class="h2 h1-title">Редактировать доступ</p>
 		<BaseForm class="edit-access-modal__form">
 			<InputList>
 				<BaseInput label="Адрес" name="address" placeholder="Поле ввода" />

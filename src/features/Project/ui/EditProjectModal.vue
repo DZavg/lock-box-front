@@ -1,6 +1,6 @@
 <template>
 	<BaseModal class="edit-project-modal">
-		<p class="h2 modal-h1-title edit-project-modal__title">Редактировать проект</p>
+		<p class="h2 h1-title edit-project-modal__title">Редактировать проект</p>
 		<BaseForm class="edit-project-modal__form">
 			<InputList>
 				<BaseInput label="Название проекта" name="project_name" placeholder="Поле ввода" />
