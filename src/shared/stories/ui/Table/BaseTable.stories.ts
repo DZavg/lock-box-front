@@ -5,6 +5,7 @@ import BaseTableBody from '@/shared/ui/Table/BaseTableBody.vue'
 import CopyButtonIcon from '@/shared/ui/Button/CopyButtonIcon.vue'
 import EditLinkIcon from '@/shared/ui/Link/EditLinkIcon.vue'
 import DeleteButtonIcon from '@/shared/ui/Button/DeleteButtonIcon.vue'
+import TableButtonIconList from '@/shared/ui/Table/TableButtonIconList.vue'
 
 const meta: Meta<typeof BaseTable> = {
 	component: BaseTable,
@@ -29,6 +30,7 @@ export const Fill: Story = {
 			CopyButtonIcon,
 			EditLinkIcon,
 			DeleteButtonIcon,
+			TableButtonIconList,
 		},
 		template: `
 			<BaseTable>
@@ -41,18 +43,18 @@ export const Fill: Story = {
 					</tr>
 				</BaseTableHead>
 				<BaseTableBody>
-						<tr>
-							<td>SSH</td>
-							<td>https://music.yandex.ru</td>
-							<td>Mbalilyne35</td>
-							<td>
-								<div style="display: flex;">
-									<CopyButtonIcon style="padding: 0 16px" />
-									<EditLinkIcon style="padding: 0 16px" />
-									<DeleteButtonIcon style="padding: 0 16px" />
-								</div>
-							</td>
-						</tr>
+					<tr>
+						<td>SSH</td>
+						<td>https://music.yandex.ru</td>
+						<td>Mbalilyne35</td>
+						<td>
+							<TableButtonIconList style="display: flex;">
+								<CopyButtonIcon/>
+								<EditLinkIcon/>
+								<DeleteButtonIcon/>
+							</TableButtonIconList>
+						</td>
+					</tr>
 				</BaseTableBody>
 			</BaseTable>
 		`,
