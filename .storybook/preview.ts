@@ -5,11 +5,13 @@ import { createPinia } from 'pinia'
 import '@/app/styles/null.scss'
 import '@/app/styles/main.scss'
 import { clickOutside } from '@/app/plugins/clickOutside'
+import router from '../src/app/router'
 
 const pinia = createPinia()
 
 setup((app: App) => {
 	app.use(pinia)
+	app.use(router)
 	app.directive('clickOutside', clickOutside)
 })
 
