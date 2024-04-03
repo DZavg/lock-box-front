@@ -10,6 +10,11 @@ const meta: Meta<typeof EyeButtonIcon> = {
 			url: 'https://www.figma.com/file/JrFyfzV8shSxNFSTQdqb4J/password-storage?type=design&node-id=1-3&mode=design&t=yWT03SRs5re1Us5z-0',
 		},
 	},
+	argTypes: {
+		iconSize: {
+			control: 'text',
+		},
+	},
 }
 
 export default meta

@@ -1,6 +1,6 @@
 <template>
-	<BaseButtonIcon v-if="active" :icon="iconEyeOpen" size="16" :icon-color="iconColor" />
-	<BaseButtonIcon v-else :icon="iconEyeClose" size="16" :icon-color="iconColor" />
+	<BaseButtonIcon v-if="active" :icon="iconEyeOpen" :icon-color="iconColor" :size="iconSize" />
+	<BaseButtonIcon v-else :icon="iconEyeClose" :icon-color="iconColor" :size="iconSize" />
 </template>
 
 <script lang="ts" setup>
@@ -10,13 +10,15 @@ import BaseButtonIcon from '@/shared/ui/Button/BaseButtonIcon.vue'
 import { IconColor } from '@/shared/types/Icon/IconColor'
 
 interface Props {
-	active: boolean
+	active?: boolean
 	iconColor?: IconColor
+	iconSize?: string | number
 }
 
 withDefaults(defineProps<Props>(), {
 	active: false,
 	iconColor: IconColor.White,
+	iconSize: 16,
 })
 </script>
 
