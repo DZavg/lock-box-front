@@ -1,21 +1,24 @@
 <template>
-	<RouterLink class="link-icon" type="button" :to="link">
+	<RouterLink :target="target" :to="link" class="link-icon">
 		<BaseIcon :icon="icon" :size="size" />
 	</RouterLink>
 </template>
 
 <script lang="ts" setup>
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
+import { type HtmlLinkTarget } from '@/shared/types/Link/HtmlLinkTarget'
 
 interface Props {
 	link: string | object
 	icon: string
+	target?: HtmlLinkTarget
 	size?: string | number
 }
 
 withDefaults(defineProps<Props>(), {
 	link: '',
 	icon: '',
+	target: '_self',
 	size: 24,
 })
 
