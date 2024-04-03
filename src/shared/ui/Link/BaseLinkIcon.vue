@@ -1,5 +1,8 @@
 <template>
-	<RouterLink :target="target" :to="link" class="link-icon">
+	<a v-if="isExternalLink" :href="'//' + link" class="link-icon" target="_blank" v-bind="$attrs">
+		<BaseIcon :icon="icon" :size="size" />
+	</a>
+	<RouterLink v-else :target="target" :to="link" class="link-icon" v-bind="$attrs">
 		<BaseIcon :icon="icon" :size="size" />
 	</RouterLink>
 </template>
@@ -7,6 +10,7 @@
 <script lang="ts" setup>
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import { type HtmlLinkTarget } from '@/shared/types/Link/HtmlLinkTarget'
+import useLink from '@/app/composable/useLink'
 
 interface Props {
 	link: string | object
@@ -15,12 +19,14 @@ interface Props {
 	size?: string | number
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
 	link: '',
 	icon: '',
 	target: '_self',
 	size: 24,
 })
+
+const isExternalLink = useLink(props.link)
 
 defineEmits<{ (e: 'onClick'): void }>()
 </script>
