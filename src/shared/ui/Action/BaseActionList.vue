@@ -1,5 +1,5 @@
 <template>
-	<div class="table-button-icon-list">
+	<div class="action-list">
 		<slot></slot>
 	</div>
 </template>
@@ -7,15 +7,13 @@
 <script lang="ts" setup></script>
 
 <style lang="scss" scoped>
-.table-button-icon-list {
+.action-list {
 	display: flex;
-	justify-content: flex-end;
 	align-items: center;
-	gap: $indent-s;
+	gap: $indent-2xl;
 
-	&:deep(button),
-	&:deep(a) {
-		padding: 0 $indent-s;
+	@media screen and (max-width: 475px) {
+		gap: $indent-m;
 	}
 }
 </style>
