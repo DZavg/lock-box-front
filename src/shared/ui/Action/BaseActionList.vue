@@ -12,7 +12,11 @@
 	align-items: center;
 	gap: $indent-2xl;
 
-	@media screen and (max-width: 475px) {
+	@media screen and (max-width: 991px) {
+		gap: $indent-xl;
+	}
+
+	@media screen and (max-width: 768px) {
 		gap: $indent-m;
 	}
 }
