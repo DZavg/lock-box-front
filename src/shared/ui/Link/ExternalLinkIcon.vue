@@ -8,10 +8,12 @@ import BaseLinkIcon from '@/shared/ui/Link/BaseLinkIcon.vue'
 
 interface Props {
 	link: string | object
+	iconSize?: string | number
 }
 
 withDefaults(defineProps<Props>(), {
 	link: '',
+	iconSize: 24,
 })
 </script>
 
