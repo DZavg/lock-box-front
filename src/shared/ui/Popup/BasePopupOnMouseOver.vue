@@ -23,8 +23,8 @@
 
 <script lang="ts" setup>
 import { onMounted, type Ref, ref } from 'vue'
-import useScreen from '@/shared/model/composable/useScreen'
-import throttle from '@/shared/utils/throttle'
+import useScreen from '@/shared/lib/composable/useScreen'
+import throttle from '@/shared/lib/throttle'
 import { PopupPosition } from '@/shared/model/types/Popup/PopupPosition'
 
 const isActive = ref(false)

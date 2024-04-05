@@ -4,7 +4,7 @@ import { createPinia } from 'pinia'
 
 import '@/app/styles/null.scss'
 import '@/app/styles/main.scss'
-import { clickOutside } from '../src/shared/plugins/clickOutside'
+import { clickOutside } from '../src/shared/lib/plugins/clickOutside'
 import router from '../src/app/router'
 
 const pinia = createPinia()

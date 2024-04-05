@@ -1,6 +1,6 @@
 import AuthLayout from '@/app/layouts/AuthLayout.vue'
-import AuthPage from '@/pages/Auth/ui/AuthPage.vue'
-import PasswordRecoveryPage from '@/pages/PasswordRecovery/ui/PasswordRecoveryPage.vue'
+import AuthPage from '@/pages/auth/ui/AuthPage.vue'
+import PasswordRecoveryPage from '@/pages/password-recovery/ui/PasswordRecoveryPage.vue'
 import { RouteName } from '@/app/router/RouteName'
 
 export const authRoutes = {

@@ -50,7 +50,7 @@ import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 import BaseError from '@/shared/ui/Error/BaseError.vue'
 import { IconColor } from '@/shared/model/types/Icon/IconColor'
 import { Position } from '@/shared/model/types/Position/Position'
-import useAbsolutePositioning from '@/shared/model/composable/useAbsolutePositioning'
+import useAbsolutePositioning from '@/shared/lib/composable/useAbsolutePositioning'
 import BaseOption from '@/shared/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
 

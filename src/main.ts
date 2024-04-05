@@ -3,8 +3,8 @@ import { createPinia } from 'pinia'
 
 import App from './app/App.vue'
 import router from './app/router'
-import checkScreen from '@/shared/plugins/checkScreen'
-import { clickOutside } from '@/shared/plugins/clickOutside'
+import checkScreen from '@/shared/lib/plugins/checkScreen'
+import { clickOutside } from '@/shared/lib/plugins/clickOutside'
 
 const app = createApp(App)
 
