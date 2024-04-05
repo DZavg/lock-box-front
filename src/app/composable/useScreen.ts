@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import { useScreenStore } from '@/app/stores/screen'
+import { useScreenStore } from '@/shared/model/stores/screen'
 
 export default function () {
 	const screenStore = useScreenStore()

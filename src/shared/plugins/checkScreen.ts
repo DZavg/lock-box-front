@@ -1,4 +1,4 @@
-import { useScreenStore } from '@/app/stores/screen'
+import { useScreenStore } from '@/shared/model/stores/screen'
 import throttle from '@/shared/utils/throttle'
 
 const checkScreen = {
