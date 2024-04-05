@@ -7,11 +7,11 @@
 </template>
 
 <script lang="ts" setup>
-import RecoveryPasswordForm from '@/widgets/recovery-password/ui/RecoveryPasswordForm.vue'
+import RecoveryPasswordForm from '@/widgets/recovery-password/form/ui/RecoveryPasswordForm.vue'
 import LogoWithDescription from '@/shared/ui/Logo/LogoWithDescription.vue'
-import RecoveryPasswordSuccessMessage from '@/widgets/recovery-password/ui/RecoveryPasswordSuccessMessage.vue'
+import RecoveryPasswordSuccessMessage from '@/widgets/recovery-password/success-message/ui/RecoveryPasswordSuccessMessage.vue'
 import { ref, type Ref } from 'vue'
-import AuthPageWrapper from '@/entities/auth/ui/AuthPageWrapper.vue'
+import AuthPageWrapper from '@/entities/auth/page-wrapper/ui/AuthPageWrapper.vue'
 
 const email: Ref<string> = ref('')
 
