@@ -1,8 +1,8 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 
-import App from './app/App.vue'
-import router from './app/router'
+import App from './App.vue'
+import router from './router'
 import checkScreen from '@/shared/lib/plugins/checkScreen'
 import { clickOutside } from '@/shared/lib/plugins/clickOutside'
 
