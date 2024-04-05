@@ -1,4 +1,4 @@
-import { type Project } from '@/widgets/projects/table/types/Project'
+import { type Project } from '@/widgets/project/table/types/Project'
 
 export const projectTableBody: Project[] = [
 	{
