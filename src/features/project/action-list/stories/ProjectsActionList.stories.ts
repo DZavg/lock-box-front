@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import ProjectsActionList from '@/features/project/action-list/ui/ProjectsActionList.vue'
+import ProjectActionList from '@/features/project/action-list/ui/ProjectActionList.vue'
 
-const meta: Meta<typeof ProjectsActionList> = {
-	component: ProjectsActionList,
+const meta: Meta<typeof ProjectActionList> = {
+	component: ProjectActionList,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof ProjectsActionList> = {
 }
 
 export default meta
-type Story = StoryObj<typeof ProjectsActionList>
+type Story = StoryObj<typeof ProjectActionList>
 
 export const Default: Story = {}

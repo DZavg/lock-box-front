@@ -1,5 +1,5 @@
 <template>
-	<BaseActionList class="projects-action-list">
+	<BaseActionList class="project-action-list">
 		<ExternalLinkIcon :icon-size="iconSize" :link="project.domain" />
 		<EyeButtonIcon :active="true" :icon-size="iconSize" />
 		<EditButtonIcon :icon-size="iconSize" />
