@@ -11,11 +11,11 @@
 	</a>
 	<RouterLink
 		v-else
-		:to="link"
-		:target="target"
-		v-bind="$attrs"
-		class="link"
 		:class="{ ['link_color_' + color]: !!color }"
+		:target="target"
+		:to="link"
+		class="link"
+		v-bind="$attrs"
 	>
 		<slot></slot>
 	</RouterLink>
@@ -24,7 +24,7 @@
 <script lang="ts" setup>
 import { type HtmlLinkTarget } from '@/shared/types/Link/HtmlLinkTarget'
 import { LinkColor } from '@/shared/types/Link/LinkColor'
-import useLink from '@/app/composable/useLink'
+import useLink from '@/shared/model/composable/useLink'
 
 interface Props {
 	link: string | object

@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { onMounted, type Ref, ref } from 'vue'
-import useScreen from '@/app/composable/useScreen'
+import useScreen from '@/shared/model/composable/useScreen'
 import throttle from '@/shared/utils/throttle'
 import { PopupPosition } from '@/shared/types/Popup/PopupPosition'
 

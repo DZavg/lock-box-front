@@ -1,9 +1,9 @@
 <template>
 	<div
-		v-click-outside="toggleDropdown"
-		class="select"
 		ref="select"
+		v-click-outside="toggleDropdown"
 		:class="{ ['select--active']: isActive && options.length }"
+		class="select"
 		tabindex="1"
 		@keydown.esc="toggleDropdown()"
 		@keydown.enter="toggleDropdown(!isActive)"
@@ -13,24 +13,24 @@
 			<div class="select__field" @click="toggleDropdown(!isActive)">
 				<span>{{ getOptionById(inputValue)?.title }}</span>
 				<DropdownButtonIcon
-					class="select__dropdown-button"
-					:is-active="isActive"
 					:icon-color="iconColor"
+					:is-active="isActive"
+					class="select__dropdown-button"
 				/>
 				<BaseOptionList
-					tabindex="1"
 					ref="selectOptions"
-					class="select__options"
 					:class="{
 						['select__options_position_' + position]: !!position,
 					}"
+					class="select__options"
+					tabindex="1"
 				>
 					<BaseOption
 						v-for="option in options"
 						:key="option.id"
 						:is-active="optionIsActive(option.id)"
 					>
-						<BaseRadio v-model="inputValue" :value="option.id" :name="name">
+						<BaseRadio v-model="inputValue" :name="name" :value="option.id">
 							{{ option.title }}
 						</BaseRadio>
 					</BaseOption>
@@ -50,7 +50,7 @@ import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 import BaseError from '@/shared/ui/Error/BaseError.vue'
 import { IconColor } from '@/shared/types/Icon/IconColor'
 import { Position } from '@/app/types/AbsolutePositioning/Position'
-import useAbsolutePositioning from '@/app/composable/useAbsolutePositioning'
+import useAbsolutePositioning from '@/shared/model/composable/useAbsolutePositioning'
 import BaseOption from '@/shared/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
 

@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import { type HtmlLinkTarget } from '@/shared/types/Link/HtmlLinkTarget'
-import useLink from '@/app/composable/useLink'
+import useLink from '@/shared/model/composable/useLink'
 
 interface Props {
 	link: string | object

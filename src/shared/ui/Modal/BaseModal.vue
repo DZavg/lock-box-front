@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import CloseButtonIcon from '@/shared/ui/Button/CloseButtonIcon.vue'
-import useLockScroll from '@/app/composable/useLockScroll'
+import useLockScroll from '@/shared/model/composable/useLockScroll'
 import BaseCard from '@/shared/ui/Card/BaseCard.vue'
 
 useLockScroll()
