@@ -6,12 +6,14 @@ import '@/app/styles/null.scss'
 import '@/app/styles/main.scss'
 import { clickOutside } from '../src/shared/lib/plugins/clickOutside'
 import router from '../src/app/router'
+import checkScreen from '../src/shared/lib/plugins/checkScreen'
 
 const pinia = createPinia()
 
 setup((app: App) => {
 	app.use(pinia)
 	app.use(router)
+	app.use(checkScreen)
 	app.directive('clickOutside', clickOutside)
 })
 
