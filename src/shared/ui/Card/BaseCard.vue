@@ -11,8 +11,8 @@
 </template>
 
 <script lang="ts" setup>
-import { CardPaddingSize } from '@/shared/types/Card/CardPaddingSize'
-import { CardBorderSize } from '@/shared/types/Card/CardBorderSize'
+import { CardPaddingSize } from '@/shared/model/types/Card/CardPaddingSize'
+import { CardBorderSize } from '@/shared/model/types/Card/CardBorderSize'
 
 interface Props {
 	paddingSize?: CardPaddingSize

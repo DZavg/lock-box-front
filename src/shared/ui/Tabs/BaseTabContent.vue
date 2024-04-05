@@ -1,12 +1,12 @@
 <template>
-	<div class="tab-content" v-show="isActive">
+	<div v-show="isActive" class="tab-content">
 		<slot></slot>
 	</div>
 </template>
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import { type TabsData } from '@/shared/types/Tabs/TabsData'
+import { type TabsData } from '@/shared/model/types/Tabs/TabsData'
 
 interface Props {
 	name: string

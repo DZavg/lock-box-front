@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { ButtonBackground } from '@/shared/types/Button/ButtonBackground'
+import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
 import BaseButton from '@/shared/ui/Button/BaseButton.vue'
 
 const meta: Meta<typeof BaseButton> = {

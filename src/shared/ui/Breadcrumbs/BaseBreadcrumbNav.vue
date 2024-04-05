@@ -3,8 +3,8 @@
 		<ul class="breadcrumb-nav__list">
 			<li v-for="(breadcrumb, index) in breadcrumbList" :key="index">
 				<BaseLink
-					:link="breadcrumb.link"
 					:color="linkColor(index)"
+					:link="breadcrumb.link"
 					class="breadcrumb-nav__link caption_p"
 				>
 					<span>{{ breadcrumb.title }}</span>
@@ -19,8 +19,8 @@
 
 <script lang="ts" setup>
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
-import { type Breadcrumb } from '@/shared/types/Breadcrumbs/Breadcrumb'
-import { LinkColor } from '@/shared/types/Link/LinkColor'
+import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
+import { LinkColor } from '@/shared/model/types/Link/LinkColor'
 import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
 
 interface Props {

@@ -1,6 +1,6 @@
 <template>
-	<InputWithIcon v-bind="props" :type="type">
-		<EyeButtonIcon @click="switchType" :active="active" :icon-color="iconColor" />
+	<InputWithIcon :type="type" v-bind="props">
+		<EyeButtonIcon :active="active" :icon-color="iconColor" @click="switchType" />
 	</InputWithIcon>
 </template>
 
@@ -8,7 +8,7 @@
 import InputWithIcon from '@/shared/ui/Input/InputWithIcon.vue'
 import EyeButtonIcon from '@/shared/ui/Button/EyeButtonIcon.vue'
 import { computed, ref, type Ref } from 'vue'
-import { IconColor } from '@/shared/types/Icon/IconColor'
+import { IconColor } from '@/shared/model/types/Icon/IconColor'
 
 interface Props {
 	name?: string

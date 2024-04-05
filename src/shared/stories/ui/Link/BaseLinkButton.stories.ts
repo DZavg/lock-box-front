@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseLinkButton from '@/shared/ui/Link/BaseLinkButton.vue'
-import { ButtonBackground } from '@/shared/types/Button/ButtonBackground'
+import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
 
 const meta: Meta<typeof BaseLinkButton> = {
 	component: BaseLinkButton,

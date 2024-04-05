@@ -1,9 +1,9 @@
 <template>
 	<button
-		:type="type"
-		:disabled="disabled"
-		class="button button_p"
 		:class="{ ['button_background_' + background]: background, ['button--loading']: loading }"
+		:disabled="disabled"
+		:type="type"
+		class="button button_p"
 		@click="!loading && !disabled && $emit('onClick')"
 	>
 		<span v-show="loading" class="button__loader">
@@ -15,8 +15,8 @@
 </template>
 
 <script lang="ts" setup>
-import { type HtmlButtonType } from '@/shared/types/Button/HtmlButtonType'
-import { ButtonBackground } from '@/shared/types/Button/ButtonBackground'
+import { type HtmlButtonType } from '@/shared/model/types/Button/HtmlButtonType'
+import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
 import iconLoading from '@/shared/images/svg/icon-loading.svg'
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 

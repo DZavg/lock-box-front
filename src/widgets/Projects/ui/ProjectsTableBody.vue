@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import BaseTableBody from '@/shared/ui/Table/BaseTableBody.vue'
 import { type Project } from '@/widgets/Projects/types/Project'
-import { LinkColor } from '@/shared/types/Link/LinkColor'
+import { LinkColor } from '@/shared/model/types/Link/LinkColor'
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
 import ProjectsActionList from '@/features/Project/ui/ProjectsActionList.vue'
 

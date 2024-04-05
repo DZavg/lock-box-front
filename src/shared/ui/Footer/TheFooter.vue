@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
-import { LinkColor } from '@/shared/types/Link/LinkColor'
+import { LinkColor } from '@/shared/model/types/Link/LinkColor'
 
 const currentYear = new Date().getFullYear()
 </script>

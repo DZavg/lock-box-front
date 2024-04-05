@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import { provide, type Ref, ref, watch } from 'vue'
-import { type TabsData } from '@/shared/types/Tabs/TabsData'
+import { type TabsData } from '@/shared/model/types/Tabs/TabsData'
 
 interface Props {
 	activeTabName?: string

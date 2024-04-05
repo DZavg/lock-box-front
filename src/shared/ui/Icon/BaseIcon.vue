@@ -1,11 +1,11 @@
 <template>
-	<svg class="icon" :class="{ ['icon-' + size]: !!size, ['icon_color_' + color]: !!color }">
+	<svg :class="{ ['icon-' + size]: !!size, ['icon_color_' + color]: !!color }" class="icon">
 		<use :href="icon + '#icon'" />
 	</svg>
 </template>
 
 <script lang="ts" setup>
-import { IconColor } from '@/shared/types/Icon/IconColor'
+import { IconColor } from '@/shared/model/types/Icon/IconColor'
 
 interface Props {
 	icon: string

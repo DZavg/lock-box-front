@@ -1,17 +1,17 @@
 <template>
 	<button
+		:disabled="disabled"
 		class="button-icon"
 		type="button"
-		:disabled="disabled"
 		@click="!disabled && $emit('onClick')"
 	>
-		<BaseIcon :icon="icon" :size="size" :color="iconColor" />
+		<BaseIcon :color="iconColor" :icon="icon" :size="size" />
 	</button>
 </template>
 
 <script lang="ts" setup>
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
-import { IconColor } from '@/shared/types/Icon/IconColor'
+import { IconColor } from '@/shared/model/types/Icon/IconColor'
 
 interface Props {
 	disabled?: boolean

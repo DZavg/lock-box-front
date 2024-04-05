@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
-import { LinkColor } from '@/shared/types/Link/LinkColor'
+import { LinkColor } from '@/shared/model/types/Link/LinkColor'
 
 const meta: Meta<typeof BaseLink> = {
 	component: BaseLink,

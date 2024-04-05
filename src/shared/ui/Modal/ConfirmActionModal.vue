@@ -3,9 +3,9 @@
 		<p class="h2 h1-title confirm-action-modal__title">{{ title }}</p>
 		<p v-if="text" class="confirm-action-modal__text">{{ text }}</p>
 		<div class="confirm-action-modal__button-list">
-			<BaseButton @click="$emit('onClose')" :background="ButtonBackground.Border"
-				>Отменить</BaseButton
-			>
+			<BaseButton :background="ButtonBackground.Border" @click="$emit('onClose')"
+				>Отменить
+			</BaseButton>
 			<BaseButton @click="$emit('onConfirm')">{{ buttonConfirmText }}</BaseButton>
 		</div>
 	</BaseModal>
@@ -14,7 +14,7 @@
 <script lang="ts" setup>
 import BaseModal from '@/shared/ui/Modal/BaseModal.vue'
 import BaseButton from '@/shared/ui/Button/BaseButton.vue'
-import { ButtonBackground } from '@/shared/types/Button/ButtonBackground'
+import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
 
 interface Props {
 	title: string

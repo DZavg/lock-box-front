@@ -22,8 +22,8 @@
 </template>
 
 <script lang="ts" setup>
-import { type HtmlLinkTarget } from '@/shared/types/Link/HtmlLinkTarget'
-import { LinkColor } from '@/shared/types/Link/LinkColor'
+import { type HtmlLinkTarget } from '@/shared/model/types/Link/HtmlLinkTarget'
+import { LinkColor } from '@/shared/model/types/Link/LinkColor'
 import useLink from '@/shared/model/composable/useLink'
 
 interface Props {
