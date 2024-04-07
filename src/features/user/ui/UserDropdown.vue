@@ -45,8 +45,8 @@ const toggleDropdown = () => {
 .user-dropdown {
 	position: relative;
 	display: inline-block;
-	max-width: 239px;
 	width: 100%;
+	max-width: 239px;
 
 	&__head {
 		display: flex;

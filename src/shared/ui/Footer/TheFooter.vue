@@ -17,13 +17,13 @@ const currentYear = new Date().getFullYear()
 <style lang="scss" scoped>
 .footer {
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
-	gap: $indent-2xs $indent-s;
-	flex-wrap: wrap;
 	padding: $indent-s $indent-m;
-	color: $color-white;
-	background-color: $color-dark-secondary;
 	border-radius: $border-radius-m;
+	background-color: $color-dark-secondary;
+	color: $color-white;
+	gap: $indent-2xs $indent-s;
 }
 </style>

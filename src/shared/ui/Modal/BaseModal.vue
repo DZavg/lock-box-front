@@ -16,26 +16,24 @@ import BaseCard from '@/shared/ui/Card/BaseCard.vue'
 
 useLockScroll()
 
-defineEmits<{
-	(e: 'onClose'): void
-}>()
+defineEmits<(e: 'onClose') => void>()
 </script>
 
 <style lang="scss" scoped>
 .modal {
-	width: 100%;
-	height: 100%;
-	display: grid;
-	align-items: center;
-	justify-content: center;
 	position: fixed;
+	z-index: 999;
 	top: 0;
 	left: 0;
-	padding: $indent-xl;
-	z-index: 999;
+	display: grid;
 	overflow: auto;
-	overscroll-behavior: contain;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	padding: $indent-xl;
 	background: $color-modal-bg;
+	overscroll-behavior: contain;
 
 	@media screen and (max-width: 768px) {
 		padding: $indent-xl $indent-s;
@@ -49,8 +47,8 @@ defineEmits<{
 
 	&__content {
 		position: relative;
-		max-width: 400px;
 		width: 100%;
+		max-width: 400px;
 		color: $color-white;
 	}
 }

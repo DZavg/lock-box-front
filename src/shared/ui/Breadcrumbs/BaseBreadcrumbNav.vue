@@ -39,10 +39,11 @@ const linkColor = (index: number) => (isLastElement(index) ? LinkColor.White : L
 .breadcrumb-nav {
 	&__list {
 		@include scrollbar(true);
+
 		display: flex;
+		overflow: auto hidden;
 		align-items: center;
 		gap: $indent-xs;
-		overflow: auto hidden;
 	}
 
 	&__link {

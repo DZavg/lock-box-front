@@ -54,9 +54,9 @@ defineEmits<{
 
 	&__button-list {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: $indent-m;
 		margin-top: $indent-l;
+		gap: $indent-m;
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 </style>

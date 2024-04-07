@@ -33,10 +33,10 @@ withDefaults(defineProps<Props>(), {
 <style lang="scss" scoped>
 .recovery-password-success-msg {
 	display: flex;
+	flex: 1 0 auto;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	flex: 1 0 auto;
 	text-align: center;
 
 	&__image-wrapper {

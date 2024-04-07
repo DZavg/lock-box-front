@@ -1,7 +1,7 @@
 @mixin h1 {
 	font-size: 32px;
-	line-height: 40px;
 	font-weight: 500;
+	line-height: 40px;
 
 	@media screen and (max-width: 475px) {
 		font-size: 24px;
@@ -11,40 +11,40 @@
 
 @mixin h2 {
 	font-size: 24px;
+	font-weight: 500;
 	line-height: 30px;
-	font-weight: 500;
 }
 
-@mixin button_p {
+@mixin button-p {
 	font-size: 16px;
-	line-height: 22px;
 	font-weight: 500;
+	line-height: 22px;
 }
 
-@mixin body_p {
+@mixin body-p {
 	font-size: 16px;
-	line-height: 22px;
 	font-weight: 400;
-}
-
-@mixin body_p_second {
-	font-size: 16px;
 	line-height: 22px;
-	font-weight: 500;
 }
 
-@mixin caption_p {
+@mixin body-p-second {
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 22px;
+}
+
+@mixin caption-p {
 	font-size: 14px;
-	line-height: 20px;
 	font-weight: 400;
+	line-height: 20px;
 }
 
-@mixin scrollbar($isHorizontal: false) {
+@mixin scrollbar($is-horizontal: false) {
 	scrollbar-width: thin;
 
 	@media only screen and (hover: hover) {
 		&::-webkit-scrollbar {
-			@if ($isHorizontal) {
+			@if $is-horizontal {
 				height: 4px;
 			} @else {
 				width: 4px;
@@ -52,8 +52,8 @@
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background-color: $color-gray-third;
 			border-radius: $border-radius-xs;
+			background-color: $color-gray-third;
 		}
 	}
 }

@@ -34,21 +34,21 @@ withDefaults(defineProps<Props>(), {
 	loading: false,
 })
 
-defineEmits<{ (e: 'onClick'): void }>()
+defineEmits<(e: 'onClick') => void>()
 </script>
 
 <style lang="scss" scoped>
 .button {
 	padding: 12px $indent-m;
-	color: $color-white;
 	border: 1px solid transparent;
 	border-radius: $border-radius-s;
-	word-break: break-word;
+	color: $color-white;
 	text-align: center;
 	transition:
 		background-color 0.2s ease-in,
 		border-color 0.2s ease-in;
 	user-select: none;
+	word-break: break-word;
 
 	&_background {
 		&_fill {
@@ -93,8 +93,8 @@ defineEmits<{ (e: 'onClick'): void }>()
 
 		.button__text {
 			display: block;
-			visibility: hidden;
 			height: 0;
+			visibility: hidden;
 		}
 	}
 

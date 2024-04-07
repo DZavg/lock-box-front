@@ -14,8 +14,8 @@ import TheFooter from '@/shared/ui/Footer/TheFooter.vue'
 <style lang="scss" scoped>
 .layout {
 	display: flex;
-	flex-direction: column;
 	min-height: 100vh;
+	flex-direction: column;
 	padding: $indent-s 0;
 }
 

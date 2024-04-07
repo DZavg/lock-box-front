@@ -14,16 +14,16 @@ import TheFooter from '@/shared/ui/Footer/TheFooter.vue'
 <style lang="scss" scoped>
 .layout {
 	display: flex;
-	flex-direction: column;
 	min-height: 100vh;
+	flex-direction: column;
 	padding: 0 0 $indent-s 0;
 }
 
 .inner {
-	width: 100%;
 	display: flex;
-	justify-content: center;
+	width: 100%;
 	flex: 1 0 auto;
+	justify-content: center;
 	padding-top: 184px;
 	padding-bottom: 184px;
 

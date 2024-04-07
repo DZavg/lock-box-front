@@ -9,17 +9,17 @@ h2,
 }
 
 .button_p {
-	@include button_p;
+	@include button-p;
 }
 
 .body_p {
-	@include body_p;
+	@include body-p;
 }
 
 .body_p_second {
-	@include body_p_second;
+	@include body-p-second;
 }
 
 .caption_p {
-	@include caption_p;
+	@include caption-p;
 }

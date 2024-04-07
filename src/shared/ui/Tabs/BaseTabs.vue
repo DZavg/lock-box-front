@@ -56,9 +56,10 @@ provide('tabsData', tabsData)
 
 	&__head {
 		@include scrollbar(true);
+
 		display: flex;
-		gap: $indent-s;
 		overflow: auto hidden;
+		gap: $indent-s;
 	}
 }
 </style>

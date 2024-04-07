@@ -27,21 +27,22 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .card {
-	$borderWidth: 1px;
-	border: $borderWidth solid $color-dark-third;
+	$border-width: 1px;
+
+	border: $border-width solid $color-dark-third;
 	background-color: $color-dark-primary;
 	color: $color-white;
 
 	&_padding-size {
 		&_small {
-			padding: calc($indent-s - $borderWidth);
+			padding: calc($indent-s - $border-width);
 		}
 
 		&_medium {
-			padding: calc($indent-xl - $borderWidth);
+			padding: calc($indent-xl - $border-width);
 
 			@media screen and (max-width: 768px) {
-				padding: calc($indent-m - $borderWidth);
+				padding: calc($indent-m - $border-width);
 			}
 		}
 	}

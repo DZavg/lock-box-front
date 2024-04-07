@@ -23,9 +23,7 @@ const props = withDefaults(defineProps<Props>(), {
 const tabsData = inject('tabsData') as TabsData
 const isActive = computed(() => tabsData.activeTabName.value === props.name)
 
-const emits = defineEmits<{
-	(e: 'updateActiveTab', value: string): void
-}>()
+const emits = defineEmits<(e: 'updateActiveTab', value: string) => void>()
 
 const updateNameActiveTab = () => {
 	tabsData.updateActiveTabName && tabsData.updateActiveTabName(props.name)
@@ -35,8 +33,8 @@ const updateNameActiveTab = () => {
 
 <style lang="scss" scoped>
 .tab-button {
-	color: $color-white;
 	padding: 11px 12px;
+	color: $color-white;
 	user-select: none;
 
 	&--active {

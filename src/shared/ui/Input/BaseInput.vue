@@ -4,14 +4,14 @@
 		<div class="input__wrapper">
 			<label>
 				<input
-					:class="{ ['input__element--error']: error }"
-					class="input__element body_p"
 					v-model="inputValue"
+					:autocomplete="autocomplete"
+					:class="{ ['input__element--error']: error }"
+					:disabled="disabled"
 					:name="name"
 					:placeholder="placeholder"
-					:disabled="disabled"
 					:type="type"
-					:autocomplete="autocomplete"
+					class="input__element body_p"
 				/>
 			</label>
 			<slot></slot>
@@ -47,9 +47,7 @@ withDefaults(defineProps<Props>(), {
 	autocomplete: 'off',
 })
 
-defineEmits<{
-	(e: 'update:modelValue', value: string): void
-}>()
+defineEmits<(e: 'update:modelValue', value: string) => void>()
 
 const inputValue = defineModel('modelValue', { default: '' })
 </script>
@@ -64,8 +62,8 @@ const inputValue = defineModel('modelValue', { default: '' })
 		width: 100%;
 		padding: 12px $indent-s;
 		border: 1px solid transparent;
-		background-color: $color-dark-third;
 		border-radius: $border-radius-s;
+		background-color: $color-dark-third;
 		color: $color-white;
 		transition: border-color 0.15s ease-in;
 
@@ -78,8 +76,8 @@ const inputValue = defineModel('modelValue', { default: '' })
 		}
 
 		&:disabled {
-			color: $color-gray-third;
 			border-color: $color-gray-third;
+			color: $color-gray-third;
 		}
 
 		&:focus {

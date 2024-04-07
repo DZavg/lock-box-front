@@ -14,7 +14,7 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .error {
-	word-break: break-word;
 	color: $color-error;
+	word-break: break-word;
 }
 </style>

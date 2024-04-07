@@ -29,15 +29,15 @@ withDefaults(defineProps<Props>(), {
 <style lang="scss" scoped>
 .link-button {
 	padding: 12px $indent-m;
-	color: $color-white;
 	border: 1px solid transparent;
 	border-radius: $border-radius-s;
-	word-break: break-word;
+	color: $color-white;
 	text-align: center;
 	transition:
 		background-color 0.2s ease-in,
 		border-color 0.2s ease-in;
 	user-select: none;
+	word-break: break-word;
 
 	&_background {
 		&_fill {

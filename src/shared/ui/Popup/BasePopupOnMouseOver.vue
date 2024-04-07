@@ -97,10 +97,10 @@ onMounted(() => {
 
 	&__body {
 		position: absolute;
-		top: 100%;
-		visibility: hidden;
-		width: 100%;
 		z-index: 99;
+		top: 100%;
+		width: 100%;
+		visibility: hidden;
 
 		&_side {
 			&_right {

@@ -16,13 +16,14 @@
 	background-color: $color-dark-third;
 
 	&__wrapper {
-		@include scrollbar();
+		@include scrollbar;
+
 		display: flex;
-		flex-direction: column;
-		gap: $indent-2xs;
-		max-height: 196px;
-		padding-right: $indent-2xs;
 		overflow: hidden auto;
+		max-height: 196px;
+		flex-direction: column;
+		padding-right: $indent-2xs;
+		gap: $indent-2xs;
 		overscroll-behavior: contain;
 	}
 }

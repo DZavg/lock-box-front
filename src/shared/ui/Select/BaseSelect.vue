@@ -4,7 +4,6 @@
 		v-click-outside="toggleDropdown"
 		:class="{ ['select--active']: isActive && options.length }"
 		class="select"
-		tabindex="1"
 		@keydown.esc="toggleDropdown()"
 		@keydown.enter="toggleDropdown(!isActive)"
 	>
@@ -23,16 +22,13 @@
 						['select__options_position_' + position]: !!position,
 					}"
 					class="select__options"
-					tabindex="1"
 				>
 					<BaseOption
 						v-for="option in options"
 						:key="option.id"
 						:is-active="optionIsActive(option.id)"
 					>
-						<BaseRadio v-model="inputValue" :name="name" :value="option.id">
-							{{ option.title }}
-						</BaseRadio>
+						<BaseRadio v-model="inputValue" :name="name" :title="option.title" :value="option.id" />
 					</BaseOption>
 				</BaseOptionList>
 			</div>
@@ -70,9 +66,7 @@ const props = withDefaults(defineProps<Props>(), {
 	options: () => [],
 })
 
-const emits = defineEmits<{
-	(e: 'update:modelValue', value: string): void
-}>()
+const emits = defineEmits<(e: 'update:modelValue', value: string) => void>()
 
 const isActive: Ref<boolean> = ref(false)
 const select: Ref<HTMLElement | null> = ref(null)
@@ -125,20 +119,10 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 .select {
-	width: 100%;
 	display: inline-flex;
+	width: 100%;
 	flex-direction: column;
 	gap: $indent-2xs;
-
-	&--active {
-		.select__field {
-			border-color: $color-blue-primary;
-		}
-
-		.select__options {
-			visibility: visible;
-		}
-	}
 
 	&__head {
 		display: flex;
@@ -150,8 +134,8 @@ onMounted(() => {
 		position: relative;
 		padding: 12px 44px 12px $indent-s;
 		border: 1px solid transparent;
-		background-color: $color-dark-third;
 		border-radius: $border-radius-s;
+		background-color: $color-dark-third;
 		color: $color-white;
 		cursor: pointer;
 		user-select: none;
@@ -159,8 +143,8 @@ onMounted(() => {
 
 	&__dropdown-button {
 		position: absolute;
-		right: $indent-s;
 		top: 50%;
+		right: $indent-s;
 		transform: translateY(-50%);
 	}
 
@@ -177,6 +161,16 @@ onMounted(() => {
 			&_bottom {
 				top: calc(100% + 8px);
 			}
+		}
+	}
+
+	&--active {
+		.select__field {
+			border-color: $color-blue-primary;
+		}
+
+		.select__options {
+			visibility: visible;
 		}
 	}
 }

@@ -28,7 +28,7 @@ export const Default: Story = {
 			return { args }
 		},
 		template: `
-			<BaseRadio v-bind="args">Редактировать профиль</BaseRadio>
+			<BaseRadio v-bind="args" title="Редактировать профиль"></BaseRadio>
 		`,
 	}),
 }

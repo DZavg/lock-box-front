@@ -36,11 +36,11 @@ const props = withDefaults(defineProps<Props>(), {})
 
 	&__icon {
 		position: absolute;
-		right: $indent-s;
 		top: 50%;
-		transform: translateY(-50%);
+		right: $indent-s;
 		font-size: 0;
 		line-height: 0;
+		transform: translateY(-50%);
 	}
 }
 </style>

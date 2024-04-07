@@ -44,8 +44,8 @@ const { isExternalLink } = useLink(props.link)
 <style lang="scss" scoped>
 .link {
 	cursor: pointer;
-	user-select: none;
 	transition: color 0.15s ease-in;
+	user-select: none;
 
 	&_color {
 		&_blue-primary {

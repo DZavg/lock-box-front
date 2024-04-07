@@ -11,6 +11,7 @@
 <style lang="scss" scoped>
 .table {
 	color: $color-white;
+
 	&__content {
 		width: 100%;
 		border-collapse: collapse;

@@ -8,8 +8,8 @@
 
 <style lang="scss" scoped>
 .auth-page-wrapper {
-	width: 100%;
 	display: flex;
+	width: 100%;
 	flex-direction: column;
 	align-items: center;
 	gap: $indent-l;

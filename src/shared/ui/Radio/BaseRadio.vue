@@ -1,24 +1,22 @@
 <template>
 	<label
-		class="radio"
 		:class="{
 			['radio--disabled']: disabled,
 		}"
+		class="radio"
 	>
 		<input
 			v-model="inputValue"
-			type="radio"
-			:value="value"
-			:name="name"
 			:disabled="disabled"
+			:name="name"
+			:value="value"
 			hidden
+			type="radio"
 		/>
 		<span class="radio__circle">
 			<span class="radio__point"></span>
 		</span>
-		<span class="radio__title">
-			<slot></slot>
-		</span>
+		{{ title }}
 	</label>
 </template>
 
@@ -28,6 +26,7 @@ interface Props {
 	modelValue: string
 	value?: string
 	disabled?: boolean
+	title: string
 }
 
 withDefaults(defineProps<Props>(), {
@@ -35,11 +34,10 @@ withDefaults(defineProps<Props>(), {
 	modelValue: '',
 	value: '',
 	disabled: false,
+	title: '',
 })
 
-defineEmits<{
-	(e: 'update:modelValue', value: string): void
-}>()
+defineEmits<(e: 'update:modelValue', value: string) => void>()
 
 const inputValue = defineModel('modelValue', { default: '' })
 </script>
@@ -48,10 +46,38 @@ const inputValue = defineModel('modelValue', { default: '' })
 .radio {
 	display: flex;
 	align-items: center;
+	color: $color-white;
+	cursor: pointer;
 	gap: $indent-xs;
 	user-select: none;
-	cursor: pointer;
-	color: $color-white;
+
+	&__circle {
+		display: flex;
+		width: 16px;
+		height: 16px;
+		flex-shrink: 0;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid $color-white;
+		border-radius: 50%;
+		transition: border-color 0.1s ease-in;
+	}
+
+	&__point {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		transition: background-color 0.1s ease-in;
+	}
+
+	&--disabled {
+		cursor: default;
+		pointer-events: none;
+
+		.radio__circle {
+			border-color: $color-gray-four;
+		}
+	}
 
 	&:hover {
 		.radio__circle {
@@ -71,34 +97,6 @@ const inputValue = defineModel('modelValue', { default: '' })
 		.radio__point {
 			background-color: $color-blue-primary;
 		}
-	}
-
-	&--disabled {
-		cursor: default;
-		pointer-events: none;
-
-		.radio__circle {
-			border-color: $color-gray-four;
-		}
-	}
-
-	&__circle {
-		flex-shrink: 0;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 16px;
-		height: 16px;
-		border-radius: 50%;
-		border: 1px solid $color-white;
-		transition: border-color 0.1s ease-in;
-	}
-
-	&__point {
-		width: 10px;
-		height: 10px;
-		border-radius: 50%;
-		transition: background-color 0.1s ease-in;
 	}
 }
 </style>
