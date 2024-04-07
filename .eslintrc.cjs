@@ -19,4 +19,12 @@ module.exports = {
 	parserOptions: {
 		ecmaVersion: 'latest',
 	},
+	overrides: [
+		{
+			files: ['*.stories.{ts,tsx}'],
+			rules: {
+				'sonarjs/no-duplicate-string': 'off',
+			},
+		},
+	],
 }
