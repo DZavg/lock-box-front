@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseSelect from '@/shared/ui/Select/BaseSelect.vue'
-import BaseRadio from '@/shared/ui/Radio/BaseRadio.vue'
 import { ref } from 'vue'
 
 const meta: Meta<typeof BaseSelect> = {
