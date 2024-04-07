@@ -1,14 +1,16 @@
 import { onMounted, onUnmounted } from 'vue'
 
 export default function () {
+	const lockClass = 'lock-scroll'
+
 	const lockScroll = () => {
-		document.body.classList.add('lock-scroll')
-		document.documentElement.classList.add('lock-scroll')
+		document.body.classList.add(lockClass)
+		document.documentElement.classList.add(lockClass)
 	}
 
 	const unlockScroll = () => {
-		document.body.classList.remove('lock-scroll')
-		document.documentElement.classList.remove('lock-scroll')
+		document.body.classList.remove(lockClass)
+		document.documentElement.classList.remove(lockClass)
 	}
 
 	onMounted(() => {
