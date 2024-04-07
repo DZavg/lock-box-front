@@ -19,8 +19,8 @@ export default function (
 	const checkPosition = () => {
 		const elementDOMRect = parentElement.value?.getBoundingClientRect() || defaultDOMRect
 
-		const elementHeight = element.value?.clientHeight || 0
-		const elementWidth = element.value?.clientWidth || 0
+		const elementHeight = element.value?.clientHeight ?? 0
+		const elementWidth = element.value?.clientWidth ?? 0
 
 		const windowWidth = window.innerWidth
 		const windowHeight = window.innerHeight
