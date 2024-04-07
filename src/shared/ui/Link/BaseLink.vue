@@ -38,7 +38,7 @@ const props = withDefaults(defineProps<Props>(), {
 	color: LinkColor.BluePrimary,
 })
 
-const isExternalLink = useLink(props.link)
+const { isExternalLink } = useLink(props.link)
 </script>
 
 <style lang="scss" scoped>

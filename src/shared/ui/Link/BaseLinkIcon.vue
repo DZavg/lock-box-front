@@ -26,7 +26,7 @@ const props = withDefaults(defineProps<Props>(), {
 	size: 24,
 })
 
-const isExternalLink = useLink(props.link)
+const { isExternalLink } = useLink(props.link)
 
 defineEmits<{ (e: 'onClick'): void }>()
 </script>
