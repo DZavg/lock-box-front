@@ -8,7 +8,6 @@
 
 <script lang="ts" setup>
 import { type InputTypeHTMLAttribute } from 'vue'
-import BaseError from '@/shared/ui/Error/BaseError.vue'
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
 
 interface Props {
