@@ -1,9 +1,11 @@
 <template>
 	<footer class="footer container-m">
-		<p class="footer__copyright caption_p">© {{ currentYear }} Techouse</p>
-		<BaseLink :color="LinkColor.White" class="caption_p" link="/"
-			>Политика конфиденциальности
-		</BaseLink>
+		<div class="footer__wrapper">
+			<p class="footer__copyright caption_p">© {{ currentYear }} Techouse</p>
+			<BaseLink :color="LinkColor.White" class="caption_p" link="/"
+				>Политика конфиденциальности
+			</BaseLink>
+		</div>
 	</footer>
 </template>
 
@@ -16,14 +18,20 @@ const currentYear = new Date().getFullYear()
 
 <style lang="scss" scoped>
 .footer {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-between;
-	padding: $indent-s $indent-m;
-	border-radius: $border-radius-m;
-	background-color: $color-dark-secondary;
-	color: $color-white;
-	gap: $indent-2xs $indent-s;
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-between;
+		padding: $indent-s $indent-m;
+		border-radius: $border-radius-m;
+		background-color: $color-dark-secondary;
+		color: $color-white;
+		gap: $indent-s;
+
+		@media screen and (max-width: 475px) {
+			padding: $indent-s;
+		}
+	}
 }
 </style>
