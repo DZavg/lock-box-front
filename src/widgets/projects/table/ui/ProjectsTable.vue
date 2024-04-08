@@ -7,9 +7,9 @@
 
 <script lang="ts" setup>
 import BaseTable from '@/shared/ui/Table/BaseTable.vue'
-import ProjectsTableBody from '@/widgets/project/table/ui/ProjectsTableBody.vue'
-import ProjectsTableHead from '@/widgets/project/table/ui/ProjectsTableHead.vue'
-import { type Project } from '@/widgets/project/table/types/Project'
+import ProjectsTableBody from '@/widgets/projects/table/ui/ProjectsTableBody.vue'
+import ProjectsTableHead from '@/widgets/projects/table/ui/ProjectsTableHead.vue'
+import { type Project } from '@/widgets/projects/table/types/Project'
 
 interface Props {
 	projects: Project[]

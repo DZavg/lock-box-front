@@ -12,7 +12,7 @@
 import BaseCard from '@/shared/ui/Card/BaseCard.vue'
 import { CardPaddingSize } from '@/shared/model/types/Card/CardPaddingSize'
 import ProjectActionList from '@/features/project/action-list/ui/ProjectActionList.vue'
-import { type Project } from '@/widgets/project/table/types/Project'
+import { type Project } from '@/widgets/projects/table/types/Project'
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
 import { LinkColor } from '@/shared/model/types/Link/LinkColor'
 

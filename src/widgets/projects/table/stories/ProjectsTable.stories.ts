@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import ProjectsTable from '@/widgets/project/table/ui/ProjectsTable.vue'
+import ProjectsTable from '@/widgets/projects/table/ui/ProjectsTable.vue'
 
 const meta: Meta<typeof ProjectsTable> = {
 	component: ProjectsTable,

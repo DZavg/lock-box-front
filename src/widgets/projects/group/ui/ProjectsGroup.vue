@@ -1,16 +1,16 @@
 <template>
 	<div class="projects-group">
-		<ProjectsTable v-if="!isMobile" :projects="projectTableBody" />
-		<ProjectCardList v-else :projects="projectTableBody" />
+		<ProjectsTable v-if="!isMobile" :projects="getProjects()" />
+		<ProjectCardList v-else :projects="getProjects()" />
 	</div>
 </template>
 
 <script lang="ts" setup>
-import ProjectsTable from '@/widgets/project/table/ui/ProjectsTable.vue'
-import { type Project } from '@/widgets/project/table/types/Project'
+import ProjectsTable from '@/widgets/projects/table/ui/ProjectsTable.vue'
+import { type Project } from '@/widgets/projects/table/types/Project'
 import ProjectCardList from '@/widgets/project/card/ui/ProjectCardList.vue'
-import { projectTableBody } from '@/widgets/project/table/data/ProjectTable'
 import useScreen from '@/shared/lib/composable/useScreen'
+import getProjects from '@/shared/stories/data/projects'
 
 interface Props {
 	projects: Project[]

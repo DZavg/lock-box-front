@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import ProjectsGroup from '@/widgets/project/group/ui/ProjectsGroup.vue'
+import ProjectsGroup from '@/widgets/projects/group/ui/ProjectsGroup.vue'
 import getProjects from '@/shared/stories/data/projects'
 
 const meta: Meta<typeof ProjectsGroup> = {
