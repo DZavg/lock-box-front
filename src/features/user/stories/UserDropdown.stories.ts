@@ -15,8 +15,4 @@ const meta: Meta<typeof UserDropdown> = {
 export default meta
 type Story = StoryObj<typeof UserDropdown>
 
-export const Default: Story = {
-	args: {
-		name: 'test name',
-	},
-}
+export const Default: Story = {}
