@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import ProjectsTable from '@/widgets/projects/table/ui/ProjectsTable.vue'
+import getProjects from '@/shared/stories/data/projects'
 
 const meta: Meta<typeof ProjectsTable> = {
 	component: ProjectsTable,
@@ -15,4 +16,8 @@ const meta: Meta<typeof ProjectsTable> = {
 export default meta
 type Story = StoryObj<typeof ProjectsTable>
 
-export const Default: Story = {}
+export const Default: Story = {
+	args: {
+		projects: getProjects(),
+	},
+}
