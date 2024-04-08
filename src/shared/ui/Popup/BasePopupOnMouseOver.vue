@@ -33,14 +33,17 @@ const { isDesktop } = useScreen()
 
 const openPopup = () => {
 	isActive.value = true
+	sendEmit()
 }
 
 const closePopup = () => {
 	isActive.value = false
+	sendEmit()
 }
 
 const togglePopup = () => {
 	isActive.value = !isActive.value
+	sendEmit()
 }
 
 const mouseEnterHandler = () => {
@@ -53,6 +56,12 @@ const mouseLeaveHandler = () => {
 	if (isDesktop.value) {
 		closePopup()
 	}
+}
+
+const emits = defineEmits<{ (e: 'onToggle', value: boolean): void }>()
+
+const sendEmit = () => {
+	emits('onToggle', isActive.value)
 }
 
 const defaultDOMRect = {
