@@ -5,7 +5,7 @@
 		@mouseleave="mouseLeaveHandler"
 		@mouseover="mouseEnterHandler"
 	>
-		<div class="popup-on-mouse-over__head" @click="togglePopup">
+		<div ref="popupHead" class="popup-on-mouse-over__head" @click="togglePopup">
 			<slot name="head"></slot>
 		</div>
 		<div
@@ -28,6 +28,7 @@ import throttle from '@/shared/lib/throttle'
 import { PopupPosition } from '@/shared/model/types/Popup/PopupPosition'
 
 const isActive = ref(false)
+const popupHead: Ref<HTMLElement | null> = ref(null)
 const popupBody: Ref<HTMLElement | null> = ref(null)
 const { isDesktop } = useScreen()
 
@@ -75,15 +76,16 @@ const defaultDOMRect = {
 const side: Ref<PopupPosition> = ref(PopupPosition.Left)
 
 const checkAvailableSide = () => {
-	const elementDOMRect = popupBody.value?.getBoundingClientRect() || defaultDOMRect
-	const windowWidth = window.innerWidth
+	const popupHeadRect = popupHead.value?.getBoundingClientRect() || defaultDOMRect
+	const popupBodyRect = popupBody.value?.getBoundingClientRect() || defaultDOMRect
+	const windowWidth = document.documentElement.clientWidth
 
-	const elementRect = {
-		right: windowWidth - elementDOMRect.right,
-		left: elementDOMRect.left,
+	const popupHeadCorrectRect = {
+		right: windowWidth - popupHeadRect.right,
+		left: popupHeadRect.left + popupHeadRect.width,
 	}
 
-	if (elementRect.right > 0) {
+	if (popupHeadCorrectRect.left > popupBodyRect.width) {
 		side.value = PopupPosition.Right
 		return
 	}
