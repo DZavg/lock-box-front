@@ -1,10 +1,10 @@
 <template>
-	<BaseForm class="login-tab-content">
-		<InputList class="login-tab-content__inputs">
+	<BaseForm class="login-form">
+		<InputList class="login-form__inputs">
 			<EmailInput />
 			<PasswordInput />
 		</InputList>
-		<BaseLink :link="{ name: RouteName.RecoveryPassword }" class="login-tab-content__link">
+		<BaseLink :link="{ name: RouteName.RecoveryPassword }" class="login-form__link">
 			Восстановить пароль
 		</BaseLink>
 		<BaseButton>Войти</BaseButton>
@@ -22,7 +22,7 @@ import { RouteName } from '@/app/router/RouteName'
 </script>
 
 <style lang="scss" scoped>
-.login-tab-content {
+.login-form {
 	display: flex;
 	flex-direction: column;
 
