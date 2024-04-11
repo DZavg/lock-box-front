@@ -1,12 +1,20 @@
 <template>
-	<div class="option-list">
+	<div ref="optionsList" class="option-list">
 		<div class="option-list__wrapper">
 			<slot></slot>
 		</div>
 	</div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { type Ref, ref } from 'vue'
+
+const optionsList: Ref<HTMLElement | null> = ref(null)
+
+defineExpose({
+	optionsList,
+})
+</script>
 
 <style lang="scss" scoped>
 .option-list {
