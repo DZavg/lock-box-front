@@ -25,14 +25,14 @@ import AuthCard from '@/entities/auth/card/ui/AuthCard.vue'
 import BaseTabs from '@/shared/ui/Tabs/BaseTabs.vue'
 import BaseTabButton from '@/shared/ui/Tabs/BaseTabButton.vue'
 import BaseTabContent from '@/shared/ui/Tabs/BaseTabContent.vue'
-import { AuthTabsNames } from '@/widgets/auth/tabs/model/AuthTabsNames'
+import { AuthTabsName } from '@/widgets/auth/tabs/model/AuthTabsName'
 import { ref, type Ref } from 'vue'
 import { AuthTabsData } from '@/widgets/auth/tabs/data/AuthTabsData'
 
-const activeTabName: Ref<string> = ref(AuthTabsNames.Login)
+const activeTabName: Ref<string> = ref(AuthTabsName.Login)
 
 const updateActiveTab = (name: string) => {
-	if (name === AuthTabsNames.DemoAccess) {
+	if (name === AuthTabsName.DemoAccess) {
 		return
 	}
 }

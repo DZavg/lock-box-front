@@ -1,21 +1,21 @@
 import { type TabData } from '@/shared/model/types/Tabs/TabsData'
 import LoginTabContent from '@/widgets/auth/tabs/ui/LoginTabContent.vue'
 import RegistrationTabContent from '@/widgets/auth/tabs/ui/RegistrationTabContent.vue'
-import { AuthTabsNames } from '@/widgets/auth/tabs/model/AuthTabsNames'
+import { AuthTabsName } from '@/widgets/auth/tabs/model/AuthTabsName'
 
 export const AuthTabsData: TabData[] = [
 	{
-		name: AuthTabsNames.Login,
+		name: AuthTabsName.Login,
 		buttonText: 'Логин',
 		component: LoginTabContent,
 	},
 	{
-		name: AuthTabsNames.Registration,
+		name: AuthTabsName.Registration,
 		buttonText: 'Регистрация',
 		component: RegistrationTabContent,
 	},
 	{
-		name: AuthTabsNames.DemoAccess,
+		name: AuthTabsName.DemoAccess,
 		buttonText: 'Демо-доступ',
 		component: LoginTabContent,
 	},
