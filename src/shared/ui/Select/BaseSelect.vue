@@ -39,7 +39,7 @@
 
 <script lang="ts" setup>
 import BaseRadio from '@/shared/ui/Radio/BaseRadio.vue'
-import { computed, onMounted, ref, type Ref } from 'vue'
+import { computed, ref, type Ref } from 'vue'
 import { type Select } from '@/shared/model/types/Select/Select'
 import DropdownButtonIcon from '@/shared/ui/Button/DropdownButtonIcon.vue'
 import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
@@ -91,10 +91,6 @@ const getOptionById = (id: string): Select => {
 	return props.options.find((item) => item.id === id) || optionTemplate
 }
 
-const setFirstOption = (): void => {
-	inputValue.value = props.options[0].id
-}
-
 const toggleDropdown = (value: boolean = false): void => {
 	isActive.value = value
 }
@@ -111,10 +107,6 @@ const { position } = useAbsolutePositioning(select, selectOptions, Position.Bott
 	Position.Top,
 	Position.Bottom,
 ])
-
-onMounted(() => {
-	setFirstOption()
-})
 </script>
 
 <style lang="scss" scoped>
