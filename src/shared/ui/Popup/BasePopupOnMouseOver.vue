@@ -22,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import { onMounted, type Ref, ref } from 'vue'
+import { onBeforeUnmount, onMounted, type Ref, ref } from 'vue'
 import useScreen from '@/shared/lib/composable/useScreen'
 import throttle from '@/shared/lib/throttle'
 import { PopupPosition } from '@/shared/model/types/Popup/PopupPosition'
@@ -98,6 +98,10 @@ const checkAvailableSideWithThrottle = throttle(checkAvailableSide)
 onMounted(() => {
 	checkAvailableSide()
 	window.addEventListener('resize', checkAvailableSideWithThrottle)
+})
+
+onBeforeUnmount(() => {
+	window.removeEventListener('resize', checkAvailableSideWithThrottle)
 })
 </script>
 
