@@ -1,6 +1,6 @@
 <template>
-	<BaseForm class="registration-tab-content">
-		<InputList class="registration-tab-content__inputs">
+	<BaseForm class="registration-form">
+		<InputList class="registration-form__inputs">
 			<BaseInput label="Имя" name="name" placeholder="Иванов Иван" />
 			<EmailInput />
 			<PasswordInput />
@@ -20,7 +20,7 @@ import InputList from '@/shared/ui/Input/InputList.vue'
 </script>
 
 <style lang="scss" scoped>
-.registration-tab-content {
+.registration-form {
 	display: flex;
 	flex-direction: column;
 
