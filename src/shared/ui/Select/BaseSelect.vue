@@ -17,7 +17,7 @@
 					class="select__dropdown-button"
 				/>
 				<BaseOptionList
-					ref="selectOptions"
+					ref="optionsList"
 					:class="{
 						['select__options_position_' + position]: !!position,
 					}"
@@ -39,16 +39,16 @@
 
 <script lang="ts" setup>
 import BaseRadio from '@/shared/ui/Radio/BaseRadio.vue'
-import { computed, ref, type Ref } from 'vue'
+import { computed, onBeforeUnmount, onMounted, ref, type Ref } from 'vue'
 import { type Select } from '@/shared/model/types/Select/Select'
 import DropdownButtonIcon from '@/shared/ui/Button/DropdownButtonIcon.vue'
 import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 import BaseError from '@/shared/ui/Error/BaseError.vue'
 import { IconColor } from '@/shared/model/types/Icon/IconColor'
 import { Position } from '@/shared/model/types/Position/Position'
-import useAbsolutePositioning from '@/shared/lib/composable/useAbsolutePositioning'
 import BaseOption from '@/shared/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
+import throttle from '@/shared/lib/throttle'
 
 interface Props {
 	name?: string
@@ -70,7 +70,7 @@ const emits = defineEmits<(e: 'update:modelValue', value: string) => void>()
 
 const isActive: Ref<boolean> = ref(false)
 const select: Ref<HTMLElement | null> = ref(null)
-const selectOptions: Ref<HTMLElement | null> = ref(null)
+const optionsList: Ref<InstanceType<typeof BaseOptionList> | null> = ref(null)
 
 const inputValue = computed({
 	get() {
@@ -103,10 +103,37 @@ const iconColor = computed(() => {
 	return isActive.value ? IconColor.BluePrimary : IconColor.White
 })
 
-const { position } = useAbsolutePositioning(select, selectOptions, Position.Bottom, [
-	Position.Top,
-	Position.Bottom,
-])
+const position = ref('')
+
+const checkPosition = () => {
+	const selectDOMRect = select.value?.getBoundingClientRect() || { top: 0, bottom: 0 }
+	const optionsHeight = optionsList.value?.optionsList?.clientHeight ?? 0
+	const windowHeight = document.documentElement.clientHeight
+
+	const elementRect = {
+		top: selectDOMRect.top,
+		bottom: windowHeight - selectDOMRect.bottom,
+	}
+
+	if (elementRect.bottom > optionsHeight) {
+		position.value = Position.Bottom
+		return
+	}
+	position.value = Position.Top
+}
+
+const checkPositionWithThrottle = throttle(checkPosition)
+
+onMounted(() => {
+	checkPosition()
+	window.addEventListener('scroll', checkPositionWithThrottle)
+	window.addEventListener('resize', checkPositionWithThrottle)
+})
+
+onBeforeUnmount(() => {
+	window.removeEventListener('scroll', checkPositionWithThrottle)
+	window.removeEventListener('resize', checkPositionWithThrottle)
+})
 </script>
 
 <style lang="scss" scoped>
