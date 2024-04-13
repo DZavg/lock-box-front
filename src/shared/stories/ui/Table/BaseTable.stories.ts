@@ -1,7 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseTable from '@/shared/ui/Table/BaseTable.vue'
-import BaseTableHead from '@/shared/ui/Table/BaseTableHead.vue'
-import BaseTableBody from '@/shared/ui/Table/BaseTableBody.vue'
 import CopyButtonIcon from '@/shared/ui/Button/CopyButtonIcon.vue'
 import EditLinkIcon from '@/shared/ui/Link/EditLinkIcon.vue'
 import DeleteButtonIcon from '@/shared/ui/Button/DeleteButtonIcon.vue'
@@ -24,28 +22,26 @@ export const Fill: Story = {
 	render: () => ({
 		components: {
 			BaseTable,
-			BaseTableHead,
-			BaseTableBody,
 			CopyButtonIcon,
 			EditLinkIcon,
 			DeleteButtonIcon,
 		},
 		template: `
 			<BaseTable>
-				<BaseTableHead>
-					<tr>
-						<th>Тип доступа</th>
-						<th>Адрес</th>
-						<th>Логин</th>
-					</tr>
-				</BaseTableHead>
-				<BaseTableBody>
-					<tr>
-						<td>SSH</td>
-						<td>https://music.yandex.ru</td>
-						<td>Mbalilyne35</td>
-					</tr>
-				</BaseTableBody>
+			<template #head>
+				<tr>
+					<th>Тип доступа</th>
+					<th>Адрес</th>
+					<th>Логин</th>
+				</tr>
+			</template>
+			<template #body>
+				<tr>
+					<td>SSH</td>
+					<td>https://music.yandex.ru</td>
+					<td>Mbalilyne35</td>
+				</tr>
+			</template>
 			</BaseTable>
 		`,
 	}),
