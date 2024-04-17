@@ -1,11 +1,13 @@
 <template>
 	<table class="table">
-		<BaseTableHead>
-			<slot name="head"></slot>
-		</BaseTableHead>
-		<BaseTableBody>
-			<slot name="body"></slot>
-		</BaseTableBody>
+		<slot>
+			<BaseTableHead>
+				<slot name="head"></slot>
+			</BaseTableHead>
+			<BaseTableBody>
+				<slot name="body"></slot>
+			</BaseTableBody>
+		</slot>
 	</table>
 </template>
 
