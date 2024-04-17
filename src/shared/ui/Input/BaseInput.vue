@@ -14,7 +14,7 @@
 					class="input__element body_p"
 				/>
 			</label>
-			<slot></slot>
+			<slot name="icon"></slot>
 		</div>
 		<BaseError v-if="error" :text="error" />
 	</div>

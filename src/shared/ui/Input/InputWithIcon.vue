@@ -1,8 +1,10 @@
 <template>
 	<BaseInput class="input-with-icon" v-bind="props">
-		<div class="input-with-icon__icon">
-			<slot></slot>
-		</div>
+		<template #icon>
+			<div class="input-with-icon__icon">
+				<slot></slot>
+			</div>
+		</template>
 	</BaseInput>
 </template>
 
