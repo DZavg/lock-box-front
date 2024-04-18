@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
 import { shallowRef } from 'vue'
-import ProjectActionList from '@/features/project/action-list/ui/ProjectActionList.vue'
 import BaseDataTableGroup from '@/shared/ui/Table/BaseDataTableGroup.vue'
+import TableActionList from '@/features/table/action-list/ui/TableActionList.vue'
 
 const meta: Meta<typeof BaseDataTableGroup> = {
 	component: BaseDataTableGroup,
@@ -48,7 +48,7 @@ export const Fill: Story = {
 				label: '',
 				key: 'action',
 				component: {
-					name: shallowRef(ProjectActionList),
+					name: shallowRef(TableActionList),
 				},
 			},
 		],

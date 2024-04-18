@@ -5,7 +5,7 @@
 			<BaseLink :color="LinkColor.White" :link="project.domain">{{ project.domain }}</BaseLink>
 		</td>
 		<td>
-			<ProjectActionList :project="project" class="projects-table-row__action-list" />
+			<TableActionList :project="project" class="projects-table-row__action-list" />
 		</td>
 	</tr>
 </template>
@@ -13,8 +13,8 @@
 <script lang="ts" setup>
 import { type Project } from '@/widgets/projects/table/types/Project'
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
-import ProjectActionList from '@/features/project/action-list/ui/ProjectActionList.vue'
 import { LinkColor } from '@/shared/model/types/Link/LinkColor'
+import TableActionList from '@/features/table/action-list/ui/TableActionList.vue'
 
 interface Props {
 	project: Project
