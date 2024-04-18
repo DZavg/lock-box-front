@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import BaseDataTable from '@/shared/ui/Table/BaseDataTable.vue'
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
 import { shallowRef } from 'vue'
+import ProjectActionList from '@/features/project/action-list/ui/ProjectActionList.vue'
+import BaseDataTableGroup from '@/shared/ui/Table/BaseDataTableGroup.vue'
 
-const meta: Meta<typeof BaseDataTable> = {
-	component: BaseDataTable,
+const meta: Meta<typeof BaseDataTableGroup> = {
+	component: BaseDataTableGroup,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -15,7 +16,7 @@ const meta: Meta<typeof BaseDataTable> = {
 }
 
 export default meta
-type Story = StoryObj<typeof BaseDataTable>
+type Story = StoryObj<typeof BaseDataTableGroup>
 
 export const Fill: Story = {
 	args: {
@@ -42,6 +43,13 @@ export const Fill: Story = {
 			{
 				label: 'Адрес',
 				key: 'domain',
+			},
+			{
+				label: '',
+				key: 'action',
+				component: {
+					name: shallowRef(ProjectActionList),
+				},
 			},
 		],
 		data: [
