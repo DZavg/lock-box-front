@@ -25,11 +25,15 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const getComponentProps = () => {
-	return props.field.component?.props(props.field, props.data) || {}
+	if (typeof props.field.component?.props === 'function')
+		return props.field.component?.props(props.field, props.data)
+	return {}
 }
 
 const getComponentHandlers = () => {
-	return props.field.component?.handlers(props.field, props.data) || {}
+	if (typeof props.field.component?.handlers === 'function')
+		return props.field.component?.handlers(props.field, props.data)
+	return {}
 }
 
 const getComponent = () => {

@@ -15,12 +15,12 @@ import BaseDataTableItem from '@/shared/ui/Table/BaseDataTableItem.vue'
 
 interface Props {
 	fields: ListField[]
-	data: ListFieldData[]
+	data: ListFieldData
 }
 
 withDefaults(defineProps<Props>(), {
 	fields: () => [],
-	data: () => [],
+	data: () => ({}),
 })
 </script>
 

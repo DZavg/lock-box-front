@@ -15,12 +15,12 @@ import { type ListField, type ListFieldData } from '@/shared/model/types/List/Li
 
 interface Props {
 	fields: ListField[]
-	data: ListFieldData[]
+	data: ListFieldData
 }
 
 withDefaults(defineProps<Props>(), {
 	fields: () => [],
-	data: () => [],
+	data: () => ({}),
 })
 </script>
 
