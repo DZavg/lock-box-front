@@ -20,11 +20,11 @@ export const Default: Story = {
 		fields: [
 			{
 				label: 'Тип доступа',
-				data: 'title',
+				key: 'title',
 			},
 			{
 				label: 'Адрес',
-				data: 'domain',
+				key: 'domain',
 			},
 		],
 		data: {
