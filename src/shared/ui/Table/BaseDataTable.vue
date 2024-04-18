@@ -11,11 +11,11 @@
 import BaseTable from '@/shared/ui/Table/BaseTable.vue'
 import BaseDataTableHead from '@/shared/ui/Table/BaseDataTableHead.vue'
 import BaseDataTableBody from '@/shared/ui/Table/BaseDataTableBody.vue'
-import { type ListField } from '@/shared/model/types/List/ListField'
+import { type ListField, type ListFieldData } from '@/shared/model/types/List/ListField'
 
 interface Props {
 	fields: ListField[]
-	data: { [key: string]: any }[]
+	data: ListFieldData[]
 }
 
 withDefaults(defineProps<Props>(), {

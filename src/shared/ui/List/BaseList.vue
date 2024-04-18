@@ -8,11 +8,11 @@
 </template>
 
 <script lang="ts" setup>
-import { type ListField } from '@/shared/model/types/List/ListField'
+import { type ListField, type ListFieldData } from '@/shared/model/types/List/ListField'
 
 interface Props {
 	fields: ListField[]
-	data: { [key: string]: any }
+	data: ListFieldData
 }
 
 withDefaults(defineProps<Props>(), {

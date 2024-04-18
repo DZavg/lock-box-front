@@ -5,11 +5,11 @@
 </template>
 
 <script lang="ts" setup>
-import { type ListField } from '@/shared/model/types/List/ListField'
+import { type ListField, type ListFieldData } from '@/shared/model/types/List/ListField'
 
 interface Props {
 	field: ListField
-	data: { [key: string]: any }
+	data: ListFieldData
 }
 
 const props = withDefaults(defineProps<Props>(), {

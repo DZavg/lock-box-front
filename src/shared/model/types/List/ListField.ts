@@ -11,3 +11,7 @@ export interface ListField {
 	key: string
 	component?: ListFieldComponent
 }
+
+export interface ListFieldData {
+	[key: string]: any
+}
