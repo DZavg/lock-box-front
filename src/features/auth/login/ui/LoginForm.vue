@@ -39,7 +39,6 @@ import { RouteName } from '@/app/router/RouteName'
 		margin-bottom: $indent-l;
 
 		@media screen and (max-width: 768px) {
-			align-self: center;
 			margin-bottom: $indent-m;
 		}
 	}
