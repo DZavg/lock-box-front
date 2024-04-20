@@ -36,6 +36,7 @@ const updateNameActiveTab = () => {
 	padding: 11px 12px;
 	color: $color-white;
 	user-select: none;
+	white-space: nowrap;
 
 	&--active {
 		border-bottom: 2px solid $color-blue-primary;
