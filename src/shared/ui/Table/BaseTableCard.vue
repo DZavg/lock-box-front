@@ -2,7 +2,7 @@
 	<BaseCard :padding-size="CardPaddingSize.Small" class="table-card">
 		<div v-for="(field, index) in fields" :key="index" class="table-card__item caption_p">
 			<p v-if="field.label" class="table-card__label">{{ field.label }}</p>
-			<BaseDataTableItem :data="data[index]" :field="field" />
+			<BaseDataTableItem :data="data" :field="field" />
 		</div>
 	</BaseCard>
 </template>
@@ -19,7 +19,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-	field: () => [],
+	fields: () => [],
 	data: () => ({}),
 })
 </script>
