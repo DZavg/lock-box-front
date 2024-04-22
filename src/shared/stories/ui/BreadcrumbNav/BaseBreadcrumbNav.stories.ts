@@ -17,7 +17,7 @@ type Story = StoryObj<typeof BaseBreadcrumbNav>
 
 export const Default: Story = {
 	args: {
-		breadcrumbList: [
+		breadcrumbs: [
 			{
 				title: 'Главная',
 				link: '/',

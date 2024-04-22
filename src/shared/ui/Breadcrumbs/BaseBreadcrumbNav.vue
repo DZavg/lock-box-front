@@ -1,7 +1,7 @@
 <template>
 	<nav aria-label="Breadcrumb" class="breadcrumb-nav">
 		<ul class="breadcrumb-nav__list">
-			<li v-for="(breadcrumb, index) in breadcrumbList" :key="index">
+			<li v-for="(breadcrumb, index) in breadcrumbs" :key="index">
 				<BaseLink
 					:color="linkColor(index)"
 					:link="breadcrumb.link"
@@ -24,14 +24,14 @@ import { LinkColor } from '@/shared/model/types/Link/LinkColor'
 import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
 
 interface Props {
-	breadcrumbList: Breadcrumb[]
+	breadcrumbs: Breadcrumb[]
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	breadcrumbList: () => [],
+	breadcrumbs: () => [],
 })
 
-const isLastElement = (index: number) => props.breadcrumbList.length - 1 === index
+const isLastElement = (index: number) => props.breadcrumbs.length - 1 === index
 const linkColor = (index: number) => (isLastElement(index) ? LinkColor.White : LinkColor.GrayThird)
 </script>
 
