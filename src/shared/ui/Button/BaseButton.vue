@@ -48,6 +48,7 @@ defineEmits<(e: 'onClick') => void>()
 		background-color 0.2s ease-in,
 		border-color 0.2s ease-in;
 	user-select: none;
+	white-space: nowrap;
 	word-break: break-word;
 
 	&_background {
