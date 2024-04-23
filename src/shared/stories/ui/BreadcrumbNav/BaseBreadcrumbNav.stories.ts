@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseBreadcrumbNav from '@/shared/ui/Breadcrumbs/BaseBreadcrumbNav.vue'
+import getBreadcrumbs from '@/shared/stories/data/breadcrumbs'
 
 const meta: Meta<typeof BaseBreadcrumbNav> = {
 	component: BaseBreadcrumbNav,
@@ -17,23 +18,6 @@ type Story = StoryObj<typeof BaseBreadcrumbNav>
 
 export const Default: Story = {
 	args: {
-		breadcrumbs: [
-			{
-				title: 'Главная',
-				link: '/',
-			},
-			{
-				title: 'Проекты',
-				link: '/',
-			},
-			{
-				title: 'Бренд одежды "IVOLGA"',
-				link: '/',
-			},
-			{
-				title: 'Доступы',
-				link: '/',
-			},
-		],
+		breadcrumbs: getBreadcrumbs(),
 	},
 }
