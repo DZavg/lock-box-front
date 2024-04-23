@@ -1,0 +1,46 @@
+<template>
+	<div class="projects-actions">
+		<BaseButton class="projects-actions__button">Добавить доступ</BaseButton>
+		<SearchInput class="projects-actions__search" />
+	</div>
+</template>
+
+<script lang="ts" setup>
+import BaseButton from '@/shared/ui/Button/BaseButton.vue'
+import SearchInput from '@/shared/ui/Input/SearchInput.vue'
+</script>
+
+<style lang="scss" scoped>
+.projects-actions {
+	display: flex;
+	align-items: flex-start;
+	gap: $indent-m;
+
+	@media screen and (max-width: 768px) {
+		width: 100%;
+		gap: $indent-s;
+	}
+
+	@media screen and (max-width: 475px) {
+		flex-direction: column;
+	}
+
+	&__button {
+		@media screen and (max-width: 475px) {
+			width: 100%;
+		}
+	}
+
+	&__search {
+		min-width: 297px;
+
+		@media screen and (max-width: 768px) {
+			min-width: initial;
+		}
+
+		@media screen and (max-width: 475px) {
+			width: 100%;
+		}
+	}
+}
+</style>
