@@ -1,4 +1,3 @@
-import { shallowRef } from 'vue'
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
 
 const getTableFields = () => {
@@ -8,7 +7,7 @@ const getTableFields = () => {
 			label: 'Тип доступа',
 			key: 'title',
 			component: {
-				name: shallowRef(BaseInput),
+				name: BaseInput,
 				props: (field: any, data: any) => {
 					return {
 						value: data.domain,

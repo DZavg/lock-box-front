@@ -1,7 +1,7 @@
-import { type Component, type ShallowRef } from 'vue'
+import { type Component } from 'vue'
 
 interface ListFieldComponent {
-	name: ShallowRef<Component> | string
+	name: Component | string
 	props?: Function
 	handlers?: Function
 }
