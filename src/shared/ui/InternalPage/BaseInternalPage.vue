@@ -8,7 +8,7 @@
 		<div class="page__head">
 			<div class="page__title">
 				<h1>{{ titleH1 }}</h1>
-				<BasePoint v-if="!isMobile" />
+				<BasePoint v-if="!isMobile && additionalText" />
 				<p v-if="additionalText" class="h1">{{ additionalText }}</p>
 			</div>
 			<slot name="head"></slot>
