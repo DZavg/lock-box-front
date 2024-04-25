@@ -1,5 +1,5 @@
 <template>
-	<AuthPageWrapper class="not-found-page container-s">
+	<div class="not-found-page container-s">
 		<div class="not-found-page__wrapper">
 			<img
 				alt="Не найдено"
@@ -10,16 +10,15 @@
 			/>
 			<h1 class="not-found-page__title">Похоже мы не можем найти нужную вам страницу</h1>
 			<BaseLinkButton :link="RouteName.Projects" class="not-found-page__link"
-				>На главную</BaseLinkButton
-			>
+				>На главную
+			</BaseLinkButton>
 		</div>
-	</AuthPageWrapper>
+	</div>
 </template>
 
 <script lang="ts" setup>
 import BaseLinkButton from '@/shared/ui/Link/BaseLinkButton.vue'
 import { RouteName } from '@/app/router/RouteName'
-import AuthPageWrapper from '@/entities/auth/page-wrapper/ui/AuthPageWrapper.vue'
 </script>
 
 <style lang="scss" scoped>
