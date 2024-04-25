@@ -1,11 +1,11 @@
-import AuthLayout from '@/app/layouts/AuthLayout.vue'
+import CustomLayout from '@/app/layouts/CustomLayout.vue'
 import AuthPage from '@/pages/auth/ui/AuthPage.vue'
 import PasswordRecoveryPage from '@/pages/password-recovery/ui/PasswordRecoveryPage.vue'
 import { RouteName } from '@/app/router/RouteName'
 
 export const authRoutes = {
 	path: '',
-	component: AuthLayout,
+	component: CustomLayout,
 	children: [
 		{
 			path: '',
