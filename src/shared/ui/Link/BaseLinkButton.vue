@@ -28,6 +28,7 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .link-button {
+	display: inline-block;
 	padding: 12px $indent-m;
 	border: 1px solid transparent;
 	border-radius: $border-radius-s;
