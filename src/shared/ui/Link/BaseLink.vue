@@ -23,19 +23,19 @@
 
 <script lang="ts" setup>
 import { type HtmlLinkTarget } from '@/shared/model/types/Link/HtmlLinkTarget'
-import { LinkColor } from '@/shared/model/types/Link/LinkColor'
+import { Color } from '@/shared/model/types/Color/Color'
 import useLink from '@/shared/lib/composable/useLink'
 
 interface Props {
 	link: string | object
 	target?: HtmlLinkTarget
-	color?: LinkColor
+	color?: Color
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	link: '',
 	target: '_self',
-	color: LinkColor.BluePrimary,
+	color: Color.BluePrimary,
 })
 
 const { isExternalLink } = useLink(props.link)

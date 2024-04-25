@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
 import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
-import { LinkColor } from '@/shared/model/types/Link/LinkColor'
+import { Color } from '@/shared/model/types/Color/Color'
 import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
 
 interface Props {
@@ -32,7 +32,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const isLastElement = (index: number) => props.breadcrumbs.length - 1 === index
-const linkColor = (index: number) => (isLastElement(index) ? LinkColor.White : LinkColor.GrayThird)
+const linkColor = (index: number) => (isLastElement(index) ? Color.White : Color.GrayThird)
 </script>
 
 <style lang="scss" scoped>

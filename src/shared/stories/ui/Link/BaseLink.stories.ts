@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
-import { LinkColor } from '@/shared/model/types/Link/LinkColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 const meta: Meta<typeof BaseLink> = {
 	component: BaseLink,
@@ -14,7 +14,7 @@ const meta: Meta<typeof BaseLink> = {
 	argTypes: {
 		color: {
 			control: 'radio',
-			options: LinkColor,
+			options: Color,
 		},
 	},
 }
@@ -26,7 +26,7 @@ export const BluePrimary: Story = {
 	args: {
 		link: '/',
 		target: '_self',
-		color: LinkColor.BluePrimary,
+		color: Color.BluePrimary,
 	},
 	render: (args: any) => ({
 		components: { BaseLink },
@@ -43,7 +43,7 @@ export const White: Story = {
 	args: {
 		link: '/',
 		target: '_self',
-		color: LinkColor.White,
+		color: Color.White,
 	},
 	render: (args: any) => ({
 		components: { BaseLink },

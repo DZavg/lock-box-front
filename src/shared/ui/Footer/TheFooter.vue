@@ -2,7 +2,7 @@
 	<footer class="footer container-m">
 		<div class="footer__wrapper">
 			<p class="footer__copyright caption_p">© {{ currentYear }} Techouse</p>
-			<BaseLink :color="LinkColor.White" class="caption_p" link="/"
+			<BaseLink :color="Color.White" class="caption_p" link="/"
 				>Политика конфиденциальности
 			</BaseLink>
 		</div>
@@ -11,7 +11,7 @@
 
 <script lang="ts" setup>
 import BaseLink from '@/shared/ui/Link/BaseLink.vue'
-import { LinkColor } from '@/shared/model/types/Link/LinkColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 const currentYear = new Date().getFullYear()
 </script>
