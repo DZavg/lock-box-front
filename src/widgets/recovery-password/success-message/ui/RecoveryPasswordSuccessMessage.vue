@@ -1,5 +1,5 @@
 <template>
-	<div class="recovery-password-success-msg">
+	<ContentCentering class="recovery-password-success-msg">
 		<div class="recovery-password-success-msg__image-wrapper">
 			<img
 				alt="Сообщение для сброса пароля отправлено"
@@ -15,11 +15,12 @@
 			сбросить пароль
 		</p>
 		<BaseLinkButton class="recovery-password-success-msg__button" link="/">Готово</BaseLinkButton>
-	</div>
+	</ContentCentering>
 </template>
 
 <script lang="ts" setup>
 import BaseLinkButton from '@/shared/ui/Link/BaseLinkButton.vue'
+import ContentCentering from '@/shared/ui/Content/ContentCentering.vue'
 
 interface Props {
 	email: string
@@ -32,13 +33,6 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .recovery-password-success-msg {
-	display: flex;
-	flex: 1 0 auto;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-
 	&__image-wrapper {
 		max-width: 160px;
 		margin-bottom: $indent-m;

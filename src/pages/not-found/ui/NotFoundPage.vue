@@ -1,5 +1,5 @@
 <template>
-	<div class="not-found-page container-s">
+	<ContentCentering class="not-found-page container-s">
 		<div class="not-found-page__wrapper">
 			<img
 				alt="Не найдено"
@@ -13,25 +13,17 @@
 				>На главную
 			</BaseLinkButton>
 		</div>
-	</div>
+	</ContentCentering>
 </template>
 
 <script lang="ts" setup>
 import BaseLinkButton from '@/shared/ui/Link/BaseLinkButton.vue'
 import { RouteName } from '@/app/router/RouteName'
+import ContentCentering from '@/shared/ui/Content/ContentCentering.vue'
 </script>
 
 <style lang="scss" scoped>
 .not-found-page {
-	&__wrapper {
-		display: flex;
-		flex: 1 0 auto;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		text-align: center;
-	}
-
 	&__image {
 		width: 100%;
 		max-width: 468px;
