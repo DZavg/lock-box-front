@@ -22,6 +22,7 @@ import TheHeader from '@/widgets/header/ui/TheHeader.vue'
 }
 
 .inner {
+	display: flex;
 	flex: 1 0 auto;
 }
 </style>
