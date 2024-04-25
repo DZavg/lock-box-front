@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import iconClose from '@/shared/images/svg/icon-close.svg'
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
-import { IconColor } from '@/shared/model/types/Icon/IconColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 const meta: Meta<typeof BaseIcon> = {
 	component: BaseIcon,
@@ -15,7 +15,7 @@ const meta: Meta<typeof BaseIcon> = {
 	argTypes: {
 		color: {
 			control: 'radio',
-			options: IconColor,
+			options: Color,
 		},
 	},
 }
@@ -27,7 +27,7 @@ export const White: Story = {
 	args: {
 		icon: iconClose,
 		size: 24,
-		color: IconColor.White,
+		color: Color.White,
 	},
 }
 
@@ -35,6 +35,6 @@ export const GrayThird: Story = {
 	args: {
 		icon: iconClose,
 		size: 24,
-		color: IconColor.GrayThird,
+		color: Color.GrayThird,
 	},
 }

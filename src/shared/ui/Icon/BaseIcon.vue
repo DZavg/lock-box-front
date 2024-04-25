@@ -5,18 +5,18 @@
 </template>
 
 <script lang="ts" setup>
-import { IconColor } from '@/shared/model/types/Icon/IconColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 interface Props {
 	icon: string
 	size?: string | number
-	color?: IconColor
+	color?: Color
 }
 
 withDefaults(defineProps<Props>(), {
 	icon: '',
 	size: 24,
-	color: IconColor.White,
+	color: Color.White,
 })
 </script>
 

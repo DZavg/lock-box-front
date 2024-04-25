@@ -44,7 +44,7 @@ import { type Select } from '@/shared/model/types/Select/Select'
 import DropdownButtonIcon from '@/shared/ui/Button/DropdownButtonIcon.vue'
 import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 import BaseError from '@/shared/ui/Error/BaseError.vue'
-import { IconColor } from '@/shared/model/types/Icon/IconColor'
+import { Color } from '@/shared/model/types/Color/Color'
 import { Position } from '@/shared/model/types/Position/Position'
 import BaseOption from '@/shared/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
@@ -100,7 +100,7 @@ const optionIsActive = (id: string): boolean => {
 }
 
 const iconColor = computed(() => {
-	return isActive.value ? IconColor.BluePrimary : IconColor.White
+	return isActive.value ? Color.BluePrimary : Color.White
 })
 
 const position = ref('')

@@ -8,7 +8,7 @@
 import InputWithIcon from '@/shared/ui/Input/InputWithIcon.vue'
 import EyeButtonIcon from '@/shared/ui/Button/EyeButtonIcon.vue'
 import { computed, ref, type Ref } from 'vue'
-import { IconColor } from '@/shared/model/types/Icon/IconColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 interface Props {
 	name?: string
@@ -33,7 +33,7 @@ const props = withDefaults(defineProps<Props>(), {
 const active: Ref<boolean> = ref(false)
 
 const type = computed(() => (active.value ? 'text' : 'password'))
-const iconColor = computed(() => (props.disabled ? IconColor.GrayThird : IconColor.White))
+const iconColor = computed(() => (props.disabled ? Color.GrayThird : Color.White))
 
 const switchType = () => {
 	active.value = !active.value

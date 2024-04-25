@@ -11,20 +11,20 @@
 
 <script lang="ts" setup>
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
-import { IconColor } from '@/shared/model/types/Icon/IconColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 interface Props {
 	disabled?: boolean
 	icon: string
 	size?: string | number
-	iconColor?: IconColor
+	iconColor?: Color
 }
 
 withDefaults(defineProps<Props>(), {
 	disabled: false,
 	icon: '',
 	size: 24,
-	iconColor: IconColor.White,
+	iconColor: Color.White,
 })
 
 defineEmits<{ (e: 'onClick'): void }>()

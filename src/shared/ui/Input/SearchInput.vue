@@ -9,7 +9,7 @@ import InputWithIcon from '@/shared/ui/Input/InputWithIcon.vue'
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import iconSearch from '@/shared/images/svg/icon-search.svg'
 import { computed } from 'vue'
-import { IconColor } from '@/shared/model/types/Icon/IconColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 interface Props {
 	name?: string
@@ -27,7 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
 	autocomplete: 'off',
 })
 
-const iconColor = computed(() => (props.disabled ? IconColor.GrayThird : IconColor.White))
+const iconColor = computed(() => (props.disabled ? Color.GrayThird : Color.White))
 </script>
 
 <style lang="scss" scoped></style>

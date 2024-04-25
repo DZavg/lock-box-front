@@ -11,15 +11,15 @@
 <script lang="ts" setup>
 import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
 import BaseButtonIcon from '@/shared/ui/Button/BaseButtonIcon.vue'
-import { IconColor } from '@/shared/model/types/Icon/IconColor'
+import { Color } from '@/shared/model/types/Color/Color'
 
 interface Props {
-	iconColor?: IconColor
+	iconColor?: Color
 	isActive?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
-	iconColor: IconColor.White,
+	iconColor: Color.White,
 	isActive: false,
 })
 </script>
