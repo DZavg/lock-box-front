@@ -1,5 +1,5 @@
 <template>
-	<div class="option" :class="{ ['option--active']: isActive }">
+	<div :class="{ ['option--active']: isActive }" class="option">
 		<slot></slot>
 	</div>
 </template>
@@ -16,7 +16,6 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .option {
-	padding: 12px $indent-s;
 	border-radius: $border-radius-xs;
 	cursor: pointer;
 	transition: background-color 0.1s ease-in;

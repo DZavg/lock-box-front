@@ -4,31 +4,39 @@
 		v-click-outside="toggleDropdown"
 		:class="{ ['select--active']: isActive && options.length }"
 		class="select"
-		@keydown.esc="toggleDropdown()"
-		@keydown.enter="toggleDropdown(!isActive)"
+		tabindex="1"
+		@keydown.esc="closeSelect"
+		@keydown.enter="toggleDropdown"
 	>
-		<div class="select__head">
+		<div ref="selectField" class="select__head">
 			<BaseLabel :label="label" />
-			<div class="select__field" @click="toggleDropdown(!isActive)">
-				<span>{{ getOptionById(inputValue)?.title }}</span>
+			<div class="select__field" @click="toggleDropdown">
+				<span>{{ getTitleActiveOption }}</span>
 				<DropdownButtonIcon
 					:icon-color="iconColor"
 					:is-active="isActive"
 					class="select__dropdown-button"
 				/>
 				<BaseOptionList
-					ref="optionsList"
+					ref="optionList"
 					:class="{
 						['select__options_position_' + position]: !!position,
 					}"
 					class="select__options"
+					@click.stop
 				>
 					<BaseOption
 						v-for="option in options"
 						:key="option.id"
-						:is-active="optionIsActive(option.id)"
+						:is-active="optionIsActive(option)"
 					>
-						<BaseRadio v-model="inputValue" :name="name" :title="option.title" :value="option.id" />
+						<BaseRadio
+							v-model.prevent.stop="modelValue"
+							:name="name"
+							:title="option.title"
+							:value="option.id"
+							class="select__radio-button"
+						/>
 					</BaseOption>
 				</BaseOptionList>
 			</div>
@@ -39,23 +47,22 @@
 
 <script lang="ts" setup>
 import BaseRadio from '@/shared/ui/Radio/BaseRadio.vue'
-import { computed, onBeforeUnmount, onMounted, ref, type Ref } from 'vue'
-import { type Select } from '@/shared/model/types/Select/Select'
+import { computed, ref, type Ref } from 'vue'
+import { type Option } from '@/shared/model/types/Option/Option'
 import DropdownButtonIcon from '@/shared/ui/Button/DropdownButtonIcon.vue'
 import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 import BaseError from '@/shared/ui/Error/BaseError.vue'
 import { Color } from '@/shared/model/types/Color/Color'
-import { Position } from '@/shared/model/types/Position/Position'
 import BaseOption from '@/shared/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
-import throttle from '@/shared/lib/throttle'
+import useSelect from '@/shared/lib/composable/useSelect'
 
 interface Props {
 	name?: string
 	modelValue?: string
 	label?: string
 	error?: string
-	options: Array<Select>
+	options: Option[]
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -66,73 +73,47 @@ const props = withDefaults(defineProps<Props>(), {
 	options: () => [],
 })
 
+const { position, selectField, optionList, checkPosition } = useSelect()
 const emits = defineEmits<(e: 'update:modelValue', value: string) => void>()
-
 const isActive: Ref<boolean> = ref(false)
-const select: Ref<HTMLElement | null> = ref(null)
-const optionsList: Ref<InstanceType<typeof BaseOptionList> | null> = ref(null)
 
-const inputValue = computed({
+const modelValue = computed({
 	get() {
 		return props.modelValue
 	},
-	set(value) {
-		toggleDropdown(false)
-		emits('update:modelValue', value)
+	set(value: string | number) {
+		toggleDropdown()
+		emits('update:modelValue', String(value))
 	},
 })
 
-const optionTemplate: Select = {
-	id: '',
-	title: 'Не выбрано',
+const toggleDropdown = (): void => {
+	if (isActive.value) {
+		closeSelect()
+		return
+	}
+	openSelect()
 }
 
-const getOptionById = (id: string): Select => {
-	return props.options.find((item) => item.id === id) || optionTemplate
+const openSelect = () => {
+	checkPosition()
+	isActive.value = true
 }
 
-const toggleDropdown = (value: boolean = false): void => {
-	isActive.value = value
+const closeSelect = () => {
+	isActive.value = false
 }
 
-const optionIsActive = (id: string): boolean => {
-	return id === inputValue.value
+const getTitleActiveOption = computed(
+	() => props.options.find((item) => optionIsActive(item))?.title || 'Не выбрано',
+)
+
+const optionIsActive = (option: Option): boolean => {
+	return option.id === modelValue.value
 }
 
 const iconColor = computed(() => {
 	return isActive.value ? Color.BluePrimary : Color.White
-})
-
-const position = ref('')
-
-const checkPosition = () => {
-	const selectDOMRect = select.value?.getBoundingClientRect() || { top: 0, bottom: 0 }
-	const optionsHeight = optionsList.value?.optionsList?.clientHeight ?? 0
-	const windowHeight = document.documentElement.clientHeight
-
-	const elementRect = {
-		top: selectDOMRect.top,
-		bottom: windowHeight - selectDOMRect.bottom,
-	}
-
-	if (elementRect.bottom > optionsHeight) {
-		position.value = Position.Bottom
-		return
-	}
-	position.value = Position.Top
-}
-
-const checkPositionWithThrottle = throttle(checkPosition)
-
-onMounted(() => {
-	checkPosition()
-	window.addEventListener('scroll', checkPositionWithThrottle)
-	window.addEventListener('resize', checkPositionWithThrottle)
-})
-
-onBeforeUnmount(() => {
-	window.removeEventListener('scroll', checkPositionWithThrottle)
-	window.removeEventListener('resize', checkPositionWithThrottle)
 })
 </script>
 
@@ -181,6 +162,10 @@ onBeforeUnmount(() => {
 				top: calc(100% + 8px);
 			}
 		}
+	}
+
+	&__radio-button {
+		padding: 12px $indent-s;
 	}
 
 	&--active {

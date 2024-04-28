@@ -1,5 +1,5 @@
 <template>
-	<div ref="optionsList" class="option-list">
+	<div ref="optionList" class="option-list">
 		<div class="option-list__wrapper">
 			<slot></slot>
 		</div>
@@ -9,10 +9,10 @@
 <script lang="ts" setup>
 import { type Ref, ref } from 'vue'
 
-const optionsList: Ref<HTMLElement | null> = ref(null)
+const optionList: Ref<HTMLElement | null> = ref(null)
 
 defineExpose({
-	optionsList,
+	optionList,
 })
 </script>
 
