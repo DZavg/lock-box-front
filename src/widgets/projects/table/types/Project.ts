@@ -1,5 +1,5 @@
 export interface Project {
-	id: string
+	id: string | number
 	title: string
 	domain: string
 }
