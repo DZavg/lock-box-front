@@ -1,4 +1,4 @@
-import { type Project } from '@/widgets/projects/table/types/Project'
+import { type Project } from '@/shared/model/types/Project/Project'
 import { BaseHttpClient } from '@/shared/api/client/repository/BaseRepository'
 
 export interface ProjectRepository {
