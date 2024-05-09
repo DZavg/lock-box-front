@@ -8,10 +8,10 @@
 		</template>
 		<template #body>
 			<BaseOptionList>
-				<BaseOption>
+				<BaseOption class="user-dropdown__option">
 					<button class="body_p">Редактировать профиль</button>
 				</BaseOption>
-				<BaseOption>
+				<BaseOption class="user-dropdown__option">
 					<button class="body_p">Выйти</button>
 				</BaseOption>
 			</BaseOptionList>
@@ -49,6 +49,10 @@ const toggleIcon = (value: boolean) => {
 
 	&:deep(.popup-on-mouse-over__body) {
 		width: 239px;
+	}
+
+	&__option {
+		padding: 12px $indent-s;
 	}
 }
 </style>
