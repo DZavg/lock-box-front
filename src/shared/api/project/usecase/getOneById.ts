@@ -1,4 +1,4 @@
-import { type Project } from '@/widgets/projects/table/types/Project'
+import { type Project } from '@/shared/model/types/Project/Project'
 import { type ProjectRepository } from '@/shared/api/project/repository/ProjectRepository'
 import { inject, injectable } from 'inversify'
 import { identifiers } from '@/shared/api/constants/identifiers'
