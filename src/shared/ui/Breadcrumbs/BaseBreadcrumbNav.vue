@@ -1,16 +1,25 @@
 <template>
 	<nav aria-label="Breadcrumb" class="breadcrumb-nav">
 		<ul class="breadcrumb-nav__list">
-			<li v-for="(breadcrumb, index) in breadcrumbs" :key="index">
+			<li v-for="(breadcrumb, index) in sliceBreadcrumbs" :key="index">
 				<BaseLink
-					:color="linkColor(index)"
+					:color="Color.GrayThird"
 					:link="breadcrumb.link"
 					class="breadcrumb-nav__link caption_p"
 				>
 					<span>{{ breadcrumb.title }}</span>
-					<svg v-if="!isLastElement(index)" class="breadcrumb-nav__icon icon-16">
+					<svg class="breadcrumb-nav__icon icon-16">
 						<use :href="iconArrowSmall + '#icon'" />
 					</svg>
+				</BaseLink>
+			</li>
+			<li>
+				<BaseLink
+					:color="Color.White"
+					:link="breadcrumbs.at(-1)?.link"
+					class="breadcrumb-nav__link caption_p"
+				>
+					<span>{{ breadcrumbs.at(-1)?.title }}</span>
 				</BaseLink>
 			</li>
 		</ul>
@@ -22,6 +31,7 @@ import BaseLink from '@/shared/ui/Link/BaseLink.vue'
 import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
 import { Color } from '@/shared/model/types/Color/Color'
 import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
+import { computed } from 'vue'
 
 interface Props {
 	breadcrumbs: Breadcrumb[]
@@ -31,8 +41,7 @@ const props = withDefaults(defineProps<Props>(), {
 	breadcrumbs: () => [],
 })
 
-const isLastElement = (index: number) => props.breadcrumbs.length - 1 === index
-const linkColor = (index: number) => (isLastElement(index) ? Color.White : Color.GrayThird)
+const sliceBreadcrumbs = computed(() => props.breadcrumbs.slice(0, props.breadcrumbs.length - 1))
 </script>
 
 <style lang="scss" scoped>
