@@ -1,7 +1,5 @@
 <template>
-	<BaseModal class="confirm-action-modal">
-		<p class="h2 h1-title confirm-action-modal__title">{{ title }}</p>
-		<p v-if="text" class="confirm-action-modal__text">{{ text }}</p>
+	<BaseModal :text="text" :title="title" class="confirm-action-modal">
 		<div class="confirm-action-modal__button-list">
 			<BaseButton :background="ButtonBackground.Border" @click="$emit('onClose')"
 				>Отменить
@@ -42,14 +40,6 @@ defineEmits<{
 		@media screen and (max-width: 768px) {
 			max-width: none;
 		}
-	}
-
-	&__title {
-		word-break: break-word;
-	}
-
-	&__text {
-		word-break: break-word;
 	}
 
 	&__button-list {

@@ -3,6 +3,8 @@
 		<div class="modal" @keydown.esc="$emit('onClose')" @mousedown.self="$emit('onClose')">
 			<BaseCard class="modal__content" v-bind="$attrs">
 				<CloseButtonIcon class="modal__close-button" @click="$emit('onClose')" />
+				<p class="h2 h1-title">{{ title }}</p>
+				<p v-if="text">{{ text }}</p>
 				<slot></slot>
 			</BaseCard>
 		</div>
@@ -13,6 +15,16 @@
 import CloseButtonIcon from '@/shared/ui/Button/CloseButtonIcon.vue'
 import useLockScroll from '@/shared/lib/composable/useLockScroll'
 import BaseCard from '@/shared/ui/Card/BaseCard.vue'
+
+interface Props {
+	title: string
+	text?: string
+}
+
+withDefaults(defineProps<Props>(), {
+	title: '',
+	text: '',
+})
 
 useLockScroll()
 
@@ -34,6 +46,7 @@ defineEmits<(e: 'onClose') => void>()
 	padding: $indent-xl;
 	background: $color-modal-bg;
 	overscroll-behavior: contain;
+	word-break: break-word;
 
 	@media screen and (max-width: 768px) {
 		padding: $indent-xl $indent-s;
@@ -43,6 +56,11 @@ defineEmits<(e: 'onClose') => void>()
 		position: absolute;
 		top: 12px;
 		right: 12px;
+
+		@media screen and (max-width: 768px) {
+			top: $indent-xs;
+			right: $indent-xs;
+		}
 	}
 
 	&__content {
