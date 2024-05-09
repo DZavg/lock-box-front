@@ -37,12 +37,9 @@ defineEmits<(e: 'onClose') => void>()
 	z-index: 999;
 	top: 0;
 	left: 0;
-	display: grid;
 	overflow: auto;
 	width: 100%;
 	height: 100%;
-	align-items: center;
-	justify-content: center;
 	padding: $indent-xl;
 	background: $color-modal-bg;
 	overscroll-behavior: contain;
@@ -67,6 +64,7 @@ defineEmits<(e: 'onClose') => void>()
 		position: relative;
 		width: 100%;
 		max-width: 400px;
+		margin: auto;
 		color: $color-white;
 	}
 }
