@@ -1,5 +1,5 @@
 <template>
-	<BaseLinkIcon :icon="iconExternalLink" :link="link" target="_blank" />
+	<BaseLinkIcon :icon="iconExternalLink" :link="link" :size="iconSize" target="_blank" />
 </template>
 
 <script lang="ts" setup>
