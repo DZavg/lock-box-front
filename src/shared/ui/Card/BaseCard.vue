@@ -2,7 +2,7 @@
 	<div
 		:class="{
 			['card_padding-size_' + paddingSize]: !!paddingSize,
-			['card_border-size_' + borderSize]: !!borderSize,
+			['card_border-radius_' + borderRadius]: !!borderRadius,
 		}"
 		class="card"
 	>
@@ -12,16 +12,16 @@
 
 <script lang="ts" setup>
 import { CardPaddingSize } from '@/shared/model/types/Card/CardPaddingSize'
-import { CardBorderSize } from '@/shared/model/types/Card/CardBorderSize'
+import { BorderRadius } from '@/shared/model/types/Border/BorderRadius'
 
 interface Props {
 	paddingSize?: CardPaddingSize
-	borderSize?: CardBorderSize
+	borderRadius?: BorderRadius
 }
 
 withDefaults(defineProps<Props>(), {
 	paddingSize: CardPaddingSize.Medium,
-	borderSize: CardBorderSize.Medium,
+	borderRadius: BorderRadius.M,
 })
 </script>
 
@@ -51,12 +51,12 @@ withDefaults(defineProps<Props>(), {
 		}
 	}
 
-	&_border-size {
-		&_small {
+	&_border-radius {
+		&_s {
 			border-radius: $border-radius-s;
 		}
 
-		&_medium {
+		&_m {
 			border-radius: $border-radius-m;
 		}
 	}
