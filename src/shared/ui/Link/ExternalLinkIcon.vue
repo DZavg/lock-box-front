@@ -5,15 +5,16 @@
 <script lang="ts" setup>
 import iconExternalLink from '@/shared/images/svg/icon-external-link.svg'
 import BaseLinkIcon from '@/shared/ui/Link/BaseLinkIcon.vue'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	link: string | object
-	iconSize?: string | number
+	iconSize?: IconSize
 }
 
 withDefaults(defineProps<Props>(), {
 	link: '',
-	iconSize: 24,
+	iconSize: IconSize.M,
 })
 </script>
 

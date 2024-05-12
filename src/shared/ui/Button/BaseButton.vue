@@ -7,7 +7,7 @@
 		@click="!loading && !disabled && $emit('onClick')"
 	>
 		<span v-show="loading" class="button__loader">
-			<BaseIcon :icon="iconLoading" size="16" />
+			<BaseIcon :icon="iconLoading" :ize="IconSize.S" />
 			<span>Загрузка...</span>
 		</span>
 		<span class="button__text"><slot></slot></span>
@@ -19,6 +19,7 @@ import { type HtmlButtonType } from '@/shared/model/types/Button/HtmlButtonType'
 import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
 import iconLoading from '@/shared/images/svg/icon-loading.svg'
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	disabled?: boolean

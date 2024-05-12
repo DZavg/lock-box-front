@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import InputWithIcon from '@/shared/ui/Input/InputWithIcon.vue'
 import iconSearch from '@/shared/images/svg/icon-search.svg'
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
+import { IconSize } from '../../../model/types/Icon/IconSize'
 
 const meta: Meta<typeof InputWithIcon> = {
 	component: InputWithIcon,
@@ -21,11 +22,11 @@ export const Default: Story = {
 	render: (args: any) => ({
 		components: { InputWithIcon, BaseIcon },
 		setup() {
-			return { args, iconSearch }
+			return { args, iconSearch, IconSize }
 		},
 		template: `
 			<InputWithIcon v-bind="args">
-				<BaseIcon :icon="iconSearch" :size="16"/>
+			<BaseIcon :icon="iconSearch" :size="IconSize.S"/>
 			</InputWithIcon>
 		`,
 	}),

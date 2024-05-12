@@ -16,6 +16,7 @@ import { type Project } from '@/shared/model/types/Project/Project'
 import { computed } from 'vue'
 import useScreen from '@/shared/lib/composable/useScreen'
 import BaseActionList from '@/shared/ui/Action/BaseActionList.vue'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	project: Project
@@ -31,7 +32,7 @@ withDefaults(defineProps<Props>(), {
 
 const { isMobile } = useScreen()
 
-const iconSize = computed(() => (isMobile.value ? 16 : 24))
+const iconSize = computed(() => (isMobile.value ? IconSize.S : IconSize.M))
 </script>
 
 <style lang="scss" scoped></style>

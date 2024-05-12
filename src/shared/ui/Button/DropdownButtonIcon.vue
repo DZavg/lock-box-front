@@ -3,8 +3,8 @@
 		:class="{ ['dropdown-button-icon--active']: isActive }"
 		:icon="iconArrowSmall"
 		:icon-color="iconColor"
+		:size="IconSize.S"
 		class="dropdown-button-icon"
-		size="16"
 	/>
 </template>
 
@@ -12,6 +12,7 @@
 import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
 import BaseButtonIcon from '@/shared/ui/Button/BaseButtonIcon.vue'
 import { Color } from '@/shared/model/types/Color/Color'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	iconColor?: Color

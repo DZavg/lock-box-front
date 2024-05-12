@@ -12,18 +12,19 @@
 <script lang="ts" setup>
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import { Color } from '@/shared/model/types/Color/Color'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	disabled?: boolean
 	icon: string
-	size?: string | number
+	size?: IconSize
 	iconColor?: Color
 }
 
 withDefaults(defineProps<Props>(), {
 	disabled: false,
 	icon: '',
-	size: 24,
+	size: IconSize.M,
 	iconColor: Color.White,
 })
 

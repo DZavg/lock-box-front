@@ -8,17 +8,18 @@ import iconEyeClose from '@/shared/images/svg/icon-eye-close.svg'
 import iconEyeOpen from '@/shared/images/svg/icon-eye-open.svg'
 import BaseButtonIcon from '@/shared/ui/Button/BaseButtonIcon.vue'
 import { Color } from '@/shared/model/types/Color/Color'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	active?: boolean
 	iconColor?: Color
-	iconSize?: string | number
+	iconSize?: IconSize
 }
 
 withDefaults(defineProps<Props>(), {
 	active: false,
 	iconColor: Color.White,
-	iconSize: 16,
+	iconSize: IconSize.S,
 })
 </script>
 

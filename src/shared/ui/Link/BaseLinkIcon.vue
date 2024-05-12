@@ -11,19 +11,20 @@
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import { type HtmlLinkTarget } from '@/shared/model/types/Link/HtmlLinkTarget'
 import useLink from '@/shared/lib/composable/useLink'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	link: string | object
 	icon: string
 	target?: HtmlLinkTarget
-	size?: string | number
+	size?: IconSize
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	link: '',
 	icon: '',
 	target: '_self',
-	size: 24,
+	size: IconSize.M,
 })
 
 const { isExternalLink } = useLink(props.link)

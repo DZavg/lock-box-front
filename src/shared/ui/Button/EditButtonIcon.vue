@@ -5,13 +5,14 @@
 <script lang="ts" setup>
 import iconEdit from '@/shared/images/svg/icon-edit.svg'
 import BaseButtonIcon from '@/shared/ui/Button/BaseButtonIcon.vue'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
-	iconSize?: string | number
+	iconSize?: IconSize
 }
 
 withDefaults(defineProps<Props>(), {
-	iconSize: 24,
+	iconSize: IconSize.M,
 })
 </script>
 

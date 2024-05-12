@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import iconClose from '@/shared/images/svg/icon-close.svg'
 import BaseLinkIcon from '@/shared/ui/Link/BaseLinkIcon.vue'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 const meta: Meta<typeof BaseLinkIcon> = {
 	component: BaseLinkIcon,
@@ -19,7 +20,7 @@ type Story = StoryObj<typeof BaseLinkIcon>
 export const Default: Story = {
 	args: {
 		icon: iconClose,
-		size: 24,
+		size: IconSize.M,
 		link: '/',
 	},
 }

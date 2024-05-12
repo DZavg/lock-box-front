@@ -1,6 +1,6 @@
 <template>
 	<InputWithIcon v-bind="props">
-		<BaseIcon :color="iconColor" :icon="iconSearch" :size="16" />
+		<BaseIcon :color="iconColor" :icon="iconSearch" :size="IconSize.S" />
 	</InputWithIcon>
 </template>
 
@@ -10,6 +10,7 @@ import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import iconSearch from '@/shared/images/svg/icon-search.svg'
 import { computed } from 'vue'
 import { Color } from '@/shared/model/types/Color/Color'
+import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
 	name?: string
