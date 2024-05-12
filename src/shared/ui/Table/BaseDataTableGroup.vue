@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 import { type ListField, type ListFieldData } from '@/shared/model/types/List/ListField'
-import useScreen from '@/shared/lib/composable/useScreen'
+import useScreen from '@/app/composable/useScreen'
 import BaseDataTable from '@/shared/ui/Table/BaseDataTable.vue'
 import BaseTableCardList from '@/shared/ui/Table/BaseTableCardList.vue'
 

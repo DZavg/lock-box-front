@@ -14,7 +14,7 @@ import EditButtonIcon from '@/shared/ui/Button/EditButtonIcon.vue'
 import DeleteButtonIcon from '@/shared/ui/Button/DeleteButtonIcon.vue'
 import { type Project } from '@/shared/model/types/Project/Project'
 import { computed } from 'vue'
-import useScreen from '@/shared/lib/composable/useScreen'
+import useScreen from '@/app/composable/useScreen'
 import BaseActionList from '@/shared/ui/Action/BaseActionList.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 

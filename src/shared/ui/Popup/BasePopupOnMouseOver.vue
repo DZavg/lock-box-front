@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted, type Ref, ref } from 'vue'
-import useScreen from '@/shared/lib/composable/useScreen'
+import useScreen from '@/app/composable/useScreen'
 import throttle from '@/shared/lib/throttle'
 import { Position } from '@/shared/model/types/Position/Position'
 

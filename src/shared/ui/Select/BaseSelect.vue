@@ -55,7 +55,7 @@ import BaseError from '@/shared/ui/Error/BaseError.vue'
 import { Color } from '@/shared/model/types/Color/Color'
 import BaseOption from '@/shared/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
-import useSelect from '@/shared/lib/composable/useSelect'
+import useSelect from '@/app/composable/useSelect'
 
 interface Props {
 	name?: string
