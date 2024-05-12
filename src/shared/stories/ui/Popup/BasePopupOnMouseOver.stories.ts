@@ -25,8 +25,10 @@ export const Default: Story = {
 		},
 		template: `
 			<BasePopupOnMouseOver v-bind="args">
-			<template #head><BaseButton>Button</BaseButton></template>
-			<template #content><p>hidden content</p></template>
+			<template #head>
+				<BaseButton>Button</BaseButton>
+			</template>
+			<template #body><p>hidden content</p></template>
 			</BasePopupOnMouseOver>
 		`,
 	}),
