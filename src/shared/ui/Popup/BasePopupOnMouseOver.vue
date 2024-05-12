@@ -25,7 +25,7 @@
 import { onBeforeUnmount, onMounted, type Ref, ref } from 'vue'
 import useScreen from '@/shared/lib/composable/useScreen'
 import throttle from '@/shared/lib/throttle'
-import { PopupPosition } from '@/shared/model/types/Popup/PopupPosition'
+import { Position } from '@/shared/model/types/Position/Position'
 
 const isActive = ref(false)
 const popupHead: Ref<HTMLElement | null> = ref(null)
@@ -73,7 +73,7 @@ const defaultDOMRect = {
 	width: 0,
 }
 
-const side: Ref<PopupPosition> = ref(PopupPosition.Left)
+const side: Ref<Position> = ref(Position.Left)
 
 const checkAvailableSide = () => {
 	const popupHeadRect = popupHead.value?.getBoundingClientRect() || defaultDOMRect
@@ -86,11 +86,11 @@ const checkAvailableSide = () => {
 	}
 
 	if (popupHeadCorrectRect.left > popupBodyRect.width) {
-		side.value = PopupPosition.Right
+		side.value = Position.Right
 		return
 	}
 
-	side.value = PopupPosition.Left
+	side.value = Position.Left
 }
 
 const checkAvailableSideWithThrottle = throttle(checkAvailableSide)
