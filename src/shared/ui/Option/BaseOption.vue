@@ -22,8 +22,7 @@ withDefaults(defineProps<Props>(), {
 	word-break: break-word;
 
 	&--active,
-	&:hover,
-	&:focus {
+	&:hover {
 		background-color: $color-dark-secondary;
 	}
 }
