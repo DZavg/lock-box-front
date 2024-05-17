@@ -16,7 +16,6 @@ app.use(Vue3Toastify, {
 	position: 'top-center',
 	autoClose: 3000,
 	multiple: false,
-	icon: true,
 	hideProgressBar: true,
 	closeButton: false,
 	theme: 'colored',
