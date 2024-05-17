@@ -1,0 +1,74 @@
+.Toastify {
+	&__toast {
+		@include body-p;
+
+		padding: $indent-xs $indent-s;
+		border-radius: $border-radius-s;
+		text-align: center;
+		word-break: break-word;
+
+		@media screen and (max-width: 480px) {
+			max-width: 228px;
+			padding: $indent-s;
+			margin: auto;
+		}
+
+		&-container {
+			@media screen and (max-width: 480px) {
+				top: 50%;
+				transform: translateY(-50%);
+			}
+		}
+
+		&-body {
+			padding: 0;
+			gap: $indent-xs;
+
+			@media screen and (max-width: 480px) {
+				flex-direction: column;
+			}
+		}
+
+		&-icon {
+			width: $icon-m;
+			height: $icon-m;
+			margin: 0;
+
+			@media screen and (max-width: 480px) {
+				width: $icon-xl;
+				height: $icon-xl;
+			}
+
+			svg {
+				display: none;
+			}
+		}
+
+		&--success {
+			.Toastify__toast-icon {
+				background: url('@/shared/images/svg/icon-success.svg');
+			}
+		}
+
+		&--warning {
+			.Toastify__toast-icon {
+				background: url('@/shared/images/svg/icon-warning.svg');
+			}
+		}
+
+		&--error {
+			.Toastify__toast-icon {
+				background: url('@/shared/images/svg/icon-error.svg');
+			}
+		}
+	}
+}
+
+:root {
+	--toastify-color-success: #{$color-success};
+	--toastify-color-warning: #{$color-warning};
+	--toastify-color-error: #{$color-error};
+	--toastify-toast-width: auto;
+	--toastify-toast-min-height: auto;
+	--toastify-font-family: inherit;
+}
