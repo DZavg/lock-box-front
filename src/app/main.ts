@@ -14,7 +14,7 @@ app.use(checkScreen)
 app.use(router)
 app.use(Vue3Toastify, {
 	position: 'top-center',
-	autoClose: 30000000,
+	autoClose: 3000,
 	multiple: false,
 	icon: true,
 	hideProgressBar: true,
