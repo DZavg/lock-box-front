@@ -28,7 +28,8 @@ export default defineConfig(({ mode }) => {
 			preprocessorOptions: {
 				scss: {
 					additionalData: `@import '@/app/styles/variables.scss';
-                         		@import '@/app/styles/mixins.scss';`,
+                         		@import '@/app/styles/mixins.scss';
+                         		@import '@/app/styles/toastNotification.scss';`,
 				},
 			},
 		},
