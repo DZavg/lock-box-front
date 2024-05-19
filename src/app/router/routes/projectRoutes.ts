@@ -12,4 +12,5 @@ export const projectRoutes = {
 			component: ProjectsPage,
 		},
 	],
+	meta: {},
 }
