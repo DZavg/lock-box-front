@@ -12,5 +12,7 @@ export const projectRoutes = {
 			component: ProjectsPage,
 		},
 	],
-	meta: {},
+	meta: {
+		requiresAuth: true,
+	},
 }
