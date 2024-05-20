@@ -1,7 +1,7 @@
 <template>
 	<div
 		ref="select"
-		v-click-outside="toggleDropdown"
+		v-click-outside="closeSelect"
 		:class="{ ['select--active']: isActive && options.length }"
 		class="select"
 		tabindex="1"
