@@ -12,7 +12,7 @@
 	flex-direction: column;
 	gap: $indent-s;
 
-	@media screen and (max-width: 768px) {
+	@include media-max-width-mobile {
 		gap: $indent-xs;
 	}
 }

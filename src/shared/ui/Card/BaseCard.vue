@@ -41,11 +41,11 @@ withDefaults(defineProps<Props>(), {
 		&_medium {
 			padding: calc($indent-xl - $border-width);
 
-			@media screen and (max-width: 991px) {
+			@include media-max-width-tablet {
 				padding: calc($indent-l - $border-width);
 			}
 
-			@media screen and (max-width: 768px) {
+			@include media-max-width-mobile {
 				padding: calc($indent-m - $border-width);
 			}
 		}

@@ -7,14 +7,14 @@
 		text-align: center;
 		word-break: break-word;
 
-		@media screen and (max-width: 480px) {
+		@include media-max-width-mobile-xs {
 			max-width: 228px;
 			padding: $indent-s;
 			margin: auto;
 		}
 
 		&-container {
-			@media screen and (max-width: 480px) {
+			@include media-max-width-mobile-xs {
 				top: 50%;
 				transform: translateY(-50%);
 			}
@@ -24,7 +24,7 @@
 			padding: 0;
 			gap: $indent-xs;
 
-			@media screen and (max-width: 480px) {
+			@include media-max-width-mobile-xs {
 				flex-direction: column;
 			}
 		}
@@ -34,7 +34,7 @@
 			height: $icon-m;
 			margin: 0;
 
-			@media screen and (max-width: 480px) {
+			@include media-max-width-mobile-xs {
 				width: $icon-xl;
 				height: $icon-xl;
 			}

@@ -50,7 +50,7 @@ provide('tabsData', tabsData)
 	flex-direction: column;
 	gap: $indent-m;
 
-	@media screen and (max-width: 768px) {
+	@include media-max-width-mobile {
 		gap: $indent-s;
 	}
 

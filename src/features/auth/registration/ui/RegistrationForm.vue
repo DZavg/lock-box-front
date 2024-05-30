@@ -27,7 +27,7 @@ import InputList from '@/shared/ui/Input/InputList.vue'
 	&__inputs {
 		margin-bottom: $indent-xl;
 
-		@media screen and (max-width: 768px) {
+		@include media-max-width-mobile {
 			margin-bottom: $indent-m;
 		}
 	}
