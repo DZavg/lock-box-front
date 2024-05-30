@@ -1,5 +1,5 @@
 <template>
-	<BaseInput class="input-with-icon" v-bind="props">
+	<BaseInput class="input-with-icon" v-bind="props" v-model="inputValue">
 		<template #icon>
 			<div class="input-with-icon__icon">
 				<slot></slot>
@@ -14,7 +14,6 @@ import BaseInput from '@/shared/ui/Input/BaseInput.vue'
 
 interface Props {
 	name: string
-	modelValue?: string
 	label?: string
 	placeholder?: string
 	error?: string
@@ -24,6 +23,10 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {})
+
+defineEmits<(e: 'update:modelValue', value: string) => void>()
+
+const inputValue = defineModel('modelValue', { default: '' })
 </script>
 
 <style lang="scss" scoped>

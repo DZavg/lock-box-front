@@ -1,5 +1,5 @@
 <template>
-	<InputWithIcon :type="type" v-bind="props">
+	<InputWithIcon :type="type" v-bind="props" v-model="inputValue">
 		<EyeButtonIcon :active="active" :icon-color="iconColor" @click="switchType" />
 	</InputWithIcon>
 </template>
@@ -12,7 +12,6 @@ import { Color } from '@/shared/model/types/Color/Color'
 
 interface Props {
 	name?: string
-	modelValue?: string
 	label?: string
 	placeholder?: string
 	error?: string
@@ -22,7 +21,6 @@ interface Props {
 
 const props = withDefaults(defineProps<Props>(), {
 	name: 'password',
-	modelValue: '',
 	label: 'Пароль',
 	placeholder: '******',
 	error: '',
@@ -38,6 +36,10 @@ const iconColor = computed(() => (props.disabled ? Color.GrayThird : Color.White
 const switchType = () => {
 	active.value = !active.value
 }
+
+defineEmits<(e: 'update:modelValue', value: string) => void>()
+
+const inputValue = defineModel('modelValue', { default: '' })
 </script>
 
 <style lang="scss" scoped></style>

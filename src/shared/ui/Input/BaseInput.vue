@@ -27,7 +27,6 @@ import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 
 interface Props {
 	name: string
-	modelValue?: string
 	label?: string
 	placeholder?: string
 	error?: string
@@ -38,7 +37,6 @@ interface Props {
 
 withDefaults(defineProps<Props>(), {
 	name: '',
-	modelValue: '',
 	label: '',
 	placeholder: '',
 	error: '',
