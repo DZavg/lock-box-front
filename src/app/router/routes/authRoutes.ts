@@ -15,11 +15,13 @@ export const authRoutes = {
 			path: '/auth',
 			name: RouteName.Auth,
 			component: AuthPage,
+			meta: { title: 'Авторизация' },
 		},
 		{
 			path: '/recovery-password',
 			name: RouteName.RecoveryPassword,
 			component: PasswordRecoveryPage,
+			meta: { title: 'Восстановление пароля' },
 		},
 	],
 }

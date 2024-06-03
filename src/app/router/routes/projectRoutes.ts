@@ -10,6 +10,7 @@ export const projectRoutes = {
 			path: '',
 			name: RouteName.Projects,
 			component: ProjectsPage,
+			meta: { title: 'Проекты' },
 		},
 	],
 	meta: {

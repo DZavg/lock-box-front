@@ -10,6 +10,7 @@ export const specialRoutes = {
 			path: '/:pathMatch(.*)*',
 			name: RouteName.NotFound,
 			component: NotFoundPage,
+			meta: { title: 'Страница не найдена' },
 		},
 	],
 }
