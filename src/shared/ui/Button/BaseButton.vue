@@ -6,10 +6,7 @@
 		class="button button_p"
 		@click="!loading && !disabled && $emit('onClick')"
 	>
-		<span v-show="loading" class="button__loader">
-			<BaseIcon :icon="iconLoading" :ize="IconSize.S" />
-			<span>Загрузка...</span>
-		</span>
+		<BaseButtonLoader v-show="loading" />
 		<span class="button__text"><slot></slot></span>
 	</button>
 </template>
@@ -17,9 +14,7 @@
 <script lang="ts" setup>
 import { type HtmlButtonType } from '@/shared/model/types/Button/HtmlButtonType'
 import { ButtonView } from '@/shared/model/types/Button/ButtonView'
-import iconLoading from '@/shared/images/svg/icon-loading.svg'
-import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
-import { IconSize } from '@/shared/model/types/Icon/IconSize'
+import BaseButtonLoader from '@/shared/ui/Button/BaseButtonLoader.vue'
 
 interface Props {
 	disabled?: boolean
@@ -63,19 +58,6 @@ defineEmits<(e: 'onClick') => void>()
 			display: block;
 			height: 0;
 			visibility: hidden;
-		}
-	}
-
-	&__loader {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: $indent-xs;
-		pointer-events: none;
-
-		svg {
-			animation: rotate 4s linear infinite;
-			fill: $color-white;
 		}
 	}
 }
