@@ -40,48 +40,15 @@ defineEmits<(e: 'onClick') => void>()
 
 <style lang="scss" scoped>
 .button {
-	padding: 12px $indent-m;
-	border-radius: $border-radius-s;
-	color: $color-white;
-	text-align: center;
-	transition:
-		background-color 0.2s ease-in,
-		outline-color 0.2s ease-in;
-	user-select: none;
-	white-space: nowrap;
-	word-break: break-word;
+	@include button;
 
 	&_view {
 		&_filled {
-			background-color: $color-blue-primary;
-
-			&:hover {
-				background-color: $color-blue-secondary;
-			}
-
-			&:active {
-				background-color: $color-blue-third;
-			}
-
-			&:disabled {
-				background-color: $color-gray-four;
-			}
+			@include button-view-filled;
 		}
 
 		&_outlined {
-			outline: 1px solid $color-blue-primary;
-
-			&:hover {
-				outline-color: $color-blue-secondary;
-			}
-
-			&:active {
-				outline-color: $color-blue-third;
-			}
-
-			&:disabled {
-				outline-color: $color-gray-four;
-			}
+			@include button-view-outlined;
 		}
 	}
 
