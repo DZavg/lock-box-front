@@ -1,6 +1,6 @@
 <template>
 	<BaseCard>
-		<h1 class="h1-title">{{ title }}</h1>
+		<h1 class="h1-indent">{{ title }}</h1>
 		<slot></slot>
 	</BaseCard>
 </template>
