@@ -9,21 +9,15 @@ const meta: Meta<typeof BaseOption> = {
 			type: 'figma',
 			url: 'https://www.figma.com/file/JrFyfzV8shSxNFSTQdqb4J/password-storage?type=design&node-id=20-3748&mode=design&t=QAjpnzANir09AxI3-0',
 		},
+		slots: {
+			default: {
+				template: `Option title`,
+			},
+		},
 	},
 }
 
 export default meta
 type Story = StoryObj<typeof BaseOption>
 
-export const Default: Story = {
-	args: {},
-	render: (args: any) => ({
-		components: { BaseOption },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseOption v-bind="args">Option title</BaseOption>
-		`,
-	}),
-}
+export const Default: Story = {}
