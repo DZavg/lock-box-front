@@ -11,6 +11,7 @@
 					:name="name"
 					:placeholder="placeholder"
 					:type="type"
+					ref="input"
 					class="input__element body_p"
 				/>
 			</label>
@@ -21,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type InputTypeHTMLAttribute } from 'vue'
+import { type InputTypeHTMLAttribute, ref, type Ref } from 'vue'
 import BaseError from '@/shared/ui/Error/BaseError.vue'
 import BaseLabel from '@/shared/ui/Label/BaseLabel.vue'
 
@@ -48,6 +49,12 @@ withDefaults(defineProps<Props>(), {
 defineEmits<(e: 'update:modelValue', value: string) => void>()
 
 const inputValue = defineModel('modelValue', { default: '' })
+
+const input: Ref<HTMLElement | null> = ref(null)
+
+defineExpose({
+	input,
+})
 </script>
 
 <style lang="scss" scoped>

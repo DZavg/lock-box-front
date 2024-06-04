@@ -1,5 +1,5 @@
 <template>
-	<BaseInput class="input-with-icon" v-bind="props" v-model="inputValue">
+	<BaseInput ref="inputWithIcon" class="input-with-icon" v-bind="props" v-model="inputValue">
 		<template #icon>
 			<div class="input-with-icon__icon">
 				<slot></slot>
@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type InputTypeHTMLAttribute } from 'vue'
+import { type InputTypeHTMLAttribute, ref, type Ref } from 'vue'
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
 
 interface Props {
@@ -22,11 +22,15 @@ interface Props {
 	autocomplete?: string
 }
 
-const props = withDefaults(defineProps<Props>(), {})
-
+const props = defineProps<Props>()
 defineEmits<(e: 'update:modelValue', value: string) => void>()
 
 const inputValue = defineModel('modelValue', { default: '' })
+const inputWithIcon: Ref<InstanceType<typeof BaseInput> | null> = ref(null)
+
+defineExpose({
+	inputWithIcon,
+})
 </script>
 
 <style lang="scss" scoped>
