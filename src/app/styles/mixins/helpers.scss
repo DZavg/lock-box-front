@@ -1,0 +1,27 @@
+@mixin scrollbar($is-horizontal: false) {
+	scrollbar-width: thin;
+
+	@media only screen and (hover: hover) {
+		&::-webkit-scrollbar {
+			@if $is-horizontal {
+				height: 4px;
+			} @else {
+				width: 4px;
+			}
+		}
+
+		&::-webkit-scrollbar-thumb {
+			border-radius: $border-radius-xs;
+			background-color: $color-gray-third;
+		}
+	}
+}
+
+@mixin max-line-count($line-count: 1) {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $line-count;
+	text-overflow: ellipsis;
+	word-break: break-word;
+}
