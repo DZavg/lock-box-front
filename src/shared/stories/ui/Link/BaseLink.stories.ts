@@ -10,6 +10,15 @@ const meta: Meta<typeof BaseLink> = {
 			type: 'figma',
 			url: 'https://www.figma.com/file/JrFyfzV8shSxNFSTQdqb4J/password-storage?type=design&node-id=47-2488&mode=design&t=yWT03SRs5re1Us5z-0',
 		},
+		slots: {
+			default: {
+				template: `Восстановить пароль`,
+			},
+		},
+	},
+	args: {
+		link: '/',
+		target: '_self',
 	},
 	argTypes: {
 		color: {
@@ -24,34 +33,12 @@ type Story = StoryObj<typeof BaseLink>
 
 export const BluePrimary: Story = {
 	args: {
-		link: '/',
-		target: '_self',
 		color: Color.BluePrimary,
 	},
-	render: (args: any) => ({
-		components: { BaseLink },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseLink v-bind="args">Восстановить пароль</BaseLink>
-		`,
-	}),
 }
 
 export const White: Story = {
 	args: {
-		link: '/',
-		target: '_self',
 		color: Color.White,
 	},
-	render: (args: any) => ({
-		components: { BaseLink },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseLink v-bind="args">Восстановить пароль</BaseLink>
-		`,
-	}),
 }
