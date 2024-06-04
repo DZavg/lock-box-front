@@ -1,5 +1,7 @@
+import type { Project } from '@/shared/model/types/Project/Project'
+
 const getProjects = () => {
-	const data = []
+	const data: Project[] = []
 	for (let i = 0; i < 10; i++) {
 		data.push({
 			id: String(i),

@@ -1,7 +1,8 @@
 import BaseInput from '@/shared/ui/Input/BaseInput.vue'
+import type { ListField } from '@/shared/model/types/List/ListField'
 
 const getTableFields = () => {
-	const tableFields = []
+	const tableFields: ListField[] = []
 	for (let i = 0; i < 3; i++) {
 		tableFields.push({
 			label: 'Тип доступа',
