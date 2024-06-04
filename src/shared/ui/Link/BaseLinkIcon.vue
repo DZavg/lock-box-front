@@ -34,16 +34,6 @@ defineEmits<{ (e: 'onClick'): void }>()
 
 <style lang="scss" scoped>
 .link-icon {
-	line-height: 0;
-
-	svg {
-		transition: opacity 0.15s ease-in;
-	}
-
-	&:hover {
-		svg {
-			opacity: 0.7;
-		}
-	}
+	@include button-icon;
 }
 </style>
