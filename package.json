@@ -72,6 +72,7 @@
 		"reflect-metadata": "^0.2.2",
 		"sass": "^1.70.0",
 		"storybook": "^7.6.15",
+		"storybook-addon-vue-slots": "^0.9.29",
 		"stylelint": "^16.6.1",
 		"stylelint-config-idiomatic-order": "^10.0.0",
 		"stylelint-config-recommended-vue": "^1.5.0",
