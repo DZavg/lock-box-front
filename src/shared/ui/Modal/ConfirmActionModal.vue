@@ -1,9 +1,7 @@
 <template>
 	<BaseModal :text="text" :title="title" class="confirm-action-modal">
 		<div class="confirm-action-modal__button-list">
-			<BaseButton :background="ButtonBackground.Border" @click="$emit('onClose')"
-				>Отменить
-			</BaseButton>
+			<BaseButton :view="ButtonView.Outlined" @click="$emit('onClose')">Отменить </BaseButton>
 			<BaseButton @click="$emit('onConfirm')">{{ buttonConfirmText }}</BaseButton>
 		</div>
 	</BaseModal>
@@ -12,7 +10,7 @@
 <script lang="ts" setup>
 import BaseModal from '@/shared/ui/Modal/BaseModal.vue'
 import BaseButton from '@/shared/ui/Button/BaseButton.vue'
-import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
+import { ButtonView } from '@/shared/model/types/Button/ButtonView'
 
 interface Props {
 	title: string

@@ -1,6 +1,6 @@
 <template>
 	<button
-		:class="{ ['button_background_' + background]: background, ['button--loading']: loading }"
+		:class="{ ['button_view_' + view]: view, ['button--loading']: loading }"
 		:disabled="disabled"
 		:type="type"
 		class="button button_p"
@@ -16,7 +16,7 @@
 
 <script lang="ts" setup>
 import { type HtmlButtonType } from '@/shared/model/types/Button/HtmlButtonType'
-import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
+import { ButtonView } from '@/shared/model/types/Button/ButtonView'
 import iconLoading from '@/shared/images/svg/icon-loading.svg'
 import BaseIcon from '@/shared/ui/Icon/BaseIcon.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
@@ -24,14 +24,14 @@ import { IconSize } from '@/shared/model/types/Icon/IconSize'
 interface Props {
 	disabled?: boolean
 	type?: HtmlButtonType
-	background?: ButtonBackground
+	view?: ButtonView
 	loading?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
 	disabled: false,
 	type: 'button',
-	background: ButtonBackground.Fill,
+	view: ButtonView.Filled,
 	loading: false,
 })
 
@@ -41,19 +41,18 @@ defineEmits<(e: 'onClick') => void>()
 <style lang="scss" scoped>
 .button {
 	padding: 12px $indent-m;
-	border: 1px solid transparent;
 	border-radius: $border-radius-s;
 	color: $color-white;
 	text-align: center;
 	transition:
 		background-color 0.2s ease-in,
-		border-color 0.2s ease-in;
+		outline-color 0.2s ease-in;
 	user-select: none;
 	white-space: nowrap;
 	word-break: break-word;
 
-	&_background {
-		&_fill {
+	&_view {
+		&_filled {
 			background-color: $color-blue-primary;
 
 			&:hover {
@@ -69,19 +68,19 @@ defineEmits<(e: 'onClick') => void>()
 			}
 		}
 
-		&_border {
-			border-color: $color-blue-primary;
+		&_outlined {
+			outline: 1px solid $color-blue-primary;
 
 			&:hover {
-				border-color: $color-blue-secondary;
+				outline-color: $color-blue-secondary;
 			}
 
 			&:active {
-				border-color: $color-blue-third;
+				outline-color: $color-blue-third;
 			}
 
 			&:disabled {
-				border-color: $color-gray-four;
+				outline-color: $color-gray-four;
 			}
 		}
 	}

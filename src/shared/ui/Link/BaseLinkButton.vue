@@ -1,6 +1,6 @@
 <template>
 	<RouterLink
-		:class="{ ['link-button_background_' + background]: background }"
+		:class="{ ['link-button_view_' + view]: view }"
 		:target="target"
 		:to="link"
 		class="link-button"
@@ -10,19 +10,19 @@
 </template>
 
 <script lang="ts" setup>
-import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
+import { ButtonView } from '@/shared/model/types/Button/ButtonView'
 import { type HtmlLinkTarget } from '@/shared/model/types/Link/HtmlLinkTarget'
 
 interface Props {
 	link: string | object
 	target?: HtmlLinkTarget
-	background?: ButtonBackground
+	view?: ButtonView
 }
 
 withDefaults(defineProps<Props>(), {
 	link: '',
 	target: '_self',
-	background: ButtonBackground.Fill,
+	view: ButtonView.Filled,
 })
 </script>
 
@@ -30,18 +30,18 @@ withDefaults(defineProps<Props>(), {
 .link-button {
 	display: inline-block;
 	padding: 12px $indent-m;
-	border: 1px solid transparent;
 	border-radius: $border-radius-s;
 	color: $color-white;
 	text-align: center;
 	transition:
 		background-color 0.2s ease-in,
-		border-color 0.2s ease-in;
+		outline-color 0.2s ease-in;
 	user-select: none;
+	white-space: nowrap;
 	word-break: break-word;
 
-	&_background {
-		&_fill {
+	&_view {
+		&_filled {
 			background-color: $color-blue-primary;
 
 			&:hover {
@@ -53,15 +53,19 @@ withDefaults(defineProps<Props>(), {
 			}
 		}
 
-		&_border {
-			border-color: $color-blue-primary;
+		&_outlined {
+			outline: 1px solid $color-blue-primary;
 
 			&:hover {
-				border-color: $color-blue-secondary;
+				outline-color: $color-blue-secondary;
 			}
 
 			&:active {
-				border-color: $color-blue-third;
+				outline-color: $color-blue-third;
+			}
+
+			&:disabled {
+				outline-color: $color-gray-four;
 			}
 		}
 	}

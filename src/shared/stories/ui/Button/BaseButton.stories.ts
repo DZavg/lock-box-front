@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
 import BaseButton from '@/shared/ui/Button/BaseButton.vue'
+import { ButtonView } from '@/shared/model/types/Button/ButtonView'
 
 const meta: Meta<typeof BaseButton> = {
 	component: BaseButton,
@@ -10,15 +10,20 @@ const meta: Meta<typeof BaseButton> = {
 			type: 'figma',
 			url: 'https://www.figma.com/file/JrFyfzV8shSxNFSTQdqb4J/password-storage?type=design&node-id=20-4880&mode=design&t=xtqnNljh5dqIFBuN-0',
 		},
+		slots: {
+			default: {
+				template: `Скопировать пароль`,
+			},
+		},
 	},
 	argTypes: {
 		type: {
 			control: 'radio',
 			options: ['submit', 'reset', 'button'],
 		},
-		background: {
+		view: {
 			control: 'radio',
-			options: ButtonBackground,
+			options: ButtonView,
 		},
 	},
 }
@@ -26,52 +31,32 @@ const meta: Meta<typeof BaseButton> = {
 export default meta
 type Story = StoryObj<typeof BaseButton>
 
-export const Fill: Story = {
+export const Filled: Story = {
 	args: {
 		disabled: false,
 		type: 'button',
-		background: ButtonBackground.Fill,
 	},
-	render: (args: any) => ({
-		components: { BaseButton },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseButton v-bind="args">Скопировать пароль</BaseButton>
-		`,
-	}),
 }
 
-export const Border: Story = {
+export const Outlined: Story = {
 	args: {
 		disabled: false,
+		view: ButtonView.Outlined,
 		type: 'button',
-		background: ButtonBackground.Border,
 	},
-	render: (args: any) => ({
-		components: { BaseButton },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseButton v-bind="args">Скопировать пароль</BaseButton>
-		`,
-	}),
 }
 
-export const Disabled: Story = {
+export const DisabledFilled: Story = {
 	args: {
 		disabled: true,
 		type: 'button',
 	},
-	render: (args: any) => ({
-		components: { BaseButton },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseButton v-bind="args">Скопировать пароль</BaseButton>
-		`,
-	}),
+}
+
+export const DisabledOutlined: Story = {
+	args: {
+		disabled: true,
+		view: ButtonView.Outlined,
+		type: 'button',
+	},
 }

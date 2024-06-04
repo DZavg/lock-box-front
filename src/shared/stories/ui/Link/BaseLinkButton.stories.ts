@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseLinkButton from '@/shared/ui/Link/BaseLinkButton.vue'
-import { ButtonBackground } from '@/shared/model/types/Button/ButtonBackground'
+import { ButtonView } from '@/shared/model/types/Button/ButtonView'
 
 const meta: Meta<typeof BaseLinkButton> = {
 	component: BaseLinkButton,
@@ -10,11 +10,20 @@ const meta: Meta<typeof BaseLinkButton> = {
 			type: 'figma',
 			url: 'https://www.figma.com/file/JrFyfzV8shSxNFSTQdqb4J/password-storage?type=design&node-id=47-2488&mode=design&t=yWT03SRs5re1Us5z-0',
 		},
+		slots: {
+			default: {
+				template: `Скопировать пароль`,
+			},
+		},
+	},
+	args: {
+		link: '/',
+		target: '_self',
 	},
 	argTypes: {
-		background: {
+		view: {
 			control: 'radio',
-			options: ButtonBackground,
+			options: ButtonView,
 		},
 	},
 }
@@ -22,32 +31,14 @@ const meta: Meta<typeof BaseLinkButton> = {
 export default meta
 type Story = StoryObj<typeof BaseLinkButton>
 
-export const Fill: Story = {
+export const Filled: Story = {
 	args: {
-		background: ButtonBackground.Fill,
+		view: ButtonView.Filled,
 	},
-	render: (args: any) => ({
-		components: { BaseLinkButton },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseLinkButton v-bind="args">Скопировать пароль</BaseLinkButton>
-		`,
-	}),
 }
 
-export const Border: Story = {
+export const Outlined: Story = {
 	args: {
-		background: ButtonBackground.Border,
+		view: ButtonView.Outlined,
 	},
-	render: (args: any) => ({
-		components: { BaseLinkButton },
-		setup() {
-			return { args }
-		},
-		template: `
-			<BaseLinkButton v-bind="args">Скопировать пароль</BaseLinkButton>
-		`,
-	}),
 }
