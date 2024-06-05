@@ -1,6 +1,6 @@
 <template>
 	<div class="projects-actions">
-		<BaseButton class="projects-actions__button">Добавить доступ</BaseButton>
+		<BaseButton class="projects-actions__button">Добавить проект</BaseButton>
 		<SearchInput class="projects-actions__search" />
 	</div>
 </template>
