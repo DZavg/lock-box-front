@@ -45,7 +45,7 @@ defineEmits<(e: 'onClose') => void>()
 	overscroll-behavior: contain;
 	word-break: break-word;
 
-	@include media-max-width-mobile {
+	@media screen and (max-width: 768px) {
 		padding: $indent-xl $indent-s;
 	}
 
@@ -54,7 +54,7 @@ defineEmits<(e: 'onClose') => void>()
 		top: 12px;
 		right: 12px;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			top: $indent-xs;
 			right: $indent-xs;
 		}

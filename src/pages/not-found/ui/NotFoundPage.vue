@@ -30,7 +30,7 @@ import ContentCentering from '@/shared/ui/Content/ContentCentering.vue'
 		height: auto;
 		margin-bottom: $indent-xl;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			margin-bottom: $indent-s;
 		}
 	}
@@ -38,13 +38,13 @@ import ContentCentering from '@/shared/ui/Content/ContentCentering.vue'
 	&__title {
 		margin-bottom: $indent-xl;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			margin-bottom: $indent-m;
 		}
 	}
 
 	&__link {
-		@include media-max-width-mobile-xs {
+		@media screen and (max-width: 480px) {
 			width: 100%;
 		}
 	}

@@ -29,7 +29,7 @@ const currentYear = new Date().getFullYear()
 		color: $color-white;
 		gap: $indent-s;
 
-		@include media-max-width-mobile-xs {
+		@media screen and (max-width: 480px) {
 			padding: $indent-s;
 		}
 	}

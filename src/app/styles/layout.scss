@@ -4,7 +4,7 @@
 	padding: 0 $indent-xl;
 	margin: 0 auto;
 
-	@include media-max-width-tablet {
+	@media screen and (max-width: 991px) {
 		padding: 0 $indent-s;
 	}
 }

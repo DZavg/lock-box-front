@@ -27,7 +27,7 @@ import UserDropdown from '@/features/user/ui/UserDropdown.vue'
 		background-color: $color-dark-secondary;
 		gap: $indent-2xs $indent-s;
 
-		@include media-max-width-mobile-xs {
+		@media screen and (max-width: 480px) {
 			padding: $indent-s;
 		}
 	}
@@ -38,7 +38,7 @@ import UserDropdown from '@/features/user/ui/UserDropdown.vue'
 		height: 20px;
 		fill: $color-white;
 
-		@include media-max-width-mobile-xs {
+		@media screen and (max-width: 480px) {
 			width: 99px;
 			height: 16px;
 		}

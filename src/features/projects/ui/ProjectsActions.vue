@@ -16,17 +16,17 @@ import SearchInput from '@/shared/ui/Input/SearchInput.vue'
 	align-items: flex-start;
 	gap: $indent-m;
 
-	@include media-max-width-mobile {
+	@media screen and (max-width: 768px) {
 		width: 100%;
 		gap: $indent-s;
 	}
 
-	@include media-max-width-mobile-xs {
+	@media screen and (max-width: 480px) {
 		flex-direction: column;
 	}
 
 	&__button {
-		@include media-max-width-mobile-xs {
+		@media screen and (max-width: 480px) {
 			width: 100%;
 		}
 	}
@@ -34,11 +34,11 @@ import SearchInput from '@/shared/ui/Input/SearchInput.vue'
 	&__search {
 		min-width: 297px;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			min-width: initial;
 		}
 
-		@include media-max-width-mobile-xs {
+		@media screen and (max-width: 480px) {
 			width: 100%;
 		}
 	}

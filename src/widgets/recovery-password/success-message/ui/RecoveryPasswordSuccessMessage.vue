@@ -37,7 +37,7 @@ withDefaults(defineProps<Props>(), {
 		max-width: 160px;
 		margin-bottom: $indent-m;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			max-width: 128px;
 			margin-bottom: $indent-s;
 		}
@@ -52,13 +52,13 @@ withDefaults(defineProps<Props>(), {
 	&__text {
 		margin-bottom: $indent-m;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			margin-bottom: $indent-xl;
 		}
 	}
 
 	&__button {
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			width: 100%;
 		}
 	}

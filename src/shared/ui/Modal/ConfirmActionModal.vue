@@ -35,7 +35,7 @@ defineEmits<{
 	&[data-v-c98d2ce4] {
 		max-width: 612px;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			max-width: none;
 		}
 	}

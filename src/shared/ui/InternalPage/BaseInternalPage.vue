@@ -46,7 +46,7 @@ const { isMobile } = useScreen()
 		bottom: 80px;
 	}
 
-	@include media-max-width-mobile {
+	@media screen and (max-width: 768px) {
 		margin: {
 			top: $indent-m;
 			bottom: $indent-m;
@@ -60,7 +60,7 @@ const { isMobile } = useScreen()
 		gap: $indent-xs $indent-s;
 		word-break: break-word;
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			flex-direction: column;
 			align-items: flex-start;
 		}
@@ -74,11 +74,11 @@ const { isMobile } = useScreen()
 		margin-bottom: $indent-m;
 		gap: $indent-l;
 
-		@include media-max-width-tablet {
+		@media screen and (max-width: 991px) {
 			gap: $indent-m;
 		}
 
-		@include media-max-width-mobile {
+		@media screen and (max-width: 768px) {
 			gap: $indent-s;
 		}
 	}
