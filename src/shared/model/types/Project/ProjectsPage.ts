@@ -1,5 +1,5 @@
-import { type Access } from '@/shared/model/types/Access/Access'
+import type { Project } from '@/shared/model/types/Project/Project'
 
 export interface ProjectsPage {
-	accesses: Access[]
+	projects: Project[]
 }
