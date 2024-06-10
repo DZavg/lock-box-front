@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import EditProjectModal from '@/features/project/edit/ui/EditProjectModal.vue'
+import ProjectModal from '@/features/project/modal/ui/ProjectModal.vue'
 
-const meta: Meta<typeof EditProjectModal> = {
-	component: EditProjectModal,
+const meta: Meta<typeof ProjectModal> = {
+	component: ProjectModal,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof EditProjectModal> = {
 }
 
 export default meta
-type Story = StoryObj<typeof EditProjectModal>
+type Story = StoryObj<typeof ProjectModal>
 
 export const Default: Story = {}

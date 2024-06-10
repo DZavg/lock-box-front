@@ -1,13 +1,20 @@
 <template>
 	<div class="projects-actions">
-		<BaseButton class="projects-actions__button">Добавить проект</BaseButton>
+		<BaseButton class="projects-actions__button" @onClick="openProjectModal"
+			>Добавить проект</BaseButton
+		>
 		<SearchInput class="projects-actions__search" />
+		<ProjectModal v-if="projectModalIsOpen" title="Добавить проект" @onClose="closeProjectModal" />
 	</div>
 </template>
 
 <script lang="ts" setup>
 import BaseButton from '@/shared/ui/Button/BaseButton.vue'
 import SearchInput from '@/shared/ui/Input/SearchInput.vue'
+import ProjectModal from '@/features/project/modal/ui/ProjectModal.vue'
+import useProjectModal from '@/features/project/modal/composable/useProjectModal'
+
+const { openProjectModal, projectModalIsOpen, closeProjectModal } = useProjectModal()
 </script>
 
 <style lang="scss" scoped>

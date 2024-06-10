@@ -1,6 +1,6 @@
 <template>
-	<BaseModal class="edit-project-modal" title="Редактировать проект">
-		<BaseForm class="edit-project-modal__form">
+	<BaseModal class="project-modal" :title="title">
+		<BaseForm class="project-modal__form">
 			<InputList>
 				<BaseInput
 					label="Название проекта"
@@ -11,7 +11,7 @@
 				<BaseInput label="Домен" name="domain" placeholder="Поле ввода" v-model="form.domain" />
 			</InputList>
 		</BaseForm>
-		<BaseButton class="edit-project-modal__button">Сохранить изменения</BaseButton>
+		<BaseButton class="project-modal__button">Сохранить изменения</BaseButton>
 	</BaseModal>
 </template>
 
@@ -22,10 +22,11 @@ import BaseButton from '@/shared/ui/Button/BaseButton.vue'
 import BaseForm from '@/shared/ui/Form/BaseForm.vue'
 import InputList from '@/shared/ui/Input/InputList.vue'
 import type { Project } from '@/shared/model/types/Project/Project'
-import useEditProjectForm from '@/features/project/edit/composable/useEditProjectForm'
+import useProjectForm from '@/features/project/modal/composable/useProjectForm'
 
 interface Props {
-	project: Project
+	project?: Project
+	title?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -34,14 +35,15 @@ const props = withDefaults(defineProps<Props>(), {
 		title: '',
 		domain: '',
 	}),
+	title: 'Редактировать проект',
 })
 
-const { form, fillForm } = useEditProjectForm()
+const { form, fillForm } = useProjectForm()
 fillForm(props.project)
 </script>
 
 <style lang="scss" scoped>
-.edit-project-modal {
+.project-modal {
 	&__form {
 		margin-bottom: $indent-l;
 	}
