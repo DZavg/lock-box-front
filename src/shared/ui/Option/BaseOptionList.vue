@@ -30,7 +30,6 @@ defineExpose({
 		overflow: hidden auto;
 		max-height: 196px;
 		flex-direction: column;
-		padding-right: $indent-2xs;
 		gap: $indent-2xs;
 		overscroll-behavior: contain;
 	}
