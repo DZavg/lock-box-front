@@ -23,6 +23,7 @@ export default defineConfig(({ mode }) => {
 		},
 		build: {
 			target: 'es2022',
+			assetsInlineLimit: 0,
 		},
 		css: {
 			preprocessorOptions: {
