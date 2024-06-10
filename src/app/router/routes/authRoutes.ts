@@ -1,6 +1,4 @@
 import CustomLayout from '@/app/layouts/CustomLayout.vue'
-import AuthPage from '@/pages/auth/ui/AuthPage.vue'
-import PasswordRecoveryPage from '@/pages/password-recovery/ui/PasswordRecoveryPage.vue'
 import { RouteName } from '@/app/router/RouteName'
 
 export const authRoutes = {
@@ -14,13 +12,13 @@ export const authRoutes = {
 		{
 			path: '/auth',
 			name: RouteName.Auth,
-			component: AuthPage,
+			component: () => import('@/pages/auth/ui/AuthPage.vue'),
 			meta: { title: 'Авторизация' },
 		},
 		{
 			path: '/recovery-password',
 			name: RouteName.RecoveryPassword,
-			component: PasswordRecoveryPage,
+			component: () => import('@/pages/password-recovery/ui/PasswordRecoveryPage.vue'),
 			meta: { title: 'Восстановление пароля' },
 		},
 	],

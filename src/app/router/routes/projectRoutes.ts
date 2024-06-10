@@ -1,7 +1,5 @@
 import DefaultLayout from '@/app/layouts/DefaultLayout.vue'
 import { RouteName } from '@/app/router/RouteName'
-import ProjectsPage from '@/pages/project/ui/ProjectsPage.vue'
-import ProjectsSlugPage from '@/pages/project/ui/ProjectsSlugPage.vue'
 
 export const projectRoutes = {
 	path: '/projects',
@@ -10,14 +8,13 @@ export const projectRoutes = {
 		{
 			path: '',
 			name: RouteName.Projects,
-			component: ProjectsPage,
+			component: () => import('@/pages/project/ui/ProjectsPage.vue'),
 			meta: { title: 'Проекты' },
 		},
 		{
 			path: ':slug',
 			name: RouteName.ProjectsSlug,
-			component: ProjectsSlugPage,
-			// meta: { title: 'Da' },
+			component: () => import('@/pages/project/ui/ProjectsSlugPage.vue'),
 		},
 	],
 	meta: {

@@ -1,6 +1,5 @@
 import CustomLayout from '@/app/layouts/CustomLayout.vue'
 import { RouteName } from '@/app/router/RouteName'
-import NotFoundPage from '@/pages/not-found/ui/NotFoundPage.vue'
 
 export const specialRoutes = {
 	path: '',
@@ -9,7 +8,7 @@ export const specialRoutes = {
 		{
 			path: '/:pathMatch(.*)*',
 			name: RouteName.NotFound,
-			component: NotFoundPage,
+			component: () => import('@/pages/not-found/ui/NotFoundPage.vue'),
 			meta: { title: 'Страница не найдена' },
 		},
 	],
