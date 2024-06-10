@@ -1,6 +1,6 @@
 <template>
-	<BaseModal class="edit-access-modal" title="Редактировать доступ">
-		<BaseForm class="edit-access-modal__form">
+	<BaseModal class="access-modal" :title="title">
+		<BaseForm class="access-modal__form">
 			<InputList>
 				<BaseInput label="Адрес" name="address" placeholder="Поле ввода" v-model="form.origin" />
 				<BaseInput label="Логин" name="login" placeholder="Поле ввода" v-model="form.login" />
@@ -13,7 +13,7 @@
 				/>
 			</InputList>
 		</BaseForm>
-		<BaseButton class="edit-access-modal__button">Сохранить изменения</BaseButton>
+		<BaseButton class="access-modal__button">Сохранить изменения</BaseButton>
 	</BaseModal>
 </template>
 
@@ -26,10 +26,11 @@ import BaseSelect from '@/shared/ui/Select/BaseSelect.vue'
 import BaseForm from '@/shared/ui/Form/BaseForm.vue'
 import InputList from '@/shared/ui/Input/InputList.vue'
 import type { Access } from '@/shared/model/types/Access/Access'
-import useEditAccessForm from '@/features/access/edit/composable/useEditAccessForm'
+import useAccessForm from '@/features/access/edit/composable/useAccessForm'
 
 interface Props {
-	access: Access
+	access?: Access
+	title?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -39,14 +40,15 @@ const props = withDefaults(defineProps<Props>(), {
 		login: '',
 		type: '',
 	}),
+	title: 'Редактировать доступ',
 })
 
-const { form, fillForm } = useEditAccessForm()
+const { form, fillForm } = useAccessForm()
 fillForm(props.access)
 </script>
 
 <style lang="scss" scoped>
-.edit-access-modal {
+.access-modal {
 	&__form {
 		margin-bottom: $indent-l;
 	}

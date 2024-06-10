@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import EditAccessModal from '@/features/access/edit/ui/EditAccessModal.vue'
+import AccessModal from '@/features/access/edit/ui/AccessModal.vue'
 
-const meta: Meta<typeof EditAccessModal> = {
-	component: EditAccessModal,
+const meta: Meta<typeof AccessModal> = {
+	component: AccessModal,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof EditAccessModal> = {
 }
 
 export default meta
-type Story = StoryObj<typeof EditAccessModal>
+type Story = StoryObj<typeof AccessModal>
 
 export const Default: Story = {}
