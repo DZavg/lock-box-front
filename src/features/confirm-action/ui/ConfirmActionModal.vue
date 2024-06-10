@@ -39,8 +39,12 @@ defineEmits<{
 	&__button-list {
 		display: grid;
 		margin-top: $indent-l;
-		gap: $indent-m;
+		gap: $indent-s $indent-m;
 		grid-template-columns: repeat(2, 1fr);
+
+		@media screen and (max-width: 480px) {
+			grid-template-columns: 1fr;
+		}
 	}
 }
 </style>
