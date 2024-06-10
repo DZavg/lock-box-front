@@ -1,5 +1,5 @@
 <template>
-	<BaseModal :text="text" :title="title" class="confirm-action-modal">
+	<BaseModal :text="text" :title="title" class="confirm-action-modal" @onClose="$emit('onClose')">
 		<div class="confirm-action-modal__button-list">
 			<BaseButton :view="ButtonView.Outlined" @click="$emit('onClose')">Отменить</BaseButton>
 			<BaseButton @click="$emit('onConfirm')">{{ buttonConfirmText }}</BaseButton>
@@ -33,11 +33,7 @@ defineEmits<{
 <style lang="scss">
 .confirm-action-modal {
 	&[data-v-c98d2ce4] {
-		max-width: 612px;
-
-		@media screen and (max-width: 768px) {
-			max-width: none;
-		}
+		max-width: 502px;
 	}
 
 	&__button-list {
