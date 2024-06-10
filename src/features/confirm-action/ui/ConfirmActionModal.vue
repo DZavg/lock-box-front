@@ -1,7 +1,7 @@
 <template>
 	<BaseModal :text="text" :title="title" class="confirm-action-modal">
 		<div class="confirm-action-modal__button-list">
-			<BaseButton :view="ButtonView.Outlined" @click="$emit('onClose')">Отменить </BaseButton>
+			<BaseButton :view="ButtonView.Outlined" @click="$emit('onClose')">Отменить</BaseButton>
 			<BaseButton @click="$emit('onConfirm')">{{ buttonConfirmText }}</BaseButton>
 		</div>
 	</BaseModal>
