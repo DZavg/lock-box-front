@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import ConfirmActionModal from '@/shared/ui/Modal/ConfirmActionModal.vue'
+import ConfirmActionModal from '@/features/confirm-action/ui/ConfirmActionModal.vue'
 
 const meta: Meta<typeof ConfirmActionModal> = {
 	component: ConfirmActionModal,

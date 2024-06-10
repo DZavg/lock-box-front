@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import ConfirmActionModal from '@/shared/ui/Modal/ConfirmActionModal.vue'
+import ConfirmActionModal from '@/features/confirm-action/ui/ConfirmActionModal.vue'
 </script>
 
 <style scoped lang="scss"></style>
