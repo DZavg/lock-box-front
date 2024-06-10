@@ -11,10 +11,11 @@
 				<BaseOption class="user-dropdown__option">
 					<button class="body_p">Редактировать профиль</button>
 				</BaseOption>
-				<BaseOption class="user-dropdown__option">
+				<BaseOption class="user-dropdown__option" @click="openLogoutModal">
 					<button class="body_p">Выйти</button>
 				</BaseOption>
 			</BaseOptionList>
+			<LogoutModal v-if="logoutModalIsOpen" @onClose="closeLogoutModal" />
 		</template>
 	</BasePopupOnMouseOver>
 </template>
@@ -25,12 +26,16 @@ import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
 import BaseOption from '@/shared/ui/Option/BaseOption.vue'
 import { type Ref, ref } from 'vue'
 import BasePopupOnMouseOver from '@/shared/ui/Popup/BasePopupOnMouseOver.vue'
+import LogoutModal from '@/features/logout/ui/LogoutModal.vue'
+import useLogoutModal from '@/features/logout/composable/useLogoutModal'
 
 const isActive: Ref<boolean> = ref(false)
 
 const toggleIcon = (value: boolean) => {
 	isActive.value = value
 }
+
+const { logoutModalIsOpen, openLogoutModal, closeLogoutModal } = useLogoutModal()
 </script>
 
 <style lang="scss" scoped>
