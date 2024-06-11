@@ -20,7 +20,7 @@
 <script lang="ts" setup>
 import BaseBreadcrumbNav from '@/shared/ui/Breadcrumbs/BaseBreadcrumbNav.vue'
 import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
-import BasePoint from '@/shared/ui/BasePoint.vue'
+import BasePoint from '@/shared/ui/Point/BasePoint.vue'
 import useScreen from '@/app/composable/useScreen'
 
 interface Props {

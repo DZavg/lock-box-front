@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import BasePoint from '@/shared/ui/BasePoint.vue'
+import BasePoint from '@/shared/ui/Point/BasePoint.vue'
 
 const meta: Meta<typeof BasePoint> = {
 	component: BasePoint,
