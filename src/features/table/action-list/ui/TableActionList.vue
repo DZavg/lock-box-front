@@ -1,10 +1,10 @@
 <template>
-	<BaseActionList class="project-action-list">
+	<div class="action-list">
 		<ExternalLinkIcon :icon-size="iconSize" :link="project.domain" />
 		<EyeButtonIcon :active="true" :icon-size="iconSize" />
 		<EditButtonIcon :icon-size="iconSize" />
 		<DeleteButtonIcon :icon-size="iconSize" />
-	</BaseActionList>
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -15,7 +15,6 @@ import DeleteButtonIcon from '@/shared/ui/Button/DeleteButtonIcon.vue'
 import { type Project } from '@/shared/model/types/Project/Project'
 import { computed } from 'vue'
 import useScreen from '@/app/composable/useScreen'
-import BaseActionList from '@/shared/ui/Action/BaseActionList.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
@@ -35,4 +34,18 @@ const { isMobile } = useScreen()
 const iconSize = computed(() => (isMobile.value ? IconSize.S : IconSize.M))
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.action-list {
+	display: flex;
+	align-items: center;
+	gap: $indent-2xl;
+
+	@media screen and (max-width: 991px) {
+		gap: $indent-xl;
+	}
+
+	@media screen and (max-width: 768px) {
+		gap: $indent-m;
+	}
+}
+</style>
