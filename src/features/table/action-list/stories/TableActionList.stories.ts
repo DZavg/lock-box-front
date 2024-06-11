@@ -15,4 +15,10 @@ const meta: Meta<typeof TableActionList> = {
 export default meta
 type Story = StoryObj<typeof TableActionList>
 
-export const Default: Story = {}
+export const Default: Story = {
+	args: {
+		externalLink: 'https://google.com',
+		link: '/',
+		copyLink: 'google.com',
+	},
+}

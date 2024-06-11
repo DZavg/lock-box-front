@@ -1,33 +1,36 @@
 <template>
 	<div class="action-list">
-		<ExternalLinkIcon :icon-size="iconSize" :link="project.domain" />
-		<EyeButtonIcon :active="true" :icon-size="iconSize" />
-		<EditButtonIcon :icon-size="iconSize" />
-		<DeleteButtonIcon :icon-size="iconSize" />
+		<ExternalLinkIcon v-if="externalLink" :size="iconSize" :link="externalLink" />
+		<EyeLinkIcon v-if="link" :link="link" :active="true" :size="iconSize" />
+		<CopyButtonIcon v-if="copyLink" :size="iconSize" :link="copyLink" />
+		<EditButtonIcon :size="iconSize" @onClick="$emit('onEdit')" />
+		<DeleteButtonIcon :size="iconSize" @onClick="$emit('onDelete')" />
 	</div>
 </template>
 
 <script lang="ts" setup>
 import ExternalLinkIcon from '@/shared/ui/Link/ExternalLinkIcon.vue'
-import EyeButtonIcon from '@/shared/ui/Button/EyeButtonIcon.vue'
 import EditButtonIcon from '@/shared/ui/Button/EditButtonIcon.vue'
 import DeleteButtonIcon from '@/shared/ui/Button/DeleteButtonIcon.vue'
-import { type Project } from '@/shared/model/types/Project/Project'
 import { computed } from 'vue'
 import useScreen from '@/app/composable/useScreen'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
+import EyeLinkIcon from '@/shared/ui/Link/EyeLinkIcon.vue'
+import CopyButtonIcon from '@/shared/ui/Button/CopyButtonIcon.vue'
 
 interface Props {
-	project: Project
+	externalLink?: string
+	link?: string | object
+	copyLink?: string
 }
 
 withDefaults(defineProps<Props>(), {
-	project: () => ({
-		id: '',
-		title: '',
-		domain: '',
-	}),
+	externalLink: '',
+	link: '',
+	copyLink: '',
 })
+
+defineEmits<{ (e: 'onEdit'): void; (e: 'onDelete'): void }>()
 
 const { isMobile } = useScreen()
 
