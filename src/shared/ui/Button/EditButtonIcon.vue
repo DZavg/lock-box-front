@@ -1,5 +1,5 @@
 <template>
-	<BaseButtonIcon :icon="iconEdit" :size="iconSize" />
+	<BaseButtonIcon :icon="iconEdit" :size="size" />
 </template>
 
 <script lang="ts" setup>
@@ -8,11 +8,11 @@ import BaseButtonIcon from '@/shared/ui/Button/BaseButtonIcon.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
-	iconSize?: IconSize
+	size?: IconSize
 }
 
 withDefaults(defineProps<Props>(), {
-	iconSize: IconSize.M,
+	size: IconSize.M,
 })
 </script>
 
