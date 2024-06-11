@@ -1,5 +1,5 @@
 <template>
-	<BaseLinkIcon :icon="iconExternalLink" :link="link" :size="iconSize" target="_blank" />
+	<BaseLinkIcon :icon="iconExternalLink" :link="link" :size="size" target="_blank" />
 </template>
 
 <script lang="ts" setup>
@@ -8,13 +8,13 @@ import BaseLinkIcon from '@/shared/ui/Link/BaseLinkIcon.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
 interface Props {
-	link: string | object
-	iconSize?: IconSize
+	link: string
+	size?: IconSize
 }
 
 withDefaults(defineProps<Props>(), {
 	link: '',
-	iconSize: IconSize.M,
+	size: IconSize.M,
 })
 </script>
 
