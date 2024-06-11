@@ -3,4 +3,4 @@ export interface ListField {
 	key: string
 }
 
-export type ListValue = Record<string, string>
+export type ListValue = Record<string, any>
