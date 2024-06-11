@@ -1,8 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseTable from '@/shared/ui/Table/BaseTable.vue'
-import CopyButtonIcon from '@/shared/ui/Button/CopyButtonIcon.vue'
-import EditLinkIcon from '@/shared/ui/Link/EditLinkIcon.vue'
-import DeleteButtonIcon from '@/shared/ui/Button/DeleteButtonIcon.vue'
 
 const meta: Meta<typeof BaseTable> = {
 	component: BaseTable,
@@ -22,9 +19,6 @@ export const Fill: Story = {
 	render: () => ({
 		components: {
 			BaseTable,
-			CopyButtonIcon,
-			EditLinkIcon,
-			DeleteButtonIcon,
 		},
 		template: `
 			<BaseTable>

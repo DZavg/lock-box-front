@@ -11,17 +11,12 @@
 			>
 			<AccessModal v-if="accessModalIsOpen" title="Добавить доступ" @onClose="closeAccessModal" />
 		</template>
-		<template #default>
-			<BaseDataTableGroup :data="getProjects()" :fields="getTableFields()" />
-		</template>
+		<template #default> </template>
 	</BaseInternalPage>
 </template>
 
 <script lang="ts" setup>
 import BaseInternalPage from '@/shared/ui/InternalPage/BaseInternalPage.vue'
-import BaseDataTableGroup from '@/shared/ui/Table/BaseDataTableGroup.vue'
-import getTableFields from '@/shared/stories/data/table.js'
-import getProjects from '@/shared/stories/data/projects.js'
 import BaseButton from '@/shared/ui/Button/BaseButton.vue'
 import getBreadcrumbs from '@/shared/stories/data/breadcrumbs'
 import { ref, type Ref } from 'vue'

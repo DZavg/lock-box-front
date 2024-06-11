@@ -1,14 +1,16 @@
 <template>
-	<table class="table">
-		<slot>
-			<BaseTableHead>
-				<slot name="head"></slot>
-			</BaseTableHead>
-			<BaseTableBody>
-				<slot name="body"></slot>
-			</BaseTableBody>
-		</slot>
-	</table>
+	<div class="table">
+		<table class="table__content">
+			<slot>
+				<BaseTableHead>
+					<slot name="head"></slot>
+				</BaseTableHead>
+				<BaseTableBody>
+					<slot name="body"></slot>
+				</BaseTableBody>
+			</slot>
+		</table>
+	</div>
 </template>
 
 <script lang="ts" setup>
@@ -18,8 +20,14 @@ import BaseTableHead from '@/shared/ui/Table/BaseTableHead.vue'
 
 <style lang="scss" scoped>
 .table {
-	width: 100%;
-	border-collapse: collapse;
-	color: $color-white;
+	@include scrollbar;
+
+	overflow: auto hidden;
+
+	&__content {
+		width: 100%;
+		border-collapse: collapse;
+		color: $color-white;
+	}
 }
 </style>

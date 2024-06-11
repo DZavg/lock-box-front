@@ -1,23 +1,23 @@
 <template>
 	<ul class="list caption_p">
 		<li v-for="field in fields" :key="field.key" class="list-item">
-			<span v-if="field.label" class="list-item__label">{{ field.label }}: </span>
-			<span class="list-item__data">{{ data[field.key] }}</span>
+			<span class="list-item__label">{{ field.label }}: </span>
+			<span class="list-item__value">{{ value[field.key] }}</span>
 		</li>
 	</ul>
 </template>
 
 <script lang="ts" setup>
-import { type ListField, type ListFieldData } from '@/shared/model/types/List/ListField'
+import { type ListField, type ListValue } from '@/shared/model/types/List/List'
 
 interface Props {
 	fields: ListField[]
-	data: ListFieldData
+	value: ListValue
 }
 
 withDefaults(defineProps<Props>(), {
 	fields: () => [],
-	data: () => ({}),
+	value: () => ({}),
 })
 </script>
 

@@ -27,7 +27,7 @@ export const Default: Story = {
 				key: 'domain',
 			},
 		],
-		data: {
+		value: {
 			title: 'Бренд одежды "IVOLGA"',
 			domain: 'ivolga.moscow',
 		},
