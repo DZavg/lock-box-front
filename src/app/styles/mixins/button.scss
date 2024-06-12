@@ -26,19 +26,20 @@
 }
 
 @mixin button-view-outlined {
-	outline: 1px solid $color-blue-primary;
+	padding: 11px $indent-m;
+	border: 1px solid $color-blue-primary;
 	transition: outline-color 0.2s ease-in;
 
 	&:hover {
-		outline-color: $color-blue-secondary;
+		border-color: $color-blue-secondary;
 	}
 
 	&:active {
-		outline-color: $color-blue-third;
+		border-color: $color-blue-third;
 	}
 
 	&:disabled {
-		outline-color: $color-gray-four;
+		border-color: $color-gray-four;
 	}
 }
 
