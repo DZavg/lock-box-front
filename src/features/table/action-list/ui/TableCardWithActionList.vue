@@ -26,6 +26,8 @@ withDefaults(defineProps<Props>(), {
 	link: '',
 	copyLink: '',
 })
+
+defineEmits<{ (e: 'onEdit'): void; (e: 'onDelete'): void }>()
 </script>
 
 <style scoped lang="scss">
