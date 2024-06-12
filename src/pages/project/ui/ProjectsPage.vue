@@ -4,7 +4,7 @@
 			<ProjectsActions />
 		</template>
 		<template #default>
-			<ProjectsTable :projects="projectPageData.projects" />
+			<ProjectsTable :projects="projectsPageData.projects" />
 		</template>
 	</BaseInternalPage>
 </template>
@@ -13,7 +13,7 @@
 import BaseInternalPage from '@/shared/ui/InternalPage/BaseInternalPage.vue'
 import ProjectsActions from '@/features/projects/ui/ProjectsActions.vue'
 import ProjectsTable from '@/widgets/projects/ui/ProjectsTable.vue'
-import { projectPageData } from '@/pages/project/data/ProjectPageData'
+import { projectsPageData } from '@/pages/project/data/ProjectsPageData'
 </script>
 
 <style lang="scss" scoped></style>
