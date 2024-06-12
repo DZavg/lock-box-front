@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import DeleteProjectModal from '@/features/project/modal/ui/DeleteProjectModal.vue'
+import ConfirmDeleteModal from '@/features/confirm-action/ui/ConfirmDeleteModal.vue'
 
-const meta: Meta<typeof DeleteProjectModal> = {
-	component: DeleteProjectModal,
+const meta: Meta<typeof ConfirmDeleteModal> = {
+	component: ConfirmDeleteModal,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,10 +13,11 @@ const meta: Meta<typeof DeleteProjectModal> = {
 }
 
 export default meta
-type Story = StoryObj<typeof DeleteProjectModal>
+type Story = StoryObj<typeof ConfirmDeleteModal>
 
 export const Default: Story = {
 	args: {
-		projectTitle: 'Бренд одежды "IVOLGA"',
+		title: 'Бренд одежды "IVOLGA"',
+		buttonConfirmText: 'Удалить проект',
 	},
 }

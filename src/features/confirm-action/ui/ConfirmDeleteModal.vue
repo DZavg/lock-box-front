@@ -1,9 +1,9 @@
 <template>
 	<ConfirmActionModal
-		class="delete-project-modal"
-		:title="`Вы действительно хотите удалить: ${projectTitle} ?`"
+		class="confirm-delete-modal"
+		:title="`Вы действительно хотите удалить: ${title} ?`"
 		text="Эти данные нельзя будет вернуть"
-		button-confirm-text="Удалить проект"
+		:button-confirm-text="buttonConfirmText"
 	/>
 </template>
 
@@ -11,11 +11,13 @@
 import ConfirmActionModal from '@/features/confirm-action/ui/ConfirmActionModal.vue'
 
 interface Props {
-	projectTitle: string
+	title: string
+	buttonConfirmText: string
 }
 
 withDefaults(defineProps<Props>(), {
-	projectTitle: '',
+	title: '',
+	buttonConfirmText: '',
 })
 </script>
 
