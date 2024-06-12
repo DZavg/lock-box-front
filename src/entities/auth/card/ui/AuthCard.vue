@@ -1,8 +1,10 @@
 <template>
-	<BaseCard>
-		<h1 class="h1-indent">{{ title }}</h1>
-		<slot></slot>
-	</BaseCard>
+  <BaseCard>
+    <h1 class="h1-indent">
+      {{ title }}
+    </h1>
+    <slot />
+  </BaseCard>
 </template>
 
 <script lang="ts" setup>

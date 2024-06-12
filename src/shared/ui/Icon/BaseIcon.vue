@@ -1,7 +1,10 @@
 <template>
-	<svg :class="{ ['icon-' + size]: !!size, ['icon_color_' + color]: !!color }" class="icon">
-		<use :href="icon + '#icon'" />
-	</svg>
+  <svg
+    :class="{ ['icon-' + size]: !!size, ['icon_color_' + color]: !!color }"
+    class="icon"
+  >
+    <use :href="icon + '#icon'" />
+  </svg>
 </template>
 
 <script lang="ts" setup>

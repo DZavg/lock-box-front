@@ -1,10 +1,22 @@
 <template>
-	<BaseModal :text="text" :title="title" class="confirm-action-modal" @onClose="$emit('onClose')">
-		<div class="confirm-action-modal__button-list">
-			<BaseButton :view="ButtonView.Outlined" @click="$emit('onClose')">Отменить</BaseButton>
-			<BaseButton @click="$emit('onConfirm')">{{ buttonConfirmText }}</BaseButton>
-		</div>
-	</BaseModal>
+  <BaseModal
+    :text="text"
+    :title="title"
+    class="confirm-action-modal"
+    @on-close="$emit('onClose')"
+  >
+    <div class="confirm-action-modal__button-list">
+      <BaseButton
+        :view="ButtonView.Outlined"
+        @click="$emit('onClose')"
+      >
+        Отменить
+      </BaseButton>
+      <BaseButton @click="$emit('onConfirm')">
+        {{ buttonConfirmText }}
+      </BaseButton>
+    </div>
+  </BaseModal>
 </template>
 
 <script lang="ts" setup>

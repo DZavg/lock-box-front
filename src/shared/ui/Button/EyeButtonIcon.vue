@@ -1,6 +1,16 @@
 <template>
-	<BaseButtonIcon v-if="active" :icon="iconEyeOpen" :icon-color="iconColor" :size="iconSize" />
-	<BaseButtonIcon v-else :icon="iconEyeClose" :icon-color="iconColor" :size="iconSize" />
+  <BaseButtonIcon
+    v-if="active"
+    :icon="iconEyeOpen"
+    :icon-color="iconColor"
+    :size="iconSize"
+  />
+  <BaseButtonIcon
+    v-else
+    :icon="iconEyeClose"
+    :icon-color="iconColor"
+    :size="iconSize"
+  />
 </template>
 
 <script lang="ts" setup>

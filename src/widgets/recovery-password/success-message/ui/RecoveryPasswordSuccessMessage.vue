@@ -1,21 +1,28 @@
 <template>
-	<ContentCentering class="recovery-password-success-msg">
-		<div class="recovery-password-success-msg__image-wrapper">
-			<img
-				alt="Сообщение для сброса пароля отправлено"
-				class="recovery-password-success-msg__image"
-				height="168"
-				src="https://placehold.co/168x168/orange/white"
-				width="168"
-			/>
-		</div>
-		<h1 class="h1-indent">Сообщение для сброса пароля отправлено</h1>
-		<p class="recovery-password-success-msg__text">
-			Сообщение было отправлено на ваш адрес {{ email }}. Следуйте инструкциям в сообщении, чтобы
-			сбросить пароль
-		</p>
-		<BaseLinkButton class="recovery-password-success-msg__button" link="/">Готово</BaseLinkButton>
-	</ContentCentering>
+  <ContentCentering class="recovery-password-success-msg">
+    <div class="recovery-password-success-msg__image-wrapper">
+      <img
+        alt="Сообщение для сброса пароля отправлено"
+        class="recovery-password-success-msg__image"
+        height="168"
+        src="https://placehold.co/168x168/orange/white"
+        width="168"
+      >
+    </div>
+    <h1 class="h1-indent">
+      Сообщение для сброса пароля отправлено
+    </h1>
+    <p class="recovery-password-success-msg__text">
+      Сообщение было отправлено на ваш адрес {{ email }}. Следуйте инструкциям в сообщении, чтобы
+      сбросить пароль
+    </p>
+    <BaseLinkButton
+      class="recovery-password-success-msg__button"
+      link="/"
+    >
+      Готово
+    </BaseLinkButton>
+  </ContentCentering>
 </template>
 
 <script lang="ts" setup>

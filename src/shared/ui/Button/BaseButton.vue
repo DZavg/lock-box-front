@@ -1,14 +1,14 @@
 <template>
-	<button
-		:class="{ ['button_view_' + view]: view, ['button--loading']: loading }"
-		:disabled="disabled"
-		:type="type"
-		class="button button_p"
-		@click="!loading && !disabled && $emit('onClick')"
-	>
-		<BaseButtonLoader v-show="loading" />
-		<span class="button__text"><slot></slot></span>
-	</button>
+  <button
+    :class="{ ['button_view_' + view]: view, ['button--loading']: loading }"
+    :disabled="disabled"
+    :type="type"
+    class="button button_p"
+    @click="!loading && !disabled && $emit('onClick')"
+  >
+    <BaseButtonLoader v-show="loading" />
+    <span class="button__text"><slot /></span>
+  </button>
 </template>
 
 <script lang="ts" setup>

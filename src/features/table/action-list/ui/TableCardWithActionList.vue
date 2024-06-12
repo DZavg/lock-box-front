@@ -1,14 +1,18 @@
 <template>
-	<BaseTableCard class="card-with-action-list">
-		<BaseList class="card-with-action-list__fields" :fields="fields" :value="value" />
-		<TableActionList
-			:external-link="externalLink"
-			:link="link"
-			:copy-link="copyLink"
-			@onEdit="$emit('onEdit')"
-			@onDelete="$emit('onDelete')"
-		/>
-	</BaseTableCard>
+  <BaseTableCard class="card-with-action-list">
+    <BaseList
+      class="card-with-action-list__fields"
+      :fields="fields"
+      :value="value"
+    />
+    <TableActionList
+      :external-link="externalLink"
+      :link="link"
+      :copy-link="copyLink"
+      @on-edit="$emit('onEdit')"
+      @on-delete="$emit('onDelete')"
+    />
+  </BaseTableCard>
 </template>
 
 <script setup lang="ts">

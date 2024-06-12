@@ -1,13 +1,13 @@
 <template>
-	<div
-		:class="{
-			['card_padding-size_' + paddingSize]: !!paddingSize,
-			['card_border-radius_' + borderRadius]: !!borderRadius,
-		}"
-		class="card"
-	>
-		<slot></slot>
-	</div>
+  <div
+    :class="{
+      ['card_padding-size_' + paddingSize]: !!paddingSize,
+      ['card_border-radius_' + borderRadius]: !!borderRadius,
+    }"
+    class="card"
+  >
+    <slot />
+  </div>
 </template>
 
 <script lang="ts" setup>

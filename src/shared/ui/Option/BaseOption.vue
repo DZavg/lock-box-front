@@ -1,7 +1,10 @@
 <template>
-	<div :class="{ ['option--active']: isActive }" class="option">
-		<slot></slot>
-	</div>
+  <div
+    :class="{ ['option--active']: isActive }"
+    class="option"
+  >
+    <slot />
+  </div>
 </template>
 
 <script lang="ts" setup>

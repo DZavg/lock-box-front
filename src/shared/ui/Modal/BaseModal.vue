@@ -1,16 +1,33 @@
 <template>
-	<Teleport to="body">
-		<div class="modal" @keydown.esc="$emit('onClose')" @mousedown.self="$emit('onClose')">
-			<div class="modal__wrapper" @mousedown.self="$emit('onClose')">
-				<BaseCard class="modal__content" v-bind="$attrs">
-					<CloseButtonIcon class="modal__close-button" @click="$emit('onClose')" />
-					<p class="h2 h1-indent">{{ title }}</p>
-					<p v-if="text">{{ text }}</p>
-					<slot></slot>
-				</BaseCard>
-			</div>
-		</div>
-	</Teleport>
+  <Teleport to="body">
+    <div
+      class="modal"
+      @keydown.esc="$emit('onClose')"
+      @mousedown.self="$emit('onClose')"
+    >
+      <div
+        class="modal__wrapper"
+        @mousedown.self="$emit('onClose')"
+      >
+        <BaseCard
+          class="modal__content"
+          v-bind="$attrs"
+        >
+          <CloseButtonIcon
+            class="modal__close-button"
+            @click="$emit('onClose')"
+          />
+          <p class="h2 h1-indent">
+            {{ title }}
+          </p>
+          <p v-if="text">
+            {{ text }}
+          </p>
+          <slot />
+        </BaseCard>
+      </div>
+    </div>
+  </Teleport>
 </template>
 
 <script lang="ts" setup>

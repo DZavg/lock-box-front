@@ -1,23 +1,33 @@
 <template>
-	<AuthCard class="auth-tabs" title="Добро пожаловать">
-		<BaseTabs :active-tab-name="activeTabName" class="auth-tabs__wrapper">
-			<template #head>
-				<BaseTabButton
-					v-for="tab in AuthTabsData"
-					:key="tab.name"
-					:name="tab.name"
-					@updateActiveTab="updateActiveTab"
-				>
-					{{ tab.buttonText }}
-				</BaseTabButton>
-			</template>
-			<template #body>
-				<BaseTabContent v-for="tab in AuthTabsData" :key="tab.name" :name="tab.name">
-					<component :is="tab.component" />
-				</BaseTabContent>
-			</template>
-		</BaseTabs>
-	</AuthCard>
+  <AuthCard
+    class="auth-tabs"
+    title="Добро пожаловать"
+  >
+    <BaseTabs
+      :active-tab-name="activeTabName"
+      class="auth-tabs__wrapper"
+    >
+      <template #head>
+        <BaseTabButton
+          v-for="tab in AuthTabsData"
+          :key="tab.name"
+          :name="tab.name"
+          @update-active-tab="updateActiveTab"
+        >
+          {{ tab.buttonText }}
+        </BaseTabButton>
+      </template>
+      <template #body>
+        <BaseTabContent
+          v-for="tab in AuthTabsData"
+          :key="tab.name"
+          :name="tab.name"
+        >
+          <component :is="tab.component" />
+        </BaseTabContent>
+      </template>
+    </BaseTabs>
+  </AuthCard>
 </template>
 
 <script lang="ts" setup>

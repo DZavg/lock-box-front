@@ -1,9 +1,15 @@
 <template>
-	<AuthPageWrapper class="password-recovery-page container-s">
-		<LogoWithDescription v-if="!email" />
-		<RecoveryPasswordForm v-if="!email" @resetPassword="assignEmailValue" />
-		<RecoveryPasswordSuccessMessage v-else :email="email" />
-	</AuthPageWrapper>
+  <AuthPageWrapper class="password-recovery-page container-s">
+    <LogoWithDescription v-if="!email" />
+    <RecoveryPasswordForm
+      v-if="!email"
+      @reset-password="assignEmailValue"
+    />
+    <RecoveryPasswordSuccessMessage
+      v-else
+      :email="email"
+    />
+  </AuthPageWrapper>
 </template>
 
 <script lang="ts" setup>

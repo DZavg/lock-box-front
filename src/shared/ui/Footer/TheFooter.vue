@@ -1,12 +1,18 @@
 <template>
-	<footer class="footer container-m">
-		<div class="footer__wrapper">
-			<p class="footer__copyright caption_p">© {{ currentYear }} Techouse</p>
-			<BaseLink :color="Color.White" class="caption_p" link="/"
-				>Политика конфиденциальности
-			</BaseLink>
-		</div>
-	</footer>
+  <footer class="footer container-m">
+    <div class="footer__wrapper">
+      <p class="footer__copyright caption_p">
+        © {{ currentYear }} Techouse
+      </p>
+      <BaseLink
+        :color="Color.White"
+        class="caption_p"
+        link="/"
+      >
+        Политика конфиденциальности
+      </BaseLink>
+    </div>
+  </footer>
 </template>
 
 <script lang="ts" setup>

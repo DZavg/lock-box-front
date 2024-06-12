@@ -1,5 +1,8 @@
 <template>
-	<BaseButtonIcon :icon="iconDelete" :size="size" />
+  <BaseButtonIcon
+    :icon="iconDelete"
+    :size="size"
+  />
 </template>
 
 <script lang="ts" setup>

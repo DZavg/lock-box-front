@@ -1,5 +1,8 @@
 <template>
-	<span v-if="label" class="label caption_p">{{ label }}</span>
+  <span
+    v-if="label"
+    class="label caption_p"
+  >{{ label }}</span>
 </template>
 
 <script lang="ts" setup>

@@ -1,10 +1,28 @@
 <template>
-	<a v-if="isExternalLink" :href="'//' + link" class="link-icon" target="_blank" v-bind="$attrs">
-		<BaseIcon :icon="icon" :size="size" />
-	</a>
-	<RouterLink v-else :target="target" :to="link" class="link-icon" v-bind="$attrs">
-		<BaseIcon :icon="icon" :size="size" />
-	</RouterLink>
+  <a
+    v-if="isExternalLink"
+    :href="'//' + link"
+    class="link-icon"
+    target="_blank"
+    v-bind="$attrs"
+  >
+    <BaseIcon
+      :icon="icon"
+      :size="size"
+    />
+  </a>
+  <RouterLink
+    v-else
+    :target="target"
+    :to="link"
+    class="link-icon"
+    v-bind="$attrs"
+  >
+    <BaseIcon
+      :icon="icon"
+      :size="size"
+    />
+  </RouterLink>
 </template>
 
 <script lang="ts" setup>

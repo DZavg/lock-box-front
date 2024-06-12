@@ -1,16 +1,16 @@
 <template>
-	<div class="table">
-		<table class="table__content">
-			<slot>
-				<BaseTableHead>
-					<slot name="head"></slot>
-				</BaseTableHead>
-				<BaseTableBody>
-					<slot name="body"></slot>
-				</BaseTableBody>
-			</slot>
-		</table>
-	</div>
+  <div class="table">
+    <table class="table__content">
+      <slot>
+        <BaseTableHead>
+          <slot name="head" />
+        </BaseTableHead>
+        <BaseTableBody>
+          <slot name="body" />
+        </BaseTableBody>
+      </slot>
+    </table>
+  </div>
 </template>
 
 <script lang="ts" setup>

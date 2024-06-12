@@ -1,23 +1,38 @@
 <template>
-	<BasePopupOnMouseOver class="user-dropdown" @onToggle="toggleIcon">
-		<template #head>
-			<div class="user-dropdown__head">
-				<p class="user-dropdown__name">Иванов Иван</p>
-				<DropdownButtonIcon :is-active="isActive" />
-			</div>
-		</template>
-		<template #body>
-			<BaseOptionList>
-				<BaseOption class="user-dropdown__option">
-					<button class="body_p">Редактировать профиль</button>
-				</BaseOption>
-				<BaseOption class="user-dropdown__option" @click="openLogoutModal">
-					<button class="body_p">Выйти</button>
-				</BaseOption>
-			</BaseOptionList>
-			<LogoutModal v-if="logoutModalIsOpen" @onClose="closeLogoutModal" />
-		</template>
-	</BasePopupOnMouseOver>
+  <BasePopupOnMouseOver
+    class="user-dropdown"
+    @on-toggle="toggleIcon"
+  >
+    <template #head>
+      <div class="user-dropdown__head">
+        <p class="user-dropdown__name">
+          Иванов Иван
+        </p>
+        <DropdownButtonIcon :is-active="isActive" />
+      </div>
+    </template>
+    <template #body>
+      <BaseOptionList>
+        <BaseOption class="user-dropdown__option">
+          <button class="body_p">
+            Редактировать профиль
+          </button>
+        </BaseOption>
+        <BaseOption
+          class="user-dropdown__option"
+          @click="openLogoutModal"
+        >
+          <button class="body_p">
+            Выйти
+          </button>
+        </BaseOption>
+      </BaseOptionList>
+      <LogoutModal
+        v-if="logoutModalIsOpen"
+        @on-close="closeLogoutModal"
+      />
+    </template>
+  </BasePopupOnMouseOver>
 </template>
 
 <script lang="ts" setup>

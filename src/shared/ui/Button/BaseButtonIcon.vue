@@ -1,12 +1,16 @@
 <template>
-	<button
-		:disabled="disabled"
-		class="button-icon"
-		type="button"
-		@click="!disabled && $emit('onClick')"
-	>
-		<BaseIcon :color="iconColor" :icon="icon" :size="size" />
-	</button>
+  <button
+    :disabled="disabled"
+    class="button-icon"
+    type="button"
+    @click="!disabled && $emit('onClick')"
+  >
+    <BaseIcon
+      :color="iconColor"
+      :icon="icon"
+      :size="size"
+    />
+  </button>
 </template>
 
 <script lang="ts" setup>

@@ -1,10 +1,15 @@
 <template>
-	<AuthCard class="recovery-password-form" title="Восстановление пароля">
-		<BaseForm class="recovery-password-form__wrapper">
-			<EmailInput v-model="form.email" />
-			<BaseButton @click="resetPassword">Сбросить пароль</BaseButton>
-		</BaseForm>
-	</AuthCard>
+  <AuthCard
+    class="recovery-password-form"
+    title="Восстановление пароля"
+  >
+    <BaseForm class="recovery-password-form__wrapper">
+      <EmailInput v-model="form.email" />
+      <BaseButton @click="resetPassword">
+        Сбросить пароль
+      </BaseButton>
+    </BaseForm>
+  </AuthCard>
 </template>
 
 <script lang="ts" setup>

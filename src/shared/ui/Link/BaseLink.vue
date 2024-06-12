@@ -1,24 +1,24 @@
 <template>
-	<a
-		v-if="isExternalLink"
-		:class="{ ['link_color_' + color]: !!color }"
-		:href="'//' + link"
-		class="link"
-		target="_blank"
-		v-bind="$attrs"
-	>
-		<slot></slot>
-	</a>
-	<RouterLink
-		v-else
-		:class="{ ['link_color_' + color]: !!color }"
-		:target="target"
-		:to="link"
-		class="link"
-		v-bind="$attrs"
-	>
-		<slot></slot>
-	</RouterLink>
+  <a
+    v-if="isExternalLink"
+    :class="{ ['link_color_' + color]: !!color }"
+    :href="'//' + link"
+    class="link"
+    target="_blank"
+    v-bind="$attrs"
+  >
+    <slot />
+  </a>
+  <RouterLink
+    v-else
+    :class="{ ['link_color_' + color]: !!color }"
+    :target="target"
+    :to="link"
+    class="link"
+    v-bind="$attrs"
+  >
+    <slot />
+  </RouterLink>
 </template>
 
 <script lang="ts" setup>

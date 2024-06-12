@@ -1,7 +1,10 @@
 <template>
-	<form @submit.prevent="$emit('submit')" @keydown.enter.prevent="$emit('submit')">
-		<slot></slot>
-	</form>
+  <form
+    @submit.prevent="$emit('submit')"
+    @keydown.enter.prevent="$emit('submit')"
+  >
+    <slot />
+  </form>
 </template>
 
 <script lang="ts" setup>

@@ -1,10 +1,10 @@
 <template>
-	<ConfirmActionModal
-		class="confirm-delete-modal"
-		:title="`Вы действительно хотите удалить: ${title} ?`"
-		text="Эти данные нельзя будет вернуть"
-		:button-confirm-text="buttonConfirmText"
-	/>
+  <ConfirmActionModal
+    class="confirm-delete-modal"
+    :title="`Вы действительно хотите удалить: ${title} ?`"
+    text="Эти данные нельзя будет вернуть"
+    :button-confirm-text="buttonConfirmText"
+  />
 </template>
 
 <script setup lang="ts">

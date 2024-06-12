@@ -1,11 +1,30 @@
 <template>
-	<div class="action-list">
-		<ExternalLinkIcon v-if="externalLink" :size="iconSize" :link="externalLink" />
-		<EyeLinkIcon v-if="link" :link="link" :active="true" :size="iconSize" />
-		<CopyButtonIcon v-if="copyLink" :size="iconSize" :link="copyLink" />
-		<EditButtonIcon :size="iconSize" @onClick="$emit('onEdit')" />
-		<DeleteButtonIcon :size="iconSize" @onClick="$emit('onDelete')" />
-	</div>
+  <div class="action-list">
+    <ExternalLinkIcon
+      v-if="externalLink"
+      :size="iconSize"
+      :link="externalLink"
+    />
+    <EyeLinkIcon
+      v-if="link"
+      :link="link"
+      :active="true"
+      :size="iconSize"
+    />
+    <CopyButtonIcon
+      v-if="copyLink"
+      :size="iconSize"
+      :link="copyLink"
+    />
+    <EditButtonIcon
+      :size="iconSize"
+      @on-click="$emit('onEdit')"
+    />
+    <DeleteButtonIcon
+      :size="iconSize"
+      @on-click="$emit('onDelete')"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>

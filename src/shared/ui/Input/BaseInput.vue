@@ -1,24 +1,27 @@
 <template>
-	<div class="input">
-		<BaseLabel :label="label" />
-		<div class="input__wrapper">
-			<label>
-				<input
-					v-model="inputValue"
-					:autocomplete="autocomplete"
-					:class="{ ['input__element--error']: error }"
-					:disabled="disabled"
-					:name="name"
-					:placeholder="placeholder"
-					:type="type"
-					ref="input"
-					class="input__element body_p"
-				/>
-			</label>
-			<slot name="icon"></slot>
-		</div>
-		<BaseError v-if="error" :text="error" />
-	</div>
+  <div class="input">
+    <BaseLabel :label="label" />
+    <div class="input__wrapper">
+      <label>
+        <input
+          ref="input"
+          v-model="inputValue"
+          :autocomplete="autocomplete"
+          :class="{ ['input__element--error']: error }"
+          :disabled="disabled"
+          :name="name"
+          :placeholder="placeholder"
+          :type="type"
+          class="input__element body_p"
+        >
+      </label>
+      <slot name="icon" />
+    </div>
+    <BaseError
+      v-if="error"
+      :text="error"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -48,7 +51,7 @@ withDefaults(defineProps<Props>(), {
 
 defineEmits<(e: 'update:modelValue', value: string) => void>()
 
-const inputValue = defineModel('modelValue', { default: '' })
+const inputValue = defineModel<string>('modelValue', { default: '' })
 
 const input: Ref<HTMLElement | null> = ref(null)
 

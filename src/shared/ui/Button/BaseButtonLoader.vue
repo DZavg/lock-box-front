@@ -1,8 +1,11 @@
 <template>
-	<span class="button-loader">
-		<BaseIcon :icon="iconLoading" :size="IconSize.S" />
-		<span>Загрузка...</span>
-	</span>
+  <span class="button-loader">
+    <BaseIcon
+      :icon="iconLoading"
+      :size="IconSize.S"
+    />
+    <span>Загрузка...</span>
+  </span>
 </template>
 
 <script setup lang="ts">

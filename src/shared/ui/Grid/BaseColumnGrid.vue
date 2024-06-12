@@ -1,7 +1,7 @@
 <template>
-	<div class="column-grid">
-		<slot></slot>
-	</div>
+  <div class="column-grid">
+    <slot />
+  </div>
 </template>
 
 <script setup lang="ts">

@@ -1,8 +1,21 @@
 <template>
-	<InputWithIcon ref="searchInput" v-bind="props" v-model="inputValue">
-		<CloseButtonIcon v-if="inputValue" :size="IconSize.S" @onClick="resetValue" />
-		<BaseIcon v-else :color="iconColor" :icon="iconSearch" :size="IconSize.S" />
-	</InputWithIcon>
+  <InputWithIcon
+    ref="searchInput"
+    v-bind="props"
+    v-model="inputValue"
+  >
+    <CloseButtonIcon
+      v-if="inputValue"
+      :size="IconSize.S"
+      @on-click="resetValue"
+    />
+    <BaseIcon
+      v-else
+      :color="iconColor"
+      :icon="iconSearch"
+      :size="IconSize.S"
+    />
+  </InputWithIcon>
 </template>
 
 <script lang="ts" setup>
@@ -29,7 +42,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const iconColor = computed(() => (props.disabled ? Color.GrayThird : Color.White))
-const inputValue = defineModel('modelValue', { default: '' })
+const inputValue = defineModel<string>('modelValue', { default: '' })
 const searchInput: Ref<InstanceType<typeof InputWithIcon> | null> = ref(null)
 
 const resetValue = () => {

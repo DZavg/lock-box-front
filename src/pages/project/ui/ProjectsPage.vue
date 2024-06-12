@@ -1,12 +1,15 @@
 <template>
-	<BaseInternalPage class="projects-page" title-h1="Проекты">
-		<template #head>
-			<ProjectsActions />
-		</template>
-		<template #default>
-			<ProjectsTable :projects="projectsPageData.projects" />
-		</template>
-	</BaseInternalPage>
+  <BaseInternalPage
+    class="projects-page"
+    title-h1="Проекты"
+  >
+    <template #head>
+      <ProjectsActions />
+    </template>
+    <template #default>
+      <ProjectsTable :projects="projectsPageData.projects" />
+    </template>
+  </BaseInternalPage>
 </template>
 
 <script lang="ts" setup>

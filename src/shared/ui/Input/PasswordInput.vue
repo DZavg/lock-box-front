@@ -1,7 +1,15 @@
 <template>
-	<InputWithIcon :type="type" v-bind="props" v-model="inputValue">
-		<EyeButtonIcon :active="active" :icon-color="iconColor" @click="switchType" />
-	</InputWithIcon>
+  <InputWithIcon
+    v-bind="props"
+    v-model="inputValue"
+    :type="type"
+  >
+    <EyeButtonIcon
+      :active="active"
+      :icon-color="iconColor"
+      @click="switchType"
+    />
+  </InputWithIcon>
 </template>
 
 <script lang="ts" setup>
@@ -39,7 +47,7 @@ const switchType = () => {
 
 defineEmits<(e: 'update:modelValue', value: string) => void>()
 
-const inputValue = defineModel('modelValue', { default: '' })
+const inputValue = defineModel<string>('modelValue', { default: '' })
 </script>
 
 <style lang="scss" scoped></style>

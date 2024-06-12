@@ -1,48 +1,54 @@
 <template>
-	<div
-		ref="select"
-		v-click-outside="closeSelect"
-		:class="{ ['select--active']: isActive && options.length }"
-		class="select"
-		tabindex="1"
-		@keydown.esc="closeSelect"
-		@keydown.enter="toggleDropdown"
-	>
-		<div ref="selectField" class="select__head">
-			<BaseLabel :label="label" />
-			<div class="select__field" @click="toggleDropdown">
-				<span>{{ getTitleActiveOption }}</span>
-				<DropdownButtonIcon
-					:icon-color="iconColor"
-					:is-active="isActive"
-					class="select__dropdown-button"
-				/>
-				<BaseOptionList
-					ref="optionList"
-					:class="{
-						['select__options_position_' + position]: !!position,
-					}"
-					class="select__options"
-					@click.stop
-				>
-					<BaseOption
-						v-for="option in options"
-						:key="option.id"
-						:is-active="optionIsActive(option)"
-					>
-						<BaseRadio
-							v-model.prevent.stop="modelValue"
-							:name="name"
-							:title="option.title"
-							:value="option.id"
-							class="select__radio-button"
-						/>
-					</BaseOption>
-				</BaseOptionList>
-			</div>
-		</div>
-		<BaseError :text="error" />
-	</div>
+  <div
+    ref="select"
+    v-click-outside="closeSelect"
+    :class="{ ['select--active']: isActive && options.length }"
+    class="select"
+    tabindex="1"
+    @keydown.esc="closeSelect"
+    @keydown.enter="toggleDropdown"
+  >
+    <div
+      ref="selectField"
+      class="select__head"
+    >
+      <BaseLabel :label="label" />
+      <div
+        class="select__field"
+        @click="toggleDropdown"
+      >
+        <span>{{ getTitleActiveOption }}</span>
+        <DropdownButtonIcon
+          :icon-color="iconColor"
+          :is-active="isActive"
+          class="select__dropdown-button"
+        />
+        <BaseOptionList
+          ref="optionList"
+          :class="{
+            ['select__options_position_' + position]: !!position,
+          }"
+          class="select__options"
+          @click.stop
+        >
+          <BaseOption
+            v-for="option in options"
+            :key="option.id"
+            :is-active="optionIsActive(option)"
+          >
+            <BaseRadio
+              v-model.prevent.stop="modelValue"
+              :name="name"
+              :title="option.title"
+              :value="option.id"
+              class="select__radio-button"
+            />
+          </BaseOption>
+        </BaseOptionList>
+      </div>
+    </div>
+    <BaseError :text="error" />
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -81,7 +87,7 @@ const modelValue = computed({
 	get() {
 		return props.modelValue
 	},
-	set(value: string | number) {
+	set(value: string) {
 		toggleDropdown()
 		emits('update:modelValue', String(value))
 	},

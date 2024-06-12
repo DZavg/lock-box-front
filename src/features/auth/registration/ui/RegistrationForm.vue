@@ -1,13 +1,20 @@
 <template>
-	<BaseForm class="registration-form">
-		<InputList class="registration-form__inputs">
-			<BaseInput label="Имя" name="name" placeholder="Иванов Иван" />
-			<EmailInput />
-			<PasswordInput />
-			<PasswordInput label="Повтор пароля" name="password_repeat" />
-		</InputList>
-		<BaseButton>Зарегистрироваться</BaseButton>
-	</BaseForm>
+  <BaseForm class="registration-form">
+    <InputList class="registration-form__inputs">
+      <BaseInput
+        label="Имя"
+        name="name"
+        placeholder="Иванов Иван"
+      />
+      <EmailInput />
+      <PasswordInput />
+      <PasswordInput
+        label="Повтор пароля"
+        name="password_repeat"
+      />
+    </InputList>
+    <BaseButton>Зарегистрироваться</BaseButton>
+  </BaseForm>
 </template>
 
 <script lang="ts" setup>

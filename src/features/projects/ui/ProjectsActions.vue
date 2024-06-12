@@ -1,11 +1,18 @@
 <template>
-	<div class="projects-actions">
-		<BaseButton class="projects-actions__button" @onClick="openProjectModal"
-			>Добавить проект</BaseButton
-		>
-		<SearchInput class="projects-actions__search" />
-		<ProjectModal v-if="projectModalIsOpen" title="Добавить проект" @onClose="closeProjectModal" />
-	</div>
+  <div class="projects-actions">
+    <BaseButton
+      class="projects-actions__button"
+      @on-click="openProjectModal"
+    >
+      Добавить проект
+    </BaseButton>
+    <SearchInput class="projects-actions__search" />
+    <ProjectModal
+      v-if="projectModalIsOpen"
+      title="Добавить проект"
+      @on-close="closeProjectModal"
+    />
+  </div>
 </template>
 
 <script lang="ts" setup>

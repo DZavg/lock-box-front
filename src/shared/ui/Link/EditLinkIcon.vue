@@ -1,5 +1,8 @@
 <template>
-	<BaseLinkIcon :icon="iconEdit" :link="link" />
+  <BaseLinkIcon
+    :icon="iconEdit"
+    :link="link"
+  />
 </template>
 
 <script lang="ts" setup>

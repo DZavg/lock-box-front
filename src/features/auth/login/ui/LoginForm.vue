@@ -1,14 +1,17 @@
 <template>
-	<BaseForm class="login-form">
-		<InputList class="login-form__inputs">
-			<EmailInput />
-			<PasswordInput />
-		</InputList>
-		<BaseLink :link="{ name: RouteName.RecoveryPassword }" class="login-form__link">
-			Восстановить пароль
-		</BaseLink>
-		<BaseButton>Войти</BaseButton>
-	</BaseForm>
+  <BaseForm class="login-form">
+    <InputList class="login-form__inputs">
+      <EmailInput />
+      <PasswordInput />
+    </InputList>
+    <BaseLink
+      :link="{ name: RouteName.RecoveryPassword }"
+      class="login-form__link"
+    >
+      Восстановить пароль
+    </BaseLink>
+    <BaseButton>Войти</BaseButton>
+  </BaseForm>
 </template>
 
 <script lang="ts" setup>

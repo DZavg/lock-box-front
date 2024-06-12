@@ -15,6 +15,7 @@ module.exports = {
 		'@vue/eslint-config-prettier/skip-formatting',
 		'plugin:storybook/recommended',
 		'plugin:sonarjs/recommended',
+		'plugin:vue/vue3-recommended',
 	],
 	parserOptions: {
 		ecmaVersion: 'latest',

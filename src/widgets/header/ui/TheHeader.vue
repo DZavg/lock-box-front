@@ -1,14 +1,14 @@
 <template>
-	<header class="header container-m">
-		<div class="header__wrapper">
-			<RouterLink to="/">
-				<svg class="header__logo">
-					<use :href="iconLogo + '#icon'" />
-				</svg>
-			</RouterLink>
-			<UserDropdown />
-		</div>
-	</header>
+  <header class="header container-m">
+    <div class="header__wrapper">
+      <RouterLink to="/">
+        <svg class="header__logo">
+          <use :href="iconLogo + '#icon'" />
+        </svg>
+      </RouterLink>
+      <UserDropdown />
+    </div>
+  </header>
 </template>
 
 <script lang="ts" setup>

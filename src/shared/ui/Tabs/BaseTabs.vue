@@ -1,12 +1,12 @@
 <template>
-	<div class="base-tabs">
-		<div class="base-tabs__head">
-			<slot name="head"></slot>
-		</div>
-		<div class="base-tabs__body">
-			<slot name="body"></slot>
-		</div>
-	</div>
+  <div class="base-tabs">
+    <div class="base-tabs__head">
+      <slot name="head" />
+    </div>
+    <div class="base-tabs__body">
+      <slot name="body" />
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>

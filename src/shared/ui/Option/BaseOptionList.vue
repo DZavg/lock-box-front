@@ -1,9 +1,12 @@
 <template>
-	<div ref="optionList" class="option-list">
-		<div class="option-list__wrapper">
-			<slot></slot>
-		</div>
-	</div>
+  <div
+    ref="optionList"
+    class="option-list"
+  >
+    <div class="option-list__wrapper">
+      <slot />
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>

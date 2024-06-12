@@ -1,11 +1,16 @@
 <template>
-	<BaseInput ref="inputWithIcon" class="input-with-icon" v-bind="props" v-model="inputValue">
-		<template #icon>
-			<div class="input-with-icon__icon">
-				<slot></slot>
-			</div>
-		</template>
-	</BaseInput>
+  <BaseInput
+    ref="inputWithIcon"
+    v-bind="props"
+    v-model="inputValue"
+    class="input-with-icon"
+  >
+    <template #icon>
+      <div class="input-with-icon__icon">
+        <slot />
+      </div>
+    </template>
+  </BaseInput>
 </template>
 
 <script lang="ts" setup>
@@ -25,7 +30,7 @@ interface Props {
 const props = defineProps<Props>()
 defineEmits<(e: 'update:modelValue', value: string) => void>()
 
-const inputValue = defineModel('modelValue', { default: '' })
+const inputValue = defineModel<string>('modelValue', { default: '' })
 const inputWithIcon: Ref<InstanceType<typeof BaseInput> | null> = ref(null)
 
 defineExpose({

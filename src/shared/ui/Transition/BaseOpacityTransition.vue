@@ -1,7 +1,7 @@
 <template>
-	<transition name="opacity-transition">
-		<slot></slot>
-	</transition>
+  <transition name="opacity-transition">
+    <slot />
+  </transition>
 </template>
 
 <script lang="ts" setup></script>

@@ -1,8 +1,8 @@
 <template>
-	<AuthPageWrapper class="auth-page container-s">
-		<LogoWithDescription />
-		<AuthTabs />
-	</AuthPageWrapper>
+  <AuthPageWrapper class="auth-page container-s">
+    <LogoWithDescription />
+    <AuthTabs />
+  </AuthPageWrapper>
 </template>
 
 <script lang="ts" setup>

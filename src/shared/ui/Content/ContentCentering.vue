@@ -1,7 +1,7 @@
 <template>
-	<div class="content-centering">
-		<slot></slot>
-	</div>
+  <div class="content-centering">
+    <slot />
+  </div>
 </template>
 
 <script lang="ts" setup></script>

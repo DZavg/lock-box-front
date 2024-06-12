@@ -1,5 +1,10 @@
 <template>
-	<p v-if="text" class="error caption_p">{{ text }}</p>
+  <p
+    v-if="text"
+    class="error caption_p"
+  >
+    {{ text }}
+  </p>
 </template>
 
 <script lang="ts" setup>

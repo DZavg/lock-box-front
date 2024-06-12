@@ -1,7 +1,10 @@
 <template>
-	<BaseCard :padding-size="CardPaddingSize.Small" class="table-card">
-		<slot></slot>
-	</BaseCard>
+  <BaseCard
+    :padding-size="CardPaddingSize.Small"
+    class="table-card"
+  >
+    <slot />
+  </BaseCard>
 </template>
 
 <script lang="ts" setup>

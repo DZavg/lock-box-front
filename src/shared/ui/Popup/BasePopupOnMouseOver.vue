@@ -1,24 +1,28 @@
 <template>
-	<div
-		v-click-outside="closePopup"
-		class="popup-on-mouse-over"
-		@mouseleave="mouseLeaveHandler"
-		@mouseover="mouseEnterHandler"
-	>
-		<div ref="popupHead" class="popup-on-mouse-over__head" @click="togglePopup">
-			<slot name="head"></slot>
-		</div>
-		<div
-			ref="popupBody"
-			:class="{
-				['popup-on-mouse-over__body--visible']: isActive,
-				['popup-on-mouse-over__body_side_' + side]: !!side,
-			}"
-			class="popup-on-mouse-over__body"
-		>
-			<slot name="body"></slot>
-		</div>
-	</div>
+  <div
+    v-click-outside="closePopup"
+    class="popup-on-mouse-over"
+    @mouseleave="mouseLeaveHandler"
+    @mouseover="mouseEnterHandler"
+  >
+    <div
+      ref="popupHead"
+      class="popup-on-mouse-over__head"
+      @click="togglePopup"
+    >
+      <slot name="head" />
+    </div>
+    <div
+      ref="popupBody"
+      :class="{
+        ['popup-on-mouse-over__body--visible']: isActive,
+        ['popup-on-mouse-over__body_side_' + side]: !!side,
+      }"
+      class="popup-on-mouse-over__body"
+    >
+      <slot name="body" />
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>

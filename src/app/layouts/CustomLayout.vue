@@ -1,10 +1,10 @@
 <template>
-	<div class="layout">
-		<div class="inner container-m">
-			<RouterView />
-		</div>
-		<TheFooter />
-	</div>
+  <div class="layout">
+    <div class="inner container-m">
+      <RouterView />
+    </div>
+    <TheFooter />
+  </div>
 </template>
 
 <script lang="ts" setup>

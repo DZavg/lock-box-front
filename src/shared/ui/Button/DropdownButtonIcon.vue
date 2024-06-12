@@ -1,11 +1,11 @@
 <template>
-	<BaseButtonIcon
-		:class="{ ['dropdown-button-icon--active']: isActive }"
-		:icon="iconArrowSmall"
-		:icon-color="iconColor"
-		:size="IconSize.S"
-		class="dropdown-button-icon"
-	/>
+  <BaseButtonIcon
+    :class="{ ['dropdown-button-icon--active']: isActive }"
+    :icon="iconArrowSmall"
+    :icon-color="iconColor"
+    :size="IconSize.S"
+    class="dropdown-button-icon"
+  />
 </template>
 
 <script lang="ts" setup>

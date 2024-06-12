@@ -1,18 +1,28 @@
 <template>
-	<BaseModal class="project-modal" :title="title">
-		<BaseForm class="project-modal__form">
-			<InputList>
-				<BaseInput
-					label="Название проекта"
-					name="title"
-					placeholder="Поле ввода"
-					v-model="form.title"
-				/>
-				<BaseInput label="Домен" name="domain" placeholder="Поле ввода" v-model="form.domain" />
-			</InputList>
-		</BaseForm>
-		<BaseButton class="project-modal__button">Сохранить изменения</BaseButton>
-	</BaseModal>
+  <BaseModal
+    class="project-modal"
+    :title="title"
+  >
+    <BaseForm class="project-modal__form">
+      <InputList>
+        <BaseInput
+          v-model="form.title"
+          label="Название проекта"
+          name="title"
+          placeholder="Поле ввода"
+        />
+        <BaseInput
+          v-model="form.domain"
+          label="Домен"
+          name="domain"
+          placeholder="Поле ввода"
+        />
+      </InputList>
+    </BaseForm>
+    <BaseButton class="project-modal__button">
+      Сохранить изменения
+    </BaseButton>
+  </BaseModal>
 </template>
 
 <script lang="ts" setup>

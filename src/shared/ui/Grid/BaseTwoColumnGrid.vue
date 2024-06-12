@@ -1,7 +1,10 @@
 <template>
-	<BaseColumnGrid class="two-column-grid" v-bind="props">
-		<slot></slot>
-	</BaseColumnGrid>
+  <BaseColumnGrid
+    class="two-column-grid"
+    v-bind="props"
+  >
+    <slot />
+  </BaseColumnGrid>
 </template>
 
 <script setup lang="ts">

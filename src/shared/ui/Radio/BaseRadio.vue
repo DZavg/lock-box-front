@@ -1,23 +1,23 @@
 <template>
-	<label
-		:class="{
-			['radio--disabled']: disabled,
-		}"
-		class="radio"
-	>
-		<input
-			v-model="inputValue"
-			:disabled="disabled"
-			:name="name"
-			:value="value"
-			hidden
-			type="radio"
-		/>
-		<span class="radio__circle">
-			<span class="radio__point"></span>
-		</span>
-		{{ title }}
-	</label>
+  <label
+    :class="{
+      ['radio--disabled']: disabled,
+    }"
+    class="radio"
+  >
+    <input
+      v-model="inputValue"
+      :disabled="disabled"
+      :name="name"
+      :value="value"
+      hidden
+      type="radio"
+    >
+    <span class="radio__circle">
+      <span class="radio__point" />
+    </span>
+    {{ title }}
+  </label>
 </template>
 
 <script lang="ts" setup>
@@ -39,7 +39,7 @@ withDefaults(defineProps<Props>(), {
 
 defineEmits<(e: 'update:modelValue', value: string) => void>()
 
-const inputValue = defineModel('modelValue', { default: '' })
+const inputValue = defineModel<string>('modelValue', { default: '' })
 </script>
 
 <style lang="scss" scoped>

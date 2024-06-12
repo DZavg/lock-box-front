@@ -1,11 +1,11 @@
 <template>
-	<div class="layout">
-		<TheHeader />
-		<div class="inner container-m">
-			<RouterView />
-		</div>
-		<TheFooter />
-	</div>
+  <div class="layout">
+    <TheHeader />
+    <div class="inner container-m">
+      <RouterView />
+    </div>
+    <TheFooter />
+  </div>
 </template>
 
 <script lang="ts" setup>

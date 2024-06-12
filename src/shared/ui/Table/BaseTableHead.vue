@@ -1,7 +1,7 @@
 <template>
-	<thead class="thead body_p_second">
-		<slot></slot>
-	</thead>
+  <thead class="thead body_p_second">
+    <slot />
+  </thead>
 </template>
 
 <script lang="ts" setup></script>

@@ -1,12 +1,12 @@
 <template>
-	<div class="logo-with-desc">
-		<RouterLink to="/">
-			<svg class="logo-with-desc__icon">
-				<use :href="iconLogo + '#icon'" />
-			</svg>
-		</RouterLink>
-		<p>Ваш надежный хранитель паролей</p>
-	</div>
+  <div class="logo-with-desc">
+    <RouterLink to="/">
+      <svg class="logo-with-desc__icon">
+        <use :href="iconLogo + '#icon'" />
+      </svg>
+    </RouterLink>
+    <p>Ваш надежный хранитель паролей</p>
+  </div>
 </template>
 
 <script lang="ts" setup>

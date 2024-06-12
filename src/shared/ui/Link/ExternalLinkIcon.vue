@@ -1,5 +1,10 @@
 <template>
-	<BaseLinkIcon :icon="iconExternalLink" :link="link" :size="size" target="_blank" />
+  <BaseLinkIcon
+    :icon="iconExternalLink"
+    :link="link"
+    :size="size"
+    target="_blank"
+  />
 </template>
 
 <script lang="ts" setup>

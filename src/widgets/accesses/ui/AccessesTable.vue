@@ -1,46 +1,59 @@
 <template>
-	<div class="accesses-table">
-		<BaseTableGroup>
-			<template #head>
-				<tr>
-					<th v-for="(field, index) in tableFields" :key="index">{{ field.label }}</th>
-					<th></th>
-				</tr>
-			</template>
-			<template #body>
-				<tr v-for="access in accesses" :key="access.id">
-					<td v-for="(field, index) in tableFields" :key="index">{{ access[field.key] }}</td>
-					<td>
-						<TableActionList
-							@onEdit="openAccessModal({ access })"
-							@onDelete="openConfirmDeleteModal({ title: access.type })"
-						/>
-					</td>
-				</tr>
-			</template>
-			<template #cards>
-				<TableCardWithActionList
-					v-for="access in accesses"
-					:key="access.id"
-					:fields="tableFields"
-					:value="access"
-					@onEdit="openAccessModal({ access })"
-					@onDelete="openConfirmDeleteModal({ title: access.type })"
-				/>
-			</template>
-		</BaseTableGroup>
-		<AccessModal
-			v-if="accessModalIsOpen"
-			@onClose="closeAccessModal"
-			:access="accessModalOptions.access"
-		/>
-		<ConfirmDeleteModal
-			v-if="confirmDeleteModalIsOpen"
-			@onClose="closeConfirmDeleteModal"
-			:title="confirmDeleteModalOptions.title"
-			button-confirm-text="Удалить доступ"
-		/>
-	</div>
+  <div class="accesses-table">
+    <BaseTableGroup>
+      <template #head>
+        <tr>
+          <th
+            v-for="(field, index) in tableFields"
+            :key="index"
+          >
+            {{ field.label }}
+          </th>
+          <th />
+        </tr>
+      </template>
+      <template #body>
+        <tr
+          v-for="access in accesses"
+          :key="access.id"
+        >
+          <td
+            v-for="(field, index) in tableFields"
+            :key="index"
+          >
+            {{ access[field.key] }}
+          </td>
+          <td>
+            <TableActionList
+              @on-edit="openAccessModal({ access })"
+              @on-delete="openConfirmDeleteModal({ title: access.type })"
+            />
+          </td>
+        </tr>
+      </template>
+      <template #cards>
+        <TableCardWithActionList
+          v-for="access in accesses"
+          :key="access.id"
+          :fields="tableFields"
+          :value="access"
+          @on-edit="openAccessModal({ access })"
+          @on-delete="openConfirmDeleteModal({ title: access.type })"
+        />
+      </template>
+    </BaseTableGroup>
+    <AccessModal
+      v-if="accessModalIsOpen"
+      :access="accessModalOptions.access"
+      @on-close="closeAccessModal"
+    />
+    <ConfirmDeleteModal
+      v-if="confirmDeleteModalIsOpen"
+      :title="confirmDeleteModalOptions.title"
+      button-confirm-text="Удалить доступ"
+      @on-close="closeConfirmDeleteModal"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">

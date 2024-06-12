@@ -1,20 +1,25 @@
 <template>
-	<div class="page">
-		<BaseBreadcrumbNav
-			v-if="breadcrumbs.length"
-			:breadcrumbs="breadcrumbs"
-			class="page__breadcrumb-nav"
-		/>
-		<div class="page__head">
-			<div class="page__title">
-				<h1>{{ titleH1 }}</h1>
-				<BasePoint v-if="!isMobile && additionalText" />
-				<p v-if="additionalText" class="h1">{{ additionalText }}</p>
-			</div>
-			<slot name="head"></slot>
-		</div>
-		<slot></slot>
-	</div>
+  <div class="page">
+    <BaseBreadcrumbNav
+      v-if="breadcrumbs.length"
+      :breadcrumbs="breadcrumbs"
+      class="page__breadcrumb-nav"
+    />
+    <div class="page__head">
+      <div class="page__title">
+        <h1>{{ titleH1 }}</h1>
+        <BasePoint v-if="!isMobile && additionalText" />
+        <p
+          v-if="additionalText"
+          class="h1"
+        >
+          {{ additionalText }}
+        </p>
+      </div>
+      <slot name="head" />
+    </div>
+    <slot />
+  </div>
 </template>
 
 <script lang="ts" setup>

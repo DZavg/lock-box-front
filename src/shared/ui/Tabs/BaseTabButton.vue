@@ -1,11 +1,11 @@
 <template>
-	<button
-		:class="{ ['tab-button--active']: isActive }"
-		class="tab-button body_p_second"
-		@click="updateNameActiveTab"
-	>
-		<slot></slot>
-	</button>
+  <button
+    :class="{ ['tab-button--active']: isActive }"
+    class="tab-button body_p_second"
+    @click="updateNameActiveTab"
+  >
+    <slot />
+  </button>
 </template>
 
 <script lang="ts" setup>

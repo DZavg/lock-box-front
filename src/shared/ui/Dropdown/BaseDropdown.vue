@@ -1,13 +1,19 @@
 <template>
-	<div class="dropdown">
-		<div class="dropdown__head">
-			<slot name="title"></slot>
-			<slot name="button" :click="$emit('onClick')"></slot>
-		</div>
-		<div v-if="isActive" class="dropdown__body">
-			<slot name="content"></slot>
-		</div>
-	</div>
+  <div class="dropdown">
+    <div class="dropdown__head">
+      <slot name="title" />
+      <slot
+        name="button"
+        :click="$emit('onClick')"
+      />
+    </div>
+    <div
+      v-if="isActive"
+      class="dropdown__body"
+    >
+      <slot name="content" />
+    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>

@@ -1,7 +1,7 @@
 <template>
-	<div class="auth-page-wrapper">
-		<slot></slot>
-	</div>
+  <div class="auth-page-wrapper">
+    <slot />
+  </div>
 </template>
 
 <script lang="ts" setup></script>

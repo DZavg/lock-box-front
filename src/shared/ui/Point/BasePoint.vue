@@ -1,5 +1,8 @@
 <template>
-	<span :style="{ width: size + 'px', height: size + 'px' }" class="point"></span>
+  <span
+    :style="{ width: size + 'px', height: size + 'px' }"
+    class="point"
+  />
 </template>
 
 <script lang="ts" setup>

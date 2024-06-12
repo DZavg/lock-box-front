@@ -1,12 +1,12 @@
 <template>
-	<RouterLink
-		:class="{ ['link-button_view_' + view]: view }"
-		:target="target"
-		:to="link"
-		class="link-button"
-	>
-		<slot></slot>
-	</RouterLink>
+  <RouterLink
+    :class="{ ['link-button_view_' + view]: view }"
+    :target="target"
+    :to="link"
+    class="link-button"
+  >
+    <slot />
+  </RouterLink>
 </template>
 
 <script lang="ts" setup>

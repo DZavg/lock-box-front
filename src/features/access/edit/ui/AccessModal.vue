@@ -1,20 +1,35 @@
 <template>
-	<BaseModal class="access-modal" :title="title">
-		<BaseForm class="access-modal__form">
-			<InputList>
-				<BaseInput label="Адрес" name="address" placeholder="Поле ввода" v-model="form.origin" />
-				<BaseInput label="Логин" name="login" placeholder="Поле ввода" v-model="form.login" />
-				<PasswordInput v-model="form.password" />
-				<BaseSelect
-					:options="[{ id: '0', title: 'SSH' }]"
-					label="Тип доступа"
-					name="type"
-					v-model="form.type"
-				/>
-			</InputList>
-		</BaseForm>
-		<BaseButton class="access-modal__button">Сохранить изменения</BaseButton>
-	</BaseModal>
+  <BaseModal
+    class="access-modal"
+    :title="title"
+  >
+    <BaseForm class="access-modal__form">
+      <InputList>
+        <BaseInput
+          v-model="form.origin"
+          label="Адрес"
+          name="address"
+          placeholder="Поле ввода"
+        />
+        <BaseInput
+          v-model="form.login"
+          label="Логин"
+          name="login"
+          placeholder="Поле ввода"
+        />
+        <PasswordInput v-model="form.password" />
+        <BaseSelect
+          v-model="form.type"
+          :options="[{ id: '0', title: 'SSH' }]"
+          label="Тип доступа"
+          name="type"
+        />
+      </InputList>
+    </BaseForm>
+    <BaseButton class="access-modal__button">
+      Сохранить изменения
+    </BaseButton>
+  </BaseModal>
 </template>
 
 <script lang="ts" setup>

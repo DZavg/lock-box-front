@@ -1,50 +1,63 @@
 <template>
-	<div class="project-table">
-		<BaseTableGroup>
-			<template #head>
-				<tr>
-					<th v-for="(field, index) in tableFields" :key="index">{{ field.label }}</th>
-					<th></th>
-				</tr>
-			</template>
-			<template #body>
-				<tr v-for="project in projects" :key="project.id">
-					<td v-for="(field, index) in tableFields" :key="index">{{ project[field.key] }}</td>
-					<td>
-						<TableActionList
-							:external-link="project.domain"
-							:link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-							@onEdit="openProjectModal({ project })"
-							@onDelete="openConfirmDeleteModal({ title: project.title })"
-						/>
-					</td>
-				</tr>
-			</template>
-			<template #cards>
-				<TableCardWithActionList
-					v-for="project in projects"
-					:key="project.id"
-					:fields="tableFields"
-					:value="project"
-					:external-link="project.domain"
-					:link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-					@onEdit="openProjectModal({ project })"
-					@onDelete="openConfirmDeleteModal({ title: project.title })"
-				/>
-			</template>
-		</BaseTableGroup>
-		<ProjectModal
-			v-if="projectModalIsOpen"
-			@onClose="closeProjectModal"
-			:project="projectModalOptions.project"
-		/>
-		<ConfirmDeleteModal
-			v-if="confirmDeleteModalIsOpen"
-			@onClose="closeConfirmDeleteModal"
-			:title="confirmDeleteModalOptions.title"
-			button-confirm-text="Удалить проект"
-		/>
-	</div>
+  <div class="project-table">
+    <BaseTableGroup>
+      <template #head>
+        <tr>
+          <th
+            v-for="(field, index) in tableFields"
+            :key="index"
+          >
+            {{ field.label }}
+          </th>
+          <th />
+        </tr>
+      </template>
+      <template #body>
+        <tr
+          v-for="project in projects"
+          :key="project.id"
+        >
+          <td
+            v-for="(field, index) in tableFields"
+            :key="index"
+          >
+            {{ project[field.key] }}
+          </td>
+          <td>
+            <TableActionList
+              :external-link="project.domain"
+              :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
+              @on-edit="openProjectModal({ project })"
+              @on-delete="openConfirmDeleteModal({ title: project.title })"
+            />
+          </td>
+        </tr>
+      </template>
+      <template #cards>
+        <TableCardWithActionList
+          v-for="project in projects"
+          :key="project.id"
+          :fields="tableFields"
+          :value="project"
+          :external-link="project.domain"
+          :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
+          @on-edit="openProjectModal({ project })"
+          @on-delete="openConfirmDeleteModal({ title: project.title })"
+        />
+      </template>
+    </BaseTableGroup>
+    <ProjectModal
+      v-if="projectModalIsOpen"
+      :project="projectModalOptions.project"
+      @on-close="closeProjectModal"
+    />
+    <ConfirmDeleteModal
+      v-if="confirmDeleteModalIsOpen"
+      :title="confirmDeleteModalOptions.title"
+      button-confirm-text="Удалить проект"
+      @on-close="closeConfirmDeleteModal"
+    />
+  </div>
 </template>
 
 <script setup lang="ts">

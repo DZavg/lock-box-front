@@ -1,29 +1,35 @@
 <template>
-	<nav aria-label="Breadcrumb" class="breadcrumb-nav">
-		<ul class="breadcrumb-nav__list">
-			<li v-for="(breadcrumb, index) in sliceBreadcrumbs" :key="index">
-				<BaseLink
-					:color="Color.GrayThird"
-					:link="breadcrumb.link"
-					class="breadcrumb-nav__link caption_p"
-				>
-					<span>{{ breadcrumb.title }}</span>
-					<svg class="breadcrumb-nav__icon icon-16">
-						<use :href="iconArrowSmall + '#icon'" />
-					</svg>
-				</BaseLink>
-			</li>
-			<li>
-				<BaseLink
-					:color="Color.White"
-					:link="breadcrumbs.at(-1)?.link"
-					class="breadcrumb-nav__link caption_p"
-				>
-					<span>{{ breadcrumbs.at(-1)?.title }}</span>
-				</BaseLink>
-			</li>
-		</ul>
-	</nav>
+  <nav
+    aria-label="Breadcrumb"
+    class="breadcrumb-nav"
+  >
+    <ul class="breadcrumb-nav__list">
+      <li
+        v-for="(breadcrumb, index) in sliceBreadcrumbs"
+        :key="index"
+      >
+        <BaseLink
+          :color="Color.GrayThird"
+          :link="breadcrumb.link"
+          class="breadcrumb-nav__link caption_p"
+        >
+          <span>{{ breadcrumb.title }}</span>
+          <svg class="breadcrumb-nav__icon icon-16">
+            <use :href="iconArrowSmall + '#icon'" />
+          </svg>
+        </BaseLink>
+      </li>
+      <li>
+        <BaseLink
+          :color="Color.White"
+          :link="breadcrumbs.at(-1)?.link"
+          class="breadcrumb-nav__link caption_p"
+        >
+          <span>{{ breadcrumbs.at(-1)?.title }}</span>
+        </BaseLink>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script lang="ts" setup>

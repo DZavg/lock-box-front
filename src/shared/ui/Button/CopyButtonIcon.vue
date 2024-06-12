@@ -1,5 +1,8 @@
 <template>
-	<BaseButtonIcon :icon="iconCopy" :size="size" />
+  <BaseButtonIcon
+    :icon="iconCopy"
+    :size="size"
+  />
 </template>
 
 <script lang="ts" setup>
