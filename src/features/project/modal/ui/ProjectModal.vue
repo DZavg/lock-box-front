@@ -38,8 +38,7 @@ const props = withDefaults(defineProps<Props>(), {
 	title: 'Редактировать проект',
 })
 
-const { form, fillForm } = useProjectForm()
-fillForm(props.project)
+const { form } = useProjectForm(props.project)
 </script>
 
 <style lang="scss" scoped>

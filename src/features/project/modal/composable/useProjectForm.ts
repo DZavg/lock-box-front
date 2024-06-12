@@ -1,16 +1,14 @@
 import { type Ref, ref } from 'vue'
 import type { Project } from '@/shared/model/types/Project/Project'
 
-export default function () {
-	const form: Ref<Project> = ref({
-		id: '',
-		title: '',
-		domain: '',
-	})
+export default function (data?: Project) {
+	const form: Ref<Project> = ref(
+		data || {
+			id: '',
+			title: '',
+			domain: '',
+		},
+	)
 
-	function fillForm(data: Project) {
-		form.value = data
-	}
-
-	return { form, fillForm }
+	return { form }
 }
