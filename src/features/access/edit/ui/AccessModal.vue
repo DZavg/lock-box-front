@@ -43,8 +43,7 @@ const props = withDefaults(defineProps<Props>(), {
 	title: 'Редактировать доступ',
 })
 
-const { form, fillForm } = useAccessForm()
-fillForm(props.access)
+const { form } = useAccessForm(props.access)
 </script>
 
 <style lang="scss" scoped>
