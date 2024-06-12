@@ -1,7 +1,13 @@
 <template>
 	<BaseTableCard class="card-with-action-list">
 		<BaseList class="card-with-action-list__fields" :fields="fields" :value="value" />
-		<TableActionList :external-link="externalLink" :link="link" :copy-link="copyLink" />
+		<TableActionList
+			:external-link="externalLink"
+			:link="link"
+			:copy-link="copyLink"
+			@onEdit="$emit('onEdit')"
+			@onDelete="$emit('onDelete')"
+		/>
 	</BaseTableCard>
 </template>
 
