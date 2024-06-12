@@ -1,9 +1,19 @@
 import { type Ref, ref } from 'vue'
+import type { Project } from '@/shared/model/types/Project/Project'
+
+interface ProjectModalOptions {
+	project?: Project
+}
 
 export default function () {
 	const projectModalIsOpen: Ref<boolean> = ref(false)
+	const projectModalOptions: Ref<ProjectModalOptions> = ref({})
 
-	function openProjectModal() {
+	function openProjectModal(options?: ProjectModalOptions) {
+		if (options) {
+			setProjectModalOptions(options)
+		}
+
 		projectModalIsOpen.value = true
 	}
 
@@ -11,5 +21,9 @@ export default function () {
 		projectModalIsOpen.value = false
 	}
 
-	return { openProjectModal, closeProjectModal, projectModalIsOpen }
+	function setProjectModalOptions(options: ProjectModalOptions) {
+		projectModalOptions.value = options
+	}
+
+	return { openProjectModal, closeProjectModal, projectModalIsOpen, projectModalOptions }
 }
