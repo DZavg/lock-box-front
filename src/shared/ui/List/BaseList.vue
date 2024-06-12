@@ -35,6 +35,10 @@ withDefaults(defineProps<Props>(), {
 		&__label {
 			color: $color-gray-secondary;
 		}
+
+		&__value {
+			@include max-line-count(1);
+		}
 	}
 }
 </style>
