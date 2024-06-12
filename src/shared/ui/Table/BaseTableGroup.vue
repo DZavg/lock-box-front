@@ -1,8 +1,8 @@
 <template>
 	<div class="table-group">
-		<BaseTableCardList v-if="isMobile">
+		<BaseTwoColumnGrid v-if="isMobile">
 			<slot name="cards"></slot>
-		</BaseTableCardList>
+		</BaseTwoColumnGrid>
 		<BaseTable v-else>
 			<template #body>
 				<slot name="body"></slot>
@@ -18,6 +18,7 @@
 import BaseTable from '@/shared/ui/Table/BaseTable.vue'
 import useScreen from '@/app/composable/useScreen'
 import BaseTableCardList from '@/shared/ui/Table/BaseTableCardList.vue'
+import BaseTwoColumnGrid from '@/shared/ui/Grid/BaseTwoColumnGrid.vue'
 
 const { isMobile } = useScreen()
 </script>
