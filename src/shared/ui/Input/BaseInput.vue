@@ -43,7 +43,7 @@ withDefaults(defineProps<Props>(), {
 	error: '',
 	type: 'text',
 	disabled: false,
-	autocomplete: 'off',
+	autocomplete: 'on',
 })
 
 defineEmits<(e: 'update:modelValue', value: string) => void>()
