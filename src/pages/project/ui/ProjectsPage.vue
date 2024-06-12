@@ -1,10 +1,10 @@
 <template>
-	<BaseInternalPage :breadcrumbs="[]" class="page" title-h1="Проекты">
+	<BaseInternalPage class="projects-page" title-h1="Проекты">
 		<template #head>
 			<ProjectsActions />
 		</template>
 		<template #default>
-			<ProjectsTable :projects="getProjects()" />
+			<ProjectsTable :projects="projectPageData.projects" />
 		</template>
 	</BaseInternalPage>
 </template>
@@ -12,8 +12,8 @@
 <script lang="ts" setup>
 import BaseInternalPage from '@/shared/ui/InternalPage/BaseInternalPage.vue'
 import ProjectsActions from '@/features/projects/ui/ProjectsActions.vue'
-import getProjects from '@/shared/stories/data/projects'
 import ProjectsTable from '@/widgets/projects/ui/ProjectsTable.vue'
+import { projectPageData } from '@/pages/project/data/ProjectPageData'
 </script>
 
 <style lang="scss" scoped></style>
