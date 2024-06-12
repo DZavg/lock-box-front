@@ -29,3 +29,15 @@ $icon-s: 16px;
 $icon-m: 24px;
 $icon-l: 32px;
 $icon-xl: 40px;
+
+:root {
+	--indent-2xs: #{$indent-2xs};
+	--indent-xs: #{$indent-xs};
+	--indent-s: #{$indent-s};
+	--indent-m: #{$indent-m};
+	--indent-l: #{$indent-l};
+	--indent-xl: #{$indent-xl};
+	--indent-2xl: #{$indent-2xl};
+	--indent-3xl: #{$indent-3xl};
+	--indent-4xl: #{$indent-4xl};
+}
