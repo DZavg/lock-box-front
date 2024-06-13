@@ -4,8 +4,8 @@ import Vue3Toastify, { type ToastContainerOptions } from 'vue3-toastify'
 import 'vue3-toastify/dist/index.css'
 import App from './App.vue'
 import router from './router'
-import checkScreen from '@/app/plugins/checkScreen'
-import { clickOutside } from '@/app/plugins/clickOutside'
+import checkScreen from '@/plugins/checkScreen'
+import { clickOutside } from '@/plugins/clickOutside'
 
 const app = createApp(App)
 

@@ -4,9 +4,9 @@ import { createPinia } from 'pinia'
 
 import '@/app/styles/null.scss'
 import '@/app/styles/main.scss'
-import { clickOutside } from '../src/app/plugins/clickOutside'
+import { clickOutside } from '../src/plugins/clickOutside'
 import router from '../src/app/router'
-import checkScreen from '../src/app/plugins/checkScreen'
+import checkScreen from '../src/plugins/checkScreen'
 
 const pinia = createPinia()
 
