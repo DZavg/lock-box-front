@@ -32,7 +32,7 @@ import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import type { Project } from '@/shared/model/types/Project/Project'
-import useProjectForm from '@/features/project/modal/composable/useProjectForm'
+import useProjectForm from '@/composable/useProjectForm'
 
 interface Props {
 	project?: Project

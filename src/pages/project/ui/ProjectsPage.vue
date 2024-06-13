@@ -14,7 +14,7 @@
 
 <script lang="ts" setup>
 import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
-import ProjectsActions from '@/features/projects/ui/ProjectsActions.vue'
+import ProjectsActions from '@/components/Projects/ProjectsActions.vue'
 import ProjectsTable from '@/widgets/projects/ui/ProjectsTable.vue'
 import { projectsPageData } from '@/pages/project/data/ProjectsPageData'
 </script>

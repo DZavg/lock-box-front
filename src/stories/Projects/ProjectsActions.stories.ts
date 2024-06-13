@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import ProjectsActions from '@/features/projects/ui/ProjectsActions.vue'
+import ProjectsActions from '@/components/Projects/ProjectsActions.vue'
 
 const meta: Meta<typeof ProjectsActions> = {
 	component: ProjectsActions,
