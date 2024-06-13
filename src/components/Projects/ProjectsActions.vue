@@ -19,7 +19,7 @@
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import SearchInput from '@/components/ui/Input/SearchInput.vue'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
-import useProjectModal from '@/composable/useProjectModal'
+import useProjectModal from '@/composable/Project/useProjectModal'
 
 const { openProjectModal, projectModalIsOpen, closeProjectModal } = useProjectModal()
 </script>

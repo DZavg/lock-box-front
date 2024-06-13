@@ -68,7 +68,7 @@ import type { Project } from '@/model/types/Project/Project'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import type { TableField } from '@/model/types/Table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
-import useProjectModal from '@/composable/useProjectModal'
+import useProjectModal from '@/composable/Project/useProjectModal'
 import useConfirmDeleteModal from '@/composable/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModal/ConfirmDeleteModal.vue'
 

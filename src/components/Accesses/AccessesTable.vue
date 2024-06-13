@@ -65,7 +65,7 @@ import useConfirmDeleteModal from '@/composable/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModal/ConfirmDeleteModal.vue'
 import type { Access } from '@/model/types/Access/Access'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
-import useAccessModal from '@/composable/useAccessModal'
+import useAccessModal from '@/composable/Access/useAccessModal'
 
 interface Props {
 	accesses: Access[]
