@@ -2,11 +2,11 @@ import { type Preview, setup } from '@storybook/vue3'
 import { type App } from 'vue'
 import { createPinia } from 'pinia'
 
-import '@/app/styles/null.scss'
-import '@/app/styles/main.scss'
-import { clickOutside } from '../src/app/plugins/clickOutside'
-import router from '../src/app/router'
-import checkScreen from '../src/app/plugins/checkScreen'
+import '../src/assets/styles/null.scss'
+import '../src/assets/styles/main.scss'
+import { clickOutside } from '../src/plugins/clickOutside'
+import router from '../src/router'
+import checkScreen from '../src/plugins/checkScreen'
 
 const pinia = createPinia()
 
