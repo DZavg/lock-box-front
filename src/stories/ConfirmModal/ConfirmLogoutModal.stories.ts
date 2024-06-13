@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import LogoutModal from '@/components/Auth/LogoutModal.vue'
+import ConfirmLogoutModal from '@/components/ConfirmModals/ConfirmLogoutModal.vue'
 
-const meta: Meta<typeof LogoutModal> = {
-	component: LogoutModal,
+const meta: Meta<typeof ConfirmLogoutModal> = {
+	component: ConfirmLogoutModal,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -13,6 +13,6 @@ const meta: Meta<typeof LogoutModal> = {
 }
 
 export default meta
-type Story = StoryObj<typeof LogoutModal>
+type Story = StoryObj<typeof ConfirmLogoutModal>
 
 export const Default: Story = {}

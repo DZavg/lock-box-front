@@ -27,7 +27,7 @@
           </button>
         </BaseOption>
       </BaseOptionList>
-      <LogoutModal
+      <ConfirmLogoutModal
         v-if="logoutModalIsOpen"
         @on-close="closeLogoutModal"
       />
@@ -41,8 +41,8 @@ import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
 import BaseOption from '@/components/ui/Option/BaseOption.vue'
 import { type Ref, ref } from 'vue'
 import BasePopupOnMouseOver from '@/components/ui/Popup/BasePopupOnMouseOver.vue'
-import LogoutModal from '@/components/Auth/LogoutModal.vue'
 import useLogoutModal from '@/composable/useLogoutModal'
+import ConfirmLogoutModal from '@/components/ConfirmModals/ConfirmLogoutModal.vue'
 
 const isActive: Ref<boolean> = ref(false)
 
