@@ -1,6 +1,6 @@
-import { type ProjectRepository } from '@/shared/api/project/repository/ProjectRepository'
+import { type ProjectRepository } from '@/api/project/repository/ProjectRepository'
 import { inject, injectable } from 'inversify'
-import { identifiers } from '@/shared/api/constants/identifiers'
+import { identifiers } from '@/api/constants/identifiers'
 import { type ProjectsPage } from '@/shared/model/types/Project/ProjectsPage'
 
 export interface GetAll {

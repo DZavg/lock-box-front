@@ -1,4 +1,4 @@
-import { BaseHttpClient } from '@/shared/api/client/repository/BaseRepository'
+import { BaseHttpClient } from '@/api/client/repository/BaseRepository'
 import { type ProjectsPage } from '@/shared/model/types/Project/ProjectsPage'
 import { type ProjectsSlugPage } from '@/shared/model/types/Project/ProjectsSlugPage'
 

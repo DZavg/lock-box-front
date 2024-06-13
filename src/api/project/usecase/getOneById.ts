@@ -1,7 +1,7 @@
 import { type ProjectsSlugPage } from '@/shared/model/types/Project/ProjectsSlugPage'
-import { type ProjectRepository } from '@/shared/api/project/repository/ProjectRepository'
+import { type ProjectRepository } from '@/api/project/repository/ProjectRepository'
 import { inject, injectable } from 'inversify'
-import { identifiers } from '@/shared/api/constants/identifiers'
+import { identifiers } from '@/api/constants/identifiers'
 
 export interface GetOneById {
 	readonly projectRepository: ProjectRepository

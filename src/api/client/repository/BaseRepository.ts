@@ -1,6 +1,6 @@
 import { type AxiosInstance } from 'axios'
 import { inject, injectable } from 'inversify'
-import { identifiers } from '@/shared/api/constants/identifiers'
+import { identifiers } from '@/api/constants/identifiers'
 
 interface BaseRepository {
 	readonly httpClient: AxiosInstance
