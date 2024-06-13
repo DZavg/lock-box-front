@@ -1,4 +1,4 @@
-import { useScreenStore } from '@/app/stores/screen'
+import { useScreenStore } from '@/stores/screen'
 import throttle from '@/shared/lib/throttle'
 
 const checkScreen = {

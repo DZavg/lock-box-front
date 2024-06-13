@@ -1,5 +1,5 @@
 import type { RouteLocationNormalized } from 'vue-router'
-import { useUserStore } from '@/app/stores/user'
+import { useUserStore } from '@/stores/user'
 import { storeToRefs } from 'pinia'
 import { RouteName } from '@/app/router/RouteName'
 
