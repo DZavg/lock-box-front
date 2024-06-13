@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import AccessesTable from '@/components/Accesses/AccessesTable.vue'
-import getAccesses from '@/stories/data/access'
+import getAccesses from '@/global/mock/access'
 
 const meta: Meta<typeof AccessesTable> = {
 	component: AccessesTable,

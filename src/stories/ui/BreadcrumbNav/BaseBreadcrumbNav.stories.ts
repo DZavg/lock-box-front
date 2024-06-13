@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseBreadcrumbNav from '@/components/ui/Breadcrumbs/BaseBreadcrumbNav.vue'
-import getBreadcrumbs from '@/stories/data/breadcrumbs'
+import getBreadcrumbs from '@/global/mock/breadcrumbs'
 
 const meta: Meta<typeof BaseBreadcrumbNav> = {
 	component: BaseBreadcrumbNav,

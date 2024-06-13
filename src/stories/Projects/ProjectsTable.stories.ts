@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import ProjectsTable from '@/components/Projects/ProjectsTable.vue'
-import getProjects from '@/stories/data/projects'
+import getProjects from '@/global/mock/projects'
 
 const meta: Meta<typeof ProjectsTable> = {
 	component: ProjectsTable,

@@ -1,5 +1,5 @@
 import type { ProjectsSlugPage } from '@/global/types/api/project/ProjectsSlugPage'
-import getAccesses from '@/stories/data/access'
+import getAccesses from '@/global/mock/access'
 
 export const projectsSlugPageData: ProjectsSlugPage = {
 	accesses: getAccesses(),
