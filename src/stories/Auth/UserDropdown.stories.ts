@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import UserDropdown from '@/features/user/ui/UserDropdown.vue'
+import UserDropdown from '@/components/Auth/UserDropdown.vue'
 
 const meta: Meta<typeof UserDropdown> = {
 	component: UserDropdown,

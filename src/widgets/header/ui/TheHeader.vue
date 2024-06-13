@@ -13,7 +13,7 @@
 
 <script lang="ts" setup>
 import iconLogo from '@/shared/images/svg/icon-logo.svg'
-import UserDropdown from '@/features/user/ui/UserDropdown.vue'
+import UserDropdown from '@/components/Auth/UserDropdown.vue'
 </script>
 
 <style lang="scss" scoped>

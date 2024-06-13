@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import LogoutModal from '@/features/logout/ui/LogoutModal.vue'
+import LogoutModal from '@/components/Auth/LogoutModal.vue'
 
 const meta: Meta<typeof LogoutModal> = {
 	component: LogoutModal,

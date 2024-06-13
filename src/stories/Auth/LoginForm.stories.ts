@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import LoginForm from '@/features/auth/login/ui/LoginForm.vue'
+import LoginForm from '@/components/Auth/LoginForm.vue'
 
 const meta: Meta<typeof LoginForm> = {
 	component: LoginForm,

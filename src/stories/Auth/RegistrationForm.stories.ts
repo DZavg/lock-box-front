@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import RegistrationForm from '@/features/auth/registration/ui/RegistrationForm.vue'
+import RegistrationForm from '@/components/Auth/RegistrationForm.vue'
 
 const meta: Meta<typeof RegistrationForm> = {
 	component: RegistrationForm,
