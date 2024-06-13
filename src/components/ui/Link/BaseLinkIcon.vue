@@ -27,9 +27,9 @@
 
 <script lang="ts" setup>
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
-import { type HtmlLinkTarget } from '@/model/types/Link/HtmlLinkTarget'
+import { type HtmlLinkTarget } from '@/global/types/ui/link/HtmlLinkTarget'
 import useLink from '@/composable/useLink'
-import { IconSize } from '@/model/types/Icon/IconSize'
+import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 interface Props {
 	link: string | object

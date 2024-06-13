@@ -1,4 +1,4 @@
-import type { ProjectsSlugPage } from '@/model/types/Project/ProjectsSlugPage'
+import type { ProjectsSlugPage } from '@/global/types/api/project/ProjectsSlugPage'
 import getAccesses from '@/stories/data/access'
 
 export const projectsSlugPageData: ProjectsSlugPage = {

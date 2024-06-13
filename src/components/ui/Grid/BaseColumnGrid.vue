@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Gap } from '@/model/types/Gap/Gap'
-import { Indent } from '@/model/types/Gap/Indent'
+import type { Gap } from '@/global/types/ui/gap/Gap'
+import { Indent } from '@/global/types/ui/gap/Indent'
 
 interface Props {
 	desktopGap?: Gap

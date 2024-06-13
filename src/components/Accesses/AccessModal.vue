@@ -40,7 +40,7 @@ import PasswordInput from '@/components/ui/Input/PasswordInput.vue'
 import BaseSelect from '@/components/ui/Select/BaseSelect.vue'
 import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
-import type { Access } from '@/model/types/Access/Access'
+import type { Access } from '@/global/types/api/access/Access'
 import useAccessForm from '@/composable/Access/useAccessForm'
 
 interface Props {

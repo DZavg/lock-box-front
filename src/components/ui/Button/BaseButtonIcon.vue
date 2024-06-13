@@ -15,8 +15,8 @@
 
 <script lang="ts" setup>
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
-import { Color } from '@/model/types/Color/Color'
-import { IconSize } from '@/model/types/Icon/IconSize'
+import { Color } from '@/global/types/ui/color/Color'
+import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 interface Props {
 	disabled?: boolean

@@ -22,7 +22,7 @@
 <script lang="ts" setup>
 import BaseModal from '@/components/ui/Modal/BaseModal.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
-import { ButtonView } from '@/model/types/Button/ButtonView'
+import { ButtonView } from '@/global/types/ui/button/ButtonView'
 
 interface Props {
 	title: string

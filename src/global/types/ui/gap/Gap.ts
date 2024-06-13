@@ -1,4 +1,4 @@
-import { Indent } from '@/model/types/Gap/Indent'
+import { Indent } from '@/global/types/ui/gap/Indent'
 
 export interface Gap {
 	row?: Indent

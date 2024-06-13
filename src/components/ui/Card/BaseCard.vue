@@ -11,8 +11,8 @@
 </template>
 
 <script lang="ts" setup>
-import { CardPaddingSize } from '@/model/types/Card/CardPaddingSize'
-import { BorderRadius } from '@/model/types/Border/BorderRadius'
+import { CardPaddingSize } from '@/global/types/ui/card/CardPaddingSize'
+import { BorderRadius } from '@/global/types/ui/border/BorderRadius'
 
 interface Props {
 	paddingSize?: CardPaddingSize

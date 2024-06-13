@@ -1,5 +1,5 @@
 import { type Ref, ref } from 'vue'
-import type { Project } from '@/model/types/Project/Project'
+import type { Project } from '@/global/types/api/project/Project'
 
 export default function (data?: Project) {
 	const form: Ref<Project> = ref(

@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
 import iconClose from '@/assets/images/svg/icon-close.svg'
-import { IconSize } from '@/model/types/Icon/IconSize'
+import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 const meta: Meta<typeof BaseButtonIcon> = {
 	component: BaseButtonIcon,

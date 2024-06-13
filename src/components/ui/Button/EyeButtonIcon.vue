@@ -17,8 +17,8 @@
 import iconEyeClose from '@/assets/images/svg/icon-eye-close.svg'
 import iconEyeOpen from '@/assets/images/svg/icon-eye-open.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
-import { Color } from '@/model/types/Color/Color'
-import { IconSize } from '@/model/types/Icon/IconSize'
+import { Color } from '@/global/types/ui/color/Color'
+import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 interface Props {
 	active?: boolean

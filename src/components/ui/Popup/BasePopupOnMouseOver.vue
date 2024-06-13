@@ -29,7 +29,7 @@
 import { onBeforeUnmount, onMounted, type Ref, ref } from 'vue'
 import useScreen from '@/composable/useScreen'
 import throttle from '@/lib/throttle'
-import { Position } from '@/model/types/Position/Position'
+import { Position } from '@/global/types/ui/position/Position'
 
 const isActive = ref(false)
 const popupHead: Ref<HTMLElement | null> = ref(null)

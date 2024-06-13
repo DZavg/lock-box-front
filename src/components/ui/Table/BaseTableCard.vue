@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import BaseCard from '@/components/ui/Card/BaseCard.vue'
-import { CardPaddingSize } from '@/model/types/Card/CardPaddingSize'
+import { CardPaddingSize } from '@/global/types/ui/card/CardPaddingSize'
 </script>
 
 <style lang="scss" scoped>

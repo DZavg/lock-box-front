@@ -1,6 +1,6 @@
-import { type TabData } from '@/model/types/Tabs/TabsData'
+import { type TabData } from '@/global/types/ui/tabs/TabsData'
 import RegistrationForm from '@/components/Auth/RegistrationForm.vue'
-import { AuthTabsName } from '@/model/ui/AuthTabsName'
+import { AuthTabsName } from '@/global/types/ui/auth/AuthTabsName'
 import LoginForm from '@/components/Auth/LoginForm.vue'
 
 export const AuthTabsData: TabData[] = [

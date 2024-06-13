@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseCard from '@/components/ui/Card/BaseCard.vue'
-import { BorderRadius } from '@/model/types/Border/BorderRadius'
-import { CardPaddingSize } from '@/model/types/Card/CardPaddingSize'
+import { BorderRadius } from '@/global/types/ui/border/BorderRadius'
+import { CardPaddingSize } from '@/global/types/ui/card/CardPaddingSize'
 
 const meta: Meta<typeof BaseCard> = {
 	component: BaseCard,

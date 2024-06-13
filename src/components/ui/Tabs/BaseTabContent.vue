@@ -9,7 +9,7 @@
 
 <script lang="ts" setup>
 import { computed, inject } from 'vue'
-import { type TabsData } from '@/model/types/Tabs/TabsData'
+import { type TabsData } from '@/global/types/ui/tabs/TabsData'
 
 interface Props {
 	name: string

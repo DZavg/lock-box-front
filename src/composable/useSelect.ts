@@ -1,5 +1,5 @@
 import { onBeforeUnmount, onMounted, type Ref, ref } from 'vue'
-import { Position } from '@/model/types/Position/Position'
+import { Position } from '@/global/types/ui/position/Position'
 import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
 import throttle from '@/lib/throttle'
 

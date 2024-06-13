@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import iconClose from '@/assets/images/svg/icon-close.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
-import { IconSize } from '@/model/types/Icon/IconSize'
+import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 interface Props {
 	size?: IconSize

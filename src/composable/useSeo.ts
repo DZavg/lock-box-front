@@ -1,4 +1,4 @@
-import type { SEO } from '@/model/types/Seo/SEO'
+import type { SEO } from '@/global/types/api/seo/SEO'
 
 export default function useSeo(seo: SEO) {
 	const PROJECT_NAME = 'Lock Box'

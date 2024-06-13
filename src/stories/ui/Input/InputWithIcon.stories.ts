@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/vue3'
 import InputWithIcon from '@/components/ui/Input/InputWithIcon.vue'
 import iconSearch from '@/assets/images/svg/icon-search.svg'
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
-import { IconSize } from '@/model/types/Icon/IconSize'
+import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 const meta: Meta<typeof InputWithIcon> = {
 	component: InputWithIcon,

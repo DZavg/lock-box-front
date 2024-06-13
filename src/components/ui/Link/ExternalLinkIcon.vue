@@ -10,7 +10,7 @@
 <script lang="ts" setup>
 import iconExternalLink from '@/assets/images/svg/icon-external-link.svg'
 import BaseLinkIcon from '@/components/ui/Link/BaseLinkIcon.vue'
-import { IconSize } from '@/model/types/Icon/IconSize'
+import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 interface Props {
 	link: string

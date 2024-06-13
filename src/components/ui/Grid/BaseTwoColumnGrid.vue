@@ -9,8 +9,8 @@
 
 <script setup lang="ts">
 import BaseColumnGrid from '@/components/ui/Grid/BaseColumnGrid.vue'
-import { Indent } from '@/model/types/Gap/Indent'
-import type { Gap } from '@/model/types/Gap/Gap'
+import { Indent } from '@/global/types/ui/gap/Indent'
+import type { Gap } from '@/global/types/ui/gap/Gap'
 
 interface Props {
 	desktopGap?: Gap
