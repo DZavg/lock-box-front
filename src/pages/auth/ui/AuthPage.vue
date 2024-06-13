@@ -7,7 +7,7 @@
 
 <script lang="ts" setup>
 import LogoWithDescription from '@/components/ui/Logo/LogoWithDescription.vue'
-import AuthTabs from '@/widgets/auth/tabs/ui/AuthTabs.vue'
+import AuthTabs from '@/components/Auth/AuthTabs.vue'
 import AuthPageWrapper from '@/components/Auth/AuthPageWrapper.vue'
 </script>
 

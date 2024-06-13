@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import AuthTabs from '@/widgets/auth/tabs/ui/AuthTabs.vue'
+import AuthTabs from '@/components/Auth/AuthTabs.vue'
 
 const meta: Meta<typeof AuthTabs> = {
 	component: AuthTabs,
