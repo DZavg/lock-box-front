@@ -1,5 +1,5 @@
 import { useScreenStore } from '@/stores/screen'
-import throttle from '@/shared/lib/throttle'
+import throttle from '@/lib/throttle'
 
 const checkScreen = {
 	install: () => {

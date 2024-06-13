@@ -28,7 +28,7 @@
 <script lang="ts" setup>
 import { onBeforeUnmount, onMounted, type Ref, ref } from 'vue'
 import useScreen from '@/composable/useScreen'
-import throttle from '@/shared/lib/throttle'
+import throttle from '@/lib/throttle'
 import { Position } from '@/shared/model/types/Position/Position'
 
 const isActive = ref(false)

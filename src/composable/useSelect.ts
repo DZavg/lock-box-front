@@ -1,7 +1,7 @@
 import { onBeforeUnmount, onMounted, type Ref, ref } from 'vue'
 import { Position } from '@/shared/model/types/Position/Position'
 import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
-import throttle from '@/shared/lib/throttle'
+import throttle from '@/lib/throttle'
 
 export default function () {
 	const selectField: Ref<InstanceType<typeof HTMLElement> | null> = ref(null)
