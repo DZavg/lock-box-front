@@ -1,4 +1,4 @@
-import type { Project } from '@/shared/model/types/Project/Project'
+import type { Project } from '@/model/types/Project/Project'
 
 const getProjects = () => {
 	const data: Project[] = []

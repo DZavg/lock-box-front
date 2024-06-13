@@ -1,5 +1,5 @@
 import { type Ref, ref } from 'vue'
-import type { Project } from '@/shared/model/types/Project/Project'
+import type { Project } from '@/model/types/Project/Project'
 
 interface ProjectModalOptions {
 	project?: Project

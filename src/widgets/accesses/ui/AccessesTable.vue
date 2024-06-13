@@ -60,10 +60,10 @@
 import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
-import type { TableField } from '@/shared/model/types/Table/Table'
+import type { TableField } from '@/model/types/Table/Table'
 import useConfirmDeleteModal from '@/composable/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModal/ConfirmDeleteModal.vue'
-import type { Access } from '@/shared/model/types/Access/Access'
+import type { Access } from '@/model/types/Access/Access'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
 import useAccessModal from '@/composable/useAccessModal'
 

@@ -1,4 +1,4 @@
-import type { Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
+import type { Breadcrumb } from '@/model/types/Breadcrumbs/Breadcrumb'
 
 const getBreadcrumbs = () => {
 	const breadcrumbs: Breadcrumb[] = []

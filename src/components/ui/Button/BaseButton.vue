@@ -12,8 +12,8 @@
 </template>
 
 <script lang="ts" setup>
-import { type HtmlButtonType } from '@/shared/model/types/Button/HtmlButtonType'
-import { ButtonView } from '@/shared/model/types/Button/ButtonView'
+import { type HtmlButtonType } from '@/model/types/Button/HtmlButtonType'
+import { ButtonView } from '@/model/types/Button/ButtonView'
 import BaseButtonLoader from '@/components/ui/Button/BaseButtonLoader.vue'
 
 interface Props {

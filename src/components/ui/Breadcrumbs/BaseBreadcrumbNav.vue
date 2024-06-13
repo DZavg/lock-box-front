@@ -34,8 +34,8 @@
 
 <script lang="ts" setup>
 import BaseLink from '@/components/ui/Link/BaseLink.vue'
-import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
-import { Color } from '@/shared/model/types/Color/Color'
+import { type Breadcrumb } from '@/model/types/Breadcrumbs/Breadcrumb'
+import { Color } from '@/model/types/Color/Color'
 import iconArrowSmall from '@/assets/images/svg/icon-arrow-small.svg'
 import { computed } from 'vue'
 

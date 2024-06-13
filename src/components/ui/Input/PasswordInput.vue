@@ -16,7 +16,7 @@
 import InputWithIcon from '@/components/ui/Input/InputWithIcon.vue'
 import EyeButtonIcon from '@/components/ui/Button/EyeButtonIcon.vue'
 import { computed, ref, type Ref } from 'vue'
-import { Color } from '@/shared/model/types/Color/Color'
+import { Color } from '@/model/types/Color/Color'
 
 interface Props {
 	name?: string

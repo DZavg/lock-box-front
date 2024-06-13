@@ -1,4 +1,4 @@
-import type { Access } from '@/shared/model/types/Access/Access'
+import type { Access } from '@/model/types/Access/Access'
 
 const getAccesses = () => {
 	const data: Access[] = []

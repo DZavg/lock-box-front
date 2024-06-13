@@ -1,4 +1,4 @@
-import { type TabData } from '@/shared/model/types/Tabs/TabsData'
+import { type TabData } from '@/model/types/Tabs/TabsData'
 import RegistrationForm from '@/components/Auth/RegistrationForm.vue'
 import { AuthTabsName } from '@/model/ui/AuthTabsName'
 import LoginForm from '@/components/Auth/LoginForm.vue'

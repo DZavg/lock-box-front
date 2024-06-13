@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 import BaseBreadcrumbNav from '@/components/ui/Breadcrumbs/BaseBreadcrumbNav.vue'
-import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
+import { type Breadcrumb } from '@/model/types/Breadcrumbs/Breadcrumb'
 import BasePoint from '@/components/ui/Point/BasePoint.vue'
 import useScreen from '@/composable/useScreen'
 

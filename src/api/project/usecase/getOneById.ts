@@ -1,4 +1,4 @@
-import { type ProjectsSlugPage } from '@/shared/model/types/Project/ProjectsSlugPage'
+import { type ProjectsSlugPage } from '@/model/types/Project/ProjectsSlugPage'
 import { type ProjectRepository } from '@/api/project/repository/ProjectRepository'
 import { inject, injectable } from 'inversify'
 import { identifiers } from '@/api/constants/identifiers'

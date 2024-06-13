@@ -17,7 +17,7 @@
 
 <script lang="ts" setup>
 import BaseLink from '@/components/ui/Link/BaseLink.vue'
-import { Color } from '@/shared/model/types/Color/Color'
+import { Color } from '@/model/types/Color/Color'
 
 const currentYear = new Date().getFullYear()
 </script>

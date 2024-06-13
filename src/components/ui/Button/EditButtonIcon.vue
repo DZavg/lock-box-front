@@ -8,7 +8,7 @@
 <script lang="ts" setup>
 import iconEdit from '@/assets/images/svg/icon-edit.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
-import { IconSize } from '@/shared/model/types/Icon/IconSize'
+import { IconSize } from '@/model/types/Icon/IconSize'
 
 interface Props {
 	size?: IconSize

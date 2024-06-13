@@ -33,7 +33,7 @@ import EditButtonIcon from '@/components/ui/Button/EditButtonIcon.vue'
 import DeleteButtonIcon from '@/components/ui/Button/DeleteButtonIcon.vue'
 import { computed } from 'vue'
 import useScreen from '@/composable/useScreen'
-import { IconSize } from '@/shared/model/types/Icon/IconSize'
+import { IconSize } from '@/model/types/Icon/IconSize'
 import EyeLinkIcon from '@/components/ui/Link/EyeLinkIcon.vue'
 import CopyButtonIcon from '@/components/ui/Button/CopyButtonIcon.vue'
 

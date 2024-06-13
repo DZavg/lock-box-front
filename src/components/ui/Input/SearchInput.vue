@@ -23,8 +23,8 @@ import InputWithIcon from '@/components/ui/Input/InputWithIcon.vue'
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
 import iconSearch from '@/assets/images/svg/icon-search.svg'
 import { computed, type Ref, ref } from 'vue'
-import { Color } from '@/shared/model/types/Color/Color'
-import { IconSize } from '@/shared/model/types/Icon/IconSize'
+import { Color } from '@/model/types/Color/Color'
+import { IconSize } from '@/model/types/Icon/IconSize'
 import CloseButtonIcon from '@/components/ui/Button/CloseButtonIcon.vue'
 
 interface Props {

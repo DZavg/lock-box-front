@@ -10,8 +10,8 @@
 </template>
 
 <script lang="ts" setup>
-import { ButtonView } from '@/shared/model/types/Button/ButtonView'
-import { type HtmlLinkTarget } from '@/shared/model/types/Link/HtmlLinkTarget'
+import { ButtonView } from '@/model/types/Button/ButtonView'
+import { type HtmlLinkTarget } from '@/model/types/Link/HtmlLinkTarget'
 
 interface Props {
 	link: string | object

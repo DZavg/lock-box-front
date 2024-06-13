@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import { type ListField, type ListValue } from '@/shared/model/types/List/List'
+import { type ListField, type ListValue } from '@/model/types/List/List'
 
 interface Props {
 	fields: ListField[]

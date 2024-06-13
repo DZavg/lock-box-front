@@ -9,7 +9,7 @@
 <script lang="ts" setup>
 import iconEyeOpen from '@/assets/images/svg/icon-eye-open.svg'
 import BaseLinkIcon from '@/components/ui/Link/BaseLinkIcon.vue'
-import { IconSize } from '@/shared/model/types/Icon/IconSize'
+import { IconSize } from '@/model/types/Icon/IconSize'
 
 interface Props {
 	link: string | object
