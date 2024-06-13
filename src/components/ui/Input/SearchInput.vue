@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import InputWithIcon from '@/components/ui/Input/InputWithIcon.vue'
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
-import iconSearch from '@/shared/images/svg/icon-search.svg'
+import iconSearch from '@/assets/images/svg/icon-search.svg'
 import { computed, type Ref, ref } from 'vue'
 import { Color } from '@/shared/model/types/Color/Color'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'

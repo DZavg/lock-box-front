@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import iconClose from '@/shared/images/svg/icon-close.svg'
+import iconClose from '@/assets/images/svg/icon-close.svg'
 import BaseLinkIcon from '@/components/ui/Link/BaseLinkIcon.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 

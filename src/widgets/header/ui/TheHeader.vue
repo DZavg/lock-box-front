@@ -12,7 +12,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconLogo from '@/shared/images/svg/icon-logo.svg'
+import iconLogo from '@/assets/images/svg/icon-logo.svg'
 import UserDropdown from '@/components/Auth/UserDropdown.vue'
 </script>
 

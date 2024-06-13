@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import iconLoading from '@/shared/images/svg/icon-loading.svg'
+import iconLoading from '@/assets/images/svg/icon-loading.svg'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
 </script>

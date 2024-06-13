@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconEdit from '@/shared/images/svg/icon-edit.svg'
+import iconEdit from '@/assets/images/svg/icon-edit.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 

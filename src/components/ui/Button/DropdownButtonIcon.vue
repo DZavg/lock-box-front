@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
+import iconArrowSmall from '@/assets/images/svg/icon-arrow-small.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
 import { Color } from '@/shared/model/types/Color/Color'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'

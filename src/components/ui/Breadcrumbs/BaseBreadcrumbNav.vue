@@ -36,7 +36,7 @@
 import BaseLink from '@/components/ui/Link/BaseLink.vue'
 import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
 import { Color } from '@/shared/model/types/Color/Color'
-import iconArrowSmall from '@/shared/images/svg/icon-arrow-small.svg'
+import iconArrowSmall from '@/assets/images/svg/icon-arrow-small.svg'
 import { computed } from 'vue'
 
 interface Props {

@@ -7,7 +7,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconEyeOpen from '@/shared/images/svg/icon-eye-open.svg'
+import iconEyeOpen from '@/assets/images/svg/icon-eye-open.svg'
 import BaseLinkIcon from '@/components/ui/Link/BaseLinkIcon.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 

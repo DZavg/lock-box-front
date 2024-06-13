@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconCopy from '@/shared/images/svg/icon-copy.svg'
+import iconCopy from '@/assets/images/svg/icon-copy.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
 
