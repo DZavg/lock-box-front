@@ -1,5 +1,5 @@
 import CustomLayout from '@/layouts/CustomLayout.vue'
-import { RouteName } from '@/app/router/RouteName'
+import { RouteName } from '@/router/RouteName'
 
 export const specialRoutes = {
 	path: '',

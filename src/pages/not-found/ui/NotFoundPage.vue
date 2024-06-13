@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import BaseLinkButton from '@/components/ui/Link/BaseLinkButton.vue'
-import { RouteName } from '@/app/router/RouteName'
+import { RouteName } from '@/router/RouteName'
 import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
 </script>
 

@@ -21,7 +21,7 @@ import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import PasswordInput from '@/components/ui/Input/PasswordInput.vue'
 import BaseLink from '@/components/ui/Link/BaseLink.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
-import { RouteName } from '@/app/router/RouteName'
+import { RouteName } from '@/router/RouteName'
 </script>
 
 <style lang="scss" scoped>

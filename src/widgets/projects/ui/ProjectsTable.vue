@@ -61,7 +61,7 @@
 </template>
 
 <script setup lang="ts">
-import { RouteName } from '@/app/router/RouteName'
+import { RouteName } from '@/router/RouteName'
 import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import type { Project } from '@/shared/model/types/Project/Project'

@@ -1,5 +1,5 @@
 import DefaultLayout from '@/layouts/DefaultLayout.vue'
-import { RouteName } from '@/app/router/RouteName'
+import { RouteName } from '@/router/RouteName'
 
 export const projectRoutes = {
 	path: '/projects',

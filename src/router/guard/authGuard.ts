@@ -1,7 +1,7 @@
 import type { RouteLocationNormalized } from 'vue-router'
 import { useUserStore } from '@/stores/user'
 import { storeToRefs } from 'pinia'
-import { RouteName } from '@/app/router/RouteName'
+import { RouteName } from '@/router/RouteName'
 
 export default function (to: RouteLocationNormalized) {
 	const userStore = useUserStore()
