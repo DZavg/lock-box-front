@@ -1,4 +1,4 @@
-import DefaultLayout from '@/app/layouts/DefaultLayout.vue'
+import DefaultLayout from '@/layouts/DefaultLayout.vue'
 import { RouteName } from '@/app/router/RouteName'
 
 export const projectRoutes = {
