@@ -64,8 +64,8 @@ import type { TableField } from '@/shared/model/types/Table/Table'
 import useConfirmDeleteModal from '@/features/confirm-action/composable/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/features/confirm-action/ui/ConfirmDeleteModal.vue'
 import type { Access } from '@/shared/model/types/Access/Access'
-import AccessModal from '@/features/access/edit/ui/AccessModal.vue'
-import useAccessModal from '@/features/access/edit/composable/useAccessModal'
+import AccessModal from '@/components/Accesses/AccessModal.vue'
+import useAccessModal from '@/composable/useAccessModal'
 
 interface Props {
 	accesses: Access[]

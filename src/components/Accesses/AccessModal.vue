@@ -41,7 +41,7 @@ import BaseSelect from '@/components/ui/Select/BaseSelect.vue'
 import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import type { Access } from '@/shared/model/types/Access/Access'
-import useAccessForm from '@/features/access/edit/composable/useAccessForm'
+import useAccessForm from '@/composable/useAccessForm'
 
 interface Props {
 	access?: Access
