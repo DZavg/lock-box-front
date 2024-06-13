@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts" setup>
-import AuthCard from '@/entities/auth/card/ui/AuthCard.vue'
+import AuthCard from '@/components/Auth/AuthCard.vue'
 import BaseTabs from '@/components/ui/Tabs/BaseTabs.vue'
 import BaseTabButton from '@/components/ui/Tabs/BaseTabButton.vue'
 import BaseTabContent from '@/components/ui/Tabs/BaseTabContent.vue'

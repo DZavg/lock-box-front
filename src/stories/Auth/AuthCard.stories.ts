@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import AuthCard from '@/entities/auth/card/ui/AuthCard.vue'
+import AuthCard from '@/components/Auth/AuthCard.vue'
 
 const meta: Meta<typeof AuthCard> = {
 	component: AuthCard,

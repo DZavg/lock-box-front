@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import AuthPageWrapper from '@/entities/auth/page-wrapper/ui/AuthPageWrapper.vue'
+import AuthPageWrapper from '@/components/Auth/AuthPageWrapper.vue'
 import LogoWithDescription from '@/components/ui/Logo/LogoWithDescription.vue'
 
 const meta: Meta<typeof AuthPageWrapper> = {
