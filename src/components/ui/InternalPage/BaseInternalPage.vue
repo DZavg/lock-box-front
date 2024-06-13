@@ -26,7 +26,7 @@
 import BaseBreadcrumbNav from '@/components/ui/Breadcrumbs/BaseBreadcrumbNav.vue'
 import { type Breadcrumb } from '@/shared/model/types/Breadcrumbs/Breadcrumb'
 import BasePoint from '@/components/ui/Point/BasePoint.vue'
-import useScreen from '@/app/composable/useScreen'
+import useScreen from '@/composable/useScreen'
 
 interface Props {
 	breadcrumbs?: Breadcrumb[]

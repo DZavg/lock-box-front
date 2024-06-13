@@ -32,7 +32,7 @@
 
 <script lang="ts" setup>
 import CloseButtonIcon from '@/components/ui/Button/CloseButtonIcon.vue'
-import useLockScroll from '@/app/composable/useLockScroll'
+import useLockScroll from '@/composable/useLockScroll'
 import BaseCard from '@/components/ui/Card/BaseCard.vue'
 
 interface Props {

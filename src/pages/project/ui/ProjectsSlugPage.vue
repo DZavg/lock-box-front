@@ -31,7 +31,7 @@
 import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import { ref, type Ref } from 'vue'
-import useSeo from '@/app/composable/useSeo'
+import useSeo from '@/composable/useSeo'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
 import useAccessModal from '@/composable/useAccessModal'
 import AccessesTable from '@/widgets/accesses/ui/AccessesTable.vue'
