@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import ConfirmActionModal from '@/features/confirm-action/ui/ConfirmActionModal.vue'
+import ConfirmActionModal from '@/components/ConfirmModal/ConfirmActionModal.vue'
 
 interface Props {
 	title: string

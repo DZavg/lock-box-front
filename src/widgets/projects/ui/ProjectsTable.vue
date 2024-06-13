@@ -69,8 +69,8 @@ import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionLi
 import type { TableField } from '@/shared/model/types/Table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useProjectModal from '@/composable/useProjectModal'
-import useConfirmDeleteModal from '@/features/confirm-action/composable/useConfirmDeleteModal'
-import ConfirmDeleteModal from '@/features/confirm-action/ui/ConfirmDeleteModal.vue'
+import useConfirmDeleteModal from '@/composable/useConfirmDeleteModal'
+import ConfirmDeleteModal from '@/components/ConfirmModal/ConfirmDeleteModal.vue'
 
 interface Props {
 	projects: Project[]
