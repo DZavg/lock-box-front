@@ -70,7 +70,7 @@ import type { TableField } from '@/global/types/ui/table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useProjectModal from '@/composable/Project/useProjectModal'
 import useConfirmDeleteModal from '@/composable/useConfirmDeleteModal'
-import ConfirmDeleteModal from '@/components/ConfirmModal/ConfirmDeleteModal.vue'
+import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 
 interface Props {
 	projects: Project[]

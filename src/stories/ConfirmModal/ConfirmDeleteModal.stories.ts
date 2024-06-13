@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import ConfirmDeleteModal from '@/components/ConfirmModal/ConfirmDeleteModal.vue'
+import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 
 const meta: Meta<typeof ConfirmDeleteModal> = {
 	component: ConfirmDeleteModal,
