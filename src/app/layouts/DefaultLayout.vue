@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import TheFooter from '@/shared/ui/Footer/TheFooter.vue'
+import TheFooter from '@/components/ui/Footer/TheFooter.vue'
 import TheHeader from '@/widgets/header/ui/TheHeader.vue'
 </script>
 

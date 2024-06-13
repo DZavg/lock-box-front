@@ -18,12 +18,12 @@
 </template>
 
 <script lang="ts" setup>
-import BaseForm from '@/shared/ui/Form/BaseForm.vue'
-import EmailInput from '@/shared/ui/Input/EmailInput.vue'
-import BaseButton from '@/shared/ui/Button/BaseButton.vue'
-import PasswordInput from '@/shared/ui/Input/PasswordInput.vue'
-import BaseInput from '@/shared/ui/Input/BaseInput.vue'
-import InputList from '@/shared/ui/Input/InputList.vue'
+import BaseForm from '@/components/ui/Form/BaseForm.vue'
+import EmailInput from '@/components/ui/Input/EmailInput.vue'
+import BaseButton from '@/components/ui/Button/BaseButton.vue'
+import PasswordInput from '@/components/ui/Input/PasswordInput.vue'
+import BaseInput from '@/components/ui/Input/BaseInput.vue'
+import InputList from '@/components/ui/Input/InputList.vue'
 </script>
 
 <style lang="scss" scoped>

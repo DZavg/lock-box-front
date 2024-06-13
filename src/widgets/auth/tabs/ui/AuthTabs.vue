@@ -32,9 +32,9 @@
 
 <script lang="ts" setup>
 import AuthCard from '@/entities/auth/card/ui/AuthCard.vue'
-import BaseTabs from '@/shared/ui/Tabs/BaseTabs.vue'
-import BaseTabButton from '@/shared/ui/Tabs/BaseTabButton.vue'
-import BaseTabContent from '@/shared/ui/Tabs/BaseTabContent.vue'
+import BaseTabs from '@/components/ui/Tabs/BaseTabs.vue'
+import BaseTabButton from '@/components/ui/Tabs/BaseTabButton.vue'
+import BaseTabContent from '@/components/ui/Tabs/BaseTabContent.vue'
 import { AuthTabsName } from '@/widgets/auth/tabs/model/AuthTabsName'
 import { ref, type Ref } from 'vue'
 import { AuthTabsData } from '@/widgets/auth/tabs/data/AuthTabsData'

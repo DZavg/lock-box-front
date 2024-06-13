@@ -26,11 +26,11 @@
 </template>
 
 <script lang="ts" setup>
-import BaseModal from '@/shared/ui/Modal/BaseModal.vue'
-import BaseInput from '@/shared/ui/Input/BaseInput.vue'
-import BaseButton from '@/shared/ui/Button/BaseButton.vue'
-import BaseForm from '@/shared/ui/Form/BaseForm.vue'
-import InputList from '@/shared/ui/Input/InputList.vue'
+import BaseModal from '@/components/ui/Modal/BaseModal.vue'
+import BaseInput from '@/components/ui/Input/BaseInput.vue'
+import BaseButton from '@/components/ui/Button/BaseButton.vue'
+import BaseForm from '@/components/ui/Form/BaseForm.vue'
+import InputList from '@/components/ui/Input/InputList.vue'
 import type { Project } from '@/shared/model/types/Project/Project'
 import useProjectForm from '@/features/project/modal/composable/useProjectForm'
 

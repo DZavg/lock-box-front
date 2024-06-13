@@ -26,8 +26,8 @@
 </template>
 
 <script lang="ts" setup>
-import BaseLinkButton from '@/shared/ui/Link/BaseLinkButton.vue'
-import ContentCentering from '@/shared/ui/Content/ContentCentering.vue'
+import BaseLinkButton from '@/components/ui/Link/BaseLinkButton.vue'
+import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
 
 interface Props {
 	email: string

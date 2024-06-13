@@ -14,9 +14,9 @@
 
 <script lang="ts" setup>
 import AuthCard from '@/entities/auth/card/ui/AuthCard.vue'
-import BaseForm from '@/shared/ui/Form/BaseForm.vue'
-import EmailInput from '@/shared/ui/Input/EmailInput.vue'
-import BaseButton from '@/shared/ui/Button/BaseButton.vue'
+import BaseForm from '@/components/ui/Form/BaseForm.vue'
+import EmailInput from '@/components/ui/Input/EmailInput.vue'
+import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import { ref } from 'vue'
 
 const form = ref({

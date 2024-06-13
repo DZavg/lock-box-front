@@ -58,7 +58,7 @@
 
 <script setup lang="ts">
 import TableActionList from '@/features/table/action-list/ui/TableActionList.vue'
-import BaseTableGroup from '@/shared/ui/Table/BaseTableGroup.vue'
+import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import TableCardWithActionList from '@/features/table/action-list/ui/TableCardWithActionList.vue'
 import type { TableField } from '@/shared/model/types/Table/Table'
 import useConfirmDeleteModal from '@/features/confirm-action/composable/useConfirmDeleteModal'

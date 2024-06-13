@@ -33,13 +33,13 @@
 </template>
 
 <script lang="ts" setup>
-import BaseModal from '@/shared/ui/Modal/BaseModal.vue'
-import BaseInput from '@/shared/ui/Input/BaseInput.vue'
-import BaseButton from '@/shared/ui/Button/BaseButton.vue'
-import PasswordInput from '@/shared/ui/Input/PasswordInput.vue'
-import BaseSelect from '@/shared/ui/Select/BaseSelect.vue'
-import BaseForm from '@/shared/ui/Form/BaseForm.vue'
-import InputList from '@/shared/ui/Input/InputList.vue'
+import BaseModal from '@/components/ui/Modal/BaseModal.vue'
+import BaseInput from '@/components/ui/Input/BaseInput.vue'
+import BaseButton from '@/components/ui/Button/BaseButton.vue'
+import PasswordInput from '@/components/ui/Input/PasswordInput.vue'
+import BaseSelect from '@/components/ui/Select/BaseSelect.vue'
+import BaseForm from '@/components/ui/Form/BaseForm.vue'
+import InputList from '@/components/ui/Input/InputList.vue'
 import type { Access } from '@/shared/model/types/Access/Access'
 import useAccessForm from '@/features/access/edit/composable/useAccessForm'
 

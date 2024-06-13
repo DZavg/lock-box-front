@@ -28,14 +28,14 @@
 </template>
 
 <script lang="ts" setup>
-import ExternalLinkIcon from '@/shared/ui/Link/ExternalLinkIcon.vue'
-import EditButtonIcon from '@/shared/ui/Button/EditButtonIcon.vue'
-import DeleteButtonIcon from '@/shared/ui/Button/DeleteButtonIcon.vue'
+import ExternalLinkIcon from '@/components/ui/Link/ExternalLinkIcon.vue'
+import EditButtonIcon from '@/components/ui/Button/EditButtonIcon.vue'
+import DeleteButtonIcon from '@/components/ui/Button/DeleteButtonIcon.vue'
 import { computed } from 'vue'
 import useScreen from '@/app/composable/useScreen'
 import { IconSize } from '@/shared/model/types/Icon/IconSize'
-import EyeLinkIcon from '@/shared/ui/Link/EyeLinkIcon.vue'
-import CopyButtonIcon from '@/shared/ui/Button/CopyButtonIcon.vue'
+import EyeLinkIcon from '@/components/ui/Link/EyeLinkIcon.vue'
+import CopyButtonIcon from '@/components/ui/Button/CopyButtonIcon.vue'
 
 interface Props {
 	externalLink?: string

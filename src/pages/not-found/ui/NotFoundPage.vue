@@ -22,9 +22,9 @@
 </template>
 
 <script lang="ts" setup>
-import BaseLinkButton from '@/shared/ui/Link/BaseLinkButton.vue'
+import BaseLinkButton from '@/components/ui/Link/BaseLinkButton.vue'
 import { RouteName } from '@/app/router/RouteName'
-import ContentCentering from '@/shared/ui/Content/ContentCentering.vue'
+import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
 </script>
 
 <style lang="scss" scoped>

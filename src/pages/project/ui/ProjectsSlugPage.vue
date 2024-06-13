@@ -28,8 +28,8 @@
 </template>
 
 <script lang="ts" setup>
-import BaseInternalPage from '@/shared/ui/InternalPage/BaseInternalPage.vue'
-import BaseButton from '@/shared/ui/Button/BaseButton.vue'
+import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
+import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import { ref, type Ref } from 'vue'
 import useSeo from '@/app/composable/useSeo'
 import AccessModal from '@/features/access/edit/ui/AccessModal.vue'

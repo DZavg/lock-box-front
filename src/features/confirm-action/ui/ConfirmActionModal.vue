@@ -20,8 +20,8 @@
 </template>
 
 <script lang="ts" setup>
-import BaseModal from '@/shared/ui/Modal/BaseModal.vue'
-import BaseButton from '@/shared/ui/Button/BaseButton.vue'
+import BaseModal from '@/components/ui/Modal/BaseModal.vue'
+import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import { ButtonView } from '@/shared/model/types/Button/ButtonView'
 
 interface Props {

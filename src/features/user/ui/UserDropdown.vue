@@ -36,11 +36,11 @@
 </template>
 
 <script lang="ts" setup>
-import DropdownButtonIcon from '@/shared/ui/Button/DropdownButtonIcon.vue'
-import BaseOptionList from '@/shared/ui/Option/BaseOptionList.vue'
-import BaseOption from '@/shared/ui/Option/BaseOption.vue'
+import DropdownButtonIcon from '@/components/ui/Button/DropdownButtonIcon.vue'
+import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
+import BaseOption from '@/components/ui/Option/BaseOption.vue'
 import { type Ref, ref } from 'vue'
-import BasePopupOnMouseOver from '@/shared/ui/Popup/BasePopupOnMouseOver.vue'
+import BasePopupOnMouseOver from '@/components/ui/Popup/BasePopupOnMouseOver.vue'
 import LogoutModal from '@/features/logout/ui/LogoutModal.vue'
 import useLogoutModal from '@/features/logout/composable/useLogoutModal'
 

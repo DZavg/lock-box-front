@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-import BaseCard from '@/shared/ui/Card/BaseCard.vue'
+import BaseCard from '@/components/ui/Card/BaseCard.vue'
 
 interface Props {
 	title: string
