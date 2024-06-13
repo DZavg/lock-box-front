@@ -68,8 +68,8 @@ import type { Project } from '@/global/types/api/project/Project'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import type { TableField } from '@/global/types/ui/table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
-import useProjectModal from '@/composable/modals/useProjectModal'
-import useConfirmDeleteModal from '@/composable/useConfirmDeleteModal'
+import useProjectModal from '@/composables/modals/useProjectModal'
+import useConfirmDeleteModal from '@/composables/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 
 interface Props {

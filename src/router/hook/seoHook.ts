@@ -1,5 +1,5 @@
 import type { RouteLocationNormalized } from 'vue-router'
-import useSeo from '@/composable/useSeo'
+import useSeo from '@/composables/useSeo'
 
 export default function (to: RouteLocationNormalized) {
 	const { title } = to.meta

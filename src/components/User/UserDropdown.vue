@@ -41,7 +41,7 @@ import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
 import BaseOption from '@/components/ui/Option/BaseOption.vue'
 import { type Ref, ref } from 'vue'
 import BasePopupOnMouseOver from '@/components/ui/Popup/BasePopupOnMouseOver.vue'
-import useLogoutModal from '@/composable/useLogoutModal'
+import useLogoutModal from '@/composables/useLogoutModal'
 import ConfirmLogoutModal from '@/components/ConfirmModals/ConfirmLogoutModal.vue'
 
 const isActive: Ref<boolean> = ref(false)

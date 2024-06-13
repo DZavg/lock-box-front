@@ -24,7 +24,7 @@
 <script lang="ts" setup>
 import { type HtmlLinkTarget } from '@/global/types/ui/link/HtmlLinkTarget'
 import { Color } from '@/global/types/ui/color/Color'
-import useLink from '@/composable/useLink'
+import useLink from '@/composables/useLink'
 
 interface Props {
 	link: string | object

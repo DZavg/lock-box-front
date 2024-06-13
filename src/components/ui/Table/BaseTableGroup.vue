@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import BaseTable from '@/components/ui/Table/BaseTable.vue'
-import useScreen from '@/composable/useScreen'
+import useScreen from '@/composables/useScreen'
 import BaseTwoColumnGrid from '@/components/ui/Grid/BaseTwoColumnGrid.vue'
 
 const { isMobile } = useScreen()

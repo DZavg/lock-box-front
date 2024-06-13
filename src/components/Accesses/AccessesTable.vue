@@ -61,11 +61,11 @@ import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import type { TableField } from '@/global/types/ui/table/Table'
-import useConfirmDeleteModal from '@/composable/useConfirmDeleteModal'
+import useConfirmDeleteModal from '@/composables/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import type { Access } from '@/global/types/api/access/Access'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
-import useAccessModal from '@/composable/modals/useAccessModal'
+import useAccessModal from '@/composables/modals/useAccessModal'
 
 interface Props {
 	accesses: Access[]
