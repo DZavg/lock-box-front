@@ -37,7 +37,7 @@ import BaseTabButton from '@/components/ui/Tabs/BaseTabButton.vue'
 import BaseTabContent from '@/components/ui/Tabs/BaseTabContent.vue'
 import { AuthTabsName } from '@/global/types/ui/auth/AuthTabsName'
 import { ref, type Ref } from 'vue'
-import { AuthTabsData } from '@/global/mock/AuthTabsData'
+import { AuthTabsData } from '@/global/data/auth/AuthTabsData'
 
 const activeTabName: Ref<string> = ref(AuthTabsName.Login)
 
