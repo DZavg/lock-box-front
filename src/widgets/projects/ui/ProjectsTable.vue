@@ -62,10 +62,10 @@
 
 <script setup lang="ts">
 import { RouteName } from '@/app/router/RouteName'
-import TableActionList from '@/features/table/action-list/ui/TableActionList.vue'
+import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import type { Project } from '@/shared/model/types/Project/Project'
-import TableCardWithActionList from '@/features/table/action-list/ui/TableCardWithActionList.vue'
+import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import type { TableField } from '@/shared/model/types/Table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useProjectModal from '@/composable/useProjectModal'

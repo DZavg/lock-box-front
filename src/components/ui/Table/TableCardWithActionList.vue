@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 import BaseTableCard from '@/components/ui/Table/BaseTableCard.vue'
-import TableActionList from '@/features/table/action-list/ui/TableActionList.vue'
+import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseList from '@/components/ui/List/BaseList.vue'
 import type { ListField, ListValue } from '@/shared/model/types/List/List'
 

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import TableActionList from '@/features/table/action-list/ui/TableActionList.vue'
+import TableActionList from '@/components/ui/Table/TableActionList.vue'
 
 const meta: Meta<typeof TableActionList> = {
 	component: TableActionList,

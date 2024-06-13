@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import TableCardWithActionList from '@/features/table/action-list/ui/TableCardWithActionList.vue'
+import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import type { TableField } from '@/shared/model/types/Table/Table'
 import type { Project } from '@/shared/model/types/Project/Project'
 import getProjects from '@/stories/data/projects'
