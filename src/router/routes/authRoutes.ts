@@ -12,13 +12,13 @@ export const authRoutes = {
 		{
 			path: '/auth',
 			name: RouteName.Auth,
-			component: () => import('@/pages/auth/ui/AuthPage.vue'),
+			component: () => import('@/views/auth/ui/AuthPage.vue'),
 			meta: { title: 'Авторизация' },
 		},
 		{
 			path: '/recovery-password',
 			name: RouteName.RecoveryPassword,
-			component: () => import('@/pages/password-recovery/ui/PasswordRecoveryPage.vue'),
+			component: () => import('@/views/password-recovery/ui/PasswordRecoveryPage.vue'),
 			meta: { title: 'Восстановление пароля' },
 		},
 	],

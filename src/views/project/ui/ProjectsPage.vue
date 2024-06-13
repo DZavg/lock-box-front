@@ -16,7 +16,7 @@
 import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
 import ProjectsActions from '@/components/Projects/ProjectsActions.vue'
 import ProjectsTable from '@/components/Projects/ProjectsTable.vue'
-import { projectsPageData } from '@/pages/project/data/ProjectsPageData'
+import { projectsPageData } from '@/views/project/data/ProjectsPageData'
 </script>
 
 <style lang="scss" scoped></style>

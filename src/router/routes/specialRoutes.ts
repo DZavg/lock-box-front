@@ -8,7 +8,7 @@ export const specialRoutes = {
 		{
 			path: '/:pathMatch(.*)*',
 			name: RouteName.NotFound,
-			component: () => import('@/pages/not-found/ui/NotFoundPage.vue'),
+			component: () => import('@/views/not-found/ui/NotFoundPage.vue'),
 			meta: { title: 'Страница не найдена' },
 		},
 	],

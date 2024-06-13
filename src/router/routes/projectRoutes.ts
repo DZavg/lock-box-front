@@ -8,13 +8,13 @@ export const projectRoutes = {
 		{
 			path: '',
 			name: RouteName.Projects,
-			component: () => import('@/pages/project/ui/ProjectsPage.vue'),
+			component: () => import('@/views/project/ui/ProjectsPage.vue'),
 			meta: { title: 'Проекты' },
 		},
 		{
 			path: ':slug',
 			name: RouteName.ProjectsSlug,
-			component: () => import('@/pages/project/ui/ProjectsSlugPage.vue'),
+			component: () => import('@/views/project/ui/ProjectsSlugPage.vue'),
 		},
 	],
 	meta: {

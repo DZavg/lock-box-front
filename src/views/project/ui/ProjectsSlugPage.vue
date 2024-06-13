@@ -35,7 +35,7 @@ import useSeo from '@/composable/useSeo'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
 import useAccessModal from '@/composable/useAccessModal'
 import AccessesTable from '@/components/Accesses/AccessesTable.vue'
-import { projectsSlugPageData } from '@/pages/project/data/ProjectsSlugPageData'
+import { projectsSlugPageData } from '@/views/project/data/ProjectsSlugPageData'
 import { RouteName } from '@/router/RouteName'
 
 const title: Ref<string> = ref(projectsSlugPageData.title)
