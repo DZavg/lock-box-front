@@ -13,9 +13,9 @@
 </template>
 
 <script lang="ts" setup>
-import RecoveryPasswordForm from '@/widgets/recovery-password/form/ui/RecoveryPasswordForm.vue'
+import RecoveryPasswordForm from '@/components/Auth/RecoveryPasswordForm.vue'
 import LogoWithDescription from '@/components/ui/Logo/LogoWithDescription.vue'
-import RecoveryPasswordSuccessMessage from '@/widgets/recovery-password/success-message/ui/RecoveryPasswordSuccessMessage.vue'
+import RecoveryPasswordSuccessMessage from '@/components/Auth/RecoveryPasswordSuccessMessage.vue'
 import { ref, type Ref } from 'vue'
 import AuthPageWrapper from '@/components/Auth/AuthPageWrapper.vue'
 

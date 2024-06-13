@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import RecoveryPasswordSuccessMessage from '@/widgets/recovery-password/success-message/ui/RecoveryPasswordSuccessMessage.vue'
+import RecoveryPasswordSuccessMessage from '@/components/Auth/RecoveryPasswordSuccessMessage.vue'
 
 const meta: Meta<typeof RecoveryPasswordSuccessMessage> = {
 	component: RecoveryPasswordSuccessMessage,

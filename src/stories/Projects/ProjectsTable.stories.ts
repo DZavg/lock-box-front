@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import AccessesTable from '@/widgets/accesses/ui/AccessesTable.vue'
-import getAccesses from '@/stories/data/access'
+import ProjectsTable from '@/components/Projects/ProjectsTable.vue'
+import getProjects from '@/stories/data/projects'
 
-const meta: Meta<typeof AccessesTable> = {
-	component: AccessesTable,
+const meta: Meta<typeof ProjectsTable> = {
+	component: ProjectsTable,
 	tags: ['autodocs'],
 	parameters: {
 		design: {
@@ -14,10 +14,10 @@ const meta: Meta<typeof AccessesTable> = {
 }
 
 export default meta
-type Story = StoryObj<typeof AccessesTable>
+type Story = StoryObj<typeof ProjectsTable>
 
 export const Default: Story = {
 	args: {
-		accesses: getAccesses(),
+		projects: getProjects(),
 	},
 }

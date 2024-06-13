@@ -10,7 +10,7 @@
 
 <script lang="ts" setup>
 import TheFooter from '@/components/ui/Footer/TheFooter.vue'
-import TheHeader from '@/widgets/header/ui/TheHeader.vue'
+import TheHeader from '@/components/ui/Header/TheHeader.vue'
 </script>
 
 <style lang="scss" scoped>

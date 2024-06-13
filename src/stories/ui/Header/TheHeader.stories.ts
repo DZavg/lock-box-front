@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import TheHeader from '@/widgets/header/ui/TheHeader.vue'
+import TheHeader from '@/components/ui/Header/TheHeader.vue'
 
 const meta: Meta<typeof TheHeader> = {
 	component: TheHeader,
