@@ -1,19 +1,19 @@
 <template>
-  <AuthCard
-    class="recovery-password-form"
-    title="Восстановление пароля"
-  >
+  <BaseCard class="recovery-password-form">
+    <h1 class="h1-indent">
+      Восстановление пароля
+    </h1>
     <BaseForm class="recovery-password-form__wrapper">
       <EmailInput v-model="form.email" />
       <BaseButton @click="resetPassword">
         Сбросить пароль
       </BaseButton>
     </BaseForm>
-  </AuthCard>
+  </BaseCard>
 </template>
 
 <script lang="ts" setup>
-import AuthCard from '@/components/Auth/AuthCard.vue'
+import BaseCard from '@/components/ui/Card/BaseCard.vue'
 import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import EmailInput from '@/components/ui/Input/EmailInput.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'

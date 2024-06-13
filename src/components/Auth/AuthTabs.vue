@@ -1,8 +1,8 @@
 <template>
-  <AuthCard
-    class="auth-tabs"
-    title="Добро пожаловать"
-  >
+  <BaseCard class="auth-tabs">
+    <h1 class="h1-indent">
+      Добро пожаловать
+    </h1>
     <BaseTabs
       :active-tab-name="activeTabName"
       class="auth-tabs__wrapper"
@@ -27,11 +27,11 @@
         </BaseTabContent>
       </template>
     </BaseTabs>
-  </AuthCard>
+  </BaseCard>
 </template>
 
 <script lang="ts" setup>
-import AuthCard from '@/components/Auth/AuthCard.vue'
+import BaseCard from '@/components/ui/Card/BaseCard.vue'
 import BaseTabs from '@/components/ui/Tabs/BaseTabs.vue'
 import BaseTabButton from '@/components/ui/Tabs/BaseTabButton.vue'
 import BaseTabContent from '@/components/ui/Tabs/BaseTabContent.vue'
