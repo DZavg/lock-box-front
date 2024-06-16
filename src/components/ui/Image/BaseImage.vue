@@ -36,12 +36,6 @@ withDefaults(defineProps<Props>(), {
 
 <style lang="scss" scoped>
 .image {
-	display: flex;
-	width: 100%;
-	height: 100%;
-	align-items: center;
-	justify-content: center;
-
 	&__item {
 		width: 100%;
 		height: 100%;
