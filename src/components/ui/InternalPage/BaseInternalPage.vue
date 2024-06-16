@@ -45,7 +45,9 @@ const { isMobile } = useScreen()
 
 <style lang="scss" scoped>
 .page {
+	display: flex;
 	width: 100%;
+	flex-direction: column;
 	margin: {
 		top: $indent-xl;
 		bottom: 80px;
