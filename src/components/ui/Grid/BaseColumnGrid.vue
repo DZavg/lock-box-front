@@ -30,8 +30,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 </script>
 
-<!--TODO: create story-->
-
 <style lang="scss" scoped>
 .column-grid {
 	display: grid;

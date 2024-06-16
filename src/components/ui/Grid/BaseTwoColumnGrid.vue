@@ -34,8 +34,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 </script>
 
-<!--TODO: create story-->
-
 <style lang="scss" scoped>
 .two-column-grid {
 	grid-template-columns: repeat(2, 1fr);
