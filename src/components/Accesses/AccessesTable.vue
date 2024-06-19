@@ -4,7 +4,7 @@
       <template #head>
         <tr>
           <th
-            v-for="(field, index) in tableFields"
+            v-for="(field, index) in accessesTableFieldsData"
             :key="index"
           >
             {{ field.label }}
@@ -18,7 +18,7 @@
           :key="access.id"
         >
           <td
-            v-for="(field, index) in tableFields"
+            v-for="(field, index) in accessesTableFieldsData"
             :key="index"
           >
             {{ access[field.key] }}
@@ -35,7 +35,7 @@
         <TableCardWithActionList
           v-for="access in accesses"
           :key="access.id"
-          :fields="tableFields"
+          :fields="accessesTableFieldsData"
           :value="access"
           @on-edit="openAccessModal({ access })"
           @on-delete="openConfirmDeleteModal({ title: access.type })"
@@ -60,12 +60,12 @@
 import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
-import type { TableField } from '@/global/types/ui/table/Table'
 import useConfirmDeleteModal from '@/composables/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import type { Access } from '@/global/types/api/access/Access'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
 import useAccessModal from '@/composables/modals/useAccessModal'
+import { accessesTableFieldsData } from '@/global/data/access/AccessesTableData'
 
 interface Props {
 	accesses: Access[]
@@ -83,21 +83,6 @@ const {
 	confirmDeleteModalIsOpen,
 	confirmDeleteModalOptions,
 } = useConfirmDeleteModal()
-
-const tableFields: TableField<keyof Access>[] = [
-	{
-		label: 'Тип доступа',
-		key: 'type',
-	},
-	{
-		label: 'Адрес',
-		key: 'origin',
-	},
-	{
-		label: 'Логин',
-		key: 'login',
-	},
-]
 </script>
 
 <style scoped lang="scss">
