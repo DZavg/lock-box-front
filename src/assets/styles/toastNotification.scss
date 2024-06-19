@@ -8,7 +8,6 @@
 		word-break: break-word;
 
 		@media screen and (max-width: 480px) {
-			max-width: 228px;
 			padding: $indent-s;
 			margin: auto;
 		}
@@ -16,6 +15,9 @@
 		&-container {
 			@media screen and (max-width: 480px) {
 				top: 50%;
+				right: 0;
+				max-width: 228px;
+				margin: auto;
 				transform: translateY(-50%);
 			}
 		}
