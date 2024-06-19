@@ -35,6 +35,5 @@ export const Default: Story = {
 		value: getProjects()[0],
 		externalLink: 'https://google.com',
 		link: '/',
-		copyLink: 'google.com',
 	},
 }

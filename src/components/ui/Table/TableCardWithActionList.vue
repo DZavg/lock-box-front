@@ -8,7 +8,8 @@
     <TableActionList
       :external-link="externalLink"
       :link="link"
-      :copy-link="copyLink"
+      :show-copy-button="showCopyButton"
+      @on-copy="$emit('onCopy')"
       @on-edit="$emit('onEdit')"
       @on-delete="$emit('onDelete')"
     />
@@ -26,7 +27,7 @@ interface Props {
 	value: ListValue
 	externalLink?: string
 	link?: string | object
-	copyLink?: string
+	showCopyButton?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
@@ -34,10 +35,10 @@ withDefaults(defineProps<Props>(), {
 	value: () => ({}),
 	externalLink: '',
 	link: '',
-	copyLink: '',
+	showCopyButton: false,
 })
 
-defineEmits<{ (e: 'onEdit'): void; (e: 'onDelete'): void }>()
+defineEmits<{ (e: 'onEdit'): void; (e: 'onDelete'): void; (e: 'onCopy'): void }>()
 </script>
 
 <style scoped lang="scss">

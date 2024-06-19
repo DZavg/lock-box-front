@@ -25,6 +25,7 @@
           </td>
           <td>
             <TableActionList
+              :show-copy-button="true"
               @on-edit="openAccessModal({ access })"
               @on-delete="openConfirmDeleteModal({ title: access.type })"
             />
@@ -37,6 +38,7 @@
           :key="access.id"
           :fields="accessesTableFieldsData"
           :value="access"
+          :show-copy-button="true"
           @on-edit="openAccessModal({ access })"
           @on-delete="openConfirmDeleteModal({ title: access.type })"
         />

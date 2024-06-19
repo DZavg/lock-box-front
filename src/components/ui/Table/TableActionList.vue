@@ -12,9 +12,9 @@
       :size="iconSize"
     />
     <CopyButtonIcon
-      v-if="copyLink"
+      v-if="showCopyButton"
       :size="iconSize"
-      :link="copyLink"
+      @on-click="$emit('onCopy')"
     />
     <EditButtonIcon
       :size="iconSize"
@@ -40,16 +40,16 @@ import CopyButtonIcon from '@/components/ui/Button/CopyButtonIcon.vue'
 interface Props {
 	externalLink?: string
 	link?: string | object
-	copyLink?: string
+	showCopyButton?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
 	externalLink: '',
 	link: '',
-	copyLink: '',
+	showCopyButton: false,
 })
 
-defineEmits<{ (e: 'onEdit'): void; (e: 'onDelete'): void }>()
+defineEmits<{ (e: 'onEdit'): void; (e: 'onDelete'): void; (e: 'onCopy'): void }>()
 
 const { isMobile } = useScreen()
 

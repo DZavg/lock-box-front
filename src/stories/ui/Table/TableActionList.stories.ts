@@ -19,6 +19,5 @@ export const Default: Story = {
 	args: {
 		externalLink: 'https://google.com',
 		link: '/',
-		copyLink: 'google.com',
 	},
 }
