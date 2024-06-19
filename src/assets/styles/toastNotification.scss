@@ -8,6 +8,7 @@
 		word-break: break-word;
 
 		@media screen and (max-width: 480px) {
+			width: fit-content;
 			padding: $indent-s;
 			margin: auto;
 		}
