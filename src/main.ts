@@ -14,12 +14,12 @@ app.use(checkScreen)
 app.use(router)
 app.use(Vue3Toastify, {
 	position: 'top-center',
-	autoClose: 3000,
-	multiple: false,
+	autoClose: 2000,
+	multiple: true,
+	limit: 1,
 	hideProgressBar: true,
 	closeButton: false,
 	theme: 'colored',
-	dangerouslyHTMLString: true,
 } as ToastContainerOptions)
 
 app.directive('clickOutside', clickOutside)
