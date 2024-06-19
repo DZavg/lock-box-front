@@ -12,12 +12,10 @@ import { IconSize } from '@/global/types/ui/icon/IconSize'
 
 interface Props {
 	size?: IconSize
-	link: string
 }
 
 withDefaults(defineProps<Props>(), {
 	size: IconSize.M,
-	link: '',
 })
 </script>
 
