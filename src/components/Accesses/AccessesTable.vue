@@ -26,6 +26,7 @@
           <td>
             <TableActionList
               :show-copy-button="true"
+              @on-copy="copyPassword(access)"
               @on-edit="openAccessModal({ access })"
               @on-delete="openConfirmDeleteModal({ title: access.type })"
             />
@@ -39,6 +40,7 @@
           :fields="accessesTableFieldsData"
           :value="access"
           :show-copy-button="true"
+          @on-copy="copyPassword(access)"
           @on-edit="openAccessModal({ access })"
           @on-delete="openConfirmDeleteModal({ title: access.type })"
         />
@@ -68,6 +70,7 @@ import type { Access } from '@/global/types/api/access/Access'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
 import useAccessModal from '@/composables/modals/useAccessModal'
 import { accessesTableFieldsData } from '@/global/data/access/AccessesTableData'
+import useClipboard from '@/composables/useClipboard'
 
 interface Props {
 	accesses: Access[]
@@ -85,6 +88,11 @@ const {
 	confirmDeleteModalIsOpen,
 	confirmDeleteModalOptions,
 } = useConfirmDeleteModal()
+const { writeText } = useClipboard()
+
+const copyPassword = (access: Access) => {
+	writeText(access.login)
+}
 </script>
 
 <style scoped lang="scss">
