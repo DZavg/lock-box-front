@@ -1,8 +1,14 @@
 <template>
   <BaseForm class="login-form">
     <InputList class="login-form__inputs">
-      <EmailInput />
-      <PasswordInput />
+      <EmailInput
+        v-model="form.email"
+        :error="errors.email"
+      />
+      <PasswordInput
+        v-model="form.password"
+        :error="errors.password"
+      />
     </InputList>
     <BaseLink
       :link="{ name: RouteName.RecoveryPassword }"
@@ -10,7 +16,12 @@
     >
       Восстановить пароль
     </BaseLink>
-    <BaseButton>Войти</BaseButton>
+    <BaseButton
+      :loading="isLoading"
+      @on-click="signIn"
+    >
+      Войти
+    </BaseButton>
   </BaseForm>
 </template>
 
@@ -22,6 +33,23 @@ import PasswordInput from '@/components/ui/Input/PasswordInput.vue'
 import BaseLink from '@/components/ui/Link/BaseLink.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import { RouteName } from '@/router/RouteName'
+import { useUserStore } from '@/stores/user'
+import useRequest from '@/composables/useRequest'
+import { type Ref, ref } from 'vue'
+import type { LoginDto } from '@/api/auth/dto/login.dto'
+
+const form: Ref<LoginDto> = ref({
+	email: '',
+	password: '',
+})
+
+const { execute, isLoading, errors } = useRequest()
+const userStore = useUserStore()
+const { login } = userStore
+
+const signIn = async () => {
+	await execute(() => login(form.value))
+}
 </script>
 
 <style lang="scss" scoped>
