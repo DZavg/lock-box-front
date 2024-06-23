@@ -5,15 +5,15 @@ import { type ProjectsSlugPage } from '@/global/types/api/project/ProjectsSlugPa
 export interface ProjectRepository {
 	baseUrl: string
 
-	getAll(): Promise<ProjectsPage[]>
+	getAll(): Promise<ProjectsPage>
 
 	getOneById(id: number | string): Promise<ProjectsSlugPage>
 }
 
 export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepository {
-	baseUrl = 'project/'
+	baseUrl = 'projects/'
 
-	async getAll(): Promise<ProjectsPage[]> {
+	async getAll(): Promise<ProjectsPage> {
 		return await this.httpClient.get(`${this.baseUrl}`)
 	}
 
