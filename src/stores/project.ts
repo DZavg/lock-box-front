@@ -13,11 +13,11 @@ export const useProjectStore = defineStore('project', {
 	},
 	actions: {
 		async getOneById(id: string | number) {
-			return getOneById.execute(id)
+			return await getOneById.execute(id)
 		},
 
 		async getAll() {
-			return getAll.execute()
+			return await getAll.execute()
 		},
 	},
 	getters: {},
