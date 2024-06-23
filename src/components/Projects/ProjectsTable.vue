@@ -64,7 +64,7 @@
 import { RouteName } from '@/router/RouteName'
 import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
-import type { Project } from '@/global/types/api/project/Project'
+import type { Project } from '@/api/project/entity/Project'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import type { TableField } from '@/global/types/ui/table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'

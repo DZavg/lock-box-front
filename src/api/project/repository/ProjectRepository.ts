@@ -1,6 +1,6 @@
 import { BaseHttpClient } from '@/api/client/repository/BaseRepository'
-import { type ProjectsPage } from '@/global/types/api/project/ProjectsPage'
-import { type ProjectsSlugPage } from '@/global/types/api/project/ProjectsSlugPage'
+import { type ProjectsPage } from '@/api/project/entity/ProjectsPage'
+import { type ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
 
 export interface ProjectRepository {
 	baseUrl: string

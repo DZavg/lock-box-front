@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import type { TableField } from '@/global/types/ui/table/Table'
-import type { Project } from '@/global/types/api/project/Project'
+import type { Project } from '@/api/project/entity/Project'
 import getProjects from '@/global/mock/projects'
 
 const meta: Meta<typeof TableCardWithActionList> = {

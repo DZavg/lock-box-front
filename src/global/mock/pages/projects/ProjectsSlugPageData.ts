@@ -1,4 +1,4 @@
-import type { ProjectsSlugPage } from '@/global/types/api/project/ProjectsSlugPage'
+import type { ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
 import getAccesses from '@/global/mock/access'
 
 export const projectsSlugPageData: ProjectsSlugPage = {

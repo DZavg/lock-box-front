@@ -1,4 +1,4 @@
-import { type ProjectsSlugPage } from '@/global/types/api/project/ProjectsSlugPage'
+import { type ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
 import { type ProjectRepository } from '@/api/project/repository/ProjectRepository'
 import { inject, injectable } from 'inversify'
 import { identifiers } from '@/api/constants/identifiers'

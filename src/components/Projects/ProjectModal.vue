@@ -31,7 +31,7 @@ import BaseInput from '@/components/ui/Input/BaseInput.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
-import type { Project } from '@/global/types/api/project/Project'
+import type { Project } from '@/api/project/entity/Project'
 import useProjectForm from '@/composables/forms/useProjectForm'
 
 interface Props {

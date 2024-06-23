@@ -1,4 +1,4 @@
-import type { Project } from '@/global/types/api/project/Project'
+import type { Project } from '@/api/project/entity/Project'
 
 const getProjects = () => {
 	const data: Project[] = []

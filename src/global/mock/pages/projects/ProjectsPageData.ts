@@ -1,4 +1,4 @@
-import type { ProjectsPage } from '@/global/types/api/project/ProjectsPage'
+import type { ProjectsPage } from '@/api/project/entity/ProjectsPage'
 import getProjects from '@/global/mock/projects'
 
 export const projectsPageData: ProjectsPage = {
