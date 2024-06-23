@@ -1,5 +1,6 @@
 import Cookies from 'js-cookie'
 import type { Tokens } from '@/api/tokens/entity/Tokens'
+import { injectable } from 'inversify'
 
 export interface TokensRepository {
 	getTokens(): Tokens
@@ -7,6 +8,7 @@ export interface TokensRepository {
 	removeTokens(): void
 }
 
+@injectable()
 export class TokensRepositoryImpl implements TokensRepository {
 	getTokens(): Tokens {
 		return {
