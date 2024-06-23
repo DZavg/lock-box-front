@@ -33,6 +33,6 @@ container.bind<Login>(identifiers.login).to(LoginImpl)
 container.bind<TokensRepository>(identifiers.tokensRepository).to(TokensRepositoryImpl)
 container.bind<GetTokens>(identifiers.getTokens).to(GetTokensImpl)
 container.bind<SetTokens>(identifiers.setTokens).to(SetTokensImpl)
-container.bind<RemoveTokens>(identifiers.getTokens).to(RemoveTokensImpl)
+container.bind<RemoveTokens>(identifiers.removeTokens).to(RemoveTokensImpl)
 
 export { container }
