@@ -1,10 +1,11 @@
 import { type Ref, ref } from 'vue'
 import { toast } from 'vue3-toastify'
+import errorsTransform from '@/lib/errorsTransform'
 
 export default function () {
 	const data: Ref<any> = ref({})
 	const isLoading: Ref<boolean> = ref(false)
-	const errors: Ref<Array<string>> = ref([])
+	const errors: Ref<any> = ref({})
 
 	const execute = async (callback: Function = () => {}) => {
 		if (isLoading.value) {
@@ -13,6 +14,7 @@ export default function () {
 
 		try {
 			isLoading.value = true
+			errors.value = {}
 			const response = await callback()
 			const data = response.data
 			data.value = data
@@ -23,7 +25,7 @@ export default function () {
 		} catch (e: any) {
 			const errorData = e.response.data
 			if (errorData.errors) {
-				errors.value = errorData.errors
+				errors.value = errorsTransform(errorData.errors)
 			}
 			if (errorData.error) {
 				toast.error(errorData.error)
@@ -33,5 +35,5 @@ export default function () {
 		}
 	}
 
-	return { data, isLoading, execute }
+	return { data, isLoading, execute, errors }
 }
