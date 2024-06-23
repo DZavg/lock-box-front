@@ -12,7 +12,7 @@ const createHttpClient = (config: CreateAxiosDefaults) => {
 		},
 	)
 
-	axios.interceptors.response.use(
+	httpClient.interceptors.response.use(
 		function (response) {
 			return response
 		},
