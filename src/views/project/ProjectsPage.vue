@@ -9,7 +9,7 @@
     <template #default>
       <ProjectsTable
         v-if="true"
-        :projects="projectPage?.projects"
+        :projects="projects"
       />
       <SearchNotFound v-else />
     </template>
@@ -27,7 +27,7 @@ import useRequest from '@/composables/useRequest'
 
 const projectStore = useProjectStore()
 const { getAll } = projectStore
-const { data: projectPage, execute } = useRequest()
+const { data: projects, execute } = useRequest()
 
 onMounted(async () => {
 	await execute(getAll)
