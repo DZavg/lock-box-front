@@ -33,7 +33,7 @@ import PasswordInput from '@/components/ui/Input/PasswordInput.vue'
 import BaseLink from '@/components/ui/Link/BaseLink.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import { RouteName } from '@/router/RouteName'
-import { useUserStore } from '@/stores/user'
+import { useAuthStore } from '@/stores/auth'
 import useRequest from '@/composables/useRequest'
 import { type Ref, ref } from 'vue'
 import type { LoginDto } from '@/api/auth/dto/login.dto'
@@ -44,8 +44,8 @@ const form: Ref<LoginDto> = ref({
 })
 
 const { execute, isLoading, errors } = useRequest()
-const userStore = useUserStore()
-const { login } = userStore
+const authStore = useAuthStore()
+const { login } = authStore
 
 const signIn = async () => {
 	await execute(() => login(form.value))

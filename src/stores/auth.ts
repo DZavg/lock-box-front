@@ -11,10 +11,9 @@ const login = container.get<Login>(identifiers.login)
 const setTokens = container.get<SetTokens>(identifiers.setTokens)
 const removeTokens = container.get<RemoveTokens>(identifiers.removeTokens)
 
-export const useUserStore = defineStore('user', {
+export const useAuthStore = defineStore('auth', {
 	state: () => {
 		return {
-			user: null,
 			isAuthorized: false,
 		}
 	},

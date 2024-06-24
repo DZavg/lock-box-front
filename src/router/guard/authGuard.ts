@@ -1,11 +1,11 @@
 import type { RouteLocationNormalized } from 'vue-router'
-import { useUserStore } from '@/stores/user'
+import { useAuthStore } from '@/stores/auth'
 import { storeToRefs } from 'pinia'
 import { RouteName } from '@/router/RouteName'
 
 export default function (to: RouteLocationNormalized) {
-	const userStore = useUserStore()
-	const { getIsAuthorized } = storeToRefs(userStore)
+	const authStore = useAuthStore()
+	const { getIsAuthorized } = storeToRefs(authStore)
 	const { requiresAuth } = to.meta
 
 	if (requiresAuth && !getIsAuthorized.value) {
