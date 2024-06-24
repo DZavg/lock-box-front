@@ -16,7 +16,7 @@ const createHttpClient = (config: CreateAxiosDefaults) => {
 
 	httpClient.interceptors.response.use(
 		function (response) {
-			return response
+			return response.data
 		},
 		function (error) {
 			return Promise.reject(error)

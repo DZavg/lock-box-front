@@ -16,11 +16,10 @@ export default function () {
 			isLoading.value = true
 			errors.value = {}
 			const response = await callback()
-			const data = response.data
-			data.value = data
+			data.value = response
 
-			if (data.message) {
-				toast.success(data.message)
+			if (response.message) {
+				toast.success(response.message)
 			}
 		} catch (e: any) {
 			const errorData = e.response.data
