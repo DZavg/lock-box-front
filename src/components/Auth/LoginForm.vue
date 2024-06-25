@@ -37,6 +37,8 @@ import { useAuthStore } from '@/stores/auth'
 import useRequest from '@/composables/useRequest'
 import { type Ref, ref } from 'vue'
 import type { LoginDto } from '@/api/auth/dto/login.dto'
+import { useRouter } from 'vue-router'
+import { useUserStore } from '@/stores/user'
 
 const form: Ref<LoginDto> = ref({
 	email: '',
@@ -45,10 +47,17 @@ const form: Ref<LoginDto> = ref({
 
 const { execute, isLoading, errors } = useRequest()
 const authStore = useAuthStore()
+const userStore = useUserStore()
+
 const { login } = authStore
+const { getInfo } = userStore
+
+const router = useRouter()
 
 const signIn = async () => {
 	await execute(() => login(form.value))
+	await getInfo()
+	await router.push(RouteName.Projects)
 }
 </script>
 
