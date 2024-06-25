@@ -20,7 +20,7 @@
         </BaseOption>
         <BaseOption
           class="user-dropdown__option"
-          @click="openLogoutModal"
+          @click="openModal"
         >
           <button class="body_p">
             Выйти
@@ -28,8 +28,8 @@
         </BaseOption>
       </BaseOptionList>
       <ConfirmLogoutModal
-        v-if="logoutModalIsOpen"
-        @on-close="closeLogoutModal"
+        v-if="modalIsOpen"
+        @on-close="closeModal"
       />
     </template>
   </BasePopupOnMouseOver>
@@ -41,10 +41,10 @@ import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
 import BaseOption from '@/components/ui/Option/BaseOption.vue'
 import { type Ref, ref } from 'vue'
 import BasePopupOnMouseOver from '@/components/ui/Popup/BasePopupOnMouseOver.vue'
-import useLogoutModal from '@/composables/useLogoutModal'
 import ConfirmLogoutModal from '@/components/ConfirmModals/ConfirmLogoutModal.vue'
 import { useUserStore } from '@/stores/user'
 import { storeToRefs } from 'pinia'
+import useModal from '@/composables/useModal'
 
 const isActive: Ref<boolean> = ref(false)
 
@@ -55,7 +55,7 @@ const toggleIcon = (value: boolean) => {
 const userStore = useUserStore()
 const { getUser } = storeToRefs(userStore)
 
-const { logoutModalIsOpen, openLogoutModal, closeLogoutModal } = useLogoutModal()
+const { openModal, closeModal, modalIsOpen } = useModal()
 </script>
 
 <style lang="scss" scoped>
