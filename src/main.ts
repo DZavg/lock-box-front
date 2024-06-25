@@ -6,10 +6,12 @@ import App from './App.vue'
 import router from './router'
 import checkScreen from '@/plugins/checkScreen'
 import { clickOutside } from '@/plugins/clickOutside'
+import checkAuth from '@/plugins/checkAuth'
 
 const app = createApp(App)
 
 app.use(createPinia())
+await checkAuth()
 app.use(checkScreen)
 app.use(router)
 app.use(Vue3Toastify, {
