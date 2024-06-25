@@ -12,4 +12,7 @@ export const identifiers = {
 	getTokens: Symbol.for('GetTokens'),
 	setTokens: Symbol.for('SetTokens'),
 	removeTokens: Symbol.for('RemoveTokens'),
+
+	userRepository: Symbol.for('UserRepository'),
+	getUserInfo: Symbol.for('GetUserInfo'),
 }

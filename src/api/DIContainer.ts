@@ -18,6 +18,8 @@ import {
 import { type GetTokens, GetTokensImpl } from '@/api/tokens/usecase/getTokens'
 import { type SetTokens, SetTokensImpl } from '@/api/tokens/usecase/setTokens'
 import { type RemoveTokens, RemoveTokensImpl } from '@/api/tokens/usecase/removeTokens'
+import { type UserRepository, UserRepositoryImpl } from '@/api/user/repository/UserRepository'
+import { type GetInfo, GetInfoImpl } from '@/api/user/usecase/getInfo'
 
 const container: Container = new Container()
 
@@ -34,5 +36,8 @@ container.bind<TokensRepository>(identifiers.tokensRepository).to(TokensReposito
 container.bind<GetTokens>(identifiers.getTokens).to(GetTokensImpl)
 container.bind<SetTokens>(identifiers.setTokens).to(SetTokensImpl)
 container.bind<RemoveTokens>(identifiers.removeTokens).to(RemoveTokensImpl)
+
+container.bind<UserRepository>(identifiers.userRepository).to(UserRepositoryImpl)
+container.bind<GetInfo>(identifiers.getUserInfo).to(GetInfoImpl)
 
 export { container }
