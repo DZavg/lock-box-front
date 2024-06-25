@@ -8,7 +8,7 @@
     </template>
     <template #default>
       <ProjectsTable
-        v-if="projects.length"
+        v-if="true"
         :projects="projects"
       />
       <SearchNotFound v-else />
