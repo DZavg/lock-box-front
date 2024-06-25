@@ -20,6 +20,8 @@ import { type SetTokens, SetTokensImpl } from '@/api/tokens/usecase/setTokens'
 import { type RemoveTokens, RemoveTokensImpl } from '@/api/tokens/usecase/removeTokens'
 import { type UserRepository, UserRepositoryImpl } from '@/api/user/repository/UserRepository'
 import { type GetInfo, GetInfoImpl } from '@/api/user/usecase/getInfo'
+import type { Logout } from '@/api/auth/usecase/logout'
+import { LogoutImpl } from '@/api/auth/usecase/logout'
 
 const container: Container = new Container()
 
@@ -31,6 +33,7 @@ container.bind<GetAll>(identifiers.getAllProjects).to(GetAllImpl)
 
 container.bind<AuthRepository>(identifiers.authRepository).to(AuthRepositoryImpl)
 container.bind<Login>(identifiers.login).to(LoginImpl)
+container.bind<Logout>(identifiers.logout).to(LogoutImpl)
 
 container.bind<TokensRepository>(identifiers.tokensRepository).to(TokensRepositoryImpl)
 container.bind<GetTokens>(identifiers.getTokens).to(GetTokensImpl)

@@ -7,6 +7,7 @@ export const identifiers = {
 
 	authRepository: Symbol.for('AuthRepository'),
 	login: Symbol.for('Login'),
+	logout: Symbol.for('Logout'),
 
 	tokensRepository: Symbol.for('TokensRepository'),
 	getTokens: Symbol.for('GetTokens'),
