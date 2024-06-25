@@ -6,9 +6,11 @@ import type { Login } from '@/api/auth/usecase/login'
 import type { SetTokens } from '@/api/tokens/usecase/setTokens'
 import type { Tokens } from '@/api/tokens/entity/Tokens'
 import type { RemoveTokens } from '@/api/tokens/usecase/removeTokens'
+import type { GetTokens } from '@/api/tokens/usecase/getTokens'
 
 const login = container.get<Login>(identifiers.login)
 const setTokens = container.get<SetTokens>(identifiers.setTokens)
+const getTokens = container.get<GetTokens>(identifiers.getTokens)
 const removeTokens = container.get<RemoveTokens>(identifiers.removeTokens)
 
 export const useAuthStore = defineStore('auth', {
@@ -26,11 +28,15 @@ export const useAuthStore = defineStore('auth', {
 			return response
 		},
 
-		singIn(tokens: Tokens) {
+		singIn(tokens: Tokens = { access_token: '', refresh_token: '' }) {
 			this.isAuthorized = true
 			if (tokens.access_token && tokens.refresh_token) {
 				setTokens.execute(tokens)
 			}
+		},
+
+		getTokens(): Tokens {
+			return getTokens.execute()
 		},
 
 		singOut() {
