@@ -6,7 +6,7 @@
     <template #head>
       <div class="user-dropdown__head">
         <p class="user-dropdown__name">
-          Иванов Иван
+          {{ getUser.username }}
         </p>
         <DropdownButtonIcon :is-active="isActive" />
       </div>
@@ -43,12 +43,17 @@ import { type Ref, ref } from 'vue'
 import BasePopupOnMouseOver from '@/components/ui/Popup/BasePopupOnMouseOver.vue'
 import useLogoutModal from '@/composables/useLogoutModal'
 import ConfirmLogoutModal from '@/components/ConfirmModals/ConfirmLogoutModal.vue'
+import { useUserStore } from '@/stores/user'
+import { storeToRefs } from 'pinia'
 
 const isActive: Ref<boolean> = ref(false)
 
 const toggleIcon = (value: boolean) => {
 	isActive.value = value
 }
+
+const userStore = useUserStore()
+const { getUser } = storeToRefs(userStore)
 
 const { logoutModalIsOpen, openLogoutModal, closeLogoutModal } = useLogoutModal()
 </script>
