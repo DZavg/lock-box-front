@@ -22,4 +22,7 @@ export const authRoutes = {
 			meta: { title: 'Восстановление пароля' },
 		},
 	],
+	meta: {
+		requiresNotAuth: true,
+	},
 }
