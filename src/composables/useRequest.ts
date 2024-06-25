@@ -3,7 +3,7 @@ import { toast } from 'vue3-toastify'
 import errorsTransform from '@/lib/errorsTransform'
 
 export default function () {
-	const data: Ref<any> = ref({})
+	const data: Ref<any> = ref()
 	const isLoading: Ref<boolean> = ref(false)
 	const errors: Ref<any> = ref({})
 
