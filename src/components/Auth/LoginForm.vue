@@ -1,5 +1,8 @@
 <template>
-  <BaseForm class="login-form">
+  <BaseForm
+    class="login-form"
+    @submit="signIn"
+  >
     <InputList class="login-form__inputs">
       <EmailInput
         v-model="form.email"
