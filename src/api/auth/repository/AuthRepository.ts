@@ -17,6 +17,6 @@ export class AuthRepositoryImpl extends BaseHttpClient implements AuthRepository
 	}
 
 	async logout(): Promise<Message> {
-		return await this.httpClient.post(`${this.baseUrl}logout`)
+		return await this.httpClient.post(`${this.baseUrl}logout/`)
 	}
 }
