@@ -18,7 +18,7 @@ export default function () {
 			const response = await callback()
 			data.value = response
 
-			if (response.message) {
+			if (response?.message) {
 				toast.success(response.message)
 			}
 		} catch (e: any) {
