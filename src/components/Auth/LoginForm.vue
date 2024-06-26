@@ -58,9 +58,11 @@ const { getInfo } = userStore
 const router = useRouter()
 
 const signIn = async () => {
-	await execute(() => login(form.value))
-	await getInfo()
-	await router.push(RouteName.Projects)
+	await execute(async () => {
+		await login(form.value)
+		await getInfo()
+		await router.push(RouteName.Projects)
+	})
 }
 </script>
 
