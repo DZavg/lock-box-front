@@ -22,6 +22,7 @@ import { type UserRepository, UserRepositoryImpl } from '@/api/user/repository/U
 import { type GetInfo, GetInfoImpl } from '@/api/user/usecase/getInfo'
 import type { Logout } from '@/api/auth/usecase/logout'
 import { LogoutImpl } from '@/api/auth/usecase/logout'
+import { type Registration, RegistrationImpl } from '@/api/auth/usecase/registration'
 
 const container: Container = new Container()
 
@@ -34,6 +35,7 @@ container.bind<GetAll>(identifiers.getAllProjects).to(GetAllImpl)
 container.bind<AuthRepository>(identifiers.authRepository).to(AuthRepositoryImpl)
 container.bind<Login>(identifiers.login).to(LoginImpl)
 container.bind<Logout>(identifiers.logout).to(LogoutImpl)
+container.bind<Registration>(identifiers.registration).to(RegistrationImpl)
 
 container.bind<TokensRepository>(identifiers.tokensRepository).to(TokensRepositoryImpl)
 container.bind<GetTokens>(identifiers.getTokens).to(GetTokensImpl)

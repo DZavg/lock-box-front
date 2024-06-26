@@ -8,9 +8,12 @@ import type { Tokens } from '@/api/tokens/entity/Tokens'
 import type { RemoveTokens } from '@/api/tokens/usecase/removeTokens'
 import type { GetTokens } from '@/api/tokens/usecase/getTokens'
 import type { Logout } from '@/api/auth/usecase/logout'
+import type { Registration } from '@/api/auth/usecase/registration'
+import type { RegistrationDto } from '@/api/auth/dto/registration.dto'
 
 const login = container.get<Login>(identifiers.login)
 const logout = container.get<Logout>(identifiers.logout)
+const registration = container.get<Registration>(identifiers.registration)
 const setTokens = container.get<SetTokens>(identifiers.setTokens)
 const getTokens = container.get<GetTokens>(identifiers.getTokens)
 const removeTokens = container.get<RemoveTokens>(identifiers.removeTokens)
@@ -50,6 +53,10 @@ export const useAuthStore = defineStore('auth', {
 		singOut() {
 			this.isAuthorized = false
 			removeTokens.execute()
+		},
+
+		async registration(data: RegistrationDto) {
+			return await registration.execute(data)
 		},
 	},
 

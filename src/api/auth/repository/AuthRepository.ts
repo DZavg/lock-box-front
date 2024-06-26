@@ -2,11 +2,13 @@ import { BaseHttpClient } from '@/api/client/repository/BaseRepository'
 import type { LoginDto } from '@/api/auth/dto/login.dto'
 import type { Tokens } from '@/api/tokens/entity/Tokens'
 import type { Message } from '@/global/types/api/message/Message'
+import type { RegistrationDto } from '@/api/auth/dto/registration.dto'
 
 export interface AuthRepository {
 	baseUrl: string
 	login(data: LoginDto): Promise<Tokens>
 	logout(): Promise<Message>
+	registration(data: RegistrationDto): Promise<Message>
 }
 
 export class AuthRepositoryImpl extends BaseHttpClient implements AuthRepository {
@@ -18,5 +20,9 @@ export class AuthRepositoryImpl extends BaseHttpClient implements AuthRepository
 
 	async logout(): Promise<Message> {
 		return await this.httpClient.post(`${this.baseUrl}logout/`)
+	}
+
+	async registration(data: RegistrationDto): Promise<Message> {
+		return await this.httpClient.post(`${this.baseUrl}registration/`, data)
 	}
 }
