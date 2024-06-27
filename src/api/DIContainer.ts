@@ -23,6 +23,8 @@ import { type GetInfo, GetInfoImpl } from '@/api/user/usecase/getInfo'
 import type { Logout } from '@/api/auth/usecase/logout'
 import { LogoutImpl } from '@/api/auth/usecase/logout'
 import { type Registration, RegistrationImpl } from '@/api/auth/usecase/registration'
+import type { Create } from '@/api/project/usecase/create'
+import { CreateImpl } from '@/api/project/usecase/create'
 
 const container: Container = new Container()
 
@@ -31,6 +33,7 @@ container.bind<AxiosInstance>(identifiers.httpClient).toConstantValue(httpClient
 container.bind<ProjectRepository>(identifiers.projectRepository).to(ProjectRepositoryImpl)
 container.bind<GetOneById>(identifiers.getOneProjectById).to(GetOneByIdImpl)
 container.bind<GetAll>(identifiers.getAllProjects).to(GetAllImpl)
+container.bind<Create>(identifiers.createProject).to(CreateImpl)
 
 container.bind<AuthRepository>(identifiers.authRepository).to(AuthRepositoryImpl)
 container.bind<Login>(identifiers.login).to(LoginImpl)
