@@ -29,7 +29,7 @@
       :loading="loading"
       @on-click="$emit('onSubmit', form)"
     >
-      Сохранить изменения
+      {{ buttonText }}
     </BaseButton>
   </BaseModal>
 </template>
@@ -47,6 +47,7 @@ import type { Error } from '@/global/types/api/error/Error'
 interface Props {
 	project?: Project
 	title?: string
+	buttonText?: string
 	errors?: Error
 	loading?: boolean
 }
@@ -58,6 +59,7 @@ const props = withDefaults(defineProps<Props>(), {
 		domain: '',
 	}),
 	title: 'Редактировать проект',
+	buttonText: 'Сохранить изменения',
 	loading: false,
 	errors: () => ({}),
 })
