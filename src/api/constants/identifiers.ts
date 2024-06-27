@@ -5,6 +5,7 @@ export const identifiers = {
 	getOneProjectById: Symbol.for('GetOneProjectById'),
 	getAllProjects: Symbol.for('GetAllProjects'),
 	createProject: Symbol.for('CreateProject'),
+	deleteOneProjectById: Symbol.for('DeleteOneProjectById'),
 
 	authRepository: Symbol.for('AuthRepository'),
 	login: Symbol.for('Login'),

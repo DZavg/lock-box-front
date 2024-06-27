@@ -6,10 +6,12 @@ import { type GetAll } from '@/api/project/usecase/getAll'
 import type { Create } from '@/api/project/usecase/create'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
 import type { Project } from '@/api/project/entity/Project'
+import type { DeleteOneById } from '@/api/project/usecase/deleteOneById'
 
 const getOneById = container.get<GetOneById>(identifiers.getOneProjectById)
 const getAll = container.get<GetAll>(identifiers.getAllProjects)
 const create = container.get<Create>(identifiers.createProject)
+const deleteOneProjectById = container.get<DeleteOneById>(identifiers.deleteOneProjectById)
 
 export const useProjectStore = defineStore('project', {
 	state: () => {
@@ -30,6 +32,10 @@ export const useProjectStore = defineStore('project', {
 
 		async create(project: ProjectDto) {
 			return await create.execute(project)
+		},
+
+		async deleteOneById(id: string | number) {
+			return await deleteOneProjectById.execute(id)
 		},
 	},
 	getters: {
