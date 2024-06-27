@@ -61,7 +61,7 @@ const props = withDefaults(defineProps<Props>(), {
 	errors: () => ({}),
 })
 
-const form: Ref<Project> = ref(props.project || projectDefaults)
+const form: Ref<Project> = ref(props.project)
 
 defineEmits<{
 	(e: 'onSubmit', form: Project): void

@@ -54,7 +54,7 @@ const props = withDefaults(defineProps<Props>(), {
 	title: 'Редактировать доступ',
 })
 
-const form: Ref<Access> = ref(props.access || accessDefaults)
+const form: Ref<Access> = ref(props.access)
 </script>
 
 <style lang="scss" scoped>
