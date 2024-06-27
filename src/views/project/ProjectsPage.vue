@@ -9,7 +9,7 @@
     <template #default>
       <ProjectsTable
         v-if="true"
-        :projects="projects"
+        :projects="getProjects"
       />
       <SearchNotFound v-else />
     </template>
@@ -24,10 +24,12 @@ import SearchNotFound from '@/components/Search/SearchNotFound.vue'
 import { onMounted } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
+import { storeToRefs } from 'pinia'
 
 const projectStore = useProjectStore()
 const { getAll } = projectStore
-const { data: projects, execute } = useRequest()
+const { getProjects } = storeToRefs(projectStore)
+const { execute } = useRequest()
 
 onMounted(async () => {
 	await execute(getAll)
