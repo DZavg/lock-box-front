@@ -23,7 +23,10 @@
           :key="tab.name"
           :name="tab.name"
         >
-          <component :is="tab.component" />
+          <component
+            :is="tab.component"
+            @update-active-tab="updateActiveTab"
+          />
         </BaseTabContent>
       </template>
     </BaseTabs>
@@ -42,9 +45,11 @@ import { AuthTabsData } from '@/global/data/auth/AuthTabsData'
 const activeTabName: Ref<string> = ref(AuthTabsName.Login)
 
 const updateActiveTab = (name: string) => {
+	if (!name) return
 	if (name === AuthTabsName.DemoAccess) {
 		return
 	}
+	activeTabName.value = name
 }
 </script>
 

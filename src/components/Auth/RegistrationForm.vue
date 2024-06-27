@@ -1,19 +1,31 @@
 <template>
-  <BaseForm class="registration-form">
+  <BaseForm
+    class="registration-form"
+    @submit="registration"
+  >
     <InputList class="registration-form__inputs">
       <BaseInput
+        v-model="form.username"
         label="Имя"
-        name="name"
+        name="username"
+        :error="errors.username"
         placeholder="Иванов Иван"
       />
-      <EmailInput />
-      <PasswordInput />
+      <EmailInput
+        v-model="form.email"
+        :error="errors.email"
+      />
       <PasswordInput
-        label="Повтор пароля"
-        name="password_repeat"
+        v-model="form.password"
+        :error="errors.password"
       />
     </InputList>
-    <BaseButton>Зарегистрироваться</BaseButton>
+    <BaseButton
+      :loading="isLoading"
+      @on-click="registration"
+    >
+      Зарегистрироваться
+    </BaseButton>
   </BaseForm>
 </template>
 
@@ -24,6 +36,31 @@ import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import PasswordInput from '@/components/ui/Input/PasswordInput.vue'
 import BaseInput from '@/components/ui/Input/BaseInput.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
+import useRequest from '@/composables/useRequest'
+import { useAuthStore } from '@/stores/auth'
+import { ref, type Ref } from 'vue'
+import type { RegistrationDto } from '@/api/auth/dto/registration.dto'
+import { AuthTabsName } from '@/global/types/ui/auth/AuthTabsName'
+
+const form: Ref<RegistrationDto> = ref({
+	username: '',
+	email: '',
+	password: '',
+})
+
+const emits = defineEmits<{ (e: 'updateActiveTab', name: AuthTabsName): void }>()
+
+const { execute, isLoading, errors } = useRequest()
+const authStore = useAuthStore()
+const { registration: fetchRegistration } = authStore
+
+const registration = async () => {
+	await execute(async () => {
+		const response = await fetchRegistration(form.value)
+		emits('updateActiveTab', AuthTabsName.Login)
+		return response
+	})
+}
 </script>
 
 <style lang="scss" scoped>
