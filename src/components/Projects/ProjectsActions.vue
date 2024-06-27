@@ -10,6 +10,7 @@
     <ProjectModal
       v-if="projectModalIsOpen"
       title="Добавить проект"
+      button-text="Добавить"
       :loading="isLoading"
       :errors="errors"
       @on-close="closeProjectModal"
