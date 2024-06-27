@@ -4,6 +4,8 @@
     :title="`Вы действительно хотите удалить: ${title} ?`"
     text="Эти данные нельзя будет вернуть"
     :button-confirm-text="buttonConfirmText"
+    @on-confirm="$emit('onConfirm')"
+    @on-close="$emit('onClose')"
   />
 </template>
 
@@ -19,6 +21,11 @@ withDefaults(defineProps<Props>(), {
 	title: '',
 	buttonConfirmText: '',
 })
+
+defineEmits<{
+	(e: 'onClose'): void
+	(e: 'onConfirm'): void
+}>()
 </script>
 
 <style scoped lang="scss"></style>
