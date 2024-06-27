@@ -50,7 +50,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	access: () => accessDefaults,
+	access: () => ({ ...accessDefaults }),
 	title: 'Редактировать доступ',
 })
 
