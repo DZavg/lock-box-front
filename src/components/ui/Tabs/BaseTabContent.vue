@@ -1,6 +1,6 @@
 <template>
   <div
-    v-show="isActive"
+    v-if="isActive"
     class="tab-content"
   >
     <slot />
