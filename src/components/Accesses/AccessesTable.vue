@@ -28,7 +28,7 @@
               :show-copy-button="true"
               @on-copy="copyPassword(access)"
               @on-edit="openAccessModal({ access })"
-              @on-delete="openConfirmDeleteModal({ title: access.type })"
+              @on-delete="openConfirmDeleteModal"
             />
           </td>
         </tr>
@@ -42,7 +42,7 @@
           :show-copy-button="true"
           @on-copy="copyPassword(access)"
           @on-edit="openAccessModal({ access })"
-          @on-delete="openConfirmDeleteModal({ title: access.type })"
+          @on-delete="openConfirmDeleteModal"
         />
       </template>
     </BaseTableGroup>
@@ -53,7 +53,7 @@
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
-      :title="confirmDeleteModalOptions.title"
+      :title="selectAccess.type"
       button-confirm-text="Удалить доступ"
       @on-close="closeConfirmDeleteModal"
     />
@@ -64,13 +64,15 @@
 import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
-import useConfirmDeleteModal from '@/composables/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import type { Access } from '@/global/types/api/access/Access'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
 import useAccessModal from '@/composables/modals/useAccessModal'
 import { accessesTableFieldsData } from '@/global/data/access/AccessesTableData'
 import useClipboard from '@/composables/useClipboard'
+import useModal from '@/composables/useModal'
+import { ref, type Ref } from 'vue'
+import { accessDefaults } from '@/global/defaults/access/Project'
 
 interface Props {
 	accesses: Access[]
@@ -80,14 +82,15 @@ withDefaults(defineProps<Props>(), {
 	accesses: () => [],
 })
 
+const selectAccess: Ref<Access> = ref(accessDefaults)
+
 const { openAccessModal, closeAccessModal, accessModalIsOpen, accessModalOptions } =
 	useAccessModal()
 const {
-	openConfirmDeleteModal,
-	closeConfirmDeleteModal,
-	confirmDeleteModalIsOpen,
-	confirmDeleteModalOptions,
-} = useConfirmDeleteModal()
+	modalIsOpen: confirmDeleteModalIsOpen,
+	openModal: openConfirmDeleteModal,
+	closeModal: closeConfirmDeleteModal,
+} = useModal()
 const { writeText } = useClipboard()
 
 const copyPassword = (access: Access) => {

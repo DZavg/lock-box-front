@@ -43,6 +43,7 @@ import InputList from '@/components/ui/Input/InputList.vue'
 import type { Project } from '@/api/project/entity/Project'
 import useProjectForm from '@/composables/forms/useProjectForm'
 import type { Error } from '@/global/types/api/error/Error'
+import { projectDefaults } from '@/global/defaults/project/Project'
 
 interface Props {
 	project?: Project
@@ -53,11 +54,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	project: () => ({
-		id: '',
-		title: '',
-		domain: '',
-	}),
+	project: () => projectDefaults,
 	title: 'Редактировать проект',
 	buttonText: 'Сохранить изменения',
 	loading: false,

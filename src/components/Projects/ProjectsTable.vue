@@ -28,7 +28,7 @@
               :external-link="project.domain"
               :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
               @on-edit="openProjectModal({ project })"
-              @on-delete="openConfirmDeleteModal({ title: project.title })"
+              @on-delete="confirmDelete(project)"
             />
           </td>
         </tr>
@@ -42,7 +42,7 @@
           :external-link="project.domain"
           :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
           @on-edit="openProjectModal({ project })"
-          @on-delete="openConfirmDeleteModal({ title: project.title })"
+          @on-delete="confirmDelete(project)"
         />
       </template>
     </BaseTableGroup>
@@ -53,9 +53,10 @@
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
-      :title="confirmDeleteModalOptions.title"
+      :title="selectProject.title"
       button-confirm-text="Удалить проект"
       @on-close="closeConfirmDeleteModal"
+      @on-confirm="deleteProject"
     />
   </div>
 </template>
@@ -69,8 +70,12 @@ import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionLi
 import type { TableField } from '@/global/types/ui/table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useProjectModal from '@/composables/modals/useProjectModal'
-import useConfirmDeleteModal from '@/composables/useConfirmDeleteModal'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
+import { useProjectStore } from '@/stores/project'
+import useRequest from '@/composables/useRequest'
+import { ref, type Ref } from 'vue'
+import { projectDefaults } from '@/global/defaults/project/Project'
+import useModal from '@/composables/useModal'
 
 interface Props {
 	projects: Project[]
@@ -80,14 +85,33 @@ withDefaults(defineProps<Props>(), {
 	projects: () => [],
 })
 
+const selectProject: Ref<Project> = ref(projectDefaults)
+
 const { projectModalIsOpen, closeProjectModal, openProjectModal, projectModalOptions } =
 	useProjectModal()
 const {
-	openConfirmDeleteModal,
-	closeConfirmDeleteModal,
-	confirmDeleteModalIsOpen,
-	confirmDeleteModalOptions,
-} = useConfirmDeleteModal()
+	modalIsOpen: confirmDeleteModalIsOpen,
+	openModal: openConfirmDeleteModal,
+	closeModal: closeConfirmDeleteModal,
+} = useModal()
+const { execute } = useRequest()
+
+const projectStore = useProjectStore()
+const { deleteOneById, getAll } = projectStore
+
+const confirmDelete = (project: Project) => {
+	openConfirmDeleteModal()
+	selectProject.value = project
+}
+
+const deleteProject = async () => {
+	await execute(async () => {
+		const response = await deleteOneById(selectProject.value.id)
+		await getAll()
+		closeConfirmDeleteModal()
+		return response
+	})
+}
 
 const tableFields: TableField<keyof Project>[] = [
 	{

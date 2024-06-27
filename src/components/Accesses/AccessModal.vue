@@ -42,6 +42,7 @@ import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import type { Access } from '@/global/types/api/access/Access'
 import useAccessForm from '@/composables/forms/useAccessForm'
+import { accessDefaults } from '@/global/defaults/access/Project'
 
 interface Props {
 	access?: Access
@@ -49,12 +50,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	access: () => ({
-		id: '',
-		origin: '',
-		login: '',
-		type: '',
-	}),
+	access: () => accessDefaults,
 	title: 'Редактировать доступ',
 })
 
