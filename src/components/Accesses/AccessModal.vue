@@ -41,8 +41,8 @@ import BaseSelect from '@/components/ui/Select/BaseSelect.vue'
 import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import type { Access } from '@/global/types/api/access/Access'
-import useAccessForm from '@/composables/forms/useAccessForm'
 import { accessDefaults } from '@/global/defaults/access/Project'
+import { ref, type Ref } from 'vue'
 
 interface Props {
 	access?: Access
@@ -54,7 +54,7 @@ const props = withDefaults(defineProps<Props>(), {
 	title: 'Редактировать доступ',
 })
 
-const { form } = useAccessForm(props.access)
+const form: Ref<Access> = ref(props.access || accessDefaults)
 </script>
 
 <style lang="scss" scoped>
