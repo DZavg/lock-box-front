@@ -1,4 +1,4 @@
-import type { Access } from '@/global/types/api/access/Access'
+import type { Access } from '@/api/access/entity/Access'
 
 export const accessDefaults: Access = {
 	id: '',

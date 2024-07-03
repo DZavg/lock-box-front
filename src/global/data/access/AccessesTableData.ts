@@ -1,5 +1,5 @@
 import type { TableField } from '@/global/types/ui/table/Table'
-import type { Access } from '@/global/types/api/access/Access'
+import type { Access } from '@/api/access/entity/Access'
 
 export const accessesTableFieldsData: TableField<keyof Access>[] = [
 	{

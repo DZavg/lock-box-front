@@ -1,6 +1,7 @@
 import { type Project } from '@/api/project/entity/Project'
-import { type Access } from '@/global/types/api/access/Access'
+import { type Access } from '@/api/access/entity/Access'
 
-export interface ProjectsSlugPage extends Project {
+export interface ProjectsSlugPage {
 	accesses: Access[]
+	project: Project
 }

@@ -1,5 +1,5 @@
 import { type Ref, ref } from 'vue'
-import type { Access } from '@/global/types/api/access/Access'
+import type { Access } from '@/api/access/entity/Access'
 
 interface AccessModalOptions {
 	access?: Access

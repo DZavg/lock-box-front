@@ -26,6 +26,8 @@ import { type Registration, RegistrationImpl } from '@/api/auth/usecase/registra
 import type { Create } from '@/api/project/usecase/create'
 import { CreateImpl } from '@/api/project/usecase/create'
 import { type DeleteOneById, DeleteOneByIdImpl } from '@/api/project/usecase/deleteOneById'
+import type { GetAllAccesses } from '@/api/project/usecase/getAllAccesses'
+import { GetAllAccessesImpl } from '@/api/project/usecase/getAllAccesses'
 
 const container: Container = new Container()
 
@@ -36,6 +38,7 @@ container.bind<GetOneById>(identifiers.getOneProjectById).to(GetOneByIdImpl)
 container.bind<GetAll>(identifiers.getAllProjects).to(GetAllImpl)
 container.bind<Create>(identifiers.createProject).to(CreateImpl)
 container.bind<DeleteOneById>(identifiers.deleteOneProjectById).to(DeleteOneByIdImpl)
+container.bind<GetAllAccesses>(identifiers.getAllAccesses).to(GetAllAccessesImpl)
 
 container.bind<AuthRepository>(identifiers.authRepository).to(AuthRepositoryImpl)
 container.bind<Login>(identifiers.login).to(LoginImpl)

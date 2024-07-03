@@ -2,11 +2,11 @@
   <BaseInternalPage
     :breadcrumbs="[
       { title: 'Проекты', link: { name: RouteName.Projects } },
-      { title: projectsSlugPageData.title, link: { name: RouteName.ProjectsSlug } },
+      { title: title, link: { name: RouteName.ProjectsSlug } },
     ]"
     class="projects-slug-page"
     :title-h1="title"
-    :additional-text="projectsSlugPageData.domain"
+    :additional-text="getProjectsSlugPage.project?.domain"
   >
     <template #head>
       <BaseButton
@@ -22,7 +22,7 @@
       />
     </template>
     <template #default>
-      <AccessesTable :accesses="projectsSlugPageData.accesses" />
+      <AccessesTable :accesses="getProjectsSlugPage.accesses" />
     </template>
   </BaseInternalPage>
 </template>
@@ -30,18 +30,33 @@
 <script lang="ts" setup>
 import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
-import { ref, type Ref } from 'vue'
+import { onMounted, ref, type Ref } from 'vue'
 import useSeo from '@/composables/useSeo'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
 import useAccessModal from '@/composables/modals/useAccessModal'
 import AccessesTable from '@/components/Accesses/AccessesTable.vue'
-import { projectsSlugPageData } from '@/global/mock/pages/projects/ProjectsSlugPageData'
 import { RouteName } from '@/router/RouteName'
+import { useProjectStore } from '@/stores/project'
+import { storeToRefs } from 'pinia'
+import useRequest from '@/composables/useRequest'
+import { useRoute } from 'vue-router'
 
-const title: Ref<string> = ref(projectsSlugPageData.title)
+const route = useRoute()
 
-useSeo({ title: title.value })
+const title: Ref<string> = ref('')
+
 const { accessModalIsOpen, closeAccessModal, openAccessModal } = useAccessModal()
+const projectStore = useProjectStore()
+
+const { getAllAccesses } = projectStore
+const { getProjectsSlugPage } = storeToRefs(projectStore)
+const { execute } = useRequest()
+
+onMounted(async () => {
+	await execute(() => getAllAccesses(route.params.slug as string))
+	title.value = getProjectsSlugPage.value.project.title
+	useSeo({ title: title.value })
+})
 </script>
 
 <style lang="scss" scoped></style>
