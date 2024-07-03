@@ -9,12 +9,14 @@ import type { Project } from '@/api/project/entity/Project'
 import type { DeleteOneById } from '@/api/project/usecase/deleteOneById'
 import type { GetAllAccesses } from '@/api/project/usecase/getAllAccesses'
 import type { ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
+import type { CreateAccess } from '@/api/project/usecase/createAccess'
 
 const getOneById = container.get<GetOneById>(identifiers.getOneProjectById)
 const getAll = container.get<GetAll>(identifiers.getAllProjects)
 const create = container.get<Create>(identifiers.createProject)
 const deleteOneProjectById = container.get<DeleteOneById>(identifiers.deleteOneProjectById)
 const getAllAccesses = container.get<GetAllAccesses>(identifiers.getAllAccesses)
+const createAccess = container.get<CreateAccess>(identifiers.createAccess)
 
 export const useProjectStore = defineStore('project', {
 	state: () => {
@@ -46,6 +48,10 @@ export const useProjectStore = defineStore('project', {
 			const response = await getAllAccesses.execute(id)
 			this.projectsSlugPage = response
 			return response
+		},
+
+		async createAccess(id: string | number) {
+			return await createAccess.execute(id)
 		},
 	},
 	getters: {

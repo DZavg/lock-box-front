@@ -12,6 +12,7 @@ export interface ProjectRepository {
 	create(project: ProjectDto): Promise<Project>
 	deleteOneById(id: number | string): Promise<Message>
 	getAllAccesses(id: number | string): Promise<ProjectsSlugPage>
+	createAccess(id: number | string): Promise<Message>
 }
 
 export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepository {
@@ -35,5 +36,9 @@ export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepo
 
 	async getAllAccesses(id: string | number): Promise<ProjectsSlugPage> {
 		return await this.httpClient.get(`${this.baseUrl}${id}/accesses`)
+	}
+
+	async createAccess(id: string | number): Promise<Message> {
+		return await this.httpClient.post(`${this.baseUrl}${id}/accesses`)
 	}
 }
