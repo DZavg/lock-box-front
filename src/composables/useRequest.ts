@@ -22,7 +22,7 @@ export default function () {
 				toast.success(response.message)
 			}
 		} catch (e: any) {
-			const errorData = e.response.data
+			const errorData = e?.response?.data
 			if (errorData.errors) {
 				errors.value = errorsTransform(errorData.errors)
 			}
