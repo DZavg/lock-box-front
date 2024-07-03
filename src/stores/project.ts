@@ -10,6 +10,7 @@ import type { DeleteOneById } from '@/api/project/usecase/deleteOneById'
 import type { GetAllAccesses } from '@/api/project/usecase/getAllAccesses'
 import type { ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
 import type { CreateAccess } from '@/api/project/usecase/createAccess'
+import type { AccessDto } from '@/api/access/dto/access.dto'
 
 const getOneById = container.get<GetOneById>(identifiers.getOneProjectById)
 const getAll = container.get<GetAll>(identifiers.getAllProjects)
@@ -50,8 +51,8 @@ export const useProjectStore = defineStore('project', {
 			return response
 		},
 
-		async createAccess(id: string | number) {
-			return await createAccess.execute(id)
+		async createAccess(id: number | string, access: AccessDto) {
+			return await createAccess.execute(id, access)
 		},
 	},
 	getters: {

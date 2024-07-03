@@ -18,6 +18,8 @@
       <AccessModal
         v-if="accessModalIsOpen"
         title="Добавить доступ"
+        :errors="errors"
+        @on-submit="createAccess"
         @on-close="closeAccessModal"
       />
     </template>
@@ -40,20 +42,31 @@ import { useProjectStore } from '@/stores/project'
 import { storeToRefs } from 'pinia'
 import useRequest from '@/composables/useRequest'
 import { useRoute } from 'vue-router'
+import type { AccessDto } from '@/api/access/dto/access.dto'
 
 const route = useRoute()
+const slug = route.params.slug as string
 
 const title: Ref<string> = ref('')
 
 const { accessModalIsOpen, closeAccessModal, openAccessModal } = useAccessModal()
 const projectStore = useProjectStore()
 
-const { getAllAccesses } = projectStore
+const { getAllAccesses, createAccess: fetchAccess } = projectStore
 const { getProjectsSlugPage } = storeToRefs(projectStore)
-const { execute } = useRequest()
+const { execute, errors } = useRequest()
+
+const createAccess = (access: AccessDto) => {
+	execute(async () => {
+		const response = await fetchAccess(slug, access)
+		await getAllAccesses(slug as string)
+		closeAccessModal()
+		return response
+	})
+}
 
 onMounted(async () => {
-	await execute(() => getAllAccesses(route.params.slug as string))
+	await execute(() => getAllAccesses(slug))
 	title.value = getProjectsSlugPage.value.project.title
 	useSeo({ title: title.value })
 })
