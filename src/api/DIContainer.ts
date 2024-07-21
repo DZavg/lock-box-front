@@ -29,6 +29,8 @@ import { type DeleteOneById, DeleteOneByIdImpl } from '@/api/project/usecase/del
 import type { GetAllAccesses } from '@/api/project/usecase/getAllAccesses'
 import { GetAllAccessesImpl } from '@/api/project/usecase/getAllAccesses'
 import { type CreateAccess, CreateAccessImpl } from '@/api/project/usecase/createAccess'
+import type { Update } from '@/api/project/usecase/update'
+import { UpdateImpl } from '@/api/project/usecase/update'
 
 const container: Container = new Container()
 
@@ -38,6 +40,7 @@ container.bind<ProjectRepository>(identifiers.projectRepository).to(ProjectRepos
 container.bind<GetOneById>(identifiers.getOneProjectById).to(GetOneByIdImpl)
 container.bind<GetAll>(identifiers.getAllProjects).to(GetAllImpl)
 container.bind<Create>(identifiers.createProject).to(CreateImpl)
+container.bind<Update>(identifiers.updateProject).to(UpdateImpl)
 container.bind<DeleteOneById>(identifiers.deleteOneProjectById).to(DeleteOneByIdImpl)
 container.bind<GetAllAccesses>(identifiers.getAllAccesses).to(GetAllAccessesImpl)
 container.bind<CreateAccess>(identifiers.createAccess).to(CreateAccessImpl)
