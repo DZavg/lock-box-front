@@ -42,8 +42,8 @@ import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import type { Project } from '@/api/project/entity/Project'
 import type { Error } from '@/global/types/api/error/Error'
-import { projectDefaults } from '@/global/defaults/project/Project'
 import { ref, type Ref } from 'vue'
+import type { ProjectDto } from '@/api/project/dto/project.dto'
 
 interface Props {
 	project?: Project
@@ -54,17 +54,19 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	project: () => ({ ...projectDefaults }),
+	project: () => ({ id: '', title: '', domain: '' }),
 	title: 'Редактировать проект',
 	buttonText: 'Сохранить изменения',
 	loading: false,
 	errors: () => ({}),
 })
 
-const form: Ref<Project> = ref(props.project)
+const form: Ref<ProjectDto> = ref(
+	JSON.parse(JSON.stringify({ title: props.project.title, domain: props.project.domain })),
+)
 
 defineEmits<{
-	(e: 'onSubmit', form: Project): void
+	(e: 'onSubmit', form: ProjectDto): void
 }>()
 </script>
 

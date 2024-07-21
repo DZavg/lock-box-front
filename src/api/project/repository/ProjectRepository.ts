@@ -1,17 +1,17 @@
 import { BaseHttpClient } from '@/api/client/repository/BaseRepository'
-import type { ProjectDto } from '@/api/project/dto/project.dto'
 import type { Project } from '@/api/project/entity/Project'
 import type { Message } from '@/global/types/api/message/Message'
 import type { ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
 import type { AccessDto } from '@/api/access/dto/access.dto'
 import type { UpdateProjectDto } from '@/api/project/dto/update-project.dto'
+import type { ProjectDto } from '@/api/project/dto/project.dto'
 
 export interface ProjectRepository {
 	baseUrl: string
 
 	getAll(): Promise<Project[]>
 	getOneById(id: number | string): Promise<Project>
-	create(project: ProjectDto): Promise<Project>
+	create(project: ProjectDto): Promise<Message>
 	update(id: number | string, project: UpdateProjectDto): Promise<Message>
 	deleteOneById(id: number | string): Promise<Message>
 	getAllAccesses(id: number | string): Promise<ProjectsSlugPage>
@@ -29,7 +29,7 @@ export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepo
 		return await this.httpClient.get(`${this.baseUrl}${id}`)
 	}
 
-	async create(project: ProjectDto): Promise<Project> {
+	async create(project: ProjectDto): Promise<Message> {
 		return await this.httpClient.post(`${this.baseUrl}`, project)
 	}
 

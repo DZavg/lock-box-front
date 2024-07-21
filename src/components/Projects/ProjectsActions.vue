@@ -24,9 +24,9 @@ import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import SearchInput from '@/components/ui/Input/SearchInput.vue'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useProjectModal from '@/composables/modals/useProjectModal'
-import type { Project } from '@/api/project/entity/Project'
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
+import type { ProjectDto } from '@/api/project/dto/project.dto'
 
 const { openProjectModal, projectModalIsOpen, closeProjectModal } = useProjectModal()
 const { execute, isLoading, errors } = useRequest()
@@ -34,7 +34,7 @@ const { execute, isLoading, errors } = useRequest()
 const projectStore = useProjectStore()
 const { create, getAll } = projectStore
 
-const createProject = (project: Project) => {
+const createProject = (project: ProjectDto) => {
 	execute(async () => {
 		const response = await create(project)
 		await getAll()
