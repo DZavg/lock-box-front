@@ -4,7 +4,7 @@
       <template #head>
         <tr>
           <th
-            v-for="(field, index) in tableFields"
+            v-for="(field, index) in projectsTableFieldsData"
             :key="index"
           >
             {{ field.label }}
@@ -18,7 +18,7 @@
           :key="project.id"
         >
           <td
-            v-for="(field, index) in tableFields"
+            v-for="(field, index) in projectsTableFieldsData"
             :key="index"
           >
             {{ project[field.key] }}
@@ -37,7 +37,7 @@
         <TableCardWithActionList
           v-for="project in projects"
           :key="project.id"
-          :fields="tableFields"
+          :fields="projectsTableFieldsData"
           :value="project"
           :external-link="project.domain"
           :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
@@ -68,7 +68,6 @@ import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import type { Project } from '@/api/project/entity/Project'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
-import type { TableField } from '@/global/types/ui/table/Table'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useProjectModal from '@/composables/modals/useProjectModal'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
@@ -79,6 +78,7 @@ import useModal from '@/composables/useModal'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
 import deleteDuplicateFields from '@/lib/deleteDuplicateFields'
 import { projectDefaults } from '@/global/defaults/project/Project'
+import { projectsTableFieldsData } from '@/global/data/project/ProjectsTableData'
 
 interface Props {
 	projects: Project[]
@@ -132,17 +132,6 @@ const updateProject = async (form: ProjectDto) => {
 		return response
 	})
 }
-
-const tableFields: TableField<keyof Project>[] = [
-	{
-		label: 'Название проекта',
-		key: 'title',
-	},
-	{
-		label: 'Домен',
-		key: 'domain',
-	},
-]
 </script>
 
 <style scoped lang="scss">
