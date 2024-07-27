@@ -100,7 +100,7 @@ const {
 const { execute } = useRequest()
 
 const projectStore = useProjectStore()
-const { deleteOneById, getAll, update } = projectStore
+const { deleteOneById, getAll, updateOneById } = projectStore
 
 const confirmDelete = (project: Project) => {
 	openConfirmDeleteModal()
@@ -123,7 +123,7 @@ const deleteProject = async () => {
 
 const updateProject = async (form: ProjectDto) => {
 	await execute(async () => {
-		const response = await update(
+		const response = await updateOneById(
 			selectProject.value?.id,
 			deleteDuplicateFields(form, selectProject.value),
 		)

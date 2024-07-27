@@ -104,7 +104,7 @@ const { writeText } = useClipboard()
 const { execute } = useRequest()
 
 const accessStore = useAccessStore()
-const { update } = accessStore
+const { updateOneById } = accessStore
 
 const confirmUpdate = (access: Access) => {
 	openAccessModal({ access })
@@ -113,7 +113,7 @@ const confirmUpdate = (access: Access) => {
 
 const updateAccess = async (form: AccessDto) => {
 	await execute(async () => {
-		const response = await update(
+		const response = await updateOneById(
 			selectAccess.value?.id,
 			deleteDuplicateFields(form, selectAccess.value),
 		)

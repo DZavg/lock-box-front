@@ -5,13 +5,13 @@ import type { Message } from '@/global/types/api/message/Message'
 export interface AccessRepository {
 	baseUrl: string
 
-	update(id: string, access: UpdateAccessDto): Promise<Message>
+	updateOneById(id: string, access: UpdateAccessDto): Promise<Message>
 }
 
 export class AccessRepositoryImpl extends BaseHttpClient implements AccessRepository {
 	baseUrl = 'accesses/'
 
-	async update(id: string, access: UpdateAccessDto): Promise<Message> {
+	async updateOneById(id: string, access: UpdateAccessDto): Promise<Message> {
 		return await this.httpClient.patch(`${this.baseUrl}${id}`, access)
 	}
 }

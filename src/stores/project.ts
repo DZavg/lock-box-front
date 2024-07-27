@@ -7,20 +7,20 @@ import type { Create } from '@/api/project/usecase/create'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
 import type { Project } from '@/api/project/entity/Project'
 import type { DeleteOneById } from '@/api/project/usecase/deleteOneById'
-import type { GetAllAccesses } from '@/api/project/usecase/getAllAccesses'
+import type { GetAllAccessesById } from '@/api/project/usecase/getAllAccessesById'
 import type { ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
-import type { CreateAccess } from '@/api/project/usecase/createAccess'
+import type { CreateAccessById } from '@/api/project/usecase/createAccessById'
 import type { AccessDto } from '@/api/access/dto/access.dto'
-import type { Update } from '@/api/project/usecase/update'
+import type { UpdateOneById } from '@/api/project/usecase/updateOneById'
 import type { UpdateProjectDto } from '@/api/project/dto/update-project.dto'
 
 const getOneById = container.get<GetOneById>(identifiers.getOneProjectById)
 const getAll = container.get<GetAll>(identifiers.getAllProjects)
 const create = container.get<Create>(identifiers.createProject)
-const update = container.get<Update>(identifiers.updateProject)
+const updateOneById = container.get<UpdateOneById>(identifiers.updateOneProjectById)
 const deleteOneProjectById = container.get<DeleteOneById>(identifiers.deleteOneProjectById)
-const getAllAccesses = container.get<GetAllAccesses>(identifiers.getAllAccesses)
-const createAccess = container.get<CreateAccess>(identifiers.createAccess)
+const getAllAccessesById = container.get<GetAllAccessesById>(identifiers.getAllAccessesById)
+const createAccessById = container.get<CreateAccessById>(identifiers.createAccessById)
 
 export const useProjectStore = defineStore('project', {
 	state: () => {
@@ -44,22 +44,22 @@ export const useProjectStore = defineStore('project', {
 			return await create.execute(project)
 		},
 
-		async update(id: string, project: UpdateProjectDto) {
-			return await update.execute(id, project)
+		async updateOneById(id: string, project: UpdateProjectDto) {
+			return await updateOneById.execute(id, project)
 		},
 
 		async deleteOneById(id: string) {
 			return await deleteOneProjectById.execute(id)
 		},
 
-		async getAllAccesses(id: string) {
-			const response = await getAllAccesses.execute(id)
+		async getAllAccessesById(id: string) {
+			const response = await getAllAccessesById.execute(id)
 			this.projectsSlugPage = response
 			return response
 		},
 
-		async createAccess(id: string, access: AccessDto) {
-			return await createAccess.execute(id, access)
+		async createAccessById(id: string, access: AccessDto) {
+			return await createAccessById.execute(id, access)
 		},
 	},
 	getters: {

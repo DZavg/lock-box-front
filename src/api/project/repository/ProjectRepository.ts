@@ -12,10 +12,10 @@ export interface ProjectRepository {
 	getAll(): Promise<Project[]>
 	getOneById(id: string): Promise<Project>
 	create(project: ProjectDto): Promise<Message>
-	update(id: string, project: UpdateProjectDto): Promise<Message>
+	updateOneById(id: string, project: UpdateProjectDto): Promise<Message>
 	deleteOneById(id: string): Promise<Message>
-	getAllAccesses(id: string): Promise<ProjectsSlugPage>
-	createAccess(id: string, access: AccessDto): Promise<Message>
+	getAllAccessesById(id: string): Promise<ProjectsSlugPage>
+	createAccessById(id: string, access: AccessDto): Promise<Message>
 }
 
 export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepository {
@@ -33,7 +33,7 @@ export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepo
 		return await this.httpClient.post(`${this.baseUrl}`, project)
 	}
 
-	async update(id: string, project: UpdateProjectDto): Promise<Message> {
+	async updateOneById(id: string, project: UpdateProjectDto): Promise<Message> {
 		return await this.httpClient.patch(`${this.baseUrl}${id}`, project)
 	}
 
@@ -41,11 +41,11 @@ export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepo
 		return await this.httpClient.delete(`${this.baseUrl}${id}`)
 	}
 
-	async getAllAccesses(id: string): Promise<ProjectsSlugPage> {
+	async getAllAccessesById(id: string): Promise<ProjectsSlugPage> {
 		return await this.httpClient.get(`${this.baseUrl}${id}/accesses`)
 	}
 
-	async createAccess(id: string, access: AccessDto): Promise<Message> {
+	async createAccessById(id: string, access: AccessDto): Promise<Message> {
 		return await this.httpClient.post(`${this.baseUrl}${id}/accesses`, access)
 	}
 }

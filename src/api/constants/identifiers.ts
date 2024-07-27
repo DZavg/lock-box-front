@@ -5,13 +5,13 @@ export const identifiers = {
 	getOneProjectById: Symbol.for('GetOneProjectById'),
 	getAllProjects: Symbol.for('GetAllProjects'),
 	createProject: Symbol.for('CreateProject'),
-	updateProject: Symbol.for('UpdateProject'),
+	updateOneProjectById: Symbol.for('UpdateOneProjectById'),
 	deleteOneProjectById: Symbol.for('DeleteOneProjectById'),
-	getAllAccesses: Symbol.for('GetAllAccesses'),
-	createAccess: Symbol.for('CreateAccess'),
+	getAllAccessesById: Symbol.for('GetAllAccessesById'),
+	createAccessById: Symbol.for('CreateAccessById'),
 
 	accessRepository: Symbol.for('AccessRepository'),
-	updateAccess: Symbol.for('UpdateAccess'),
+	updateOneAccessById: Symbol.for('UpdateOneAccessById'),
 
 	authRepository: Symbol.for('AuthRepository'),
 	login: Symbol.for('Login'),

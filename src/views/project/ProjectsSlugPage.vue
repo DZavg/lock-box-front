@@ -55,21 +55,21 @@ const title: Ref<string> = ref('')
 const { accessModalIsOpen, closeAccessModal, openAccessModal } = useAccessModal()
 const projectStore = useProjectStore()
 
-const { getAllAccesses, createAccess: fetchAccess } = projectStore
+const { getAllAccessesById, createAccessById } = projectStore
 const { getProjectsSlugPage } = storeToRefs(projectStore)
 const { execute, errors } = useRequest()
 
 const createAccess = (access: AccessDto) => {
 	execute(async () => {
-		const response = await fetchAccess(slug, access)
-		await getAllAccesses(slug as string)
+		const response = await createAccessById(slug, access)
+		await getAllAccessesById(slug as string)
 		closeAccessModal()
 		return response
 	})
 }
 
 const getAccesses = async () => {
-	await execute(() => getAllAccesses(slug))
+	await execute(() => getAllAccessesById(slug))
 }
 
 onMounted(async () => {

@@ -1,21 +1,21 @@
 import { type ProjectRepository } from '@/api/project/repository/ProjectRepository'
 import { inject, injectable } from 'inversify'
 import { identifiers } from '@/api/constants/identifiers'
-import type { UpdateProjectDto } from '@/api/project/dto/update-project.dto'
 import type { Message } from '@/global/types/api/message/Message'
+import type { AccessDto } from '@/api/access/dto/access.dto'
 
-export interface Update {
+export interface CreateAccessById {
 	readonly projectRepository: ProjectRepository
 
-	execute(id: string, project: UpdateProjectDto): Promise<Message>
+	execute(id: string, access: AccessDto): Promise<Message>
 }
 
 @injectable()
-export class UpdateImpl implements Update {
+export class CreateAccessImpl implements CreateAccessById {
 	@inject(identifiers.projectRepository)
 	readonly projectRepository!: ProjectRepository
 
-	async execute(id: string, project: UpdateProjectDto): Promise<Message> {
-		return await this.projectRepository.update(id, project)
+	async execute(id: string, access: AccessDto): Promise<Message> {
+		return await this.projectRepository.createAccessById(id, access)
 	}
 }

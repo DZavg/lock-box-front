@@ -1,15 +1,15 @@
 import { defineStore } from 'pinia'
 import { container } from '@/api/DIContainer'
-import { type Update } from '@/api/access/usecase/update'
+import { type UpdateOneById } from '@/api/access/usecase/updateOneById'
 import { identifiers } from '@/api/constants/identifiers'
 import type { UpdateAccessDto } from '@/api/access/dto/update-access.dto'
 
-const update = container.get<Update>(identifiers.updateAccess)
+const updateOneById = container.get<UpdateOneById>(identifiers.updateOneAccessById)
 
 export const useAccessStore = defineStore('access', {
 	actions: {
-		async update(id: string, access: UpdateAccessDto) {
-			return await update.execute(id, access)
+		async updateOneById(id: string, access: UpdateAccessDto) {
+			return await updateOneById.execute(id, access)
 		},
 	},
 })
