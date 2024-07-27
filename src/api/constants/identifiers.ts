@@ -13,6 +13,7 @@ export const identifiers = {
 	accessRepository: Symbol.for('AccessRepository'),
 	updateOneAccessById: Symbol.for('UpdateOneAccessById'),
 	deleteOneAccessById: Symbol.for('DeleteOneAccessById'),
+	getPasswordById: Symbol.for('GetPasswordById'),
 
 	authRepository: Symbol.for('AuthRepository'),
 	login: Symbol.for('Login'),

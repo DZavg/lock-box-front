@@ -105,7 +105,7 @@ const { writeText } = useClipboard()
 const { execute } = useRequest()
 
 const accessStore = useAccessStore()
-const { updateOneById, deleteOneById } = accessStore
+const { updateOneById, deleteOneById, getPasswordById } = accessStore
 
 const confirmAction = (access: Access, callback: Function = () => {}) => {
 	callback()
@@ -133,8 +133,12 @@ const updateAccess = async (form: AccessDto) => {
 	})
 }
 
-const copyPassword = (access: Access) => {
-	writeText(access.login)
+const copyPassword = async (access: Access) => {
+	await execute(async () => {
+		const response = await getPasswordById(access.id)
+		writeText(response.password)
+		return response
+	})
 }
 </script>
 
