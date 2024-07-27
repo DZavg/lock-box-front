@@ -27,8 +27,8 @@
             <TableActionList
               :external-link="project.domain"
               :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-              @on-edit="confirmUpdate(project)"
-              @on-delete="confirmDelete(project)"
+              @on-edit="confirmAction(project, () => openProjectModal({ project }))"
+              @on-delete="confirmAction(project, openConfirmDeleteModal)"
             />
           </td>
         </tr>
@@ -41,8 +41,8 @@
           :value="project"
           :external-link="project.domain"
           :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-          @on-edit="confirmUpdate(project)"
-          @on-delete="confirmDelete(project)"
+          @on-edit="confirmAction(project, () => openProjectModal({ project }))"
+          @on-delete="confirmAction(project, openConfirmDeleteModal)"
         />
       </template>
     </BaseTableGroup>
@@ -102,13 +102,8 @@ const { execute } = useRequest()
 const projectStore = useProjectStore()
 const { deleteOneById, getAll, updateOneById } = projectStore
 
-const confirmDelete = (project: Project) => {
-	openConfirmDeleteModal()
-	selectProject.value = project
-}
-
-const confirmUpdate = (project: Project) => {
-	openProjectModal({ project })
+const confirmAction = (project: Project, callback: Function = () => {}) => {
+	callback()
 	selectProject.value = project
 }
 
