@@ -6,7 +6,7 @@ import type { Message } from '@/global/types/api/message/Message'
 export interface DeleteOneById {
 	readonly projectRepository: ProjectRepository
 
-	execute(id: number | string): Promise<Message>
+	execute(id: string): Promise<Message>
 }
 
 @injectable()
@@ -14,7 +14,7 @@ export class DeleteOneByIdImpl implements DeleteOneById {
 	@inject(identifiers.projectRepository)
 	readonly projectRepository!: ProjectRepository
 
-	async execute(id: number | string): Promise<Message> {
+	async execute(id: string): Promise<Message> {
 		return await this.projectRepository.deleteOneById(id)
 	}
 }

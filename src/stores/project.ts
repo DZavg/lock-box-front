@@ -30,7 +30,7 @@ export const useProjectStore = defineStore('project', {
 		}
 	},
 	actions: {
-		async getOneById(id: string | number) {
+		async getOneById(id: string) {
 			return await getOneById.execute(id)
 		},
 
@@ -44,21 +44,21 @@ export const useProjectStore = defineStore('project', {
 			return await create.execute(project)
 		},
 
-		async update(id: number | string, project: UpdateProjectDto) {
+		async update(id: string, project: UpdateProjectDto) {
 			return await update.execute(id, project)
 		},
 
-		async deleteOneById(id: string | number) {
+		async deleteOneById(id: string) {
 			return await deleteOneProjectById.execute(id)
 		},
 
-		async getAllAccesses(id: string | number) {
+		async getAllAccesses(id: string) {
 			const response = await getAllAccesses.execute(id)
 			this.projectsSlugPage = response
 			return response
 		},
 
-		async createAccess(id: number | string, access: AccessDto) {
+		async createAccess(id: string, access: AccessDto) {
 			return await createAccess.execute(id, access)
 		},
 	},
