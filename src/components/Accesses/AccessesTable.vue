@@ -27,8 +27,8 @@
             <TableActionList
               :show-copy-button="true"
               @on-copy="copyPassword(access)"
-              @on-edit="confirmUpdate(access)"
-              @on-delete="confirmDelete(access)"
+              @on-edit="confirmAction(access, () => openAccessModal({ access }))"
+              @on-delete="confirmAction(access, openConfirmDeleteModal)"
             />
           </td>
         </tr>
@@ -41,8 +41,8 @@
           :value="access"
           :show-copy-button="true"
           @on-copy="copyPassword(access)"
-          @on-edit="confirmUpdate(access)"
-          @on-delete="confirmDelete(access)"
+          @on-edit="confirmAction(access, () => openAccessModal({ access }))"
+          @on-delete="confirmAction(access, openConfirmDeleteModal)"
         />
       </template>
     </BaseTableGroup>
@@ -107,13 +107,8 @@ const { execute } = useRequest()
 const accessStore = useAccessStore()
 const { updateOneById, deleteOneById } = accessStore
 
-const confirmDelete = (access: Access) => {
-	openConfirmDeleteModal()
-	selectAccess.value = access
-}
-
-const confirmUpdate = (access: Access) => {
-	openAccessModal({ access })
+const confirmAction = (access: Access, callback: Function = () => {}) => {
+	callback()
 	selectAccess.value = access
 }
 
