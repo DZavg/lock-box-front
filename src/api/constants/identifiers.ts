@@ -10,6 +10,9 @@ export const identifiers = {
 	getAllAccesses: Symbol.for('GetAllAccesses'),
 	createAccess: Symbol.for('CreateAccess'),
 
+	accessRepository: Symbol.for('AccessRepository'),
+	updateAccess: Symbol.for('UpdateAccess'),
+
 	authRepository: Symbol.for('AuthRepository'),
 	login: Symbol.for('Login'),
 	logout: Symbol.for('Logout'),

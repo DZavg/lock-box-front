@@ -27,7 +27,7 @@
             <TableActionList
               :show-copy-button="true"
               @on-copy="copyPassword(access)"
-              @on-edit="openAccessModal({ access })"
+              @on-edit="confirmUpdate(access)"
               @on-delete="openConfirmDeleteModal"
             />
           </td>
@@ -41,7 +41,7 @@
           :value="access"
           :show-copy-button="true"
           @on-copy="copyPassword(access)"
-          @on-edit="openAccessModal({ access })"
+          @on-edit="confirmUpdate(access)"
           @on-delete="openConfirmDeleteModal"
         />
       </template>
@@ -50,6 +50,7 @@
       v-if="accessModalIsOpen"
       :access="accessModalOptions.access"
       @on-close="closeAccessModal"
+      @on-submit="updateAccess"
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
@@ -73,6 +74,10 @@ import useClipboard from '@/composables/useClipboard'
 import useModal from '@/composables/useModal'
 import { ref, type Ref } from 'vue'
 import { accessDefaults } from '@/global/defaults/access/Project'
+import deleteDuplicateFields from '@/lib/deleteDuplicateFields'
+import type { AccessDto } from '@/api/access/dto/access.dto'
+import useRequest from '@/composables/useRequest'
+import { useAccessStore } from '@/stores/access'
 
 interface Props {
 	accesses: Access[]
@@ -81,6 +86,10 @@ interface Props {
 withDefaults(defineProps<Props>(), {
 	accesses: () => [],
 })
+
+const emits = defineEmits<{
+	(e: 'onSuccess'): void
+}>()
 
 const selectAccess: Ref<Access> = ref(accessDefaults)
 
@@ -92,6 +101,27 @@ const {
 	closeModal: closeConfirmDeleteModal,
 } = useModal()
 const { writeText } = useClipboard()
+const { execute } = useRequest()
+
+const accessStore = useAccessStore()
+const { update } = accessStore
+
+const confirmUpdate = (access: Access) => {
+	openAccessModal({ access })
+	selectAccess.value = access
+}
+
+const updateAccess = async (form: AccessDto) => {
+	await execute(async () => {
+		const response = await update(
+			selectAccess.value?.id,
+			deleteDuplicateFields(form, selectAccess.value),
+		)
+		emits('onSuccess')
+		closeAccessModal()
+		return response
+	})
+}
 
 const copyPassword = (access: Access) => {
 	writeText(access.login)

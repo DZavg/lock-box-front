@@ -56,6 +56,7 @@ import type { Access } from '@/api/access/entity/Access'
 import { accessDefaults } from '@/global/defaults/access/Project'
 import { ref, type Ref } from 'vue'
 import type { Error } from '@/global/types/api/error/Error'
+import type { AccessDto } from '@/api/access/dto/access.dto'
 
 interface Props {
 	access?: Access
@@ -74,10 +75,18 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 defineEmits<{
-	(e: 'onSubmit', form: Access): void
+	(e: 'onSubmit', form: AccessDto): void
 }>()
 
-const form: Ref<Access> = ref(props.access)
+const form: Ref<AccessDto> = ref(
+	JSON.parse(
+		JSON.stringify({
+			origin: props.access.origin,
+			login: props.access.login,
+			type: props.access.type,
+		}),
+	),
+)
 </script>
 
 <style lang="scss" scoped>

@@ -31,6 +31,12 @@ import { GetAllAccessesImpl } from '@/api/project/usecase/getAllAccesses'
 import { type CreateAccess, CreateAccessImpl } from '@/api/project/usecase/createAccess'
 import type { Update } from '@/api/project/usecase/update'
 import { UpdateImpl } from '@/api/project/usecase/update'
+import type { AccessRepository } from '@/api/access/repository/AccessRepository'
+import { AccessRepositoryImpl } from '@/api/access/repository/AccessRepository'
+import {
+	type Update as UpdateAccess,
+	UpdateImpl as UpdateAccessImpl,
+} from '@/api/access/usecase/update'
 
 const container: Container = new Container()
 
@@ -44,6 +50,9 @@ container.bind<Update>(identifiers.updateProject).to(UpdateImpl)
 container.bind<DeleteOneById>(identifiers.deleteOneProjectById).to(DeleteOneByIdImpl)
 container.bind<GetAllAccesses>(identifiers.getAllAccesses).to(GetAllAccessesImpl)
 container.bind<CreateAccess>(identifiers.createAccess).to(CreateAccessImpl)
+
+container.bind<AccessRepository>(identifiers.accessRepository).to(AccessRepositoryImpl)
+container.bind<UpdateAccess>(identifiers.updateAccess).to(UpdateAccessImpl)
 
 container.bind<AuthRepository>(identifiers.authRepository).to(AuthRepositoryImpl)
 container.bind<Login>(identifiers.login).to(LoginImpl)

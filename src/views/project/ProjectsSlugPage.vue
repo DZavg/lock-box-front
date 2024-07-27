@@ -24,7 +24,10 @@
       />
     </template>
     <template #default>
-      <AccessesTable :accesses="getProjectsSlugPage.accesses" />
+      <AccessesTable
+        :accesses="getProjectsSlugPage.accesses"
+        @on-success="getAccesses"
+      />
     </template>
   </BaseInternalPage>
 </template>
@@ -65,8 +68,12 @@ const createAccess = (access: AccessDto) => {
 	})
 }
 
-onMounted(async () => {
+const getAccesses = async () => {
 	await execute(() => getAllAccesses(slug))
+}
+
+onMounted(async () => {
+	await getAccesses()
 	title.value = getProjectsSlugPage.value.project.title
 	useSeo({ title: title.value })
 })
