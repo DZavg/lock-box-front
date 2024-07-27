@@ -13,11 +13,6 @@
     </template>
     <template #body>
       <BaseOptionList>
-        <BaseOption class="user-dropdown__option">
-          <button class="body_p">
-            Редактировать профиль
-          </button>
-        </BaseOption>
         <BaseOption
           class="user-dropdown__option"
           @click="openModal"
