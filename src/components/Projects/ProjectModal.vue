@@ -44,6 +44,7 @@ import type { Project } from '@/api/project/entity/Project'
 import type { Error } from '@/global/types/api/error/Error'
 import { ref, type Ref } from 'vue'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
+import { projectDefaults } from '@/global/defaults/project/Project'
 
 interface Props {
 	project?: Project
@@ -54,7 +55,7 @@ interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-	project: () => ({ id: '', title: '', domain: '' }),
+	project: () => ({ ...projectDefaults }),
 	title: 'Редактировать проект',
 	buttonText: 'Сохранить изменения',
 	loading: false,

@@ -27,7 +27,7 @@
             <TableActionList
               :external-link="project.domain"
               :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-              @on-edit="openProjectModal({ project })"
+              @on-edit="confirmUpdate(project)"
               @on-delete="confirmDelete(project)"
             />
           </td>
@@ -41,7 +41,7 @@
           :value="project"
           :external-link="project.domain"
           :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-          @on-edit="openProjectModal({ project })"
+          @on-edit="confirmUpdate(project)"
           @on-delete="confirmDelete(project)"
         />
       </template>
@@ -50,10 +50,11 @@
       v-if="projectModalIsOpen"
       :project="projectModalOptions.project"
       @on-close="closeProjectModal"
+      @on-submit="updateProject"
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
-      :title="selectProject.title"
+      :title="selectProject?.title"
       button-confirm-text="Удалить проект"
       @on-close="closeConfirmDeleteModal"
       @on-confirm="deleteProject"
@@ -74,8 +75,10 @@ import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vu
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
 import { ref, type Ref } from 'vue'
-import { projectDefaults } from '@/global/defaults/project/Project'
 import useModal from '@/composables/useModal'
+import type { ProjectDto } from '@/api/project/dto/project.dto'
+import deleteDuplicateFields from '@/lib/deleteDuplicateFields'
+import { projectDefaults } from '@/global/defaults/project/Project'
 
 interface Props {
 	projects: Project[]
@@ -97,18 +100,35 @@ const {
 const { execute } = useRequest()
 
 const projectStore = useProjectStore()
-const { deleteOneById, getAll } = projectStore
+const { deleteOneById, getAll, update } = projectStore
 
 const confirmDelete = (project: Project) => {
 	openConfirmDeleteModal()
 	selectProject.value = project
 }
 
+const confirmUpdate = (project: Project) => {
+	openProjectModal({ project })
+	selectProject.value = project
+}
+
 const deleteProject = async () => {
 	await execute(async () => {
-		const response = await deleteOneById(selectProject.value.id)
+		const response = await deleteOneById(selectProject.value?.id)
 		await getAll()
 		closeConfirmDeleteModal()
+		return response
+	})
+}
+
+const updateProject = async (form: ProjectDto) => {
+	await execute(async () => {
+		const response = await update(
+			selectProject.value?.id,
+			deleteDuplicateFields(form, selectProject.value),
+		)
+		await getAll()
+		closeProjectModal()
 		return response
 	})
 }
