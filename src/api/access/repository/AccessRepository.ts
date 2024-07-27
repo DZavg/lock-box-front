@@ -6,6 +6,7 @@ export interface AccessRepository {
 	baseUrl: string
 
 	updateOneById(id: string, access: UpdateAccessDto): Promise<Message>
+	deleteOneById(id: string): Promise<Message>
 }
 
 export class AccessRepositoryImpl extends BaseHttpClient implements AccessRepository {
@@ -13,5 +14,9 @@ export class AccessRepositoryImpl extends BaseHttpClient implements AccessReposi
 
 	async updateOneById(id: string, access: UpdateAccessDto): Promise<Message> {
 		return await this.httpClient.patch(`${this.baseUrl}${id}`, access)
+	}
+
+	async deleteOneById(id: string): Promise<Message> {
+		return await this.httpClient.delete(`${this.baseUrl}${id}`)
 	}
 }

@@ -28,7 +28,7 @@
               :show-copy-button="true"
               @on-copy="copyPassword(access)"
               @on-edit="confirmUpdate(access)"
-              @on-delete="openConfirmDeleteModal"
+              @on-delete="confirmDelete(access)"
             />
           </td>
         </tr>
@@ -42,7 +42,7 @@
           :show-copy-button="true"
           @on-copy="copyPassword(access)"
           @on-edit="confirmUpdate(access)"
-          @on-delete="openConfirmDeleteModal"
+          @on-delete="confirmDelete(access)"
         />
       </template>
     </BaseTableGroup>
@@ -57,6 +57,7 @@
       :title="selectAccess.type"
       button-confirm-text="Удалить доступ"
       @on-close="closeConfirmDeleteModal"
+      @on-confirm="deleteAccess"
     />
   </div>
 </template>
@@ -104,11 +105,25 @@ const { writeText } = useClipboard()
 const { execute } = useRequest()
 
 const accessStore = useAccessStore()
-const { updateOneById } = accessStore
+const { updateOneById, deleteOneById } = accessStore
+
+const confirmDelete = (access: Access) => {
+	openConfirmDeleteModal()
+	selectAccess.value = access
+}
 
 const confirmUpdate = (access: Access) => {
 	openAccessModal({ access })
 	selectAccess.value = access
+}
+
+const deleteAccess = async () => {
+	await execute(async () => {
+		const response = await deleteOneById(selectAccess.value?.id)
+		emits('onSuccess')
+		closeConfirmDeleteModal()
+		return response
+	})
 }
 
 const updateAccess = async (form: AccessDto) => {
