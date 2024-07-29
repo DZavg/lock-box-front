@@ -9,7 +9,7 @@ import type { ProjectDto } from '@/api/project/dto/project.dto'
 export interface ProjectRepository {
 	baseUrl: string
 
-	getAll(): Promise<Project[]>
+	getAll(query: string): Promise<Project[]>
 	getOneById(id: string): Promise<Project>
 	create(project: ProjectDto): Promise<Message>
 	updateOneById(id: string, project: UpdateProjectDto): Promise<Message>
@@ -21,8 +21,12 @@ export interface ProjectRepository {
 export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepository {
 	baseUrl = 'projects/'
 
-	async getAll(): Promise<Project[]> {
-		return await this.httpClient.get(`${this.baseUrl}`)
+	async getAll(query: string = ''): Promise<Project[]> {
+		return await this.httpClient.get(`${this.baseUrl}`, {
+			params: {
+				query,
+			},
+		})
 	}
 
 	async getOneById(id: string): Promise<Project> {

@@ -8,7 +8,7 @@
     </template>
     <template #default>
       <ProjectsTable
-        v-if="true"
+        v-if="getProjects.length"
         :projects="getProjects"
       />
       <SearchNotFound v-else />
@@ -25,6 +25,9 @@ import { onMounted } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
 import { storeToRefs } from 'pinia'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
 
 const projectStore = useProjectStore()
 const { getAll } = projectStore
@@ -32,7 +35,7 @@ const { getProjects } = storeToRefs(projectStore)
 const { execute } = useRequest()
 
 onMounted(async () => {
-	await execute(getAll)
+	await execute(async () => await getAll(String(route.query.q || '')))
 })
 </script>
 

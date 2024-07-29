@@ -34,8 +34,8 @@ export const useProjectStore = defineStore('project', {
 			return await getOneById.execute(id)
 		},
 
-		async getAll() {
-			const response = await getAll.execute()
+		async getAll(query: string = '') {
+			const response = await getAll.execute(query)
 			this.projects = response
 			return response
 		},

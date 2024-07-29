@@ -6,7 +6,7 @@ import type { Project } from '@/api/project/entity/Project'
 export interface GetAll {
 	readonly projectRepository: ProjectRepository
 
-	execute(): Promise<Project[]>
+	execute(query: string): Promise<Project[]>
 }
 
 @injectable()
@@ -14,7 +14,7 @@ export class GetAllImpl implements GetAll {
 	@inject(identifiers.projectRepository)
 	readonly projectRepository!: ProjectRepository
 
-	async execute() {
-		return await this.projectRepository.getAll()
+	async execute(query: string = '') {
+		return await this.projectRepository.getAll(query)
 	}
 }
