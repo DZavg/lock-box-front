@@ -8,7 +8,10 @@ const getAccesses = () => {
 			origin: 'https://music.yandex.ru',
 			login: 'Mbalilyne35',
 			password: 'root',
-			type: 'SSH',
+			type: {
+				id: String(i),
+				title: 'SSH',
+			},
 		})
 	}
 	return data

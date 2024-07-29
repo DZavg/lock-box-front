@@ -14,6 +14,7 @@ export const identifiers = {
 	updateOneAccessById: Symbol.for('UpdateOneAccessById'),
 	deleteOneAccessById: Symbol.for('DeleteOneAccessById'),
 	getPasswordById: Symbol.for('GetPasswordById'),
+	getAllTypes: Symbol.for('GetAllTypes'),
 
 	authRepository: Symbol.for('AuthRepository'),
 	login: Symbol.for('Login'),

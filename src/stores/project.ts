@@ -54,6 +54,11 @@ export const useProjectStore = defineStore('project', {
 
 		async getAllAccessesById(id: string) {
 			const response = await getAllAccessesById.execute(id)
+
+			response.accesses.map((item) => {
+				item.type_name = item.type.title
+			})
+
 			this.projectsSlugPage = response
 			return response
 		},

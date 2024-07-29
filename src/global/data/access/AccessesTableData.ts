@@ -4,7 +4,7 @@ import type { Access } from '@/api/access/entity/Access'
 export const accessesTableFieldsData: TableField<keyof Access>[] = [
 	{
 		label: 'Тип доступа',
-		key: 'type',
+		key: 'type_name',
 	},
 	{
 		label: 'Адрес',

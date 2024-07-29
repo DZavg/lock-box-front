@@ -54,7 +54,7 @@
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
-      :title="selectAccess.type"
+      :title="selectAccess.type.title"
       button-confirm-text="Удалить доступ"
       @on-close="closeConfirmDeleteModal"
       @on-confirm="deleteAccess"

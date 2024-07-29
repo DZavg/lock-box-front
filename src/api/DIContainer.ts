@@ -35,7 +35,6 @@ import {
 } from '@/api/project/usecase/create'
 import {
 	type DeleteOneById as DeleteOneProjectById,
-	DeleteOneByIdImpl,
 	DeleteOneByIdImpl as DeleteOneProjectByIdImpl,
 } from '@/api/project/usecase/deleteOneById'
 import type { GetAllAccessesById } from '@/api/project/usecase/getAllAccessesById'
@@ -56,6 +55,7 @@ import {
 	DeleteOneByIdImpl as DeleteOneAccessByIdImpl,
 } from '@/api/access/usecase/deleteOneById'
 import { type GetPasswordById, GetPasswordByIdImpl } from '@/api/access/usecase/getPasswordById'
+import { type GetAllTypes, GetAllTypesImpl } from '@/api/access/usecase/getAllTypes'
 
 const container: Container = new Container()
 
@@ -74,6 +74,7 @@ container.bind<AccessRepository>(identifiers.accessRepository).to(AccessReposito
 container.bind<UpdateOneAccessById>(identifiers.updateOneAccessById).to(UpdateOneAccessByIdImpl)
 container.bind<DeleteOneAccessById>(identifiers.deleteOneAccessById).to(DeleteOneAccessByIdImpl)
 container.bind<GetPasswordById>(identifiers.getPasswordById).to(GetPasswordByIdImpl)
+container.bind<GetAllTypes>(identifiers.getAllTypes).to(GetAllTypesImpl)
 
 container.bind<AuthRepository>(identifiers.authRepository).to(AuthRepositoryImpl)
 container.bind<Login>(identifiers.login).to(LoginImpl)

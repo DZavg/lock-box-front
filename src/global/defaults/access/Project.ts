@@ -4,5 +4,8 @@ export const accessDefaults: Access = {
 	id: '',
 	origin: '',
 	login: '',
-	type: '',
+	type: {
+		id: '',
+		title: '',
+	},
 }

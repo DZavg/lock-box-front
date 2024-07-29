@@ -28,7 +28,7 @@
         />
         <BaseSelect
           v-model="form.type"
-          :options="[{ id: '0', title: 'SSH' }]"
+          :options="accessTypes"
           label="Тип доступа"
           :error="errors.type"
           name="type"
@@ -54,9 +54,12 @@ import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import InputList from '@/components/ui/Input/InputList.vue'
 import type { Access } from '@/api/access/entity/Access'
 import { accessDefaults } from '@/global/defaults/access/Project'
-import { ref, type Ref } from 'vue'
+import { onMounted, ref, type Ref } from 'vue'
 import type { Error } from '@/global/types/api/error/Error'
 import type { AccessDto } from '@/api/access/dto/access.dto'
+import type { AccessType } from '@/api/access/entity/AccessType'
+import { useAccessStore } from '@/stores/access'
+import useRequest from '@/composables/useRequest'
 
 interface Props {
 	access?: Access
@@ -78,15 +81,29 @@ defineEmits<{
 	(e: 'onSubmit', form: AccessDto): void
 }>()
 
+const accessStore = useAccessStore()
+const { getAllTypes } = accessStore
+
+const { execute } = useRequest()
+
 const form: Ref<AccessDto> = ref(
 	JSON.parse(
 		JSON.stringify({
 			origin: props.access.origin,
 			login: props.access.login,
-			type: props.access.type,
+			type: props.access.type.id,
 		}),
 	),
 )
+
+const accessTypes: Ref<AccessType[]> = ref([])
+
+onMounted(async () => {
+	await execute(async () => {
+		accessTypes.value = await getAllTypes()
+		return accessTypes
+	})
+})
 </script>
 
 <style lang="scss" scoped>
