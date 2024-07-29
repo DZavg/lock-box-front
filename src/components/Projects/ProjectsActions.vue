@@ -6,7 +6,7 @@
     >
       Добавить проект
     </BaseButton>
-    <SearchInput class="projects-actions__search" />
+    <ProjectsSearch class="projects-actions__search" />
     <ProjectModal
       v-if="projectModalIsOpen"
       title="Добавить проект"
@@ -21,7 +21,7 @@
 
 <script lang="ts" setup>
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
-import SearchInput from '@/components/ui/Input/SearchInput.vue'
+import ProjectsSearch from '@/components/Projects/ProjectsSearch.vue'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useProjectModal from '@/composables/modals/useProjectModal'
 import { useProjectStore } from '@/stores/project'
