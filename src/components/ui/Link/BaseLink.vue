@@ -1,16 +1,5 @@
 <template>
-  <a
-    v-if="isExternalLink"
-    :class="{ ['link_color_' + color]: !!color }"
-    :href="'//' + link"
-    class="link"
-    target="_blank"
-    v-bind="$attrs"
-  >
-    <slot />
-  </a>
   <RouterLink
-    v-else
     :class="{ ['link_color_' + color]: !!color }"
     :target="target"
     :to="link"
@@ -24,7 +13,6 @@
 <script lang="ts" setup>
 import { type HtmlLinkTarget } from '@/global/types/ui/link/HtmlLinkTarget'
 import { Color } from '@/global/types/ui/color/Color'
-import useLink from '@/composables/useLink'
 
 interface Props {
 	link: string | object
@@ -32,13 +20,11 @@ interface Props {
 	color?: Color
 }
 
-const props = withDefaults(defineProps<Props>(), {
+withDefaults(defineProps<Props>(), {
 	link: '',
 	target: '_self',
 	color: Color.BluePrimary,
 })
-
-const { isExternalLink } = useLink(props.link)
 </script>
 
 <style lang="scss" scoped>
