@@ -1,5 +1,5 @@
 <template>
-  <BaseLinkIcon
+  <BaseExternalLinkIcon
     :icon="iconExternalLink"
     :link="link"
     :size="size"
@@ -9,8 +9,8 @@
 
 <script lang="ts" setup>
 import iconExternalLink from '@/assets/images/svg/icon-external-link.svg'
-import BaseLinkIcon from '@/components/ui/Link/BaseLinkIcon.vue'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
+import BaseExternalLinkIcon from '@/components/ui/Link/BaseExternalLinkIcon.vue'
 
 interface Props {
 	link: string
