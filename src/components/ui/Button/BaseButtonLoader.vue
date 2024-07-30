@@ -1,17 +1,12 @@
 <template>
   <span class="button-loader">
-    <BaseIcon
-      :icon="iconLoading"
-      :size="IconSize.S"
-    />
+    <LoadingIcon />
     <span>Загрузка...</span>
   </span>
 </template>
 
 <script setup lang="ts">
-import iconLoading from '@/assets/images/svg/icon-loading.svg'
-import { IconSize } from '@/global/types/ui/icon/IconSize'
-import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
+import LoadingIcon from '@/components/ui/Loading/LoadingIcon.vue'
 </script>
 
 <style scoped lang="scss">
@@ -21,10 +16,5 @@ import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
 	justify-content: center;
 	gap: $indent-xs;
 	pointer-events: none;
-
-	svg {
-		animation: rotate 4s linear infinite;
-		fill: $color-white;
-	}
 }
 </style>
