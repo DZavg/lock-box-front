@@ -27,7 +27,7 @@
             <TableActionList
               :show-copy-button="true"
               @on-copy="copyPassword(access)"
-              @on-edit="confirmAction(access, () => openAccessModal({ access }))"
+              @on-edit="confirmAction(access, openAccessModal)"
               @on-delete="confirmAction(access, openConfirmDeleteModal)"
             />
           </td>
@@ -41,14 +41,14 @@
           :value="access"
           :show-copy-button="true"
           @on-copy="copyPassword(access)"
-          @on-edit="confirmAction(access, () => openAccessModal({ access }))"
+          @on-edit="confirmAction(access, openAccessModal)"
           @on-delete="confirmAction(access, openConfirmDeleteModal)"
         />
       </template>
     </BaseTableGroup>
     <AccessModal
       v-if="accessModalIsOpen"
-      :access="accessModalOptions.access"
+      :access="selectAccess"
       @on-close="closeAccessModal"
       @on-submit="updateAccess"
     />
@@ -69,7 +69,6 @@ import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionLi
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import type { Access } from '@/api/access/entity/Access'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
-import useAccessModal from '@/composables/modals/useAccessModal'
 import { accessesTableFieldsData } from '@/global/data/access/AccessesTableData'
 import useClipboard from '@/composables/useClipboard'
 import useModal from '@/composables/useModal'
@@ -94,8 +93,11 @@ const emits = defineEmits<{
 
 const selectAccess: Ref<Access> = ref(accessDefaults)
 
-const { openAccessModal, closeAccessModal, accessModalIsOpen, accessModalOptions } =
-	useAccessModal()
+const {
+	openModal: openAccessModal,
+	closeModal: closeAccessModal,
+	modalIsOpen: accessModalIsOpen,
+} = useModal()
 const {
 	modalIsOpen: confirmDeleteModalIsOpen,
 	openModal: openConfirmDeleteModal,

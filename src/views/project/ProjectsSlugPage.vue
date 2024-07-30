@@ -38,7 +38,6 @@ import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import { onMounted, ref, type Ref } from 'vue'
 import useSeo from '@/composables/useSeo'
 import AccessModal from '@/components/Accesses/AccessModal.vue'
-import useAccessModal from '@/composables/modals/useAccessModal'
 import AccessesTable from '@/components/Accesses/AccessesTable.vue'
 import { RouteName } from '@/router/RouteName'
 import { useProjectStore } from '@/stores/project'
@@ -46,13 +45,18 @@ import { storeToRefs } from 'pinia'
 import useRequest from '@/composables/useRequest'
 import { useRoute } from 'vue-router'
 import type { AccessDto } from '@/api/access/dto/access.dto'
+import useModal from '@/composables/useModal'
 
 const route = useRoute()
 const slug = route.params.slug as string
 
 const title: Ref<string> = ref('')
 
-const { accessModalIsOpen, closeAccessModal, openAccessModal } = useAccessModal()
+const {
+	openModal: openAccessModal,
+	closeModal: closeAccessModal,
+	modalIsOpen: accessModalIsOpen,
+} = useModal()
 const projectStore = useProjectStore()
 
 const { getAllAccessesById, createAccessById } = projectStore
