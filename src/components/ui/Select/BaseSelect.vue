@@ -2,7 +2,7 @@
   <div
     ref="select"
     v-click-outside="closeSelect"
-    :class="{ ['select--active']: isActive && options.length }"
+    :class="{ ['select--active']: isActive && options.length, ['select--loading']: loading }"
     class="select"
     tabindex="1"
     @keydown.esc="closeSelect"
@@ -18,10 +18,17 @@
         @click="toggleDropdown"
       >
         <span>{{ getTitleActiveOption }}</span>
+        <span
+          v-if="loading"
+          class="select__icon"
+        >
+          <LoadingIcon />
+        </span>
         <DropdownButtonIcon
+          v-else
           :icon-color="iconColor"
           :is-active="isActive"
-          class="select__dropdown-button"
+          class="select__icon"
         />
         <BaseOptionList
           ref="optionList"
@@ -62,6 +69,7 @@ import { Color } from '@/global/types/ui/color/Color'
 import BaseOption from '@/components/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
 import useSelect from '@/composables/useSelect'
+import LoadingIcon from '@/components/ui/Loading/LoadingIcon.vue'
 
 interface Props {
 	name?: string
@@ -69,6 +77,7 @@ interface Props {
 	label?: string
 	error?: string
 	options: Option[]
+	loading?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -77,6 +86,7 @@ const props = withDefaults(defineProps<Props>(), {
 	label: '',
 	error: '',
 	options: () => [],
+	loading: false,
 })
 
 const { position, selectField, optionList, checkPosition } = useSelect()
@@ -147,10 +157,11 @@ const iconColor = computed(() => {
 		user-select: none;
 	}
 
-	&__dropdown-button {
+	&__icon {
 		position: absolute;
 		top: 50%;
 		right: $indent-s;
+		display: flex;
 		transform: translateY(-50%);
 	}
 
@@ -181,6 +192,15 @@ const iconColor = computed(() => {
 
 		.select__options {
 			visibility: visible;
+		}
+	}
+
+	&--loading {
+		pointer-events: none;
+
+		.select__field {
+			border-color: $color-gray-third;
+			color: $color-gray-third;
 		}
 	}
 }

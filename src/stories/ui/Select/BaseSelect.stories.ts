@@ -11,12 +11,6 @@ const meta: Meta<typeof BaseSelect> = {
 			url: 'https://www.figma.com/file/JrFyfzV8shSxNFSTQdqb4J/password-storage?type=design&node-id=20-3697&mode=design&t=tX6nRmPbFy7rfUAE-0',
 		},
 	},
-}
-
-export default meta
-type Story = StoryObj<typeof BaseSelect>
-
-export const Default: Story = {
 	args: {
 		name: 'type',
 		label: 'Поле ввода',
@@ -53,4 +47,15 @@ export const Default: Story = {
 			<BaseSelect v-bind="args" v-model="form[args.name]"/>
 		`,
 	}),
+}
+
+export default meta
+type Story = StoryObj<typeof BaseSelect>
+
+export const Default: Story = {}
+
+export const Loading: Story = {
+	args: {
+		loading: true,
+	},
 }
