@@ -74,7 +74,7 @@ const getAccesses = async () => {
 
 onMounted(async () => {
 	await getAccesses()
-	title.value = getProjectsSlugPage.value.project.title
+	title.value = getProjectsSlugPage.value?.project?.title
 	useSeo({ title: title.value })
 })
 </script>
