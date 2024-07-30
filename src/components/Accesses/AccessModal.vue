@@ -31,6 +31,7 @@
           :options="accessTypes"
           label="Тип доступа"
           :error="errors.type"
+          :loading="isLoading"
           name="type"
         />
       </InputList>
@@ -84,7 +85,7 @@ defineEmits<{
 const accessStore = useAccessStore()
 const { getAllTypes } = accessStore
 
-const { execute } = useRequest()
+const { execute, isLoading } = useRequest()
 
 const form: Ref<AccessDto> = ref(
 	JSON.parse(
