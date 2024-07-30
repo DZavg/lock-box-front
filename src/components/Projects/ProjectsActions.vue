@@ -23,12 +23,16 @@
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import ProjectsSearch from '@/components/Projects/ProjectsSearch.vue'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
-import useProjectModal from '@/composables/modals/useProjectModal'
+import useModal from '@/composables/useModal'
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
 
-const { openProjectModal, projectModalIsOpen, closeProjectModal } = useProjectModal()
+const {
+	openModal: openProjectModal,
+	closeModal: closeProjectModal,
+	modalIsOpen: projectModalIsOpen,
+} = useModal()
 const { execute, isLoading, errors } = useRequest()
 
 const projectStore = useProjectStore()

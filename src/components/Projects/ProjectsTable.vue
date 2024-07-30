@@ -27,7 +27,7 @@
             <TableActionList
               :external-link="project.domain"
               :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-              @on-edit="confirmAction(project, () => openProjectModal({ project }))"
+              @on-edit="confirmAction(project, openProjectModal)"
               @on-delete="confirmAction(project, openConfirmDeleteModal)"
             />
           </td>
@@ -41,14 +41,14 @@
           :value="project"
           :external-link="project.domain"
           :link="{ name: RouteName.ProjectsSlug, params: { slug: project.id } }"
-          @on-edit="confirmAction(project, () => openProjectModal({ project }))"
+          @on-edit="confirmAction(project, openProjectModal)"
           @on-delete="confirmAction(project, openConfirmDeleteModal)"
         />
       </template>
     </BaseTableGroup>
     <ProjectModal
       v-if="projectModalIsOpen"
-      :project="projectModalOptions.project"
+      :project="selectProject"
       @on-close="closeProjectModal"
       @on-submit="updateProject"
     />
@@ -69,7 +69,6 @@ import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import type { Project } from '@/api/project/entity/Project'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import ProjectModal from '@/components/Projects/ProjectModal.vue'
-import useProjectModal from '@/composables/modals/useProjectModal'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
@@ -90,8 +89,11 @@ withDefaults(defineProps<Props>(), {
 
 const selectProject: Ref<Project> = ref(projectDefaults)
 
-const { projectModalIsOpen, closeProjectModal, openProjectModal, projectModalOptions } =
-	useProjectModal()
+const {
+	openModal: openProjectModal,
+	closeModal: closeProjectModal,
+	modalIsOpen: projectModalIsOpen,
+} = useModal()
 const {
 	modalIsOpen: confirmDeleteModalIsOpen,
 	openModal: openConfirmDeleteModal,
