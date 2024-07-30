@@ -7,6 +7,8 @@ import router from './router'
 import checkScreen from '@/plugins/checkScreen'
 import { clickOutside } from '@/plugins/clickOutside'
 import checkAuth from '@/plugins/checkAuth'
+import { RouteName } from '@/router/RouteName'
+import { HttpStatus } from '@/lib/httpStatus'
 
 const app = createApp(App)
 
@@ -27,3 +29,11 @@ app.use(Vue3Toastify, {
 app.directive('clickOutside', clickOutside)
 
 app.mount('#app')
+
+app.config.errorHandler = async (error: any) => {
+	if (error?.response?.status === HttpStatus.NOT_FOUND) {
+		await router.push({ name: RouteName.NotFound })
+	} else {
+		throw error
+	}
+}
