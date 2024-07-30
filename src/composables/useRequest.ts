@@ -1,6 +1,7 @@
 import { type Ref, ref } from 'vue'
 import { toast } from 'vue3-toastify'
 import errorsTransform from '@/lib/errorsTransform'
+import { HttpStatus } from '@/lib/httpStatus'
 
 export default function () {
 	const data: Ref<any> = ref()
@@ -22,12 +23,17 @@ export default function () {
 				toast.success(response.message)
 			}
 		} catch (e: any) {
-			const errorData = e?.response?.data
+			const response = e?.response
+			const errorData = response?.data
+
 			if (errorData.errors) {
 				errors.value = errorsTransform(errorData.errors)
 			}
 			if (errorData.error) {
 				toast.error(errorData.error)
+			}
+			if (response?.status === HttpStatus.NOT_FOUND) {
+				throw e
 			}
 		} finally {
 			isLoading.value = false
