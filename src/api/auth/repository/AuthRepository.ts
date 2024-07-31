@@ -11,6 +11,7 @@ export interface AuthRepository {
 	logout(): Promise<Message>
 	registration(data: RegistrationDto): Promise<Message>
 	recoveryPassword(data: RecoveryPasswordDto): Promise<Message>
+	demoAccess(): Promise<Tokens>
 }
 
 export class AuthRepositoryImpl extends BaseHttpClient implements AuthRepository {
@@ -30,5 +31,9 @@ export class AuthRepositoryImpl extends BaseHttpClient implements AuthRepository
 
 	async recoveryPassword(data: RecoveryPasswordDto): Promise<Message> {
 		return await this.httpClient.post(`${this.baseUrl}recovery-password/`, data)
+	}
+
+	async demoAccess(): Promise<Tokens> {
+		return await this.httpClient.get(`${this.baseUrl}demo-access/`)
 	}
 }

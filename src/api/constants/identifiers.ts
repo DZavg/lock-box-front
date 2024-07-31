@@ -21,6 +21,7 @@ export const identifiers = {
 	logout: Symbol.for('Logout'),
 	registration: Symbol.for('Registration'),
 	recoveryPassword: Symbol.for('RecoveryPassword'),
+	demoAccess: Symbol.for('DemoAccess'),
 
 	tokensRepository: Symbol.for('TokensRepository'),
 	getTokens: Symbol.for('GetTokens'),

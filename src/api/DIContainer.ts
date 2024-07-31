@@ -63,6 +63,7 @@ import {
 	GetOneImpl as GetOneCodeImpl,
 } from '@/api/confirmation-codes/usecase/getOne'
 import { type RecoveryPassword, RecoveryPasswordImpl } from '@/api/auth/usecase/recoveryPassword'
+import { type DemoAccess, DemoAccessImpl } from '@/api/auth/usecase/demoAccess'
 
 const container: Container = new Container()
 
@@ -88,6 +89,7 @@ container.bind<Login>(identifiers.login).to(LoginImpl)
 container.bind<Logout>(identifiers.logout).to(LogoutImpl)
 container.bind<Registration>(identifiers.registration).to(RegistrationImpl)
 container.bind<RecoveryPassword>(identifiers.recoveryPassword).to(RecoveryPasswordImpl)
+container.bind<DemoAccess>(identifiers.demoAccess).to(DemoAccessImpl)
 
 container.bind<TokensRepository>(identifiers.tokensRepository).to(TokensRepositoryImpl)
 container.bind<GetTokens>(identifiers.getTokens).to(GetTokensImpl)

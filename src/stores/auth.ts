@@ -12,6 +12,7 @@ import type { Registration } from '@/api/auth/usecase/registration'
 import type { RegistrationDto } from '@/api/auth/dto/registration.dto'
 import type { RecoveryPassword } from '@/api/auth/usecase/recoveryPassword'
 import type { RecoveryPasswordDto } from '@/api/auth/dto/recovery-password.dto'
+import type { DemoAccess } from '@/api/auth/usecase/demoAccess'
 
 const login = container.get<Login>(identifiers.login)
 const logout = container.get<Logout>(identifiers.logout)
@@ -20,6 +21,7 @@ const recoveryPassword = container.get<RecoveryPassword>(identifiers.recoveryPas
 const setTokens = container.get<SetTokens>(identifiers.setTokens)
 const getTokens = container.get<GetTokens>(identifiers.getTokens)
 const removeTokens = container.get<RemoveTokens>(identifiers.removeTokens)
+const demoAccess = container.get<DemoAccess>(identifiers.demoAccess)
 
 export const useAuthStore = defineStore('auth', {
 	state: () => {
@@ -64,6 +66,13 @@ export const useAuthStore = defineStore('auth', {
 
 		async recoveryPassword(data: RecoveryPasswordDto) {
 			return await recoveryPassword.execute(data)
+		},
+
+		async demoAccess() {
+			const response = await demoAccess.execute()
+			const { access_token, refresh_token } = response
+			this.singIn({ access_token, refresh_token })
+			return response
 		},
 	},
 
