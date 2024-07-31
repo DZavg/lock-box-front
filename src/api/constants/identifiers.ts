@@ -28,4 +28,7 @@ export const identifiers = {
 
 	userRepository: Symbol.for('UserRepository'),
 	getUserInfo: Symbol.for('GetUserInfo'),
+
+	confirmationCodesRepository: Symbol.for('ConfirmationCodesRepository'),
+	getOneCode: Symbol.for('GetOneCode'),
 }

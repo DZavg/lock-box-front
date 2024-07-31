@@ -56,6 +56,12 @@ import {
 } from '@/api/access/usecase/deleteOneById'
 import { type GetPasswordById, GetPasswordByIdImpl } from '@/api/access/usecase/getPasswordById'
 import { type GetAllTypes, GetAllTypesImpl } from '@/api/access/usecase/getAllTypes'
+import type { ConfirmationCodesRepository } from '@/api/confirmation-codes/repository/ConfirmationCodesRepository'
+import { ConfirmationCodesRepositoryImpl } from '@/api/confirmation-codes/repository/ConfirmationCodesRepository'
+import {
+	type GetOne as GetOneCode,
+	GetOneImpl as GetOneCodeImpl,
+} from '@/api/confirmation-codes/usecase/getOne'
 
 const container: Container = new Container()
 
@@ -88,5 +94,10 @@ container.bind<RemoveTokens>(identifiers.removeTokens).to(RemoveTokensImpl)
 
 container.bind<UserRepository>(identifiers.userRepository).to(UserRepositoryImpl)
 container.bind<GetInfo>(identifiers.getUserInfo).to(GetInfoImpl)
+
+container
+	.bind<ConfirmationCodesRepository>(identifiers.confirmationCodesRepository)
+	.to(ConfirmationCodesRepositoryImpl)
+container.bind<GetOneCode>(identifiers.getOneCode).to(GetOneCodeImpl)
 
 export { container }
