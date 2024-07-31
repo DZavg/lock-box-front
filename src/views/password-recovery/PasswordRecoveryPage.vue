@@ -1,11 +1,11 @@
 <template>
   <AuthPageWrapper class="password-recovery-page container-s">
-    <LogoWithDescription v-if="!email" />
+    <LogoWithDescription />
     <RecoveryPasswordForm
       v-if="!email"
       @reset-password="assignEmailValue"
     />
-    <RecoveryPasswordSuccessMessage
+    <CreatePasswordForm
       v-else
       :email="email"
     />
@@ -15,9 +15,9 @@
 <script lang="ts" setup>
 import RecoveryPasswordForm from '@/components/Auth/RecoveryPasswordForm.vue'
 import LogoWithDescription from '@/components/ui/Logo/LogoWithDescription.vue'
-import RecoveryPasswordSuccessMessage from '@/components/Auth/RecoveryPasswordSuccessMessage.vue'
 import { ref, type Ref } from 'vue'
 import AuthPageWrapper from '@/components/Auth/AuthPageWrapper.vue'
+import CreatePasswordForm from '@/components/Auth/CreatePasswordForm.vue'
 
 const email: Ref<string> = ref('')
 
