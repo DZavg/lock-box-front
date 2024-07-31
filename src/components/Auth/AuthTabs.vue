@@ -58,7 +58,7 @@ const router = useRouter()
 
 const activeTabName: Ref<string> = ref(AuthTabsName.Login)
 
-const fetchDemoAccess = () => {
+const getDemoAccess = () => {
 	execute(async () => {
 		await demoAccess()
 		await getInfo()
@@ -69,7 +69,7 @@ const fetchDemoAccess = () => {
 const updateActiveTab = (name: string) => {
 	if (!name) return
 	if (name === AuthTabsName.DemoAccess) {
-		fetchDemoAccess()
+		getDemoAccess()
 		return
 	}
 	activeTabName.value = name
