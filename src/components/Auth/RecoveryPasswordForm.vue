@@ -3,9 +3,18 @@
     <h1 class="h1-indent">
       Восстановление пароля
     </h1>
-    <BaseForm class="recovery-password-form__wrapper">
-      <EmailInput v-model="form.email" />
-      <BaseButton @click="resetPassword">
+    <BaseForm
+      class="recovery-password-form__wrapper"
+      @submit="getCode"
+    >
+      <EmailInput
+        v-model="email"
+        :error="errors.email"
+      />
+      <BaseButton
+        :loading="isLoading"
+        @click="getCode"
+      >
         Сбросить пароль
       </BaseButton>
     </BaseForm>
@@ -17,18 +26,26 @@ import BaseCard from '@/components/ui/Card/BaseCard.vue'
 import BaseForm from '@/components/ui/Form/BaseForm.vue'
 import EmailInput from '@/components/ui/Input/EmailInput.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
-import { ref } from 'vue'
+import { type Ref, ref } from 'vue'
+import { useConfirmationCodeStore } from '@/stores/confirmationCode'
+import useRequest from '@/composables/useRequest'
 
-const form = ref({
-	email: '',
-})
+const { execute, errors, isLoading } = useRequest()
+const confirmationCodeStore = useConfirmationCodeStore()
+const { getOne } = confirmationCodeStore
 
 const emits = defineEmits<{
 	(e: 'resetPassword', email: string): void
 }>()
 
-const resetPassword = () => {
-	emits('resetPassword', form.value.email)
+const email: Ref<string> = ref('')
+
+const getCode = async () => {
+	await execute(async () => {
+		const response = await getOne(email.value)
+		emits('resetPassword', email.value)
+		return response
+	})
 }
 </script>
 
