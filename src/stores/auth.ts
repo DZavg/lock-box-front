@@ -10,10 +10,13 @@ import type { GetTokens } from '@/api/tokens/usecase/getTokens'
 import type { Logout } from '@/api/auth/usecase/logout'
 import type { Registration } from '@/api/auth/usecase/registration'
 import type { RegistrationDto } from '@/api/auth/dto/registration.dto'
+import type { RecoveryPassword } from '@/api/auth/usecase/recoveryPassword'
+import type { RecoveryPasswordDto } from '@/api/auth/dto/recovery-password.dto'
 
 const login = container.get<Login>(identifiers.login)
 const logout = container.get<Logout>(identifiers.logout)
 const registration = container.get<Registration>(identifiers.registration)
+const recoveryPassword = container.get<RecoveryPassword>(identifiers.recoveryPassword)
 const setTokens = container.get<SetTokens>(identifiers.setTokens)
 const getTokens = container.get<GetTokens>(identifiers.getTokens)
 const removeTokens = container.get<RemoveTokens>(identifiers.removeTokens)
@@ -57,6 +60,10 @@ export const useAuthStore = defineStore('auth', {
 
 		async registration(data: RegistrationDto) {
 			return await registration.execute(data)
+		},
+
+		async recoveryPassword(data: RecoveryPasswordDto) {
+			return await recoveryPassword.execute(data)
 		},
 	},
 
