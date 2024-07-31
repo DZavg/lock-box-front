@@ -57,8 +57,8 @@ const { getInfo } = userStore
 
 const router = useRouter()
 
-const signIn = async () => {
-	await execute(async () => {
+const signIn = () => {
+	execute(async () => {
 		await login(form.value)
 		await getInfo()
 		await router.push(RouteName.Projects)

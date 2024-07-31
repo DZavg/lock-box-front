@@ -41,12 +41,35 @@ import BaseTabContent from '@/components/ui/Tabs/BaseTabContent.vue'
 import { AuthTabsName } from '@/global/types/ui/auth/AuthTabsName'
 import { ref, type Ref } from 'vue'
 import { AuthTabsData } from '@/global/data/auth/AuthTabsData'
+import { useAuthStore } from '@/stores/auth'
+import useRequest from '@/composables/useRequest'
+import { RouteName } from '@/router/RouteName'
+import { useUserStore } from '@/stores/user'
+import { useRouter } from 'vue-router'
+
+const authStore = useAuthStore()
+const userStore = useUserStore()
+
+const { demoAccess } = authStore
+const { getInfo } = userStore
+
+const { execute } = useRequest()
+const router = useRouter()
 
 const activeTabName: Ref<string> = ref(AuthTabsName.Login)
+
+const fetchDemoAccess = () => {
+	execute(async () => {
+		await demoAccess()
+		await getInfo()
+		await router.push(RouteName.Projects)
+	})
+}
 
 const updateActiveTab = (name: string) => {
 	if (!name) return
 	if (name === AuthTabsName.DemoAccess) {
+		fetchDemoAccess()
 		return
 	}
 	activeTabName.value = name
