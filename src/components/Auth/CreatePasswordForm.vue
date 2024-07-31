@@ -7,7 +7,7 @@
       class="create-password-form__element"
       @submit="changePassword"
     >
-      <div class="create-password-form__wrapper">
+      <InputList class="create-password-form__input-list">
         <PasswordInput
           v-model="form.password"
           :error="errors.password"
@@ -16,7 +16,7 @@
           v-model="form.code"
           :error="errors.code"
         />
-      </div>
+      </InputList>
       <BaseButton
         :loading="isLoading"
         @on-click="changePassword"
@@ -39,6 +39,7 @@ import type { RecoveryPasswordDto } from '@/api/auth/dto/recovery-password.dto'
 import { ref, type Ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { RouteName } from '@/router/RouteName'
+import InputList from '@/components/ui/Input/InputList.vue'
 
 interface Props {
 	email: string
@@ -78,15 +79,11 @@ const changePassword = async () => {
 		flex-direction: column;
 	}
 
-	&__wrapper {
-		display: flex;
-		flex-direction: column;
+	&__input-list {
 		margin-bottom: $indent-xl;
-		gap: $indent-s;
 
 		@media screen and (max-width: 768px) {
 			margin-bottom: $indent-m;
-			gap: $indent-xs;
 		}
 	}
 }
