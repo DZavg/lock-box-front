@@ -2,7 +2,7 @@ services:
   app:
     container_name: lock-box-front
     build: .
-    restart: unless-stopped
+    restart: always
     ports:
       - '${APP_DOCKER_HOST}:${APP_DOCKER_PORT}:${PORT}'
     env_file:
