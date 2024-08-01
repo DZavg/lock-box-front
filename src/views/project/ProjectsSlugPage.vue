@@ -1,5 +1,6 @@
 <template>
   <BaseInternalPage
+    v-if="!isLoading"
     :breadcrumbs="[
       { title: 'Проекты', link: { name: RouteName.Projects } },
       { title: title, link: { name: RouteName.ProjectsSlug } },
