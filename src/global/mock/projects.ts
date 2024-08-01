@@ -6,7 +6,7 @@ const getProjects = () => {
 		data.push({
 			id: String(i),
 			title: 'Бренд одежды "IVOLGA',
-			domain: 'ivolga.moscow',
+			domain: 'http://ivolga.moscow/',
 		})
 	}
 	return data
