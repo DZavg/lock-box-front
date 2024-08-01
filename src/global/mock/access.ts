@@ -12,6 +12,7 @@ const getAccesses = () => {
 				id: String(i),
 				title: 'SSH',
 			},
+			type_name: 'SSH',
 		})
 	}
 	return data
