@@ -26,6 +26,7 @@
           <td>
             <TableActionList
               :show-copy-button="true"
+              :external-link="access.origin"
               @on-copy="copyPassword(access)"
               @on-edit="confirmAction(access, openAccessModal)"
               @on-delete="confirmAction(access, openConfirmDeleteModal)"
@@ -40,6 +41,7 @@
           :fields="accessesTableFieldsData"
           :value="access"
           :show-copy-button="true"
+          :external-link="access.origin"
           @on-copy="copyPassword(access)"
           @on-edit="confirmAction(access, openAccessModal)"
           @on-delete="confirmAction(access, openConfirmDeleteModal)"
@@ -49,12 +51,14 @@
     <AccessModal
       v-if="accessModalIsOpen"
       :access="selectAccess"
+      :loading="isLoading"
       @on-close="closeAccessModal"
       @on-submit="updateAccess"
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
       :title="selectAccess.type.title"
+      :loading="isLoading"
       button-confirm-text="Удалить доступ"
       @on-close="closeConfirmDeleteModal"
       @on-confirm="deleteAccess"
@@ -104,7 +108,7 @@ const {
 	closeModal: closeConfirmDeleteModal,
 } = useModal()
 const { writeText } = useClipboard()
-const { execute } = useRequest()
+const { execute, isLoading } = useRequest()
 
 const accessStore = useAccessStore()
 const { updateOneById, deleteOneById, getPasswordById } = accessStore
