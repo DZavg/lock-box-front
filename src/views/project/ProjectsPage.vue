@@ -11,7 +11,7 @@
         v-if="getProjects.length"
         :projects="getProjects"
       />
-      <SearchNotFound v-else />
+      <SearchNotFound v-else-if="!isLoading" />
     </template>
   </BaseInternalPage>
 </template>
@@ -32,7 +32,7 @@ const route = useRoute()
 const projectStore = useProjectStore()
 const { getAll } = projectStore
 const { getProjects } = storeToRefs(projectStore)
-const { execute } = useRequest()
+const { execute, isLoading } = useRequest()
 
 onMounted(async () => {
 	await execute(async () => await getAll(String(route.query.q || '')))
