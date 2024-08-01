@@ -49,12 +49,14 @@
     <ProjectModal
       v-if="projectModalIsOpen"
       :project="selectProject"
+      :loading="isLoading"
       @on-close="closeProjectModal"
       @on-submit="updateProject"
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
       :title="selectProject?.title"
+      :loading="isLoading"
       button-confirm-text="Удалить проект"
       @on-close="closeConfirmDeleteModal"
       @on-confirm="deleteProject"
@@ -99,7 +101,7 @@ const {
 	openModal: openConfirmDeleteModal,
 	closeModal: closeConfirmDeleteModal,
 } = useModal()
-const { execute } = useRequest()
+const { execute, isLoading } = useRequest()
 
 const projectStore = useProjectStore()
 const { deleteOneById, getAll, updateOneById } = projectStore
