@@ -12,7 +12,10 @@
       >
         Отменить
       </BaseButton>
-      <BaseButton @click="$emit('onConfirm')">
+      <BaseButton
+        :loading="loading"
+        @click="$emit('onConfirm')"
+      >
         {{ buttonConfirmText }}
       </BaseButton>
     </div>
@@ -28,12 +31,14 @@ interface Props {
 	title: string
 	text?: string
 	buttonConfirmText: string
+	loading?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
 	title: '',
 	text: '',
 	buttonConfirmText: '',
+	loading: false,
 })
 
 defineEmits<{
