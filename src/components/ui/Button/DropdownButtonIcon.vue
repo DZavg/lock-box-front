@@ -4,6 +4,7 @@
     :icon="iconArrowSmall"
     :icon-color="iconColor"
     :size="IconSize.S"
+    title="Показать/скрыть выпадающее меню"
     class="dropdown-button-icon"
   />
 </template>
