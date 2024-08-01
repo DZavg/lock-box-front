@@ -18,6 +18,7 @@
       <AccessModal
         v-if="accessModalIsOpen"
         title="Добавить доступ"
+        :loading="isLoading"
         :errors="errors"
         @on-submit="createAccess"
         @on-close="closeAccessModal"
@@ -61,7 +62,7 @@ const projectStore = useProjectStore()
 
 const { getAllAccessesById, createAccessById } = projectStore
 const { getProjectsSlugPage } = storeToRefs(projectStore)
-const { execute, errors } = useRequest()
+const { execute, errors, isLoading } = useRequest()
 
 const createAccess = (access: AccessDto) => {
 	execute(async () => {
