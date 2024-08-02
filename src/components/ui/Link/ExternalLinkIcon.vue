@@ -4,6 +4,7 @@
     :link="link"
     :size="size"
     target="_blank"
+    title="Внешняя ссылка"
   />
 </template>
 
