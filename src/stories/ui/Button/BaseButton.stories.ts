@@ -35,6 +35,7 @@ export const Filled: Story = {
 	args: {
 		disabled: false,
 		type: 'button',
+		view: ButtonView.Filled,
 	},
 }
 
@@ -50,6 +51,7 @@ export const DisabledFilled: Story = {
 	args: {
 		disabled: true,
 		type: 'button',
+		view: ButtonView.Filled,
 	},
 }
 
