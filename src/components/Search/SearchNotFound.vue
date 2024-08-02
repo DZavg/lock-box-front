@@ -23,12 +23,6 @@ const text = 'Сожалеем, но ничего не найдено'
 
 <style scoped lang="scss">
 .search-not-found {
-	padding: $indent-2xl 0 0 0;
-
-	@media screen and (max-width: 768px) {
-		padding: $indent-s 0 0 0;
-	}
-
 	&__image {
 		max-width: 168px;
 		margin-bottom: $indent-m;
