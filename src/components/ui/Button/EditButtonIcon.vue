@@ -2,7 +2,7 @@
   <BaseButtonIcon
     :icon="iconEdit"
     :size="size"
-    type="Редактировать"
+    title="Редактировать"
   />
 </template>
 
