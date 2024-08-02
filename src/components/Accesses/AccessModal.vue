@@ -37,6 +37,7 @@
       </InputList>
     </BaseForm>
     <BaseButton
+      :loading="loading || isLoading"
       class="access-modal__button"
       @on-click="$emit('onSubmit', form)"
     >
