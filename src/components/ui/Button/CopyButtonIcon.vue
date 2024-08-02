@@ -2,6 +2,7 @@
   <BaseButtonIcon
     :icon="iconCopy"
     :size="size"
+    title="Скопировать"
   />
 </template>
 
