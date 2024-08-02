@@ -2,7 +2,7 @@
   <BaseButtonIcon
     :icon="iconDelete"
     :size="size"
-    type="Удалить"
+    title="Удалить"
   />
 </template>
 
