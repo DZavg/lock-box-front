@@ -1,7 +1,10 @@
 <template>
   <header class="header container-m">
     <div class="header__wrapper">
-      <RouterLink to="/">
+      <RouterLink
+        to="/"
+        title="Lock Box"
+      >
         <svg class="header__logo">
           <use :href="iconLogo + '#icon'" />
         </svg>
