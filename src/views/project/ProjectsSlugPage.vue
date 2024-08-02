@@ -1,10 +1,7 @@
 <template>
   <BaseInternalPage
     :loading="isLoading"
-    :breadcrumbs="[
-      { title: 'Проекты', link: { name: RouteName.Projects } },
-      { title: title, link: { name: RouteName.ProjectsSlug } },
-    ]"
+    :breadcrumbs="breadcrumbs"
     class="projects-slug-page"
     :title-h1="title"
     :additional-text="getProjectsSlugPage.project?.domain"
@@ -48,11 +45,16 @@ import useRequest from '@/composables/useRequest'
 import { useRoute } from 'vue-router'
 import type { AccessDto } from '@/api/access/dto/access.dto'
 import useModal from '@/composables/useModal'
+import type { Breadcrumb } from '@/global/types/api/breadcrumbs/Breadcrumb'
 
 const route = useRoute()
 const slug = route.params.slug as string
 
 const title: Ref<string> = ref('')
+const breadcrumbs: Ref<Breadcrumb[]> = ref([
+	{ title: 'Проекты', link: { name: RouteName.Projects } },
+	{ title: title, link: { name: RouteName.ProjectsSlug } },
+])
 
 const {
 	openModal: openAccessModal,
