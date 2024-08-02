@@ -14,9 +14,10 @@ import iconArrowSmall from '@/assets/images/svg/icon-arrow-small.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
 import { Color } from '@/global/types/ui/color/Color'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
+import type { IconColor } from '@/global/types/ui/icon/IconColor'
 
 interface Props {
-	iconColor?: Color
+	iconColor?: IconColor
 	isActive?: boolean
 }
 

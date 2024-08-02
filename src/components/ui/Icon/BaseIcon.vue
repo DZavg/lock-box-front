@@ -10,11 +10,12 @@
 <script lang="ts" setup>
 import { Color } from '@/global/types/ui/color/Color'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
+import type { IconColor } from '@/global/types/ui/icon/IconColor'
 
 interface Props {
 	icon: string
 	size?: IconSize
-	color?: Color
+	color?: IconColor
 }
 
 withDefaults(defineProps<Props>(), {

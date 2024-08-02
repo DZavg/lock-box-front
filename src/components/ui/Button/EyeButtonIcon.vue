@@ -19,10 +19,11 @@ import iconEyeOpen from '@/assets/images/svg/icon-eye-open.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
 import { Color } from '@/global/types/ui/color/Color'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
+import type { IconColor } from '@/global/types/ui/icon/IconColor'
 
 interface Props {
 	active?: boolean
-	iconColor?: Color
+	iconColor?: IconColor
 	iconSize?: IconSize
 }
 

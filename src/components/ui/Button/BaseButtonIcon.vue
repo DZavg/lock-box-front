@@ -17,12 +17,13 @@
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
 import { Color } from '@/global/types/ui/color/Color'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
+import type { IconColor } from '@/global/types/ui/icon/IconColor'
 
 interface Props {
 	disabled?: boolean
 	icon: string
 	size?: IconSize
-	iconColor?: Color
+	iconColor?: IconColor
 }
 
 withDefaults(defineProps<Props>(), {

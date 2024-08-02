@@ -16,7 +16,7 @@ const meta: Meta<typeof BaseIcon> = {
 	argTypes: {
 		color: {
 			control: 'radio',
-			options: Color,
+			options: [Color.White, Color.GrayThird, Color.BluePrimary],
 		},
 	},
 }
