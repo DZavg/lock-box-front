@@ -23,5 +23,6 @@ type Story = StoryObj<typeof BaseModal>
 export const Default: Story = {
 	args: {
 		title: 'Modal',
+		text: 'Text',
 	},
 }
