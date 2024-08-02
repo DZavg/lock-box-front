@@ -65,8 +65,8 @@ const { getAllAccessesById, createAccessById } = projectStore
 const { getProjectsSlugPage } = storeToRefs(projectStore)
 const { execute, errors, isLoading } = useRequest()
 
-const createAccess = (access: AccessDto) => {
-	execute(async () => {
+const createAccess = async (access: AccessDto) => {
+	await execute(async () => {
 		const response = await createAccessById(slug, access)
 		await getAllAccessesById(slug as string)
 		closeAccessModal()

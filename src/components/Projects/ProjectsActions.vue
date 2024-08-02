@@ -38,8 +38,8 @@ const { execute, isLoading, errors } = useRequest()
 const projectStore = useProjectStore()
 const { create, getAll } = projectStore
 
-const createProject = (project: ProjectDto) => {
-	execute(async () => {
+const createProject = async (project: ProjectDto) => {
+	await execute(async () => {
 		const response = await create(project)
 		await getAll()
 		closeProjectModal()

@@ -28,8 +28,8 @@ const inputValue = computed({
 	},
 })
 
-const searchProjects = (query: string) => {
-	execute(async () => await getAll(query))
+const searchProjects = async (query: string) => {
+	await execute(async () => await getAll(query))
 }
 
 const searchProjectsWithDebounce = debounce((query: string) => searchProjects(query))
