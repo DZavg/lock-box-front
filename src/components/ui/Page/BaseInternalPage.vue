@@ -1,11 +1,14 @@
 <template>
   <div class="page">
     <BaseBreadcrumbNav
-      v-if="breadcrumbs.length"
+      v-if="breadcrumbs.length && !loading"
       :breadcrumbs="breadcrumbs"
       class="page__breadcrumb-nav"
     />
-    <div class="page__head">
+    <div
+      v-if="!loading"
+      class="page__head"
+    >
       <div class="page__title">
         <h1>{{ titleH1 }}</h1>
         <BasePoint v-if="!isMobile && additionalText" />
@@ -18,7 +21,8 @@
       </div>
       <slot name="head" />
     </div>
-    <slot />
+    <BasePageLoading v-if="loading" />
+    <slot v-else />
   </div>
 </template>
 
@@ -27,17 +31,20 @@ import BaseBreadcrumbNav from '@/components/ui/Breadcrumbs/BaseBreadcrumbNav.vue
 import { type Breadcrumb } from '@/global/types/api/breadcrumbs/Breadcrumb'
 import BasePoint from '@/components/ui/Point/BasePoint.vue'
 import useScreen from '@/composables/useScreen'
+import BasePageLoading from '@/components/ui/Page/BasePageLoading.vue'
 
 interface Props {
 	breadcrumbs?: Breadcrumb[]
 	titleH1: string
 	additionalText?: string
+	loading?: boolean
 }
 
 withDefaults(defineProps<Props>(), {
 	breadcrumbs: () => [],
 	titleH1: '',
 	additionalText: '',
+	loading: false,
 })
 
 const { isMobile } = useScreen()
@@ -48,16 +55,10 @@ const { isMobile } = useScreen()
 	display: flex;
 	width: 100%;
 	flex-direction: column;
-	margin: {
-		top: $indent-xl;
-		bottom: 80px;
-	}
+	margin: $indent-xl 0;
 
 	@media screen and (max-width: 768px) {
-		margin: {
-			top: $indent-m;
-			bottom: $indent-m;
-		}
+		margin: $indent-m 0;
 	}
 
 	&__title {

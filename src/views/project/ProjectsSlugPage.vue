@@ -1,6 +1,6 @@
 <template>
   <BaseInternalPage
-    v-if="!isLoading"
+    :loading="isLoading"
     :breadcrumbs="[
       { title: 'Проекты', link: { name: RouteName.Projects } },
       { title: title, link: { name: RouteName.ProjectsSlug } },
@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts" setup>
-import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
+import BaseInternalPage from '@/components/ui/Page/BaseInternalPage.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import { onMounted, ref, type Ref } from 'vue'
 import useSeo from '@/composables/useSeo'

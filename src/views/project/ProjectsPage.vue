@@ -1,5 +1,6 @@
 <template>
   <BaseInternalPage
+    :loading="isLoading"
     class="projects-page"
     title-h1="Проекты"
   >
@@ -11,13 +12,13 @@
         v-if="getProjects.length"
         :projects="getProjects"
       />
-      <SearchNotFound v-else-if="!isLoading" />
+      <SearchNotFound v-else />
     </template>
   </BaseInternalPage>
 </template>
 
 <script lang="ts" setup>
-import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
+import BaseInternalPage from '@/components/ui/Page/BaseInternalPage.vue'
 import ProjectsActions from '@/components/Projects/ProjectsActions.vue'
 import ProjectsTable from '@/components/Projects/ProjectsTable.vue'
 import SearchNotFound from '@/components/Search/SearchNotFound.vue'
