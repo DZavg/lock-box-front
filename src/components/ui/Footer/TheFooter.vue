@@ -2,15 +2,8 @@
   <footer class="footer container-m">
     <div class="footer__wrapper">
       <p class="footer__copyright caption_p">
-        © {{ currentYear }} Techouse
+        © {{ currentYear }} Lock Box
       </p>
-      <BaseLink
-        :color="Color.White"
-        class="caption_p"
-        link="/"
-      >
-        Политика конфиденциальности
-      </BaseLink>
     </div>
   </footer>
 </template>
