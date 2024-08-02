@@ -131,7 +131,7 @@ const updateAccess = async (form: AccessDto) => {
 	await execute(async () => {
 		const response = await updateOneById(
 			selectAccess.value?.id,
-			deleteDuplicateFields(form, selectAccess.value),
+			deleteDuplicateFields(form, { ...selectAccess.value, type: selectAccess.value.type.id }),
 		)
 		emits('onSuccess')
 		closeAccessModal()

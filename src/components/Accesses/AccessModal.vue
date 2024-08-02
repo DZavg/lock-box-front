@@ -28,7 +28,7 @@
         />
         <BaseSelect
           v-model="form.type"
-          :options="accessTypes"
+          :options="getAccessTypes"
           label="Тип доступа"
           :error="errors.type"
           :loading="isLoading"
@@ -58,9 +58,9 @@ import { accessDefaults } from '@/global/defaults/access/Project'
 import { onMounted, ref, type Ref } from 'vue'
 import type { Error } from '@/global/types/api/error/Error'
 import type { AccessDto } from '@/api/access/dto/access.dto'
-import type { AccessType } from '@/api/access/entity/AccessType'
 import { useAccessStore } from '@/stores/access'
 import useRequest from '@/composables/useRequest'
+import { storeToRefs } from 'pinia'
 
 interface Props {
 	access?: Access
@@ -84,6 +84,7 @@ defineEmits<{
 
 const accessStore = useAccessStore()
 const { getAllTypes } = accessStore
+const { getAccessTypes } = storeToRefs(accessStore)
 
 const { execute, isLoading } = useRequest()
 
@@ -97,13 +98,8 @@ const form: Ref<AccessDto> = ref(
 	),
 )
 
-const accessTypes: Ref<AccessType[]> = ref([])
-
 onMounted(async () => {
-	await execute(async () => {
-		accessTypes.value = await getAllTypes()
-		return accessTypes
-	})
+	await execute(getAllTypes)
 })
 </script>
 
