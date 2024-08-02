@@ -13,11 +13,12 @@
 <script lang="ts" setup>
 import { type HtmlLinkTarget } from '@/global/types/ui/link/HtmlLinkTarget'
 import { Color } from '@/global/types/ui/color/Color'
+import type { LinkColor } from '@/global/types/ui/link/LinkColor'
 
 interface Props {
 	link: string | object
 	target?: HtmlLinkTarget
-	color?: Color
+	color?: LinkColor
 }
 
 withDefaults(defineProps<Props>(), {

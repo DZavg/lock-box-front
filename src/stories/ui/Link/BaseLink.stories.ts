@@ -23,7 +23,7 @@ const meta: Meta<typeof BaseLink> = {
 	argTypes: {
 		color: {
 			control: 'radio',
-			options: Color,
+			options: [Color.White, Color.GrayThird, Color.BluePrimary],
 		},
 	},
 }
