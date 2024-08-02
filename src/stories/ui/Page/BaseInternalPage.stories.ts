@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import BaseInternalPage from '@/components/ui/InternalPage/BaseInternalPage.vue'
+import BaseInternalPage from '@/components/ui/Page/BaseInternalPage.vue'
 import getBreadcrumbs from '@/global/mock/breadcrumbs'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 
