@@ -77,7 +77,7 @@ import useRequest from '@/composables/useRequest'
 import { ref, type Ref } from 'vue'
 import useModal from '@/composables/useModal'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
-import deleteDuplicateFields from '@/lib/deleteDuplicateFields'
+import deleteDuplicateFields from '@/utils/deleteDuplicateFields'
 import { projectDefaults } from '@/global/defaults/project/Project'
 import { projectsTableFieldsData } from '@/global/data/project/ProjectsTableData'
 

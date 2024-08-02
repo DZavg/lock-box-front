@@ -6,7 +6,7 @@
 import SearchInput from '@/components/ui/Input/SearchInput.vue'
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
-import debounce from '@/lib/debounce'
+import debounce from '@/utils/debounce'
 import { useRoute, useRouter } from 'vue-router'
 import { RouteName } from '@/router/RouteName'
 import { computed } from 'vue'

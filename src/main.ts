@@ -8,7 +8,7 @@ import checkScreen from '@/plugins/checkScreen'
 import { clickOutside } from '@/plugins/clickOutside'
 import checkAuth from '@/plugins/checkAuth'
 import { RouteName } from '@/router/RouteName'
-import { HttpStatus } from '@/lib/httpStatus'
+import { HttpStatus } from '@/utils/httpStatus'
 
 const app = createApp(App)
 

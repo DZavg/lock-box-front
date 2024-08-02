@@ -1,7 +1,7 @@
 import { type Ref, ref } from 'vue'
 import { toast } from 'vue3-toastify'
-import errorsTransform from '@/lib/errorsTransform'
-import { HttpStatus } from '@/lib/httpStatus'
+import errorsTransform from '@/utils/errorsTransform'
+import { HttpStatus } from '@/utils/httpStatus'
 
 export default function () {
 	const data: Ref<any> = ref()
