@@ -8,9 +8,10 @@ export default function () {
 		}
 
 		if (value instanceof Promise) {
-			value.then((resolve) =>
-				navigator.clipboard.writeText(String(resolve)).then(onfulfilled, onrejected),
-			)
+			const type = 'text/plain'
+			const blob = value.then((resolve) => new Blob([String(resolve)], { type }))
+			const data = new ClipboardItem({ [type]: blob })
+			navigator.clipboard.write([data]).then(onfulfilled, onrejected)
 			return
 		}
 		navigator.clipboard.writeText(value).then(onfulfilled, onrejected)

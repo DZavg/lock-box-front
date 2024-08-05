@@ -140,11 +140,7 @@ const updateAccess = async (form: AccessDto) => {
 }
 
 const copyPassword = async (access: Access) => {
-	await execute(async () => {
-		const response = await getPasswordById(access.id)
-		writeText(response.password)
-		return response
-	})
+	writeText(getPasswordById(access.id))
 }
 </script>
 

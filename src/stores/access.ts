@@ -29,7 +29,8 @@ export const useAccessStore = defineStore('access', {
 		},
 
 		async getPasswordById(id: string) {
-			return await getPasswordById.execute(id)
+			const response = await getPasswordById.execute(id)
+			return response.password
 		},
 
 		async getAllTypes() {
