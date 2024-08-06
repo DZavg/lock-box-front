@@ -54,13 +54,11 @@
       @on-close="closeAccessModal"
       @on-success="$emit('onSuccess')"
     />
-    <ConfirmDeleteModal
+    <ConfirmDeleteAccessModal
       v-if="confirmDeleteModalIsOpen"
-      :title="selectAccess.type.title"
-      :loading="isLoading"
-      button-confirm-text="Удалить доступ"
+      :access="selectAccess"
       @on-close="closeConfirmDeleteModal"
-      @on-confirm="deleteAccess"
+      @on-success="$emit('onSuccess')"
     />
   </div>
 </template>
@@ -69,16 +67,15 @@
 import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
-import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import type { Access } from '@/api/access/entity/Access'
 import { accessesTableFieldsData } from '@/global/data/access/AccessesTableData'
 import useClipboard from '@/composables/useClipboard'
 import useModal from '@/composables/useModal'
 import { ref, type Ref } from 'vue'
 import { accessDefaults } from '@/global/defaults/access/Project'
-import useRequest from '@/composables/useRequest'
 import { useAccessStore } from '@/stores/access'
 import UpdateAccessModal from '@/components/Accesses/Modals/UpdateAccessModal.vue'
+import ConfirmDeleteAccessModal from '@/components/Accesses/Modals/ConfirmDeleteAccessModal.vue'
 
 interface Props {
 	accesses: Access[]
@@ -105,23 +102,13 @@ const {
 	closeModal: closeConfirmDeleteModal,
 } = useModal()
 const { writeText } = useClipboard()
-const { execute, isLoading } = useRequest()
 
 const accessStore = useAccessStore()
-const { deleteOneById, getPasswordById } = accessStore
+const { getPasswordById } = accessStore
 
 const confirmAction = (access: Access, callback: Function = () => {}) => {
 	callback()
 	selectAccess.value = access
-}
-
-const deleteAccess = async () => {
-	await execute(async () => {
-		const response = await deleteOneById(selectAccess.value?.id)
-		emits('onSuccess')
-		closeConfirmDeleteModal()
-		return response
-	})
 }
 
 const copyPassword = async (access: Access) => {
