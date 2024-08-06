@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import AccessModal from '@/components/Accesses/AccessModal.vue'
+import AccessModal from '@/components/Accesses/Modals/AccessModal.vue'
 
 const meta: Meta<typeof AccessModal> = {
 	component: AccessModal,
