@@ -24,18 +24,19 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emits = defineEmits<{
+	(e: 'onSuccess'): void
 	(e: 'onClose'): void
 }>()
 
 const { execute, isLoading } = useRequest()
 
 const projectStore = useProjectStore()
-const { getAll, deleteOneById } = projectStore
+const { deleteOneById } = projectStore
 
-const deleteProject = async () => {
-	await execute(async () => {
+const deleteProject = () => {
+	execute(async () => {
 		const response = await deleteOneById(props.project.id)
-		await getAll()
+		emits('onSuccess')
 		emits('onClose')
 		return response
 	})

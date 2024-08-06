@@ -16,18 +16,19 @@ import type { ProjectDto } from '@/api/project/dto/project.dto'
 import { useProjectStore } from '@/stores/project'
 
 const emits = defineEmits<{
+	(e: 'onSuccess'): void
 	(e: 'onClose'): void
 }>()
 
 const { execute, isLoading, errors } = useRequest()
 
 const projectStore = useProjectStore()
-const { getAll, create } = projectStore
+const { create } = projectStore
 
-const createProject = async (project: ProjectDto) => {
-	await execute(async () => {
+const createProject = (project: ProjectDto) => {
+	execute(async () => {
 		const response = await create(project)
-		await getAll()
+		emits('onSuccess')
 		emits('onClose')
 		return response
 	})

@@ -26,21 +26,22 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const emits = defineEmits<{
+	(e: 'onSuccess'): void
 	(e: 'onClose'): void
 }>()
 
 const { execute, isLoading, errors } = useRequest()
 
 const projectStore = useProjectStore()
-const { getAll, updateOneById } = projectStore
+const { updateOneById } = projectStore
 
-const updateProject = async (form: ProjectDto) => {
-	await execute(async () => {
+const updateProject = (form: ProjectDto) => {
+	execute(async () => {
 		const response = await updateOneById(
 			props.project?.id,
 			deleteDuplicateFields(form, props.project),
 		)
-		await getAll()
+		emits('onSuccess')
 		emits('onClose')
 		return response
 	})

@@ -5,13 +5,14 @@
     title-h1="Проекты"
   >
     <template #head>
-      <ProjectsActions />
+      <ProjectsActions @on-success="fetchProjects" />
     </template>
     <template #default>
       <SearchNotFound v-if="!getProjects.length && $route.query.q" />
       <ProjectsTable
         v-else
         :projects="getProjects"
+        @on-success="fetchProjects"
       />
     </template>
   </BaseInternalPage>
@@ -35,8 +36,12 @@ const { getAll } = projectStore
 const { getProjects } = storeToRefs(projectStore)
 const { execute, isLoading } = useRequest()
 
-onMounted(async () => {
+const fetchProjects = async () => {
 	await execute(async () => await getAll(String(route.query.q || '')))
+}
+
+onMounted(async () => {
+	await fetchProjects()
 })
 </script>
 

@@ -49,11 +49,13 @@
     <UpdateProjectModal
       v-if="projectModalIsOpen"
       :project="selectProject"
+      @on-success="$emit('onSuccess')"
       @on-close="closeProjectModal"
     />
     <ConfirmDeleteProjectModal
       v-if="confirmDeleteModalIsOpen"
       :project="selectProject"
+      @on-success="$emit('onSuccess')"
       @on-close="closeConfirmDeleteModal"
     />
   </div>
@@ -92,6 +94,10 @@ const {
 	openModal: openConfirmDeleteModal,
 	closeModal: closeConfirmDeleteModal,
 } = useModal()
+
+defineEmits<{
+	(e: 'onSuccess'): void
+}>()
 
 const confirmAction = (project: Project, callback: Function = () => {}) => {
 	callback()

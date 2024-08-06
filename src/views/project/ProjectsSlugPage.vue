@@ -66,7 +66,7 @@ const { getProjectsSlugPage } = storeToRefs(projectStore)
 const { execute, isLoading } = useRequest()
 
 const getAccesses = async () => {
-	await execute(() => getAllAccessesById(slug))
+	await execute(async () => await getAllAccessesById(slug))
 }
 
 onMounted(async () => {

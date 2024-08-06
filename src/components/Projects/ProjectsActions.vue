@@ -9,6 +9,7 @@
     <ProjectsSearch class="projects-actions__search" />
     <CreateProjectModal
       v-if="projectModalIsOpen"
+      @on-success="$emit('onSuccess')"
       @on-close="closeProjectModal"
     />
   </div>
@@ -25,6 +26,10 @@ const {
 	closeModal: closeProjectModal,
 	modalIsOpen: projectModalIsOpen,
 } = useModal()
+
+defineEmits<{
+	(e: 'onSuccess'): void
+}>()
 </script>
 
 <style lang="scss" scoped>
