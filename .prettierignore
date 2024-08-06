@@ -116,3 +116,6 @@ sw.*
 *.woff
 *.woff2
 *.sh
+
+# Other
+robots.txt
