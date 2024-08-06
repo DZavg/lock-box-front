@@ -8,11 +8,8 @@
       <ProjectsActions />
     </template>
     <template #default>
-      <ProjectsTable
-        v-if="getProjects.length"
-        :projects="getProjects"
-      />
-      <SearchNotFound v-else />
+      <SearchNotFound v-if="!getProjects.length && $route.query.q" />
+      <ProjectsTable :projects="getProjects" />
     </template>
   </BaseInternalPage>
 </template>
