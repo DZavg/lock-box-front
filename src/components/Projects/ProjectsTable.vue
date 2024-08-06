@@ -51,13 +51,10 @@
       :project="selectProject"
       @on-close="closeProjectModal"
     />
-    <ConfirmDeleteModal
+    <ConfirmDeleteProjectModal
       v-if="confirmDeleteModalIsOpen"
-      :title="selectProject?.title"
-      :loading="isLoading"
-      button-confirm-text="Удалить проект"
+      :project="selectProject"
       @on-close="closeConfirmDeleteModal"
-      @on-confirm="deleteProject"
     />
   </div>
 </template>
@@ -68,14 +65,12 @@ import TableActionList from '@/components/ui/Table/TableActionList.vue'
 import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import type { Project } from '@/api/project/entity/Project'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
-import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
-import { useProjectStore } from '@/stores/project'
-import useRequest from '@/composables/useRequest'
 import { ref, type Ref } from 'vue'
 import useModal from '@/composables/useModal'
 import { projectDefaults } from '@/global/defaults/project/Project'
 import { projectsTableFieldsData } from '@/global/data/project/ProjectsTableData'
 import UpdateProjectModal from '@/components/Projects/Modals/UpdateProjectModal.vue'
+import ConfirmDeleteProjectModal from '@/components/Projects/Modals/ConfirmDeleteProjectModal.vue'
 
 interface Props {
 	projects: Project[]
@@ -97,23 +92,10 @@ const {
 	openModal: openConfirmDeleteModal,
 	closeModal: closeConfirmDeleteModal,
 } = useModal()
-const { execute, isLoading } = useRequest()
-
-const projectStore = useProjectStore()
-const { deleteOneById, getAll } = projectStore
 
 const confirmAction = (project: Project, callback: Function = () => {}) => {
 	callback()
 	selectProject.value = project
-}
-
-const deleteProject = async () => {
-	await execute(async () => {
-		const response = await deleteOneById(selectProject.value?.id)
-		await getAll()
-		closeConfirmDeleteModal()
-		return response
-	})
 }
 </script>
 
