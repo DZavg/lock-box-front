@@ -2,6 +2,7 @@
   <BaseModal
     class="project-modal"
     :title="title"
+    @on-close="$emit('onClose')"
   >
     <BaseForm
       class="project-modal__form"
@@ -68,6 +69,7 @@ const form: Ref<ProjectDto> = ref(
 
 defineEmits<{
 	(e: 'onSubmit', form: ProjectDto): void
+	(e: 'onClose'): void
 }>()
 </script>
 

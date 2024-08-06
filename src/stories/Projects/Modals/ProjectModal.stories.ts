@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import ProjectModal from '@/components/Projects/ProjectModal.vue'
+import ProjectModal from '@/components/Projects/Modals/ProjectModal.vue'
 
 const meta: Meta<typeof ProjectModal> = {
 	component: ProjectModal,

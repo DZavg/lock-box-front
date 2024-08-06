@@ -7,14 +7,9 @@
       Добавить проект
     </BaseButton>
     <ProjectsSearch class="projects-actions__search" />
-    <ProjectModal
+    <CreateProjectModal
       v-if="projectModalIsOpen"
-      title="Добавить проект"
-      button-text="Добавить"
-      :loading="isLoading"
-      :errors="errors"
       @on-close="closeProjectModal"
-      @on-submit="createProject"
     />
   </div>
 </template>
@@ -22,30 +17,14 @@
 <script lang="ts" setup>
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import ProjectsSearch from '@/components/Projects/ProjectsSearch.vue'
-import ProjectModal from '@/components/Projects/ProjectModal.vue'
 import useModal from '@/composables/useModal'
-import { useProjectStore } from '@/stores/project'
-import useRequest from '@/composables/useRequest'
-import type { ProjectDto } from '@/api/project/dto/project.dto'
+import CreateProjectModal from '@/components/Projects/Modals/CreateProjectModal.vue'
 
 const {
 	openModal: openProjectModal,
 	closeModal: closeProjectModal,
 	modalIsOpen: projectModalIsOpen,
 } = useModal()
-const { execute, isLoading, errors } = useRequest()
-
-const projectStore = useProjectStore()
-const { create, getAll } = projectStore
-
-const createProject = async (project: ProjectDto) => {
-	await execute(async () => {
-		const response = await create(project)
-		await getAll()
-		closeProjectModal()
-		return response
-	})
-}
 </script>
 
 <style lang="scss" scoped>
