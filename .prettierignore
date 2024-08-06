@@ -118,4 +118,4 @@ sw.*
 *.sh
 
 # Other
-robots.txt
+public/robots.txt
