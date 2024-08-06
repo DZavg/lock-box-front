@@ -1,6 +1,9 @@
 <template>
   <div class="logo-with-desc">
-    <RouterLink to="/">
+    <RouterLink
+      to="/"
+      title="Lock Box"
+    >
       <svg class="logo-with-desc__icon">
         <use :href="iconLogo + '#icon'" />
       </svg>
