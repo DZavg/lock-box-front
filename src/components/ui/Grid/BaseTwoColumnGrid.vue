@@ -39,7 +39,7 @@ const props = withDefaults(defineProps<Props>(), {
 	grid-template-columns: repeat(2, 1fr);
 
 	@media screen and (max-width: 768px) {
-		grid-template-columns: repeat(auto-fit, minmax(288px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(288px, 1fr));
 	}
 }
 </style>
