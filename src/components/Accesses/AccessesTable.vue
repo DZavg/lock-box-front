@@ -48,12 +48,11 @@
         />
       </template>
     </BaseTableGroup>
-    <AccessModal
+    <UpdateAccessModal
       v-if="accessModalIsOpen"
       :access="selectAccess"
-      :loading="isLoading"
       @on-close="closeAccessModal"
-      @on-submit="updateAccess"
+      @on-success="$emit('onSuccess')"
     />
     <ConfirmDeleteModal
       v-if="confirmDeleteModalIsOpen"
@@ -72,16 +71,14 @@ import BaseTableGroup from '@/components/ui/Table/BaseTableGroup.vue'
 import TableCardWithActionList from '@/components/ui/Table/TableCardWithActionList.vue'
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import type { Access } from '@/api/access/entity/Access'
-import AccessModal from '@/components/Accesses/Modals/AccessModal.vue'
 import { accessesTableFieldsData } from '@/global/data/access/AccessesTableData'
 import useClipboard from '@/composables/useClipboard'
 import useModal from '@/composables/useModal'
 import { ref, type Ref } from 'vue'
 import { accessDefaults } from '@/global/defaults/access/Project'
-import deleteDuplicateFields from '@/utils/deleteDuplicateFields'
-import type { AccessDto } from '@/api/access/dto/access.dto'
 import useRequest from '@/composables/useRequest'
 import { useAccessStore } from '@/stores/access'
+import UpdateAccessModal from '@/components/Accesses/Modals/UpdateAccessModal.vue'
 
 interface Props {
 	accesses: Access[]
@@ -111,7 +108,7 @@ const { writeText } = useClipboard()
 const { execute, isLoading } = useRequest()
 
 const accessStore = useAccessStore()
-const { updateOneById, deleteOneById, getPasswordById } = accessStore
+const { deleteOneById, getPasswordById } = accessStore
 
 const confirmAction = (access: Access, callback: Function = () => {}) => {
 	callback()
@@ -123,18 +120,6 @@ const deleteAccess = async () => {
 		const response = await deleteOneById(selectAccess.value?.id)
 		emits('onSuccess')
 		closeConfirmDeleteModal()
-		return response
-	})
-}
-
-const updateAccess = async (form: AccessDto) => {
-	await execute(async () => {
-		const response = await updateOneById(
-			selectAccess.value?.id,
-			deleteDuplicateFields(form, { ...selectAccess.value, type: selectAccess.value.type.id }),
-		)
-		emits('onSuccess')
-		closeAccessModal()
 		return response
 	})
 }

@@ -2,6 +2,7 @@
   <BaseModal
     class="access-modal"
     :title="title"
+    @on-close="$emit('onClose')"
   >
     <BaseForm
       class="access-modal__form"
@@ -81,6 +82,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 defineEmits<{
 	(e: 'onSubmit', form: AccessDto): void
+	(e: 'onClose'): void
 }>()
 
 const accessStore = useAccessStore()
