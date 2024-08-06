@@ -4,12 +4,14 @@
     :icon="iconEyeOpen"
     :icon-color="iconColor"
     :size="iconSize"
+    title="Скрыть пароль"
   />
   <BaseButtonIcon
     v-else
     :icon="iconEyeClose"
     :icon-color="iconColor"
     :size="iconSize"
+    title="Показать пароль"
   />
 </template>
 
