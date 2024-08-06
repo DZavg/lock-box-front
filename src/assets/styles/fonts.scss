@@ -6,8 +6,8 @@
 	src:
 		local('Geologica Regular'),
 		local('Geologica-Regular'),
-		url('@/assets/fonts/Geologica-Regular.woff2') format('woff2'),
-		url('@/assets/fonts/Geologica-Regular.woff') format('woff');
+		url('/fonts/Geologica-Regular.woff2') format('woff2'),
+		url('/fonts/Geologica-Regular.woff') format('woff');
 }
 
 @font-face {
@@ -18,6 +18,6 @@
 	src:
 		local('Geologica Medium'),
 		local('Geologica-Medium'),
-		url('@/assets/fonts/Geologica-Medium.woff2') format('woff2'),
-		url('@/assets/fonts/Geologica-Medium.woff') format('woff');
+		url('/fonts/Geologica-Medium.woff2') format('woff2'),
+		url('/fonts/Geologica-Medium.woff') format('woff');
 }
