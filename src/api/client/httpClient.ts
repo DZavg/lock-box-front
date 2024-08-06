@@ -1,6 +1,5 @@
 import axios, { type CreateAxiosDefaults } from 'axios'
 import setAuthHeader from '@/api/client/interceptors/setAuthHeader'
-import deleteEmptyFields from '@/utils/deleteEmptyFields'
 
 const createHttpClient = (config: CreateAxiosDefaults) => {
 	const httpClient = axios.create(config)
@@ -8,7 +7,6 @@ const createHttpClient = (config: CreateAxiosDefaults) => {
 	httpClient.interceptors.request.use(
 		function (config) {
 			setAuthHeader(config)
-			config.data = deleteEmptyFields(config.data)
 			return config
 		},
 		function (error) {
