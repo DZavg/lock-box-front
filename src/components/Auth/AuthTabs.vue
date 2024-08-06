@@ -58,8 +58,8 @@ const router = useRouter()
 
 const activeTabName: Ref<string> = ref(AuthTabsName.Login)
 
-const getDemoAccess = async () => {
-	await execute(async () => {
+const getDemoAccess = () => {
+	execute(async () => {
 		await demoAccess()
 		await getInfo()
 		await router.push(RouteName.Projects)

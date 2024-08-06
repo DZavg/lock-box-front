@@ -40,8 +40,8 @@ const emits = defineEmits<{
 
 const email: Ref<string> = ref('')
 
-const getCode = async () => {
-	await execute(async () => {
+const getCode = () => {
+	execute(async () => {
 		const response = await getOne(email.value)
 		emits('resetPassword', email.value)
 		return response

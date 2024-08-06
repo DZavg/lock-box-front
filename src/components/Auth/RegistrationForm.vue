@@ -54,8 +54,8 @@ const { execute, isLoading, errors } = useRequest()
 const authStore = useAuthStore()
 const { registration: fetchRegistration } = authStore
 
-const registration = async () => {
-	await execute(async () => {
+const registration = () => {
+	execute(async () => {
 		const response = await fetchRegistration(form.value)
 		emits('updateActiveTab', AuthTabsName.Login)
 		return response

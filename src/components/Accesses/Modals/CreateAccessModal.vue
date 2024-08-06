@@ -32,8 +32,8 @@ const { execute, isLoading, errors } = useRequest()
 const projectStore = useProjectStore()
 const { createAccessById } = projectStore
 
-const createAccess = async (access: AccessDto) => {
-	await execute(async () => {
+const createAccess = (access: AccessDto) => {
+	execute(async () => {
 		const response = await createAccessById(props.projectId, access)
 		emits('onSuccess')
 		emits('onClose')

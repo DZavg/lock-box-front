@@ -20,8 +20,8 @@ const router = useRouter()
 const authStore = useAuthStore()
 const { logout: fetchLogout } = authStore
 
-const logout = async () => {
-	await execute(async () => {
+const logout = () => {
+	execute(async () => {
 		const response = await fetchLogout()
 		await router.push(RouteName.Auth)
 		return response

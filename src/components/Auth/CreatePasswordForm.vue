@@ -61,8 +61,8 @@ const router = useRouter()
 const authStore = useAuthStore()
 const { recoveryPassword } = authStore
 
-const changePassword = async () => {
-	await execute(async () => {
+const changePassword = () => {
+	execute(async () => {
 		const response = await recoveryPassword(form.value)
 		await router.push(RouteName.Auth)
 		return response

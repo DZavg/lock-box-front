@@ -33,8 +33,8 @@ const { execute, isLoading } = useRequest()
 const accessStore = useAccessStore()
 const { deleteOneById } = accessStore
 
-const deleteAccess = async () => {
-	await execute(async () => {
+const deleteAccess = () => {
+	execute(async () => {
 		const response = await deleteOneById(props.access.id)
 		emits('onSuccess')
 		emits('onClose')
