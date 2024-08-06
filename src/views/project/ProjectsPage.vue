@@ -9,7 +9,10 @@
     </template>
     <template #default>
       <SearchNotFound v-if="!getProjects.length && $route.query.q" />
-      <ProjectsTable :projects="getProjects" />
+      <ProjectsTable
+        v-else
+        :projects="getProjects"
+      />
     </template>
   </BaseInternalPage>
 </template>
