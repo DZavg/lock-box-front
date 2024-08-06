@@ -13,12 +13,10 @@
       >
         Добавить доступ
       </BaseButton>
-      <AccessModal
+      <CreateAccessModal
         v-if="accessModalIsOpen"
-        title="Добавить доступ"
-        :loading="isLoading"
-        :errors="errors"
-        @on-submit="createAccess"
+        :project-id="slug"
+        @on-success="getAccesses"
         @on-close="closeAccessModal"
       />
     </template>
@@ -36,16 +34,15 @@ import BaseInternalPage from '@/components/ui/Page/BaseInternalPage.vue'
 import BaseButton from '@/components/ui/Button/BaseButton.vue'
 import { onMounted, ref, type Ref } from 'vue'
 import useSeo from '@/composables/useSeo'
-import AccessModal from '@/components/Accesses/Modals/AccessModal.vue'
 import AccessesTable from '@/components/Accesses/AccessesTable.vue'
 import { RouteName } from '@/router/RouteName'
 import { useProjectStore } from '@/stores/project'
 import { storeToRefs } from 'pinia'
 import useRequest from '@/composables/useRequest'
 import { useRoute } from 'vue-router'
-import type { AccessDto } from '@/api/access/dto/access.dto'
 import useModal from '@/composables/useModal'
 import type { Breadcrumb } from '@/global/types/api/breadcrumbs/Breadcrumb'
+import CreateAccessModal from '@/components/Accesses/Modals/CreateAccessModal.vue'
 
 const route = useRoute()
 const slug = route.params.slug as string
@@ -61,20 +58,12 @@ const {
 	closeModal: closeAccessModal,
 	modalIsOpen: accessModalIsOpen,
 } = useModal()
+
 const projectStore = useProjectStore()
-
-const { getAllAccessesById, createAccessById } = projectStore
+const { getAllAccessesById } = projectStore
 const { getProjectsSlugPage } = storeToRefs(projectStore)
-const { execute, errors, isLoading } = useRequest()
 
-const createAccess = async (access: AccessDto) => {
-	await execute(async () => {
-		const response = await createAccessById(slug, access)
-		await getAllAccessesById(slug as string)
-		closeAccessModal()
-		return response
-	})
-}
+const { execute, isLoading } = useRequest()
 
 const getAccesses = async () => {
 	await execute(() => getAllAccessesById(slug))
