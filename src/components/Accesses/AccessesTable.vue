@@ -85,7 +85,7 @@ withDefaults(defineProps<Props>(), {
 	accesses: () => [],
 })
 
-const emits = defineEmits<{
+defineEmits<{
 	(e: 'onSuccess'): void
 }>()
 
