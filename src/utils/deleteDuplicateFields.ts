@@ -3,7 +3,9 @@ export default function deleteDuplicateFields(form: object, initialForm: Record<
 		form &&
 		initialForm &&
 		Object.fromEntries(
-			Object.entries(form).filter(([key, value]) => value.trim() !== initialForm[key].trim() || ''),
+			Object.entries(form).filter(
+				([key, value]) => value?.trim() !== initialForm[key]?.trim() || '',
+			),
 		)
 	)
 }
