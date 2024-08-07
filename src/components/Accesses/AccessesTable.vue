@@ -111,7 +111,7 @@ const confirmAction = (access: Access, callback: Function = () => {}) => {
 	selectAccess.value = access
 }
 
-const copyPassword = async (access: Access) => {
+const copyPassword = (access: Access) => {
 	writeText(getPasswordById(access.id))
 }
 </script>
