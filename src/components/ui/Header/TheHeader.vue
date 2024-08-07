@@ -2,7 +2,7 @@
   <header class="header container-m">
     <div class="header__wrapper">
       <RouterLink
-        to="/"
+        :to="{ name: RouteName.Projects }"
         title="Lock Box"
       >
         <svg class="header__logo">
@@ -17,6 +17,7 @@
 <script lang="ts" setup>
 import iconLogo from '@/assets/images/svg/icon-logo.svg'
 import UserDropdown from '@/components/User/UserDropdown.vue'
+import { RouteName } from '@/router/RouteName'
 </script>
 
 <style lang="scss" scoped>
