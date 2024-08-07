@@ -21,7 +21,12 @@
       />
     </template>
     <template #default>
+      <BaseEmptyState
+        v-if="!getProjectsSlugPage.accesses.length"
+        text="Нет доступов"
+      />
       <AccessesTable
+        v-else
         :accesses="getProjectsSlugPage.accesses"
         @on-success="getAccesses"
       />
@@ -43,6 +48,7 @@ import { useRoute } from 'vue-router'
 import useModal from '@/composables/useModal'
 import type { Breadcrumb } from '@/global/types/api/breadcrumbs/Breadcrumb'
 import CreateAccessModal from '@/components/Accesses/Modals/CreateAccessModal.vue'
+import BaseEmptyState from '@/components/ui/Empty/BaseEmptyState.vue'
 
 const route = useRoute()
 const slug = route.params.slug as string
