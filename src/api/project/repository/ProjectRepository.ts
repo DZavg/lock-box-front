@@ -22,11 +22,16 @@ export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepo
 	baseUrl = 'projects/'
 
 	async getAll(query: string = ''): Promise<Project[]> {
-		return await this.httpClient.get(`${this.baseUrl}`, {
-			params: {
-				query,
-			},
-		})
+		return await this.httpClient.get(
+			`${this.baseUrl}`,
+			query
+				? {
+						params: {
+							query,
+						},
+					}
+				: {},
+		)
 	}
 
 	async getOneById(id: string): Promise<Project> {
