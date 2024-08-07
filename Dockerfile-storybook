@@ -1,0 +1,19 @@
+FROM node:20.9.0-alpine AS builder
+
+COPY package*.json ./
+
+RUN npm install -g npm@9.8.1
+RUN npm ci
+
+FROM builder AS production
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+RUN npm i -g http-server
+RUN npm run build-storybook
+
+ARG STORYBOOK_PORT
+
+CMD npx http-server ./storybook-static -p ${STORYBOOK_PORT}

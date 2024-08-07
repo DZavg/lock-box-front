@@ -1,9 +1,24 @@
 services:
   app:
     container_name: lock-box-front
-    build: .
+    build:
+      context: .
+      dockerfile: ./Dockerfile
     restart: always
     ports:
       - '${APP_DOCKER_HOST}:${APP_DOCKER_PORT}:${PORT}'
+    env_file:
+      - ./.env
+
+  app-storybook:
+    container_name: lock-box-front-storybook
+    build:
+      context: .
+      dockerfile: ./Dockerfile-storybook
+      args:
+        - STORYBOOK_PORT=${STORYBOOK_PORT}
+    restart: always
+    ports:
+      - '${APP_DOCKER_HOST}:${STORYBOOK_PORT}:${STORYBOOK_PORT}'
     env_file:
       - ./.env
