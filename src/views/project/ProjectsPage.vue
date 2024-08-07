@@ -8,7 +8,11 @@
       <ProjectsActions @on-success="fetchProjects" />
     </template>
     <template #default>
-      <SearchNotFound v-if="!getProjects.length && $route.query.q" />
+      <BaseEmptyState
+        v-if="!getProjects.length && !$route.query.q"
+        text="Нет проектов"
+      />
+      <SearchNotFound v-else-if="$route.query.q" />
       <ProjectsTable
         v-else
         :projects="getProjects"
@@ -28,6 +32,7 @@ import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
 import { storeToRefs } from 'pinia'
 import { useRoute } from 'vue-router'
+import BaseEmptyState from '@/components/ui/Empty/BaseEmptyState.vue'
 
 const route = useRoute()
 
