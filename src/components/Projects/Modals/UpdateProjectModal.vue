@@ -35,16 +35,15 @@ const { execute, isLoading, errors } = useRequest()
 const projectStore = useProjectStore()
 const { updateOneById } = projectStore
 
-const updateProject = (form: ProjectDto) => {
-	execute(async () => {
-		const response = await updateOneById(
-			props.project?.id,
-			deleteDuplicateFields(form, props.project),
-		)
+const updateProject = async (form: ProjectDto) => {
+	const formWithoutDuplicateFields = deleteDuplicateFields(form, props.project)
+	if (Object.keys(formWithoutDuplicateFields).length) {
+		await execute(async () => {
+			return await updateOneById(props.project?.id, formWithoutDuplicateFields)
+		})
 		emits('onSuccess')
-		emits('onClose')
-		return response
-	})
+	}
+	emits('onClose')
 }
 </script>
 
