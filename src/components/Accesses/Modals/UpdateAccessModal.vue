@@ -35,16 +35,18 @@ const { execute, isLoading, errors } = useRequest()
 const accessStore = useAccessStore()
 const { updateOneById } = accessStore
 
-const updateAccess = (form: AccessDto) => {
-	execute(async () => {
-		const response = await updateOneById(
-			props.access.id,
-			deleteDuplicateFields(form, { ...props.access, type: props.access.type.id }),
-		)
-		emits('onSuccess')
-		emits('onClose')
-		return response
+const updateAccess = async (form: AccessDto) => {
+	const formWithoutDuplicateFields = deleteDuplicateFields(form, {
+		...props.access,
+		type: props.access.type.id,
 	})
+	if (Object.keys(formWithoutDuplicateFields).length) {
+		await execute(async () => {
+			return await updateOneById(props.access.id, formWithoutDuplicateFields)
+		})
+		emits('onSuccess')
+	}
+	emits('onClose')
 }
 </script>
 
