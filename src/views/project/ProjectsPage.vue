@@ -42,8 +42,8 @@ const fetchProjects = async () => {
 
 watch(
 	() => route.query.q,
-	async (value) => {
-		if (typeof value === 'undefined') {
+	async (value, oldValue) => {
+		if (typeof value === 'undefined' && oldValue) {
 			await fetchProjects()
 		}
 	},
