@@ -1,14 +1,14 @@
 <template>
-  <ContentCentering class="page-loading">
+  <CenteredContent class="page-loading">
     <LoadingIcon
       :size="iconSize"
       :color="Color.BluePrimary"
     />
-  </ContentCentering>
+  </CenteredContent>
 </template>
 
 <script setup lang="ts">
-import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
+import CenteredContent from '@/components/ui/Centered/CenteredContent.vue'
 import LoadingIcon from '@/components/ui/Loading/LoadingIcon.vue'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
 import { Color } from '@/global/types/ui/color/Color'

@@ -1,5 +1,5 @@
 <template>
-  <ContentCentering class="not-found-page container-s">
+  <CenteredContent class="not-found-page container-s">
     <BaseImage
       class="not-found-page__image"
       :image="{
@@ -18,13 +18,13 @@
     >
       На главную
     </BaseLinkButton>
-  </ContentCentering>
+  </CenteredContent>
 </template>
 
 <script lang="ts" setup>
 import BaseLinkButton from '@/components/ui/Link/BaseLinkButton.vue'
 import { RouteName } from '@/router/RouteName'
-import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
+import CenteredContent from '@/components/ui/Centered/CenteredContent.vue'
 import BaseImage from '@/components/ui/Image/BaseImage.vue'
 import notFoundImage from '@/assets/images/not-found.webp'
 </script>

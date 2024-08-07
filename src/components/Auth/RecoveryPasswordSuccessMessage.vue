@@ -1,5 +1,5 @@
 <template>
-  <ContentCentering class="recovery-password-success-msg">
+  <CenteredContent class="recovery-password-success-msg">
     <BaseImage
       :image="{
         src: 'https://placehold.co/168x168/orange/white',
@@ -21,12 +21,12 @@
     >
       Готово
     </BaseLinkButton>
-  </ContentCentering>
+  </CenteredContent>
 </template>
 
 <script lang="ts" setup>
 import BaseLinkButton from '@/components/ui/Link/BaseLinkButton.vue'
-import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
+import CenteredContent from '@/components/ui/Centered/CenteredContent.vue'
 import BaseImage from '@/components/ui/Image/BaseImage.vue'
 
 interface Props {

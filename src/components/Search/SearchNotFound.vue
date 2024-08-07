@@ -1,5 +1,5 @@
 <template>
-  <ContentCentering class="search-not-found container-s">
+  <CenteredContent class="search-not-found container-s">
     <BaseImage
       class="search-not-found__image"
       :image="{
@@ -11,11 +11,11 @@
     <p class="h1">
       {{ text }}
     </p>
-  </ContentCentering>
+  </CenteredContent>
 </template>
 
 <script setup lang="ts">
-import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
+import CenteredContent from '@/components/ui/Centered/CenteredContent.vue'
 import BaseImage from '@/components/ui/Image/BaseImage.vue'
 import searchImage from '@/assets/images/search.webp'
 
