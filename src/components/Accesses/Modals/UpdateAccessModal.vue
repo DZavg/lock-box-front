@@ -42,9 +42,12 @@ const updateAccess = async (form: AccessDto) => {
 	})
 	if (Object.keys(formWithoutDuplicateFields).length) {
 		await execute(async () => {
-			return await updateOneById(props.access.id, formWithoutDuplicateFields)
+			const response = await updateOneById(props.access.id, formWithoutDuplicateFields)
+			emits('onSuccess')
+			emits('onClose')
+			return response
 		})
-		emits('onSuccess')
+		return
 	}
 	emits('onClose')
 }
