@@ -23,7 +23,7 @@ import BaseInternalPage from '@/components/ui/Page/BaseInternalPage.vue'
 import ProjectsActions from '@/components/Projects/ProjectsActions.vue'
 import ProjectsTable from '@/components/Projects/ProjectsTable.vue'
 import SearchNotFound from '@/components/Search/SearchNotFound.vue'
-import { onMounted } from 'vue'
+import { onMounted, watch } from 'vue'
 import { useProjectStore } from '@/stores/project'
 import useRequest from '@/composables/useRequest'
 import { storeToRefs } from 'pinia'
@@ -39,6 +39,15 @@ const { execute, isLoading } = useRequest()
 const fetchProjects = async () => {
 	await execute(async () => await getAll(String(route.query.q || '')))
 }
+
+watch(
+	() => route.query.q,
+	async (value) => {
+		if (typeof value === 'undefined') {
+			await fetchProjects()
+		}
+	},
+)
 
 onMounted(async () => {
 	await fetchProjects()
