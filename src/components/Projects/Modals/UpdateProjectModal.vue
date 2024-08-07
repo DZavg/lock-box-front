@@ -39,9 +39,12 @@ const updateProject = async (form: ProjectDto) => {
 	const formWithoutDuplicateFields = deleteDuplicateFields(form, props.project)
 	if (Object.keys(formWithoutDuplicateFields).length) {
 		await execute(async () => {
-			return await updateOneById(props.project?.id, formWithoutDuplicateFields)
+			const response = await updateOneById(props.project?.id, formWithoutDuplicateFields)
+			emits('onSuccess')
+			emits('onClose')
+			return response
 		})
-		emits('onSuccess')
+		return
 	}
 	emits('onClose')
 }
