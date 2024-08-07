@@ -3,7 +3,7 @@
     <BaseImage
       class="not-found-page__image"
       :image="{
-        src: 'https://placehold.co/468x176/orange/white',
+        src: notFoundImage,
         alt: 'Не найдено',
         title: 'Не найдено',
       }"
@@ -26,6 +26,7 @@ import BaseLinkButton from '@/components/ui/Link/BaseLinkButton.vue'
 import { RouteName } from '@/router/RouteName'
 import ContentCentering from '@/components/ui/Content/ContentCentering.vue'
 import BaseImage from '@/components/ui/Image/BaseImage.vue'
+import notFoundImage from '@/assets/images/not-found.webp'
 </script>
 
 <style lang="scss" scoped>
