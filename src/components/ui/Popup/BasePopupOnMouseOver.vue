@@ -31,7 +31,7 @@ import useScreen from '@/composables/useScreen'
 import throttle from '@/utils/throttle'
 import { Position } from '@/global/types/ui/position/Position'
 
-const isActive = ref(false)
+const isActive: Ref<boolean> = ref(false)
 const popupHead: Ref<HTMLElement | null> = ref(null)
 const popupBody: Ref<HTMLElement | null> = ref(null)
 const { isDesktop } = useScreen()
