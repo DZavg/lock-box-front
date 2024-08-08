@@ -19,6 +19,10 @@ export default meta
 type Story = StoryObj<typeof InputWithIcon>
 
 export const Default: Story = {
+	args: {
+		name: 'search',
+		placeholder: 'Поиск',
+	},
 	render: (args: any) => ({
 		components: { InputWithIcon, BaseIcon },
 		setup() {
