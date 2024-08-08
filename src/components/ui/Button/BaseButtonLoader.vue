@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import LoadingIcon from '@/components/ui/Loading/LoadingIcon.vue'
+import LoadingIcon from '@/components/ui/Icon/LoadingIcon.vue'
 </script>
 
 <style scoped lang="scss">

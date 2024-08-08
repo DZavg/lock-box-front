@@ -69,7 +69,7 @@ import { Color } from '@/global/types/ui/color/Color'
 import BaseOption from '@/components/ui/Option/BaseOption.vue'
 import BaseOptionList from '@/components/ui/Option/BaseOptionList.vue'
 import useSelect from '@/composables/useSelect'
-import LoadingIcon from '@/components/ui/Loading/LoadingIcon.vue'
+import LoadingIcon from '@/components/ui/Icon/LoadingIcon.vue'
 
 interface Props {
 	name?: string

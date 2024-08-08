@@ -9,7 +9,7 @@
 
 <script setup lang="ts">
 import CenteredContent from '@/components/ui/Centered/CenteredContent.vue'
-import LoadingIcon from '@/components/ui/Loading/LoadingIcon.vue'
+import LoadingIcon from '@/components/ui/Icon/LoadingIcon.vue'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
 import { Color } from '@/global/types/ui/color/Color'
 import { computed } from 'vue'

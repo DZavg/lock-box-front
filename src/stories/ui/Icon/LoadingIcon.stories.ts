@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import LoadingIcon from '@/components/ui/Loading/LoadingIcon.vue'
+import LoadingIcon from '@/components/ui/Icon/LoadingIcon.vue'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
 import { Color } from '@/global/types/ui/color/Color'
 
