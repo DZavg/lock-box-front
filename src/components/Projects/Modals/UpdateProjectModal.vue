@@ -15,7 +15,7 @@ import type { ProjectDto } from '@/api/project/dto/project.dto'
 import deleteDuplicateFields from '@/utils/deleteDuplicateFields'
 import { useProjectStore } from '@/stores/project'
 import type { Project } from '@/api/project/entity/Project'
-import { projectDefaults } from '@/global/defaults/project/Project'
+import { projectDefaults } from '@/global/defaults/project/ProjectDefaults'
 
 interface Props {
 	project?: Project

@@ -45,7 +45,7 @@ import type { Project } from '@/api/project/entity/Project'
 import type { Error } from '@/global/types/api/error/Error'
 import { ref, type Ref } from 'vue'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
-import { projectDefaults } from '@/global/defaults/project/Project'
+import { projectDefaults } from '@/global/defaults/project/ProjectDefaults'
 
 interface Props {
 	project?: Project

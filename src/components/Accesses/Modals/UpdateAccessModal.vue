@@ -11,7 +11,7 @@
 <script setup lang="ts">
 import AccessModal from '@/components/Accesses/Modals/AccessModal.vue'
 import type { Access } from '@/api/access/entity/Access'
-import { accessDefaults } from '@/global/defaults/access/Project'
+import { accessDefaults } from '@/global/defaults/access/AccessDefaults'
 import type { AccessDto } from '@/api/access/dto/access.dto'
 import deleteDuplicateFields from '@/utils/deleteDuplicateFields'
 import useRequest from '@/composables/useRequest'

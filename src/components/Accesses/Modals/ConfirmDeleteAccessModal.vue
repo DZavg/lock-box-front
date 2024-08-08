@@ -12,7 +12,7 @@
 import ConfirmDeleteModal from '@/components/ConfirmModals/ConfirmDeleteModal.vue'
 import useRequest from '@/composables/useRequest'
 import type { Access } from '@/api/access/entity/Access'
-import { accessDefaults } from '@/global/defaults/access/Project'
+import { accessDefaults } from '@/global/defaults/access/AccessDefaults'
 import { useAccessStore } from '@/stores/access'
 
 interface Props {
