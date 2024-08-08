@@ -48,13 +48,13 @@
     </BaseTableGroup>
     <UpdateProjectModal
       v-if="projectModalIsOpen"
-      :project="selectProject"
+      :project="selectedProject"
       @on-success="$emit('onSuccess')"
       @on-close="closeProjectModal"
     />
     <ConfirmDeleteProjectModal
       v-if="confirmDeleteModalIsOpen"
-      :project="selectProject"
+      :project="selectedProject"
       @on-success="$emit('onSuccess')"
       @on-close="closeConfirmDeleteModal"
     />
@@ -82,7 +82,7 @@ withDefaults(defineProps<Props>(), {
 	projects: () => [],
 })
 
-const selectProject: Ref<Project> = ref(projectDefaults)
+const selectedProject: Ref<Project> = ref(projectDefaults)
 
 const {
 	openModal: openProjectModal,
@@ -101,7 +101,7 @@ defineEmits<{
 
 const confirmAction = (project: Project, callback: Function = () => {}) => {
 	callback()
-	selectProject.value = project
+	selectedProject.value = project
 }
 </script>
 
