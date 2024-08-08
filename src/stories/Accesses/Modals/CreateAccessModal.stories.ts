@@ -15,4 +15,8 @@ const meta: Meta<typeof CreateAccessModal> = {
 export default meta
 type Story = StoryObj<typeof CreateAccessModal>
 
-export const Default: Story = {}
+export const Default: Story = {
+	args: {
+		projectId: '0',
+	},
+}
