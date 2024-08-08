@@ -22,8 +22,8 @@ const inputValue = computed({
 	get() {
 		return String(route.query.q || '')
 	},
-	set(value) {
-		router.push({ name: RouteName.Projects, query: { q: value } })
+	async set(value) {
+		await router.push({ name: RouteName.Projects, query: { q: value } })
 		searchProjectsWithDebounce(value)
 	},
 })
