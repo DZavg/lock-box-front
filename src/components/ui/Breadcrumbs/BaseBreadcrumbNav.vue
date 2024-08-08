@@ -5,7 +5,7 @@
   >
     <ul class="breadcrumb-nav__list">
       <li
-        v-for="(breadcrumb, index) in sliceBreadcrumbs"
+        v-for="(breadcrumb, index) in slicedBreadcrumbs"
         :key="index"
       >
         <BaseLink
@@ -47,7 +47,7 @@ const props = withDefaults(defineProps<Props>(), {
 	breadcrumbs: () => [],
 })
 
-const sliceBreadcrumbs = computed(() => props.breadcrumbs.slice(0, props.breadcrumbs.length - 1))
+const slicedBreadcrumbs = computed(() => props.breadcrumbs.slice(0, props.breadcrumbs.length - 1))
 </script>
 
 <style lang="scss" scoped>
