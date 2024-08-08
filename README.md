@@ -1,5 +1,11 @@
 # Lock Box
 
+**Сайт: https://dzavg.ru/**
+
+**Api: https://api.dzavg.ru/**
+
+**Storybook: https://storybook.dzavg.ru/**
+
 **Lock Box** — это веб-приложение для безопасного хранения и управления доступами к проектам.
 
 ## Содержание
