@@ -15,4 +15,8 @@ const meta: Meta<typeof RecoveryPasswordSuccessMessage> = {
 export default meta
 type Story = StoryObj<typeof RecoveryPasswordSuccessMessage>
 
-export const Default: Story = {}
+export const Default: Story = {
+	args: {
+		email: 'example@example.com',
+	},
+}
