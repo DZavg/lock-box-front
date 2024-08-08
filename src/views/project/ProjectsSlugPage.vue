@@ -22,7 +22,7 @@
     </template>
     <template #default>
       <BaseEmptyState
-        v-if="!getProjectsSlugPage.accesses.length"
+        v-if="!getProjectsSlugPage.accesses?.length"
         text="Нет доступов"
       />
       <AccessesTable
