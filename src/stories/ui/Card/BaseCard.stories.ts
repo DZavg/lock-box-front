@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
 import BaseCard from '@/components/ui/Card/BaseCard.vue'
-import { BorderRadius } from '@/global/types/ui/border/BorderRadius'
+import { BorderRadiusSize } from '@/global/types/ui/border/BorderRadiusSize'
 import { CardPaddingSize } from '@/global/types/ui/card/CardPaddingSize'
 
 const meta: Meta<typeof BaseCard> = {
@@ -20,7 +20,7 @@ const meta: Meta<typeof BaseCard> = {
 	argTypes: {
 		borderRadius: {
 			control: 'select',
-			options: BorderRadius,
+			options: BorderRadiusSize,
 		},
 		paddingSize: {
 			control: 'select',
@@ -35,6 +35,6 @@ type Story = StoryObj<typeof BaseCard>
 export const Default: Story = {
 	args: {
 		paddingSize: CardPaddingSize.Medium,
-		borderRadius: BorderRadius.S,
+		borderRadius: BorderRadiusSize.S,
 	},
 }

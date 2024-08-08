@@ -12,16 +12,16 @@
 
 <script lang="ts" setup>
 import { CardPaddingSize } from '@/global/types/ui/card/CardPaddingSize'
-import { BorderRadius } from '@/global/types/ui/border/BorderRadius'
+import { BorderRadiusSize } from '@/global/types/ui/border/BorderRadiusSize'
 
 interface Props {
 	paddingSize?: CardPaddingSize
-	borderRadius?: BorderRadius
+	borderRadius?: BorderRadiusSize
 }
 
 withDefaults(defineProps<Props>(), {
 	paddingSize: CardPaddingSize.Medium,
-	borderRadius: BorderRadius.M,
+	borderRadius: BorderRadiusSize.M,
 })
 </script>
 
