@@ -1,7 +1,7 @@
 <template>
   <div class="logo-with-desc">
     <RouterLink
-      to="/"
+      :to="{ name: RouteName.Projects }"
       title="Lock Box"
     >
       <svg class="logo-with-desc__icon">
@@ -14,6 +14,7 @@
 
 <script lang="ts" setup>
 import iconLogo from '/images/svg/icon-logo.svg'
+import { RouteName } from '@/router/RouteName'
 </script>
 
 <style lang="scss" scoped>
