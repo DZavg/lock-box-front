@@ -5,11 +5,12 @@ import type { ProjectsSlugPage } from '@/api/project/entity/ProjectsSlugPage'
 import type { AccessDto } from '@/api/access/dto/access.dto'
 import type { UpdateProjectDto } from '@/api/project/dto/update-project.dto'
 import type { ProjectDto } from '@/api/project/dto/project.dto'
+import type { ProjectsPage } from '@/api/project/entity/ProjectsPage'
 
 export interface ProjectRepository {
 	baseUrl: string
 
-	getAll(query: string): Promise<Project[]>
+	getAll(query: string): Promise<ProjectsPage>
 	getOneById(id: string): Promise<Project>
 	create(project: ProjectDto): Promise<Message>
 	updateOneById(id: string, project: UpdateProjectDto): Promise<Message>
@@ -21,7 +22,7 @@ export interface ProjectRepository {
 export class ProjectRepositoryImpl extends BaseHttpClient implements ProjectRepository {
 	baseUrl = 'projects/'
 
-	async getAll(query: string = ''): Promise<Project[]> {
+	async getAll(query: string = ''): Promise<ProjectsPage> {
 		return await this.httpClient.get(
 			`${this.baseUrl}`,
 			query

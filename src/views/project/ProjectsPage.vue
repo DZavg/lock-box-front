@@ -8,16 +8,18 @@
       <ProjectsActions @on-success="fetchProjects" />
     </template>
     <template #default>
-      <BaseEmptyState
-        v-if="!getProjects.length && !$route.query.q"
-        text="Нет проектов"
-      />
-      <SearchNotFound v-else-if="$route.query.q" />
-      <ProjectsTable
-        v-else
-        :projects="getProjects"
-        @on-success="fetchProjects"
-      />
+      <SearchNotFound v-if="!getProjects.length && $route.query.q" />
+      <template v-else>
+        <BaseEmptyState
+          v-if="!getProjectsTotalCount"
+          text="Нет проектов"
+        />
+        <ProjectsTable
+          v-else
+          :projects="getProjects"
+          @on-success="fetchProjects"
+        />
+      </template>
     </template>
   </BaseInternalPage>
 </template>
@@ -38,7 +40,7 @@ const route = useRoute()
 
 const projectStore = useProjectStore()
 const { getAll } = projectStore
-const { getProjects } = storeToRefs(projectStore)
+const { getProjects, getProjectsTotalCount } = storeToRefs(projectStore)
 const { execute, isLoading } = useRequest()
 
 const fetchProjects = async () => {

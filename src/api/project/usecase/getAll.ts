@@ -1,12 +1,12 @@
 import { type ProjectRepository } from '@/api/project/repository/ProjectRepository'
 import { inject, injectable } from 'inversify'
 import { identifiers } from '@/api/constants/identifiers'
-import type { Project } from '@/api/project/entity/Project'
+import type { ProjectsPage } from '@/api/project/entity/ProjectsPage'
 
 export interface GetAll {
 	readonly projectRepository: ProjectRepository
 
-	execute(query: string): Promise<Project[]>
+	execute(query: string): Promise<ProjectsPage>
 }
 
 @injectable()

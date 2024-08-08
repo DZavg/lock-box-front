@@ -26,6 +26,7 @@ export const useProjectStore = defineStore('project', {
 	state: () => {
 		return {
 			projects: [] as Project[],
+			projectsTotalCount: 0 as number,
 			projectsSlugPage: {} as ProjectsSlugPage,
 		}
 	},
@@ -36,7 +37,8 @@ export const useProjectStore = defineStore('project', {
 
 		async getAll(query: string = '') {
 			const response = await getAll.execute(query)
-			this.projects = response
+			this.projects = response?.projects
+			this.projectsTotalCount = response?.total_count
 			return response
 		},
 
@@ -70,6 +72,10 @@ export const useProjectStore = defineStore('project', {
 	getters: {
 		getProjects: (state) => {
 			return state.projects
+		},
+
+		getProjectsTotalCount: (state) => {
+			return state.projectsTotalCount
 		},
 
 		getProjectsSlugPage: (state) => {
