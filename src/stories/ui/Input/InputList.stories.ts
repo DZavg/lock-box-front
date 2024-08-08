@@ -21,10 +21,7 @@ export const Default: Story = {
 		components: { InputList, BaseInput },
 		template: `
 			<InputList>
-			<BaseInput placeholder="email@gmail.com"/>
-			<BaseInput placeholder="email@gmail.com"/>
-			<BaseInput placeholder="email@gmail.com"/>
-			<BaseInput placeholder="email@gmail.com"/>
+			<BaseInput name="email" placeholder="email@gmail.com" v-for="i in 6" :key="i"/>
 			</InputList>
 		`,
 	}),
