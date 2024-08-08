@@ -1,6 +1,4 @@
 @mixin scrollbar($is-horizontal: false) {
-	scrollbar-width: thin;
-
 	@media only screen and (hover: hover) {
 		&::-webkit-scrollbar {
 			@if $is-horizontal {
