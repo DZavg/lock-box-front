@@ -34,7 +34,7 @@ type Story = StoryObj<typeof BaseCard>
 
 export const Default: Story = {
 	args: {
-		paddingSize: CardPaddingSize.Medium,
+		paddingSize: CardPaddingSize.M,
 		borderRadius: BorderRadiusSize.S,
 	},
 }

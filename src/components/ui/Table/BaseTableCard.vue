@@ -1,6 +1,6 @@
 <template>
   <BaseCard
-    :padding-size="CardPaddingSize.Small"
+    :padding-size="CardPaddingSize.S"
     class="table-card"
   >
     <slot />

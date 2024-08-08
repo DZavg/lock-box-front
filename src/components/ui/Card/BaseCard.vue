@@ -20,7 +20,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-	paddingSize: CardPaddingSize.Medium,
+	paddingSize: CardPaddingSize.M,
 	borderRadius: BorderRadiusSize.M,
 })
 </script>
@@ -34,11 +34,11 @@ withDefaults(defineProps<Props>(), {
 	color: $color-white;
 
 	&_padding-size {
-		&_small {
+		&_s {
 			padding: calc($indent-s - $border-width);
 		}
 
-		&_medium {
+		&_m {
 			padding: calc($indent-xl - $border-width);
 
 			@media screen and (max-width: 991px) {

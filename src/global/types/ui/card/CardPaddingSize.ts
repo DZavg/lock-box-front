@@ -1,4 +1,4 @@
 export enum CardPaddingSize {
-	Small = 'small',
-	Medium = 'medium',
+	S = 's',
+	M = 'm',
 }
