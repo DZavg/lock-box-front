@@ -31,6 +31,6 @@ export const identifiers = {
 	userRepository: Symbol.for('UserRepository'),
 	getUserInfo: Symbol.for('GetUserInfo'),
 
-	confirmationCodesRepository: Symbol.for('ConfirmationCodesRepository'),
+	confirmationCodeRepository: Symbol.for('ConfirmationCodeRepository'),
 	getOneCode: Symbol.for('GetOneCode'),
 }

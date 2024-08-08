@@ -56,12 +56,12 @@ import {
 } from '@/api/access/usecase/deleteOneById'
 import { type GetPasswordById, GetPasswordByIdImpl } from '@/api/access/usecase/getPasswordById'
 import { type GetAllTypes, GetAllTypesImpl } from '@/api/access/usecase/getAllTypes'
-import type { ConfirmationCodesRepository } from '@/api/confirmation-codes/repository/ConfirmationCodesRepository'
-import { ConfirmationCodesRepositoryImpl } from '@/api/confirmation-codes/repository/ConfirmationCodesRepository'
+import type { ConfirmationCodeRepository } from '@/api/confirmation-code/repository/ConfirmationCodeRepository'
+import { ConfirmationCodeRepositoryImpl } from '@/api/confirmation-code/repository/ConfirmationCodeRepository'
 import {
 	type GetOne as GetOneCode,
 	GetOneImpl as GetOneCodeImpl,
-} from '@/api/confirmation-codes/usecase/getOne'
+} from '@/api/confirmation-code/usecase/getOne'
 import { type RecoveryPassword, RecoveryPasswordImpl } from '@/api/auth/usecase/recoveryPassword'
 import { type DemoAccess, DemoAccessImpl } from '@/api/auth/usecase/demoAccess'
 
@@ -100,8 +100,8 @@ container.bind<UserRepository>(identifiers.userRepository).to(UserRepositoryImpl
 container.bind<GetInfo>(identifiers.getUserInfo).to(GetInfoImpl)
 
 container
-	.bind<ConfirmationCodesRepository>(identifiers.confirmationCodesRepository)
-	.to(ConfirmationCodesRepositoryImpl)
+	.bind<ConfirmationCodeRepository>(identifiers.confirmationCodeRepository)
+	.to(ConfirmationCodeRepositoryImpl)
 container.bind<GetOneCode>(identifiers.getOneCode).to(GetOneCodeImpl)
 
 export { container }

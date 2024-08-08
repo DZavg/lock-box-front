@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { container } from '@/api/DIContainer'
 import { identifiers } from '@/api/constants/identifiers'
-import type { GetOne } from '@/api/confirmation-codes/usecase/getOne'
+import type { GetOne } from '@/api/confirmation-code/usecase/getOne'
 
 const getOne = container.get<GetOne>(identifiers.getOneCode)
 
