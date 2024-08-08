@@ -42,7 +42,7 @@
       class="access-modal__button"
       @on-click="$emit('onSubmit', form)"
     >
-      Сохранить изменения
+      {{ buttonText }}
     </BaseButton>
   </BaseModal>
 </template>
