@@ -3,6 +3,7 @@
     :loading="isLoading"
     :errors="errors"
     title="Добавить доступ"
+    button-text="Добавить"
     @on-close="$emit('onClose')"
     @on-submit="createAccess"
   />
