@@ -50,13 +50,13 @@
     </BaseTableGroup>
     <UpdateAccessModal
       v-if="accessModalIsOpen"
-      :access="selectAccess"
+      :access="selectedAccess"
       @on-close="closeAccessModal"
       @on-success="$emit('onSuccess')"
     />
     <ConfirmDeleteAccessModal
       v-if="confirmDeleteModalIsOpen"
-      :access="selectAccess"
+      :access="selectedAccess"
       @on-close="closeConfirmDeleteModal"
       @on-success="$emit('onSuccess')"
     />
@@ -89,7 +89,7 @@ defineEmits<{
 	(e: 'onSuccess'): void
 }>()
 
-const selectAccess: Ref<Access> = ref(accessDefaults)
+const selectedAccess: Ref<Access> = ref(accessDefaults)
 
 const {
 	openModal: openAccessModal,
@@ -108,7 +108,7 @@ const { getPasswordById } = accessStore
 
 const confirmAction = (access: Access, callback: Function = () => {}) => {
 	callback()
-	selectAccess.value = access
+	selectedAccess.value = access
 }
 
 const copyPassword = (access: Access) => {
