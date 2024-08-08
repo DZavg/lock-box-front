@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import CenteredTextWithImage from '@/components/ui/Centered/CenteredTextWithImage.vue'
-import emptyImage from '@/assets/images/empty.webp'
+import emptyImage from '/images/empty.webp'
 
 interface Props {
 	text: string

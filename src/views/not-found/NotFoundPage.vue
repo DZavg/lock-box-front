@@ -26,7 +26,7 @@ import BaseLinkButton from '@/components/ui/Link/BaseLinkButton.vue'
 import { RouteName } from '@/router/RouteName'
 import CenteredContent from '@/components/ui/Centered/CenteredContent.vue'
 import BaseImage from '@/components/ui/Image/BaseImage.vue'
-import notFoundImage from '@/assets/images/not-found.webp'
+import notFoundImage from '/images/not-found.webp'
 </script>
 
 <style lang="scss" scoped>

@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-import iconLoading from '@/assets/images/svg/icon-loading.svg'
+import iconLoading from '/images/svg/icon-loading.svg'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
 import BaseIcon from '@/components/ui/Icon/BaseIcon.vue'
 import { Color } from '@/global/types/ui/color/Color'

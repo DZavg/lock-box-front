@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconEdit from '@/assets/images/svg/icon-edit.svg'
+import iconEdit from '/images/svg/icon-edit.svg'
 import BaseLinkIcon from '@/components/ui/Link/BaseLinkIcon.vue'
 
 interface Props {

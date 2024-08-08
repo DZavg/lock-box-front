@@ -16,8 +16,8 @@
 </template>
 
 <script lang="ts" setup>
-import iconEyeClose from '@/assets/images/svg/icon-eye-close.svg'
-import iconEyeOpen from '@/assets/images/svg/icon-eye-open.svg'
+import iconEyeClose from '/images/svg/icon-eye-close.svg'
+import iconEyeOpen from '/images/svg/icon-eye-open.svg'
 import BaseButtonIcon from '@/components/ui/Button/BaseButtonIcon.vue'
 import { Color } from '@/global/types/ui/color/Color'
 import { IconSize } from '@/global/types/ui/icon/IconSize'

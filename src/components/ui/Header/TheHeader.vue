@@ -15,7 +15,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconLogo from '@/assets/images/svg/icon-logo.svg'
+import iconLogo from '/images/svg/icon-logo.svg'
 import UserDropdown from '@/components/User/UserDropdown.vue'
 import { RouteName } from '@/router/RouteName'
 </script>

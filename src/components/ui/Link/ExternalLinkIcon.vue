@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import iconExternalLink from '@/assets/images/svg/icon-external-link.svg'
+import iconExternalLink from '/images/svg/icon-external-link.svg'
 import { IconSize } from '@/global/types/ui/icon/IconSize'
 import BaseExternalLinkIcon from '@/components/ui/Link/BaseExternalLinkIcon.vue'
 

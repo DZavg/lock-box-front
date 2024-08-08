@@ -49,19 +49,19 @@
 
 		&--success {
 			.Toastify__toast-icon {
-				background: url('@/assets/images/svg/icon-success.svg');
+				background: url('/images/svg/icon-success.svg');
 			}
 		}
 
 		&--warning {
 			.Toastify__toast-icon {
-				background: url('@/assets/images/svg/icon-warning.svg');
+				background: url('/images/svg/icon-warning.svg');
 			}
 		}
 
 		&--error {
 			.Toastify__toast-icon {
-				background: url('@/assets/images/svg/icon-error.svg');
+				background: url('/images/svg/icon-error.svg');
 			}
 		}
 	}
