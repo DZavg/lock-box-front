@@ -61,7 +61,7 @@
 <script lang="ts" setup>
 import BaseRadio from '@/components/ui/Radio/BaseRadio.vue'
 import { computed, ref, type Ref } from 'vue'
-import { type Option } from '@/global/types/ui/option/Option'
+import { type Option } from '@/global/types/api/option/Option'
 import DropdownButtonIcon from '@/components/ui/Button/DropdownButtonIcon.vue'
 import BaseLabel from '@/components/ui/Label/BaseLabel.vue'
 import BaseError from '@/components/ui/Error/BaseError.vue'
