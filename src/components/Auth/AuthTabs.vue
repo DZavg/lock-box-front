@@ -12,6 +12,7 @@
           v-for="tab in AuthTabsData"
           :key="tab.name"
           :name="tab.name"
+          :disabled="getIsActive"
           @update-active-tab="updateActiveTab"
         >
           {{ tab.buttonText }}
@@ -46,12 +47,16 @@ import useRequest from '@/composables/useRequest'
 import { RouteName } from '@/router/RouteName'
 import { useUserStore } from '@/stores/user'
 import { useRouter } from 'vue-router'
+import { useLoaderStore } from '@/stores/loader'
+import { storeToRefs } from 'pinia'
 
 const authStore = useAuthStore()
 const userStore = useUserStore()
+const loaderStore = useLoaderStore()
 
 const { demoAccess } = authStore
 const { getInfo } = userStore
+const { getIsActive } = storeToRefs(loaderStore)
 
 const { execute } = useRequest()
 const router = useRouter()
