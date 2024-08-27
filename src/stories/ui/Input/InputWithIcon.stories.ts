@@ -23,7 +23,7 @@ export const Default: Story = {
 		name: 'search',
 		placeholder: 'Поиск',
 	},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { InputWithIcon, BaseIcon },
 		setup() {
 			return { args, iconSearch, IconSize }

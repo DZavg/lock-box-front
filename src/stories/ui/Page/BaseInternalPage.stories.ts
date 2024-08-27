@@ -23,7 +23,7 @@ export const Default: Story = {
 		titleH1: 'Бренд одежды "IVOLGA"',
 		additionalText: 'ivolga.moscow',
 	},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { BaseInternalPage, BaseButton },
 		setup() {
 			return { args }

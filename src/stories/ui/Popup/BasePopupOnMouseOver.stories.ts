@@ -18,7 +18,7 @@ type Story = StoryObj<typeof BasePopupOnMouseOver>
 
 export const Default: Story = {
 	args: {},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { BasePopupOnMouseOver, BaseButton },
 		setup() {
 			return { args }

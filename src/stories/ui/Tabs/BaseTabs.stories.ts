@@ -18,7 +18,7 @@ export default meta
 type Story = StoryObj<typeof BaseTabs>
 
 export const Default: Story = {
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { BaseTabs, BaseTabButton, BaseTabContent },
 		setup() {
 			return { args }

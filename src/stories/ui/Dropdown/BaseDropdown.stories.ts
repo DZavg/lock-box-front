@@ -20,7 +20,7 @@ export const Default: Story = {
 	args: {
 		isActive: false,
 	},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { BaseDropdown, BaseButton },
 		setup() {
 			const toggleDropdown = () => {

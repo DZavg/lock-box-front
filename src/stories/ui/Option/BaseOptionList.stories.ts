@@ -18,7 +18,7 @@ type Story = StoryObj<typeof BaseOptionList>
 
 export const Default: Story = {
 	args: {},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { BaseOptionList, BaseOption },
 		setup() {
 			return { args }

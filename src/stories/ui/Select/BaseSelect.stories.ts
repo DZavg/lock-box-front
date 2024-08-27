@@ -37,7 +37,7 @@ const meta: Meta<typeof BaseSelect> = {
 			},
 		],
 	},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { BaseSelect },
 		setup() {
 			const form = ref({})

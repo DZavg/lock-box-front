@@ -18,7 +18,7 @@ type Story = StoryObj<typeof AuthPageWrapper>
 
 export const Default: Story = {
 	args: {},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { AuthPageWrapper, LogoWithDescription },
 		setup() {
 			return { args }
