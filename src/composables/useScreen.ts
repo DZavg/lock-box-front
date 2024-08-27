@@ -1,12 +1,9 @@
-import { computed } from 'vue'
 import { useScreenStore } from '@/stores/screen'
+import { storeToRefs } from 'pinia'
 
 export default function () {
 	const screenStore = useScreenStore()
-
-	const isMobile = computed(() => screenStore.getIsMobile)
-	const isTablet = computed(() => screenStore.getIsTablet)
-	const isDesktop = computed(() => screenStore.getIsDesktop)
+	const { isMobile, isTablet, isDesktop } = storeToRefs(screenStore)
 
 	return {
 		isMobile,
