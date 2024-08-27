@@ -9,7 +9,7 @@ export default function () {
 	const loaderStore = useLoaderStore()
 	const { showLoader, hideLoader } = loaderStore
 
-	const data: Ref<any> = ref()
+	const data: Ref<unknown> = ref()
 	const isLoading: Ref<boolean> = ref(false)
 	const errors: Ref<Error> = ref({})
 
