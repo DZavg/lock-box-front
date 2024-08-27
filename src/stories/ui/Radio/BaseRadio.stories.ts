@@ -22,7 +22,7 @@ export const Default: Story = {
 		modelValue: '',
 		disabled: false,
 	},
-	render: (args: any) => ({
+	render: (args) => ({
 		components: { BaseRadio },
 		setup() {
 			return { args }
