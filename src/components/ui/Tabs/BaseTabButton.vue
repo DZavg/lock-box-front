@@ -2,6 +2,7 @@
   <button
     :class="{ ['tab-button--active']: isActive }"
     class="tab-button body_p_second"
+    :disabled="disabled"
     @click="updateNameActiveTab"
   >
     <slot />
@@ -14,10 +15,12 @@ import { type TabsData } from '@/global/types/ui/tabs/TabsData'
 
 interface Props {
 	name: string
+	disabled: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
 	name: '',
+	disabled: false,
 })
 
 const tabsData = inject('tabsData') as TabsData
